@@ -1,0 +1,575 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C889C1FC77F5F00D19F85 /* AppDelegate.swift */; };
+		180C889F1FC77F5F00D19F85 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C889E1FC77F5F00D19F85 /* GameScene.sks */; };
+		180C88A11FC77F5F00D19F85 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A01FC77F5F00D19F85 /* Actions.sks */; };
+		180C88A31FC77F5F00D19F85 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88A21FC77F5F00D19F85 /* GameScene.swift */; };
+		180C88A51FC77F5F00D19F85 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88A41FC77F5F00D19F85 /* GameViewController.swift */; };
+		180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A61FC77F5F00D19F85 /* Main.storyboard */; };
+		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
+		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
+		180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88B71FC77F6000D19F85 /* JetmanTests.swift */; };
+		180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88C21FC77F6000D19F85 /* JetmanUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		180C88B41FC77F5F00D19F85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
+			remoteInfo = Jetman;
+		};
+		180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
+			remoteInfo = Jetman;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		180C88991FC77F5F00D19F85 /* Jetman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		180C889C1FC77F5F00D19F85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		180C889E1FC77F5F00D19F85 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		180C88A01FC77F5F00D19F85 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		180C88A21FC77F5F00D19F85 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		180C88A41FC77F5F00D19F85 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		180C88A71FC77F5F00D19F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		180C88A91FC77F5F00D19F85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		180C88AC1FC77F5F00D19F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		180C88AE1FC77F5F00D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180C88B71FC77F6000D19F85 /* JetmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanTests.swift; sourceTree = "<group>"; };
+		180C88B91FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180C88C21FC77F6000D19F85 /* JetmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanUITests.swift; sourceTree = "<group>"; };
+		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		180C88961FC77F5F00D19F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88B01FC77F5F00D19F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88BB1FC77F6000D19F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		180C88901FC77F5F00D19F85 = {
+			isa = PBXGroup;
+			children = (
+				180C889B1FC77F5F00D19F85 /* Jetman */,
+				180C88B61FC77F6000D19F85 /* JetmanTests */,
+				180C88C11FC77F6000D19F85 /* JetmanUITests */,
+				180C889A1FC77F5F00D19F85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		180C889A1FC77F5F00D19F85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				180C88991FC77F5F00D19F85 /* Jetman.app */,
+				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
+				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		180C889B1FC77F5F00D19F85 /* Jetman */ = {
+			isa = PBXGroup;
+			children = (
+				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
+				180C889E1FC77F5F00D19F85 /* GameScene.sks */,
+				180C88A01FC77F5F00D19F85 /* Actions.sks */,
+				180C88A21FC77F5F00D19F85 /* GameScene.swift */,
+				180C88A41FC77F5F00D19F85 /* GameViewController.swift */,
+				180C88A61FC77F5F00D19F85 /* Main.storyboard */,
+				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
+				180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */,
+				180C88AE1FC77F5F00D19F85 /* Info.plist */,
+			);
+			path = Jetman;
+			sourceTree = "<group>";
+		};
+		180C88B61FC77F6000D19F85 /* JetmanTests */ = {
+			isa = PBXGroup;
+			children = (
+				180C88B71FC77F6000D19F85 /* JetmanTests.swift */,
+				180C88B91FC77F6000D19F85 /* Info.plist */,
+			);
+			path = JetmanTests;
+			sourceTree = "<group>";
+		};
+		180C88C11FC77F6000D19F85 /* JetmanUITests */ = {
+			isa = PBXGroup;
+			children = (
+				180C88C21FC77F6000D19F85 /* JetmanUITests.swift */,
+				180C88C41FC77F6000D19F85 /* Info.plist */,
+			);
+			path = JetmanUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		180C88981FC77F5F00D19F85 /* Jetman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180C88C71FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "Jetman" */;
+			buildPhases = (
+				180C88951FC77F5F00D19F85 /* Sources */,
+				180C88961FC77F5F00D19F85 /* Frameworks */,
+				180C88971FC77F5F00D19F85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Jetman;
+			productName = Jetman;
+			productReference = 180C88991FC77F5F00D19F85 /* Jetman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		180C88B21FC77F5F00D19F85 /* JetmanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180C88CA1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanTests" */;
+			buildPhases = (
+				180C88AF1FC77F5F00D19F85 /* Sources */,
+				180C88B01FC77F5F00D19F85 /* Frameworks */,
+				180C88B11FC77F5F00D19F85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180C88B51FC77F5F00D19F85 /* PBXTargetDependency */,
+			);
+			name = JetmanTests;
+			productName = JetmanTests;
+			productReference = 180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		180C88BD1FC77F6000D19F85 /* JetmanUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 180C88CD1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanUITests" */;
+			buildPhases = (
+				180C88BA1FC77F6000D19F85 /* Sources */,
+				180C88BB1FC77F6000D19F85 /* Frameworks */,
+				180C88BC1FC77F6000D19F85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				180C88C01FC77F6000D19F85 /* PBXTargetDependency */,
+			);
+			name = JetmanUITests;
+			productName = JetmanUITests;
+			productReference = 180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		180C88911FC77F5F00D19F85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Thomas Ganley";
+				TargetAttributes = {
+					180C88981FC77F5F00D19F85 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					180C88B21FC77F5F00D19F85 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 180C88981FC77F5F00D19F85;
+					};
+					180C88BD1FC77F6000D19F85 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 180C88981FC77F5F00D19F85;
+					};
+				};
+			};
+			buildConfigurationList = 180C88941FC77F5F00D19F85 /* Build configuration list for PBXProject "Jetman" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 180C88901FC77F5F00D19F85;
+			productRefGroup = 180C889A1FC77F5F00D19F85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				180C88981FC77F5F00D19F85 /* Jetman */,
+				180C88B21FC77F5F00D19F85 /* JetmanTests */,
+				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		180C88971FC77F5F00D19F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
+				180C889F1FC77F5F00D19F85 /* GameScene.sks in Resources */,
+				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
+				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
+				180C88A11FC77F5F00D19F85 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88B11FC77F5F00D19F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88BC1FC77F6000D19F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		180C88951FC77F5F00D19F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180C88A31FC77F5F00D19F85 /* GameScene.swift in Sources */,
+				180C88A51FC77F5F00D19F85 /* GameViewController.swift in Sources */,
+				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88AF1FC77F5F00D19F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		180C88BA1FC77F6000D19F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		180C88B51FC77F5F00D19F85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180C88981FC77F5F00D19F85 /* Jetman */;
+			targetProxy = 180C88B41FC77F5F00D19F85 /* PBXContainerItemProxy */;
+		};
+		180C88C01FC77F6000D19F85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 180C88981FC77F5F00D19F85 /* Jetman */;
+			targetProxy = 180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		180C88A61FC77F5F00D19F85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180C88A71FC77F5F00D19F85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				180C88AC1FC77F5F00D19F85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		180C88C51FC77F6000D19F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		180C88C61FC77F6000D19F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		180C88C81FC77F6000D19F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = Jetman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.Jetman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		180C88C91FC77F6000D19F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = Jetman/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.Jetman;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		180C88CB1FC77F6000D19F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jetman.app/Jetman";
+			};
+			name = Debug;
+		};
+		180C88CC1FC77F6000D19F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetmanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jetman.app/Jetman";
+			};
+			name = Release;
+		};
+		180C88CE1FC77F6000D19F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetmanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jetman;
+			};
+			name = Debug;
+		};
+		180C88CF1FC77F6000D19F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetmanUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Jetman;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		180C88941FC77F5F00D19F85 /* Build configuration list for PBXProject "Jetman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180C88C51FC77F6000D19F85 /* Debug */,
+				180C88C61FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180C88C71FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "Jetman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180C88C81FC77F6000D19F85 /* Debug */,
+				180C88C91FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180C88CA1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180C88CB1FC77F6000D19F85 /* Debug */,
+				180C88CC1FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		180C88CD1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				180C88CE1FC77F6000D19F85 /* Debug */,
+				180C88CF1FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 180C88911FC77F5F00D19F85 /* Project object */;
+}
