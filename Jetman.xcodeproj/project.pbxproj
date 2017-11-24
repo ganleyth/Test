@@ -16,6 +16,7 @@
 		180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88B71FC77F6000D19F85 /* JetmanTests.swift */; };
 		180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88C21FC77F6000D19F85 /* JetmanUITests.swift */; };
 		180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */; };
+		34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		180C88C21FC77F6000D19F85 /* JetmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanUITests.swift; sourceTree = "<group>"; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Tileset.sks; sourceTree = "<group>"; };
+		311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.debug.xcconfig"; sourceTree = "<group>"; };
+		AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.release.xcconfig"; sourceTree = "<group>"; };
+		EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +90,8 @@
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
 				180C889A1FC77F5F00D19F85 /* Products */,
+				CDBC9F1E65E66D3385737AD6 /* Pods */,
+				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +202,23 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDBC9F1E65E66D3385737AD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */,
+				AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,9 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 180C88C71FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "Jetman" */;
 			buildPhases = (
+				EDCEC23688E6BE6596F944F5 /* [CP] Check Pods Manifest.lock */,
 				180C88951FC77F5F00D19F85 /* Sources */,
 				180C88961FC77F5F00D19F85 /* Frameworks */,
 				180C88971FC77F5F00D19F85 /* Resources */,
+				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
+				7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -324,6 +351,78 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDCEC23688E6BE6596F944F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jetman-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		180C88951FC77F5F00D19F85 /* Sources */ = {
@@ -496,6 +595,7 @@
 		};
 		180C88C81FC77F6000D19F85 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -511,6 +611,7 @@
 		};
 		180C88C91FC77F6000D19F85 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
