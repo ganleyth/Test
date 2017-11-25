@@ -16,6 +16,7 @@
 		180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88B71FC77F6000D19F85 /* JetmanTests.swift */; };
 		180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88C21FC77F6000D19F85 /* JetmanUITests.swift */; };
 		180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */; };
+		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
 		34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		180C88C21FC77F6000D19F85 /* JetmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanUITests.swift; sourceTree = "<group>"; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Tileset.sks; sourceTree = "<group>"; };
+		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
 		311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.debug.xcconfig"; sourceTree = "<group>"; };
 		AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.release.xcconfig"; sourceTree = "<group>"; };
 		EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +169,7 @@
 		180C88D31FC7833F00D19F85 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				180C88DC1FC9D74400D19F85 /* Fonts */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -200,6 +203,14 @@
 			children = (
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		180C88DC1FC9D74400D19F85 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
@@ -332,6 +343,7 @@
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
+				180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */,
 				180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
