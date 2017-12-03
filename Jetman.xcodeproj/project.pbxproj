@@ -110,14 +110,11 @@
 		180C889B1FC77F5F00D19F85 /* Jetman */ = {
 			isa = PBXGroup;
 			children = (
-				180C88D31FC7833F00D19F85 /* Common */,
-				180C88D51FC7835200D19F85 /* UI */,
-				180C88D41FC7834700D19F85 /* ViewControllers */,
-				180C88D71FC7836300D19F85 /* Models */,
-				180C88D61FC7835A00D19F85 /* ModelControllers */,
-				180C88D21FC7833300D19F85 /* GameScenes */,
-				180C88D11FC7831E00D19F85 /* SceneEditorFiles */,
-				180C88D01FC7831300D19F85 /* Resources */,
+				18CEF3051FD32DED005C3980 /* Main */,
+				18CEF3061FD32DF3005C3980 /* Models */,
+				18CEF3071FD32E03005C3980 /* Common */,
+				18CEF30F1FD32E8D005C3980 /* UI Elements */,
+				18CEF30A1FD32E54005C3980 /* Experiences */,
 			);
 			path = Jetman;
 			sourceTree = "<group>";
@@ -140,77 +137,136 @@
 			path = JetmanUITests;
 			sourceTree = "<group>";
 		};
-		180C88D01FC7831300D19F85 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
-				180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */,
-				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
-				180C88AE1FC77F5F00D19F85 /* Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		180C88D11FC7831E00D19F85 /* SceneEditorFiles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SceneEditorFiles;
-			sourceTree = "<group>";
-		};
-		180C88D21FC7833300D19F85 /* GameScenes */ = {
-			isa = PBXGroup;
-			children = (
-				180C88A21FC77F5F00D19F85 /* GameScene.swift */,
-			);
-			name = GameScenes;
-			sourceTree = "<group>";
-		};
-		180C88D31FC7833F00D19F85 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				180C88DC1FC9D74400D19F85 /* Fonts */,
-			);
-			name = Common;
-			sourceTree = "<group>";
-		};
-		180C88D41FC7834700D19F85 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				180C88A41FC77F5F00D19F85 /* GameViewController.swift */,
-			);
-			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		180C88D51FC7835200D19F85 /* UI */ = {
+		18CEF3051FD32DED005C3980 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				180C88A61FC77F5F00D19F85 /* Main.storyboard */,
 				180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */,
+				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
+				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
+				180C88AE1FC77F5F00D19F85 /* Info.plist */,
 			);
-			name = UI;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		180C88D61FC7835A00D19F85 /* ModelControllers */ = {
+		18CEF3061FD32DF3005C3980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = ModelControllers;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		180C88D71FC7836300D19F85 /* Models */ = {
+		18CEF3071FD32E03005C3980 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				18CEF3081FD32E35005C3980 /* Managers */,
+				18CEF3091FD32E3D005C3980 /* Fonts */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18CEF3081FD32E35005C3980 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Models;
+			path = Managers;
 			sourceTree = "<group>";
 		};
-		180C88DC1FC9D74400D19F85 /* Fonts */ = {
+		18CEF3091FD32E3D005C3980 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */,
 			);
-			name = Fonts;
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		18CEF30A1FD32E54005C3980 /* Experiences */ = {
+			isa = PBXGroup;
+			children = (
+				18CEF30D1FD32E69005C3980 /* Launch */,
+				18CEF30C1FD32E64005C3980 /* Login */,
+				18CEF30B1FD32E60005C3980 /* Welcome */,
+				18CEF3151FD32F82005C3980 /* Settings */,
+				18CEF3141FD32F6C005C3980 /* Standings */,
+				18CEF3131FD32F2F005C3980 /* Challenges */,
+				18CEF3101FD32EB6005C3980 /* Gameplay */,
+			);
+			path = Experiences;
+			sourceTree = "<group>";
+		};
+		18CEF30B1FD32E60005C3980 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		18CEF30C1FD32E64005C3980 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18CEF30D1FD32E69005C3980 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		18CEF30F1FD32E8D005C3980 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				18CEF3121FD32EF1005C3980 /* Scene Editor Files */,
+				18CEF3111FD32EE3005C3980 /* Tilesets */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		18CEF3101FD32EB6005C3980 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				180C88A41FC77F5F00D19F85 /* GameViewController.swift */,
+				180C88A21FC77F5F00D19F85 /* GameScene.swift */,
+			);
+			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		18CEF3111FD32EE3005C3980 /* Tilesets */ = {
+			isa = PBXGroup;
+			children = (
+				180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */,
+			);
+			path = Tilesets;
+			sourceTree = "<group>";
+		};
+		18CEF3121FD32EF1005C3980 /* Scene Editor Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Scene Editor Files";
+			sourceTree = "<group>";
+		};
+		18CEF3131FD32F2F005C3980 /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Challenges;
+			sourceTree = "<group>";
+		};
+		18CEF3141FD32F6C005C3980 /* Standings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Standings;
+			sourceTree = "<group>";
+		};
+		18CEF3151FD32F82005C3980 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
