@@ -38,6 +38,13 @@
 		18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF61FDC4F4200D59107 /* LoginViewInteractor.swift */; };
 		18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF81FDC4F6100D59107 /* WelcomeViewInteractor.swift */; };
 		18B32FFB1FDC4F8100D59107 /* GameplayViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FFA1FDC4F8100D59107 /* GameplayViewInteractor.swift */; };
+		18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FFE1FDC546B00D59107 /* MemberService.swift */; };
+		18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330001FDC549900D59107 /* FacebookLoginManager.swift */; };
+		18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330021FDC553E00D59107 /* ChallengeManager.swift */; };
+		18B330051FDC556400D59107 /* StandingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330041FDC556400D59107 /* StandingsManager.swift */; };
+		18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330061FDC55E200D59107 /* NetworkManager.swift */; };
+		18B330091FDC563400D59107 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330081FDC563400D59107 /* DataManager.swift */; };
+		18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300A1FDC564800D59107 /* LoginManager.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -99,6 +106,13 @@
 		18B32FF61FDC4F4200D59107 /* LoginViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewInteractor.swift; sourceTree = "<group>"; };
 		18B32FF81FDC4F6100D59107 /* WelcomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewInteractor.swift; sourceTree = "<group>"; };
 		18B32FFA1FDC4F8100D59107 /* GameplayViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewInteractor.swift; sourceTree = "<group>"; };
+		18B32FFE1FDC546B00D59107 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
+		18B330001FDC549900D59107 /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
+		18B330021FDC553E00D59107 /* ChallengeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
+		18B330041FDC556400D59107 /* StandingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsManager.swift; sourceTree = "<group>"; };
+		18B330061FDC55E200D59107 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18B330081FDC563400D59107 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		18B3300A1FDC564800D59107 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -194,6 +208,17 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
+		18B32FFD1FDC544B00D59107 /* MemberService */ = {
+			isa = PBXGroup;
+			children = (
+				18B32FFE1FDC546B00D59107 /* MemberService.swift */,
+				18B330001FDC549900D59107 /* FacebookLoginManager.swift */,
+				18B3300A1FDC564800D59107 /* LoginManager.swift */,
+			);
+			name = MemberService;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		18CEF3051FD32DED005C3980 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,8 +253,13 @@
 		18CEF3081FD32E35005C3980 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				18B32FFD1FDC544B00D59107 /* MemberService */,
 				18B32FF01FDC4B6C00D59107 /* Interactor.swift */,
 				18B32FF21FDC4B8600D59107 /* Manager.swift */,
+				18B330021FDC553E00D59107 /* ChallengeManager.swift */,
+				18B330041FDC556400D59107 /* StandingsManager.swift */,
+				18B330061FDC55E200D59107 /* NetworkManager.swift */,
+				18B330081FDC563400D59107 /* DataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -576,8 +606,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */,
+				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
+				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
@@ -590,10 +623,14 @@
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
+				18B330091FDC563400D59107 /* DataManager.swift in Sources */,
 				18B32FCE1FD9921000D59107 /* LaunchViewController.swift in Sources */,
 				18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */,
 				18B32FF51FDC4F1A00D59107 /* LaunchViewInteractor.swift in Sources */,
 				18B32FFB1FDC4F8100D59107 /* GameplayViewInteractor.swift in Sources */,
+				18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */,
+				18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */,
+				18B330051FDC556400D59107 /* StandingsManager.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
 				18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */,
 				18B32FDD1FDA558500D59107 /* SettingsView.swift in Sources */,
