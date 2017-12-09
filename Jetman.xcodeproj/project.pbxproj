@@ -32,6 +32,8 @@
 		18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE81FDC3F9300D59107 /* LaunchScene.swift */; };
 		18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FEA1FDC406700D59107 /* LoginScene.swift */; };
 		18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FEC1FDC408400D59107 /* WelcomeScene.swift */; };
+		18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF01FDC4B6C00D59107 /* Interactor.swift */; };
+		18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF21FDC4B8600D59107 /* Manager.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -87,6 +89,8 @@
 		18B32FE81FDC3F9300D59107 /* LaunchScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		18B32FEA1FDC406700D59107 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		18B32FEC1FDC408400D59107 /* WelcomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScene.swift; sourceTree = "<group>"; };
+		18B32FF01FDC4B6C00D59107 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		18B32FF21FDC4B8600D59107 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -216,6 +220,8 @@
 		18CEF3081FD32E35005C3980 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				18B32FF01FDC4B6C00D59107 /* Interactor.swift */,
+				18B32FF21FDC4B8600D59107 /* Manager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -565,11 +571,13 @@
 				18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
 				18B32FD21FDA4EE500D59107 /* LoginViewController.swift in Sources */,
+				18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
 				18B32FCE1FD9921000D59107 /* LaunchViewController.swift in Sources */,
+				18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
 				18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */,
 				18B32FDD1FDA558500D59107 /* SettingsView.swift in Sources */,
