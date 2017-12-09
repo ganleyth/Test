@@ -10,4 +10,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    // MARK: Properties
+    
+    @IBOutlet var interactor: WelcomeViewInteractor!
 }

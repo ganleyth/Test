@@ -20,8 +20,12 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="igP-0G-akS"/>
                     </view>
+                    <connections>
+                        <outlet property="interactor" destination="PbS-QS-3hw" id="yRG-KR-iJ9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QEA-Bu-Uhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="PbS-QS-3hw" customClass="LoginViewInteractor" customModule="Jetman" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="49" y="210"/>
         </scene>

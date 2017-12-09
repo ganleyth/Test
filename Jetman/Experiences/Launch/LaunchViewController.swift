@@ -10,4 +10,8 @@ import UIKit
 
 class LaunchViewController: UIViewController {
     
+    // MARK: Properties
+    
+    @IBOutlet var interactor: LaunchViewInteractor!
+    
 }

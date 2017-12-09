@@ -10,4 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: Properties
+    
+    @IBOutlet var interactor: LoginViewInteractor!
 }

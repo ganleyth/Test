@@ -12,6 +12,10 @@ import GameplayKit
 
 class GameplayViewController: UIViewController {
     
+    // MARK: Properties
+    
+    @IBOutlet var interactor: GameplayViewInteractor!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

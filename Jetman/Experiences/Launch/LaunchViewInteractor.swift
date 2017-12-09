@@ -1,5 +1,5 @@
 //
-//  Interactor.swift
+//  LaunchViewInteractor.swift
 //  Jetman
 //
 //  Created by Thomas Ganley on 12/9/17.
@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-class Interactor: NSObject {
+class LaunchViewInteractor: Interactor {
     
 }
