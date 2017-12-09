@@ -1,8 +1,8 @@
 //
-//  GameViewController.swift
+//  GameplayViewController.swift
 //  Jetman
 //
-//  Created by Thomas Ganley on 11/23/17.
+//  Created by Thomas Ganley on 12/9/17.
 //  Copyright © 2017 Thomas Ganley. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class GameViewController: UIViewController {
-
+class GameplayViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,11 +31,11 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
     }
-
+    
     override var shouldAutorotate: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -43,12 +43,12 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
     }
-
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
