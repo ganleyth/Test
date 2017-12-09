@@ -45,6 +45,17 @@
 		18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330061FDC55E200D59107 /* NetworkManager.swift */; };
 		18B330091FDC563400D59107 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330081FDC563400D59107 /* DataManager.swift */; };
 		18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300A1FDC564800D59107 /* LoginManager.swift */; };
+		18B3300D1FDC7A7B00D59107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300C1FDC7A7B00D59107 /* User.swift */; };
+		18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300E1FDC7A9900D59107 /* Statistics.swift */; };
+		18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330101FDC7AAF00D59107 /* Challenge.swift */; };
+		18B330151FDC7B3C00D59107 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330141FDC7B3C00D59107 /* Inbox.swift */; };
+		18B330171FDC7B5300D59107 /* Outbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330161FDC7B5300D59107 /* Outbox.swift */; };
+		18B330191FDC7B6D00D59107 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330181FDC7B6D00D59107 /* Settings.swift */; };
+		18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301A1FDC7B7D00D59107 /* Player.swift */; };
+		18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301C1FDC7B9500D59107 /* Layer.swift */; };
+		18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */; };
+		18B330211FDC7C1600D59107 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330201FDC7C1600D59107 /* Obstacle.swift */; };
+		18B330231FDC7CEE00D59107 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330221FDC7CEE00D59107 /* Standings.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -113,6 +124,17 @@
 		18B330061FDC55E200D59107 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18B330081FDC563400D59107 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		18B3300A1FDC564800D59107 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		18B3300C1FDC7A7B00D59107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18B3300E1FDC7A9900D59107 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
+		18B330101FDC7AAF00D59107 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		18B330141FDC7B3C00D59107 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
+		18B330161FDC7B5300D59107 /* Outbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Outbox.swift; sourceTree = "<group>"; };
+		18B330181FDC7B6D00D59107 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		18B3301A1FDC7B7D00D59107 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		18B3301C1FDC7B9500D59107 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
+		18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
+		18B330201FDC7C1600D59107 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		18B330221FDC7CEE00D59107 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -234,6 +256,17 @@
 		18CEF3061FD32DF3005C3980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18B3300C1FDC7A7B00D59107 /* User.swift */,
+				18B3300E1FDC7A9900D59107 /* Statistics.swift */,
+				18B330221FDC7CEE00D59107 /* Standings.swift */,
+				18B330101FDC7AAF00D59107 /* Challenge.swift */,
+				18B330141FDC7B3C00D59107 /* Inbox.swift */,
+				18B330161FDC7B5300D59107 /* Outbox.swift */,
+				18B330181FDC7B6D00D59107 /* Settings.swift */,
+				18B3301A1FDC7B7D00D59107 /* Player.swift */,
+				18B330201FDC7C1600D59107 /* Obstacle.swift */,
+				18B3301C1FDC7B9500D59107 /* Layer.swift */,
+				18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -610,16 +643,24 @@
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
+				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
+				18B330211FDC7C1600D59107 /* Obstacle.swift in Sources */,
 				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
+				18B3300D1FDC7A7B00D59107 /* User.swift in Sources */,
 				18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
+				18B330231FDC7CEE00D59107 /* Standings.swift in Sources */,
 				18B32FD21FDA4EE500D59107 /* LoginViewController.swift in Sources */,
+				18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */,
+				18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */,
 				18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */,
+				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
+				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
@@ -630,10 +671,13 @@
 				18B32FFB1FDC4F8100D59107 /* GameplayViewInteractor.swift in Sources */,
 				18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */,
 				18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */,
+				18B330151FDC7B3C00D59107 /* Inbox.swift in Sources */,
 				18B330051FDC556400D59107 /* StandingsManager.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
+				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
 				18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */,
 				18B32FDD1FDA558500D59107 /* SettingsView.swift in Sources */,
+				18B330171FDC7B5300D59107 /* Outbox.swift in Sources */,
 				18B32FE11FDA55A400D59107 /* ChallengesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
