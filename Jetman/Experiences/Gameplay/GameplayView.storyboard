@@ -20,12 +20,8 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
-                    <connections>
-                        <outlet property="interactor" destination="8e9-Ra-feB" id="o7A-WJ-ADb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym8-xv-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="8e9-Ra-feB" customClass="GameplayViewInteractor" customModule="Jetman" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="199" y="213"/>
         </scene>

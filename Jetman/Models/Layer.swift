@@ -18,12 +18,7 @@ class Layer: SKNode {
         }
     }
     
-}
-
-extension Layer {
-    
     func setVelocity(value: CGPoint) {
         velocity = value
     }
-    
 }

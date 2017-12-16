@@ -9,9 +9,17 @@
 import SpriteKit
 
 class GameplayScene: SKScene {
+    
+    var interactor: GameplaySceneInteractor!
+    
+    var backgroundLayer: Layer?
+    var foregroundLayer: Layer?
 
     override func didMove(to view: SKView) {
         super.didMove(to: view)
+        
+        interactor = GameplaySceneInteractor(scene: self)
+        interactor.configureAndAddLayers()
     }
 
 }
