@@ -12,7 +12,7 @@ class Layer: SKNode {
     
     fileprivate(set) var velocity = CGPoint.zero
     
-    func update(with delta: TimeInterval) {
+    func update(with delta: TimeInterval, in frameSize: CGSize) {
         for child in children {
             child.position += CGFloat(delta) * velocity
         }

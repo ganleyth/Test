@@ -63,6 +63,7 @@
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
+		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
 		34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
+		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
 		311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.debug.xcconfig"; sourceTree = "<group>"; };
 		AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.release.xcconfig"; sourceTree = "<group>"; };
 		EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 			children = (
 				18CEF3051FD32DED005C3980 /* Main */,
 				18CEF3061FD32DF3005C3980 /* Models */,
+				18F4DE8E1FE5BEE7007FE471 /* Layer */,
 				18CEF3071FD32E03005C3980 /* Common */,
 				18CEF30F1FD32E8D005C3980 /* UI Elements */,
 				18CEF30A1FD32E54005C3980 /* Experiences */,
@@ -298,8 +301,6 @@
 				18B330181FDC7B6D00D59107 /* Settings.swift */,
 				18B3301A1FDC7B7D00D59107 /* Player.swift */,
 				18B330201FDC7C1600D59107 /* Obstacle.swift */,
-				18B3301C1FDC7B9500D59107 /* Layer.swift */,
-				18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -452,8 +453,18 @@
 				18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */,
 				18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */,
 				18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */,
+				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
 			);
 			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		18F4DE8E1FE5BEE7007FE471 /* Layer */ = {
+			isa = PBXGroup;
+			children = (
+				18B3301C1FDC7B9500D59107 /* Layer.swift */,
+				18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */,
+			);
+			path = Layer;
 			sourceTree = "<group>";
 		};
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
@@ -687,6 +698,7 @@
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
+				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
 				18B3300D1FDC7A7B00D59107 /* User.swift in Sources */,
 				18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,

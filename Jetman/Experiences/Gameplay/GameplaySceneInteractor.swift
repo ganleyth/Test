@@ -36,11 +36,11 @@ class GameplaySceneInteractor: Interactor {
         guard let scene = scene,
             let view = scene.view else { return }
         
-        let backgroundLayer = Layer()
         let backgroundNode = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "Background")))
         backgroundNode.scaleToWindowSize(view.frame.size)
         backgroundNode.setAnchorPointToZero()
-        backgroundLayer.addChild(backgroundNode)
+        let backgroundLayer = RepeatingLayer(nodeCount: 3, repeatedNode: backgroundNode)
+        backgroundLayer.setVelocity(value: CGPoint(x: -50.0, y: 0.0))
         
         scene.backgroundLayer = backgroundLayer
     }
