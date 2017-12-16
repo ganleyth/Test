@@ -11,8 +11,6 @@
 		180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A61FC77F5F00D19F85 /* Main.storyboard */; };
 		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
-		180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88B71FC77F6000D19F85 /* JetmanTests.swift */; };
-		180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C88C21FC77F6000D19F85 /* JetmanUITests.swift */; };
 		180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */; };
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
 		18B32FCC1FD991D900D59107 /* LaunchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FCB1FD991D900D59107 /* LaunchView.storyboard */; };
@@ -56,6 +54,11 @@
 		18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */; };
 		18B330211FDC7C1600D59107 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330201FDC7C1600D59107 /* Obstacle.swift */; };
 		18B330231FDC7CEE00D59107 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330221FDC7CEE00D59107 /* Standings.swift */; };
+		18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */; };
+		18B330291FDCA85D00D59107 /* CGPoint+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330281FDCA85D00D59107 /* CGPoint+HelpersTests.swift */; };
+		18B3302C1FDD8F1500D59107 /* LayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302B1FDD8F1500D59107 /* LayerTests.swift */; };
+		18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */; };
+		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -87,10 +90,8 @@
 		180C88AC1FC77F5F00D19F85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180C88AE1FC77F5F00D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		180C88B71FC77F6000D19F85 /* JetmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanTests.swift; sourceTree = "<group>"; };
 		180C88B91FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		180C88C21FC77F6000D19F85 /* JetmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JetmanUITests.swift; sourceTree = "<group>"; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Tileset.sks; sourceTree = "<group>"; };
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
@@ -135,6 +136,11 @@
 		18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
 		18B330201FDC7C1600D59107 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		18B330221FDC7CEE00D59107 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
+		18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Helpers.swift"; sourceTree = "<group>"; };
+		18B330281FDCA85D00D59107 /* CGPoint+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+HelpersTests.swift"; sourceTree = "<group>"; };
+		18B3302B1FDD8F1500D59107 /* LayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTests.swift; sourceTree = "<group>"; };
+		18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Helpers.swift"; sourceTree = "<group>"; };
+		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -206,7 +212,8 @@
 		180C88B61FC77F6000D19F85 /* JetmanTests */ = {
 			isa = PBXGroup;
 			children = (
-				180C88B71FC77F6000D19F85 /* JetmanTests.swift */,
+				18B3302A1FDD8F0900D59107 /* Models */,
+				18B330261FDCA80000D59107 /* Common */,
 				180C88B91FC77F6000D19F85 /* Info.plist */,
 			);
 			path = JetmanTests;
@@ -215,7 +222,6 @@
 		180C88C11FC77F6000D19F85 /* JetmanUITests */ = {
 			isa = PBXGroup;
 			children = (
-				180C88C21FC77F6000D19F85 /* JetmanUITests.swift */,
 				180C88C41FC77F6000D19F85 /* Info.plist */,
 			);
 			path = JetmanUITests;
@@ -239,6 +245,31 @@
 			);
 			name = MemberService;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		18B330261FDCA80000D59107 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				18B330271FDCA80B00D59107 /* Apple Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		18B330271FDCA80B00D59107 /* Apple Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				18B330281FDCA85D00D59107 /* CGPoint+HelpersTests.swift */,
+				18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */,
+			);
+			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		18B3302A1FDD8F0900D59107 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18B3302B1FDD8F1500D59107 /* LayerTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		18CEF3051FD32DED005C3980 /* Main */ = {
@@ -416,6 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				18CEF3191FD4E585005C3980 /* Date+Helpers.swift */,
+				18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */,
+				18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */,
 			);
 			path = "Apple Extensions";
 			sourceTree = "<group>";
@@ -512,6 +545,7 @@
 					};
 					180C88B21FC77F5F00D19F85 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180C88981FC77F5F00D19F85;
 					};
@@ -665,6 +699,8 @@
 				18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
 				18B330091FDC563400D59107 /* DataManager.swift in Sources */,
+				18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */,
+				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,
 				18B32FCE1FD9921000D59107 /* LaunchViewController.swift in Sources */,
 				18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */,
 				18B32FF51FDC4F1A00D59107 /* LaunchViewInteractor.swift in Sources */,
@@ -686,7 +722,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180C88B81FC77F6000D19F85 /* JetmanTests.swift in Sources */,
+				18B330291FDCA85D00D59107 /* CGPoint+HelpersTests.swift in Sources */,
+				18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */,
+				18B3302C1FDD8F1500D59107 /* LayerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,7 +732,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180C88C31FC77F6000D19F85 /* JetmanUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,12 +914,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
 				INFOPLIST_FILE = JetmanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Jetman.app/Jetman";
@@ -894,6 +933,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
 				INFOPLIST_FILE = JetmanTests/Info.plist;
