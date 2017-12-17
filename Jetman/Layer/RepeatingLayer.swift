@@ -28,6 +28,11 @@ class RepeatingLayer: Layer {
     
     override func update(with delta: TimeInterval, in frameSize: CGSize) {
         super.update(with: delta, in: frameSize)
+        
+        for i in 1..<nodes.count {
+            nodes[i].position.x = nodes[i-1].frame.maxX - 0.01
+        }
+        
         updateNodeRotation(in: frameSize)
     }
 }
@@ -42,19 +47,23 @@ extension RepeatingLayer {
             }
         }
         
-        for i in 0..<nodes.count {
-            let nodeXPosition = CGFloat(i) * repeatedNode.frame.size.width
+        guard let mostAdvancedNode = nodes.first else { return }
+        mostAdvancedNode.position = CGPoint.zero
+        addChild(mostAdvancedNode)
+        
+        for i in 1..<nodes.count {
+            let nodeXPosition = nodes[i-1].frame.maxX - 0.01
             nodes[i].position = CGPoint(x: nodeXPosition, y: 0.0)
             addChild(nodes[i])
         }
     }
     
     func updateNodeRotation(in frameSize: CGSize) {
-        guard let farthestAdvancedNode = nodes.first else { return }
+        guard let mostAdvancedNode = nodes.first,
+            let leastAdvancedNode = nodes.last else { return }
         
-        if farthestAdvancedNode.position.x < -frameSize.width {
-            let distancePastEdge = abs(farthestAdvancedNode.position.x) - frameSize.width
-            farthestAdvancedNode.position.x = CGFloat((nodes.count - 1)) * repeatedNode.frame.size.width - distancePastEdge
+        if mostAdvancedNode.frame.maxX < -1 {
+            mostAdvancedNode.position.x = leastAdvancedNode.frame.maxX - 0.01
             nodes.sort { $0.position.x < $1.position.x }
         }
     }

@@ -25,7 +25,7 @@ class GameplayScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        let delta = (currentTime - (lastTime ?? 0.0)).rounded(toDecimalCount: 2)
+        let delta = (currentTime - (lastTime ?? currentTime))
         
         if let view = view {
             backgroundLayer?.update(with: delta, in: view.frame.size)
