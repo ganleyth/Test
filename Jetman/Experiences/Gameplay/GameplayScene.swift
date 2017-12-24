@@ -13,7 +13,7 @@ class GameplayScene: SKScene {
     var interactor: GameplaySceneInteractor!
     
     var backgroundLayer: RepeatingLayer?
-    var foregroundLayer: Layer?
+    var levelLayer: Layer?
     
     var lastTime: TimeInterval?
 
@@ -29,7 +29,7 @@ class GameplayScene: SKScene {
         
         if let view = view {
             backgroundLayer?.update(with: delta, in: view.frame.size)
-            foregroundLayer?.update(with: delta, in: view.frame.size)
+            levelLayer?.update(with: delta, in: view.frame.size)
         }
         lastTime = currentTime
     }

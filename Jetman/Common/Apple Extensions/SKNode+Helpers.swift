@@ -16,4 +16,8 @@ extension SKNode {
         setScale(scale)
     }
     
+    var scale: CGFloat? {
+        return abs(xScale - yScale) <= 0.001 ? xScale : nil
+    }
+    
 }

@@ -19,22 +19,26 @@ class GameplaySceneInteractor: Interactor {
     
     func configureAndAddLayers() {
         configureBackgroundLayer()
-        configureForegroundLayer()
+        configureLevelLayer()
         
         if let scene = scene {
             if let backgroundLayer = scene.backgroundLayer {
+                backgroundLayer.zPosition = CGFloat(Constants.ZPosition.backgroundLayer.rawValue)
                 scene.addChild(backgroundLayer)
             }
             
-            if let foregroundLayer = scene.foregroundLayer {
-                scene.addChild(foregroundLayer)
+            if let levelLayer = scene.levelLayer {
+                levelLayer.zPosition = CGFloat(Constants.ZPosition.foregroundLayer.rawValue)
+                scene.addChild(levelLayer)
             }
         }
     }
     
     func configureBackgroundLayer() {
-        guard let scene = scene,
-            let view = scene.view else { return }
+        guard let view = scene?.view else {
+            Logger.error("SK view unavailable", filePath: #file, funcName: #function, lineNumber: #line)
+            return
+        }
         
         let backgroundNode = SKSpriteNode(texture: SKTexture(image: #imageLiteral(resourceName: "Background")))
         backgroundNode.scaleToWindowSize(view.frame.size)
@@ -42,10 +46,18 @@ class GameplaySceneInteractor: Interactor {
         let backgroundLayer = RepeatingLayer(nodeCount: 3, repeatedNode: backgroundNode)
         backgroundLayer.setVelocity(value: CGPoint(x: -50.0, y: 0.0))
         
-        scene.backgroundLayer = backgroundLayer
+        scene?.backgroundLayer = backgroundLayer
     }
     
-    func configureForegroundLayer() {
+    func configureLevelLayer() {
+        guard
+            let view = scene?.view,
+            let tileSet = SKTileSet(named: "ForegroundTileset") else {
+                Logger.error("Could not find the tile set for the foreground layer", filePath: #file, funcName: #function, lineNumber: #line)
+                return
+        }
+        let levelLayer = LevelLayer(windowSize: view.frame.size, tileSet: tileSet)
         
+        scene?.levelLayer = levelLayer
     }
 }

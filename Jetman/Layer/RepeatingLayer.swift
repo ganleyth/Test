@@ -30,7 +30,7 @@ class RepeatingLayer: Layer {
         super.update(with: delta, in: frameSize)
         
         for i in 1..<nodes.count {
-            nodes[i].position.x = nodes[i-1].frame.maxX - 0.01
+            nodes[i].position.x = nodes[i-1].frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset
         }
         
         updateNodeRotation(in: frameSize)
@@ -52,7 +52,7 @@ extension RepeatingLayer {
         addChild(mostAdvancedNode)
         
         for i in 1..<nodes.count {
-            let nodeXPosition = nodes[i-1].frame.maxX - 0.01
+            let nodeXPosition = nodes[i-1].frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset
             nodes[i].position = CGPoint(x: nodeXPosition, y: 0.0)
             addChild(nodes[i])
         }
@@ -63,7 +63,7 @@ extension RepeatingLayer {
             let leastAdvancedNode = nodes.last else { return }
         
         if mostAdvancedNode.frame.maxX < -1 {
-            mostAdvancedNode.position.x = leastAdvancedNode.frame.maxX - 0.01
+            mostAdvancedNode.position.x = leastAdvancedNode.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset
             nodes.sort { $0.position.x < $1.position.x }
         }
     }

@@ -11,8 +11,10 @@
 		180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A61FC77F5F00D19F85 /* Main.storyboard */; };
 		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
-		180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */; };
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
+		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
+		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
+		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
 		18B32FCC1FD991D900D59107 /* LaunchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FCB1FD991D900D59107 /* LaunchView.storyboard */; };
 		18B32FCE1FD9921000D59107 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FCD1FD9921000D59107 /* LaunchViewController.swift */; };
 		18B32FD01FDA4ED600D59107 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FCF1FDA4ED600D59107 /* LoginView.storyboard */; };
@@ -95,8 +97,10 @@
 		180C88B91FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1Tileset.sks; sourceTree = "<group>"; };
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
+		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
+		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
+		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
 		18B32FCB1FD991D900D59107 /* LaunchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchView.storyboard; sourceTree = "<group>"; };
 		18B32FCD1FD9921000D59107 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		18B32FCF1FDA4ED600D59107 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
@@ -410,7 +414,7 @@
 		18CEF3111FD32EE3005C3980 /* Tilesets */ = {
 			isa = PBXGroup;
 			children = (
-				180C88DA1FC78A2800D19F85 /* Level1Tileset.sks */,
+				18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */,
 			);
 			path = Tilesets;
 			sourceTree = "<group>";
@@ -454,6 +458,7 @@
 				18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */,
 				18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */,
 				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
+				18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */,
 			);
 			path = "Apple Extensions";
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 			children = (
 				18B3301C1FDC7B9500D59107 /* Layer.swift */,
 				18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */,
+				18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */,
 			);
 			path = Layer;
 			sourceTree = "<group>";
@@ -602,8 +608,8 @@
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
 				18B32FD91FDA515400D59107 /* WindowView.xib in Resources */,
 				18B32FD01FDA4ED600D59107 /* LoginView.storyboard in Resources */,
+				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */,
-				180C88DB1FC78A2800D19F85 /* Level1Tileset.sks in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,6 +707,7 @@
 				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
 				18B3300D1FDC7A7B00D59107 /* User.swift in Sources */,
 				18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */,
+				18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
 				18B330231FDC7CEE00D59107 /* Standings.swift in Sources */,
 				18B32FD21FDA4EE500D59107 /* LoginViewController.swift in Sources */,
@@ -727,6 +734,7 @@
 				18B330051FDC556400D59107 /* StandingsManager.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
 				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
+				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
 				18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */,
 				18B32FDD1FDA558500D59107 /* SettingsView.swift in Sources */,
 				18B330171FDC7B5300D59107 /* Outbox.swift in Sources */,
