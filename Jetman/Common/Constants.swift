@@ -35,6 +35,15 @@ struct Constants {
         case bottom = "obstacleTileBottom"
     }
     
+    enum BottomBoundaryTileName: String {
+        case topMiddle = "bottomBoundaryTopMiddle"
+        case topIncrease = "bottomBoundaryTopIncrease"
+        case topDecrease = "bottomBoundaryTopDecrease"
+        case middle = "bottomBoundaryMiddle"
+        case middleIncrease = "bottomBoundaryMiddleIncrease"
+        case middleDecrease = "bottomBoundaryMiddleDecrease"
+    }
+    
     enum ZPosition: Int {
         case backgroundLayer = 0
         case foregroundLayer

@@ -10,9 +10,10 @@ import SpriteKit
 
 final class LevelLayer: Layer {
     private let tileMap = SKTileMapNode()
-    private let obstacleTileTop: SKTileGroup
-    private let obstacleTileMiddle: SKTileGroup
-    private let obstacleTileBottom: SKTileGroup
+    private let obstacleBuildingBlocks: ObstacleBuildingBlocks
+    private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
+    
+    private var currentBottomBoundaryMaxRow = 0
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
@@ -20,14 +21,25 @@ final class LevelLayer: Layer {
             let obstacleTileTop = tileSet.tileGroups.filter({ $0.name == Constants.ObstacleTileName.top.rawValue }).first,
             let obstacleTileMiddle = tileSet.tileGroups.filter({ $0.name == Constants.ObstacleTileName.middle.rawValue }).first,
             let obstacleTileBottom = tileSet.tileGroups.filter({ $0.name == Constants.ObstacleTileName.bottom.rawValue }).first else {
-                Logger.severe("Invalid tile set for level layer", filePath: #file, funcName: #function, lineNumber: #line)
+                Logger.severe("Invalid tile set for level layer - obstacle", filePath: #file, funcName: #function, lineNumber: #line)
                 fatalError()
         }
         
-        self.obstacleTileTop = obstacleTileTop
-        self.obstacleTileMiddle = obstacleTileMiddle
-        self.obstacleTileBottom = obstacleTileBottom
+        obstacleBuildingBlocks = ObstacleBuildingBlocks(topTile: obstacleTileTop, middleTile: obstacleTileMiddle, bottomTile: obstacleTileBottom)
         
+        guard
+            let bottomBoundaryTopMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topMiddle.rawValue }).first,
+            let bottomBoundaryTopIncreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topIncrease.rawValue }).first,
+            let bottomBoundaryTopDecreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topDecrease.rawValue }).first,
+            let bottomBoundaryMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middle.rawValue }).first,
+            let bottomBoundaryMiddleIncreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middleIncrease.rawValue }).first,
+            let bottomBoundaryMiddleDecreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middleDecrease.rawValue }).first else {
+                Logger.severe("Invalid tile set for level layer - bottom boundary", filePath: #file, funcName: #function, lineNumber: #line)
+                fatalError()
+        }
+        
+        bottomBoundaryBuildingBlocks = BottomBoundaryBuildingBlocks(topMiddleTile: bottomBoundaryTopMiddleTile, topIncreaseTile: bottomBoundaryTopIncreaseTile, topDecreaseTile: bottomBoundaryTopDecreaseTile, middleTile: bottomBoundaryMiddleTile, middleIncreaseTile: bottomBoundaryMiddleIncreaseTile, middleDecreaseTile: bottomBoundaryMiddleDecreaseTile)
+            
         super.init()
         
         tileMap.tileSet = tileSet
@@ -64,14 +76,48 @@ extension LevelLayer {
         let testI = 7
         let testJ = 7
         
-        let obstacle = Obstacle(length: 1, top: obstacleTileTop, middle: obstacleTileMiddle, bottom: obstacleTileBottom)
+        let obstacle = Obstacle(length: 1, top: obstacleBuildingBlocks.topTile, middle: obstacleBuildingBlocks.middleTile, bottom: obstacleBuildingBlocks.bottomTile)
         
         if let position = tileMap.scaledPositionForTileAt(row: testI, column: testJ) {
             obstacle.position = position
             obstacle.zPosition = Constants.ZPosition.playerAndObstacles.floatValue
             tileMap.addChild(obstacle)
         }
+        
+        populateBottomBoundary()
     }
     
+    private func populateBottomBoundary() {
+        var currentRow = currentBottomBoundaryMaxRow
+        
+        for j in 0..<tileMap.numberOfColumns {
+            tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentRow)
+        }
+        
+        currentRow -= 1
+        
+        while currentRow >= 0 {
+            for j in 0..<tileMap.numberOfColumns {
+                tileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentRow)
+            }
+            currentRow -= 1
+        }
+    }
+    
+}
+
+struct ObstacleBuildingBlocks {
+    let topTile: SKTileGroup
+    let middleTile: SKTileGroup
+    let bottomTile: SKTileGroup
+}
+
+struct BottomBoundaryBuildingBlocks {
+    let topMiddleTile: SKTileGroup
+    let topIncreaseTile: SKTileGroup
+    let topDecreaseTile: SKTileGroup
+    let middleTile: SKTileGroup
+    let middleIncreaseTile: SKTileGroup
+    let middleDecreaseTile: SKTileGroup
 }
 
