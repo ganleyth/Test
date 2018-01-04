@@ -9,7 +9,8 @@
 import SpriteKit
 
 final class LevelLayer: Layer {
-    private let tileMap = SKTileMapNode()
+    private let leadingTileMap: SKTileMapNode
+    private let trailingTileMap: SKTileMapNode
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     
@@ -39,17 +40,28 @@ final class LevelLayer: Layer {
         }
         
         bottomBoundaryBuildingBlocks = BottomBoundaryBuildingBlocks(topMiddleTile: bottomBoundaryTopMiddleTile, topIncreaseTile: bottomBoundaryTopIncreaseTile, topDecreaseTile: bottomBoundaryTopDecreaseTile, middleTile: bottomBoundaryMiddleTile, middleIncreaseTile: bottomBoundaryMiddleIncreaseTile, middleDecreaseTile: bottomBoundaryMiddleDecreaseTile)
-            
+        
+        leadingTileMap = SKTileMapNode()
+        trailingTileMap = SKTileMapNode()
+        
         super.init()
         
+        initializeTileMap(leadingTileMap, with: tileSet, windowSize: windowSize)
+        initializeTileMap(trailingTileMap, with: tileSet, windowSize: windowSize)
+        
+        trailingTileMap.position = CGPoint(x: leadingTileMap.frame.maxX, y: 0.0)
+        
+        addChild(leadingTileMap)
+        addChild(trailingTileMap)
+    }
+    
+    private func initializeTileMap(_ tileMap: SKTileMapNode, with tileSet: SKTileSet, windowSize: CGSize) {
         tileMap.tileSet = tileSet
         tileMap.anchorPoint = CGPoint.zero
         tileMap.position = CGPoint.zero
         tileMap.zPosition = Constants.ZPosition.foregroundLayer.floatValue
-        configureTileMap(for: windowSize)
-        populateTileMap()
-        
-        addChild(tileMap)
+        configureTileMap(tileMap, forWindowSize: windowSize)
+        populateBottomBoundary(for: tileMap)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,7 +72,7 @@ final class LevelLayer: Layer {
 // MARK: - Tile map population
 extension LevelLayer {
     
-    private func configureTileMap(for windowSize: CGSize) {
+    private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
         tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
         let numberOfRows = Constants.TileMapLayer.defaultRowCount
         tileMap.numberOfRows = numberOfRows
@@ -71,31 +83,16 @@ extension LevelLayer {
         
         tileMap.scaleToWindowSize(windowSize)
     }
-    
-    private func populateTileMap() {
-        let testI = 7
-        let testJ = 7
-        
-        let obstacle = Obstacle(length: 1, top: obstacleBuildingBlocks.topTile, middle: obstacleBuildingBlocks.middleTile, bottom: obstacleBuildingBlocks.bottomTile)
-        
-        if let position = tileMap.scaledPositionForTileAt(row: testI, column: testJ) {
-            obstacle.position = position
-            obstacle.zPosition = Constants.ZPosition.playerAndObstacles.floatValue
-            tileMap.addChild(obstacle)
-        }
-        
-        populateBottomBoundary()
-    }
-    
-    private func populateBottomBoundary() {
+
+    private func populateBottomBoundary(for tileMap: SKTileMapNode) {
         var currentRow = currentBottomBoundaryMaxRow
-        
+
         for j in 0..<tileMap.numberOfColumns {
             tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentRow)
         }
-        
+
         currentRow -= 1
-        
+
         while currentRow >= 0 {
             for j in 0..<tileMap.numberOfColumns {
                 tileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentRow)
@@ -103,7 +100,6 @@ extension LevelLayer {
             currentRow -= 1
         }
     }
-    
 }
 
 struct ObstacleBuildingBlocks {

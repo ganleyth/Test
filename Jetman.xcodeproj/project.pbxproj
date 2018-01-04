@@ -453,12 +453,12 @@
 		18CEF3181FD4E55E005C3980 /* Apple Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				18CEF3191FD4E585005C3980 /* Date+Helpers.swift */,
 				18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */,
+				18CEF3191FD4E585005C3980 /* Date+Helpers.swift */,
 				18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */,
 				18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */,
-				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
 				18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */,
+				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
 			);
 			path = "Apple Extensions";
 			sourceTree = "<group>";
