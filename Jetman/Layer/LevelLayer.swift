@@ -10,10 +10,10 @@ import SpriteKit
 import GameKit
 
 final class LevelLayer: Layer {
-    fileprivate let leadingTileMap: SKTileMapNode
-    fileprivate let trailingTileMap: SKTileMapNode
-    fileprivate let obstacleBuildingBlocks: ObstacleBuildingBlocks
-    fileprivate let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
+    private var leadingTileMap: SKTileMapNode
+    private var trailingTileMap: SKTileMapNode
+    private let obstacleBuildingBlocks: ObstacleBuildingBlocks
+    private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     
     private var currentBottomBoundaryMaxRow = 0
     
@@ -71,6 +71,13 @@ final class LevelLayer: Layer {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func update(with delta: TimeInterval, in frameSize: CGSize) {
+        super.update(with: delta, in: frameSize)
+        if leadingTileMap.frame.maxX < 0 {
+            shiftLeadingTileMapToTrailingPosition()
+        }
+    }
 }
 
 // MARK: - Tile map population
@@ -104,11 +111,8 @@ extension LevelLayer {
             currentRow -= 1
         }
     }
-}
-
-// MARK: - Tile map population
-extension LevelLayer {
-    fileprivate func populateTrailingTileMap() {
+    
+    private func populateTrailingTileMap() {
         let minNumberOfObstacles = difficulty * 4
         let maxNumberOfObstacles = difficulty * 5
         
@@ -121,7 +125,7 @@ extension LevelLayer {
         }
         
         let positions = generateRandomObstaclePositions(for: trailingTileMap, numberOfSegments: randomNumberOfObstacles, lengths: lengths)
-    
+        
         for i in 0..<positions.count {
             let position = positions[i]
             let length = lengths[i]
@@ -187,6 +191,18 @@ extension LevelLayer {
         let randomLengthZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: 4)
         let randomLength = randomLengthZeroIndexed + 1
         return randomLength
+    }
+    
+    private func clearAllObstaclesInTileMap(_ tileMap: SKTileMapNode) {
+        
+    }
+}
+
+// MARK: - Update
+extension LevelLayer {
+    private func shiftLeadingTileMapToTrailingPosition() {
+        leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX, y: leadingTileMap.position.y)
+        swap(&leadingTileMap, &trailingTileMap)
     }
 }
 
