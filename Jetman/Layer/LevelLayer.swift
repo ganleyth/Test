@@ -17,6 +17,9 @@ final class LevelLayer: Layer {
     
     private var currentBottomBoundaryMaxRow = 0
     
+    private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
+    private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
+    
     var difficulty = 1
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
@@ -144,10 +147,13 @@ extension LevelLayer {
         let middleIndexes = (bottomIndex + 1)...(bottomIndex + length)
         
         tileMap.setTileGroup(obstacleBuildingBlocks.bottomTile, forColumn: xIndex, row: bottomIndex)
+        trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: bottomIndex))
         tileMap.setTileGroup(obstacleBuildingBlocks.topTile, forColumn: xIndex, row: topIndex)
+        trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: topIndex))
         
         for i in middleIndexes {
             tileMap.setTileGroup(obstacleBuildingBlocks.middleTile, forColumn: xIndex, row: i)
+            trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: i))
         }
     }
     
@@ -172,8 +178,14 @@ extension LevelLayer {
         for i in 0..<lengths.count {
             let length = lengths[i]
             let minX = segmentXPositions[i]
-            let maxX = segmentXPositions[i + 1]
+            let maxX = segmentXPositions[i + 1] - 1
             let maxY = tileMap.numberOfRows - length - 2
+            
+            guard maxX - minX >= 0,
+                maxY - minY >= 0 else {
+                    Logger.error("Too small of position increments", filePath: #file, funcName: #function, lineNumber: #line)
+                    continue
+            }
             
             let randomXZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxX - minX) + 1)
             let randomYZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxY - minY) + 1)
@@ -194,15 +206,22 @@ extension LevelLayer {
     }
     
     private func clearAllObstaclesInTileMap(_ tileMap: SKTileMapNode) {
+        for position in leadingTileMapObstaclePositions {
+            tileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
+        }
         
+        leadingTileMapObstaclePositions.removeAll()
     }
 }
 
 // MARK: - Update
 extension LevelLayer {
     private func shiftLeadingTileMapToTrailingPosition() {
+        clearAllObstaclesInTileMap(leadingTileMap)
         leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX, y: leadingTileMap.position.y)
         swap(&leadingTileMap, &trailingTileMap)
+        swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
+        populateTrailingTileMap()
     }
 }
 
