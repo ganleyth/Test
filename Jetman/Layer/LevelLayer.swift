@@ -7,14 +7,17 @@
 //
 
 import SpriteKit
+import GameKit
 
 final class LevelLayer: Layer {
-    private let leadingTileMap: SKTileMapNode
-    private let trailingTileMap: SKTileMapNode
-    private let obstacleBuildingBlocks: ObstacleBuildingBlocks
-    private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
+    fileprivate let leadingTileMap: SKTileMapNode
+    fileprivate let trailingTileMap: SKTileMapNode
+    fileprivate let obstacleBuildingBlocks: ObstacleBuildingBlocks
+    fileprivate let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     
     private var currentBottomBoundaryMaxRow = 0
+    
+    var difficulty = 1
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
@@ -50,6 +53,7 @@ final class LevelLayer: Layer {
         initializeTileMap(trailingTileMap, with: tileSet, windowSize: windowSize)
         
         trailingTileMap.position = CGPoint(x: leadingTileMap.frame.maxX, y: 0.0)
+        populateTrailingTileMap()
         
         addChild(leadingTileMap)
         addChild(trailingTileMap)
@@ -102,6 +106,90 @@ extension LevelLayer {
     }
 }
 
+// MARK: - Tile map population
+extension LevelLayer {
+    fileprivate func populateTrailingTileMap() {
+        let minNumberOfObstacles = difficulty * 4
+        let maxNumberOfObstacles = difficulty * 5
+        
+        let randomNumberOfObstaclesZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxNumberOfObstacles - minNumberOfObstacles) + 1)
+        let randomNumberOfObstacles = minNumberOfObstacles + randomNumberOfObstaclesZeroIndexed
+        
+        var lengths = [Int]()
+        for _ in 0..<randomNumberOfObstacles {
+            lengths.append(randomObstacleLength())
+        }
+        
+        let positions = generateRandomObstaclePositions(for: trailingTileMap, numberOfSegments: randomNumberOfObstacles, lengths: lengths)
+    
+        for i in 0..<positions.count {
+            let position = positions[i]
+            let length = lengths[i]
+            addObstacleTo(trailingTileMap, length: length, xIndex: position.x, yIndex: position.y)
+        }
+    }
+    
+    private func addObstacleTo(_ tileMap: SKTileMapNode, length: Int, xIndex: Int, yIndex: Int) {
+        guard length > 0 && length <= Constants.TileMapLayer.maxObstacleHeight else {
+            Logger.severe("Invalid obstacle length", filePath: #file, funcName: #function, lineNumber: #line)
+            fatalError()
+        }
+        
+        let bottomIndex = yIndex
+        let topIndex = yIndex + length + 1
+        let middleIndexes = (bottomIndex + 1)...(bottomIndex + length)
+        
+        tileMap.setTileGroup(obstacleBuildingBlocks.bottomTile, forColumn: xIndex, row: bottomIndex)
+        tileMap.setTileGroup(obstacleBuildingBlocks.topTile, forColumn: xIndex, row: topIndex)
+        
+        for i in middleIndexes {
+            tileMap.setTileGroup(obstacleBuildingBlocks.middleTile, forColumn: xIndex, row: i)
+        }
+    }
+    
+    private func generateRandomObstaclePositions(for tileMap: SKTileMapNode, numberOfSegments: Int, lengths: [Int]) -> [CoordinatePosition] {
+        guard numberOfSegments == lengths.count else {
+            Logger.severe("Mismatch of numberOfSegments and lengths.count", filePath: #file, funcName: #function, lineNumber: #line)
+            fatalError()
+        }
+        
+        let segmentWidth = Int(Double(tileMap.numberOfColumns) / Double(numberOfSegments))
+        var segmentXPositions = [Int]()
+        
+        for i in 0...numberOfSegments {
+            let segmentXPosition = i * segmentWidth
+            segmentXPositions.append(segmentXPosition)
+        }
+        
+        let minY = currentBottomBoundaryMaxRow + 2
+        
+        var positions = [CoordinatePosition]()
+        
+        for i in 0..<lengths.count {
+            let length = lengths[i]
+            let minX = segmentXPositions[i]
+            let maxX = segmentXPositions[i + 1]
+            let maxY = tileMap.numberOfRows - length - 2
+            
+            let randomXZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxX - minX) + 1)
+            let randomYZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxY - minY) + 1)
+            
+            let randomX = minX + randomXZeroIndexed
+            let randomY = minY + randomYZeroIndexed
+            
+            positions.append(CoordinatePosition(x: randomX, y: randomY))
+        }
+        
+        return positions
+    }
+    
+    private func randomObstacleLength() -> Int {
+        let randomLengthZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: 4)
+        let randomLength = randomLengthZeroIndexed + 1
+        return randomLength
+    }
+}
+
 struct ObstacleBuildingBlocks {
     let topTile: SKTileGroup
     let middleTile: SKTileGroup
@@ -117,3 +205,7 @@ struct BottomBoundaryBuildingBlocks {
     let middleDecreaseTile: SKTileGroup
 }
 
+struct CoordinatePosition {
+    let x: Int
+    let y: Int
+}

@@ -53,7 +53,6 @@
 		18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301A1FDC7B7D00D59107 /* Player.swift */; };
 		18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301C1FDC7B9500D59107 /* Layer.swift */; };
 		18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */; };
-		18B330211FDC7C1600D59107 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330201FDC7C1600D59107 /* Obstacle.swift */; };
 		18B330231FDC7CEE00D59107 /* Standings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330221FDC7CEE00D59107 /* Standings.swift */; };
 		18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */; };
 		18B330291FDCA85D00D59107 /* CGPoint+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330281FDCA85D00D59107 /* CGPoint+HelpersTests.swift */; };
@@ -139,7 +138,6 @@
 		18B3301A1FDC7B7D00D59107 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		18B3301C1FDC7B9500D59107 /* Layer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layer.swift; sourceTree = "<group>"; };
 		18B3301E1FDC7BE900D59107 /* RepeatingLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingLayer.swift; sourceTree = "<group>"; };
-		18B330201FDC7C1600D59107 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		18B330221FDC7CEE00D59107 /* Standings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Standings.swift; sourceTree = "<group>"; };
 		18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Helpers.swift"; sourceTree = "<group>"; };
 		18B330281FDCA85D00D59107 /* CGPoint+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+HelpersTests.swift"; sourceTree = "<group>"; };
@@ -304,7 +302,6 @@
 				18B330161FDC7B5300D59107 /* Outbox.swift */,
 				18B330181FDC7B6D00D59107 /* Settings.swift */,
 				18B3301A1FDC7B7D00D59107 /* Player.swift */,
-				18B330201FDC7C1600D59107 /* Obstacle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -699,7 +696,6 @@
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
-				18B330211FDC7C1600D59107 /* Obstacle.swift in Sources */,
 				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
