@@ -218,7 +218,7 @@ extension LevelLayer {
 extension LevelLayer {
     private func shiftLeadingTileMapToTrailingPosition() {
         clearAllObstaclesInTileMap(leadingTileMap)
-        leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX, y: leadingTileMap.position.y)
+        leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset, y: leadingTileMap.position.y)
         swap(&leadingTileMap, &trailingTileMap)
         swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
         populateTrailingTileMap()
