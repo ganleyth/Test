@@ -20,8 +20,10 @@ final class LevelLayer: Layer {
     private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
     
-    var difficulty = 1
-    var done = 0
+    private var lastBottomBoundaryChangeDirection: BoundaryChangeDirection?
+    
+    private let minNumberOfObstacles = 4
+    private let maxNumberOfObstacles = 5
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
@@ -117,8 +119,6 @@ extension LevelLayer {
     }
     
     private func populateTrailingTileMap() {
-        let minNumberOfObstacles = difficulty * 4
-        let maxNumberOfObstacles = difficulty * 5
         
         let randomNumberOfObstaclesZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxNumberOfObstacles - minNumberOfObstacles) + 1)
         let randomNumberOfObstacles = minNumberOfObstacles + randomNumberOfObstaclesZeroIndexed
@@ -233,11 +233,17 @@ extension LevelLayer {
             syncBottomBoundaryLevelForTrailingTileMap(with: .decrease)
         default: break
         }
-
-        if done == 0 {
-            decreaseBottomBoundaryLevelForTrailingTileMap()
-            done = 1
+        
+        // Determine whether the bottom boundary should change levels
+        let random = GKRandomSource.sharedRandom().nextInt(upperBound: 100)
+        if random < 50 {
+            let lastDirectionChange = lastBottomBoundaryChangeDirection ?? .decrease
+            switch lastDirectionChange {
+            case .increase: decreaseBottomBoundaryLevelForTrailingTileMap()
+            case .decrease: increaseBottomBoundaryLevelForTrailingTileMap()
+            }
         }
+
         populateTrailingTileMap()
     }
 }
@@ -260,6 +266,7 @@ extension LevelLayer {
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow + 1)
         
         currentBottomBoundaryMaxRow += 1
+        lastBottomBoundaryChangeDirection = .increase
     }
     
     private func syncBottomBoundaryLevelForTrailingTileMap(with direction: BoundaryChangeDirection) {
@@ -294,6 +301,8 @@ extension LevelLayer {
         if currentBottomBoundaryMaxRow - 1 >= 0 {
             currentBottomBoundaryMaxRow -= 1
         }
+        
+        lastBottomBoundaryChangeDirection = .decrease
     }
     
     private func maxBottomBoundaryLevelForTrailingTileMap() -> Int {
