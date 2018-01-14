@@ -15,7 +15,7 @@ final class LevelLayer: Layer {
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     
-    private var currentBottomBoundaryMaxRow = 0
+    private var currentBottomBoundaryMaxRow = 2
     
     private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
@@ -224,18 +224,18 @@ extension LevelLayer {
         swap(&leadingTileMap, &trailingTileMap)
         swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
         
-        if let tileGroup = trailingTileMap.tileGroup(atColumn: 0, row: currentBottomBoundaryMaxRow) {
-            if let name = tileGroup.name, name == Constants.BottomBoundaryTileName.topIncrease.rawValue {
-                // New trailing tile map needs to sync its bottom boundary level
-                syncBottomBoundaryLevelForTrailingTileMap()
-            }
-        } else {
-            // New trailing tile map needs to sync its bottom boundary level
-            syncBottomBoundaryLevelForTrailingTileMap()
-        }
+        let trailingMapMax = maxBottomBoundaryLevelForTrailingTileMap()
         
+        switch trailingMapMax {
+        case 0..<currentBottomBoundaryMaxRow:
+            syncBottomBoundaryLevelForTrailingTileMap(with: .increase)
+        case (currentBottomBoundaryMaxRow + 1)..<Int.max:
+            syncBottomBoundaryLevelForTrailingTileMap(with: .decrease)
+        default: break
+        }
+
         if done == 0 {
-            increaseBottomBoundaryLevelForTrailingTileMap()
+            decreaseBottomBoundaryLevelForTrailingTileMap()
             done = 1
         }
         populateTrailingTileMap()
@@ -244,7 +244,13 @@ extension LevelLayer {
 
 // MARK: - Dynamic bottom boundary
 extension LevelLayer {
-    func increaseBottomBoundaryLevelForTrailingTileMap() {
+    private enum BoundaryChangeDirection {
+        case increase
+        case decrease
+    }
+    
+    
+    private func increaseBottomBoundaryLevelForTrailingTileMap() {
         for j in 0..<trailingTileMap.numberOfColumns {
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
@@ -256,15 +262,47 @@ extension LevelLayer {
         currentBottomBoundaryMaxRow += 1
     }
     
-    func syncBottomBoundaryLevelForTrailingTileMap() {
+    private func syncBottomBoundaryLevelForTrailingTileMap(with direction: BoundaryChangeDirection) {
         for j in 0..<trailingTileMap.numberOfColumns {
-            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
-            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+            switch direction {
+            case .increase:
+                if currentBottomBoundaryMaxRow - 1 >= 0 {
+                    trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
+                }
+                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+            case .decrease:
+                trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
+                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+            }
         }
     }
     
-    func decreaseBottomBoundaryLevelForTrailingTileMap() {
-        currentBottomBoundaryMaxRow -= 1
+    private func decreaseBottomBoundaryLevelForTrailingTileMap() {
+        for j in 0..<trailingTileMap.numberOfColumns {
+            trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow)
+            if currentBottomBoundaryMaxRow - 1 >= 0 {
+                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
+            }
+        }
+        
+        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
+        if currentBottomBoundaryMaxRow - 1 >= 0 {
+            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow - 1)
+        }
+        
+        
+        if currentBottomBoundaryMaxRow - 1 >= 0 {
+            currentBottomBoundaryMaxRow -= 1
+        }
+    }
+    
+    private func maxBottomBoundaryLevelForTrailingTileMap() -> Int {
+        for i in 0..<trailingTileMap.numberOfRows {
+            if trailingTileMap.tileGroup(atColumn: 0, row: i) == nil {
+                return i - 1
+            }
+        }
+        return Int.max
     }
 }
 
