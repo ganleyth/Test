@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-class LoginViewInteractor: Interactor {
+class LoginViewInteractor: NSObject {
     
 }

@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-class LaunchViewInteractor: Interactor {
+class LaunchViewInteractor: NSObject {
     
 }

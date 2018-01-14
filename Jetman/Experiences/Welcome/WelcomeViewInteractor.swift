@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-class WelcomeViewInteractor: Interactor {
+class WelcomeViewInteractor: NSObject {
     
 }

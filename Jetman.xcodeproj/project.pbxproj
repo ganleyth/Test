@@ -32,7 +32,6 @@
 		18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE81FDC3F9300D59107 /* LaunchScene.swift */; };
 		18B32FEB1FDC406700D59107 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FEA1FDC406700D59107 /* LoginScene.swift */; };
 		18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FEC1FDC408400D59107 /* WelcomeScene.swift */; };
-		18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF01FDC4B6C00D59107 /* Interactor.swift */; };
 		18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF21FDC4B8600D59107 /* Manager.swift */; };
 		18B32FF51FDC4F1A00D59107 /* LaunchViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF41FDC4F1A00D59107 /* LaunchViewInteractor.swift */; };
 		18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF61FDC4F4200D59107 /* LoginViewInteractor.swift */; };
@@ -117,7 +116,6 @@
 		18B32FE81FDC3F9300D59107 /* LaunchScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScene.swift; sourceTree = "<group>"; };
 		18B32FEA1FDC406700D59107 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		18B32FEC1FDC408400D59107 /* WelcomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScene.swift; sourceTree = "<group>"; };
-		18B32FF01FDC4B6C00D59107 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		18B32FF21FDC4B8600D59107 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		18B32FF41FDC4F1A00D59107 /* LaunchViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewInteractor.swift; sourceTree = "<group>"; };
 		18B32FF61FDC4F4200D59107 /* LoginViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewInteractor.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				18B32FFD1FDC544B00D59107 /* MemberService */,
-				18B32FF01FDC4B6C00D59107 /* Interactor.swift */,
 				18B32FF21FDC4B8600D59107 /* Manager.swift */,
 				18B330021FDC553E00D59107 /* ChallengeManager.swift */,
 				18B330041FDC556400D59107 /* StandingsManager.swift */,
@@ -721,7 +718,6 @@
 				18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */,
 				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,
 				18B32FCE1FD9921000D59107 /* LaunchViewController.swift in Sources */,
-				18B32FF11FDC4B6C00D59107 /* Interactor.swift in Sources */,
 				18B32FF51FDC4F1A00D59107 /* LaunchViewInteractor.swift in Sources */,
 				18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */,
 				18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */,

@@ -8,14 +8,39 @@
 
 import SpriteKit
 
-class GameplaySceneInteractor: Interactor {
+class GameplaySceneInteractor {
     
     weak var scene: GameplayScene?
+    private var currentGameplayMode: GameplayMode = .yetToStart {
+        didSet {
+            switch currentGameplayMode {
+            case .playing:
+                enterGameplayMode(.playing)
+            case .gameOver:
+                enterGameplayMode(.gameOver)
+            default:
+                Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
+                fatalError()
+            }
+        }
+    }
     
     init(scene: GameplayScene) {
-        super.init()
         self.scene = scene
+        addGestureRecognizers()
     }
+}
+
+// MARK: - Class initialization
+extension GameplaySceneInteractor {
+    private func addGestureRecognizers() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer))
+        scene?.view?.addGestureRecognizer(tapGestureRecognizer)
+    }
+}
+
+// MARK: - Layer initialization
+extension GameplaySceneInteractor {
     
     func configureAndAddLayers() {
         configureBackgroundLayer()
@@ -44,8 +69,6 @@ class GameplaySceneInteractor: Interactor {
         backgroundNode.scaleToWindowSize(view.frame.size)
         backgroundNode.setAnchorPointToZero()
         let backgroundLayer = RepeatingLayer(nodeCount: 3, repeatedNode: backgroundNode)
-        backgroundLayer.setVelocity(value: CGPoint(x: -50.0, y: 0.0))
-        
         scene?.backgroundLayer = backgroundLayer
     }
     
@@ -57,8 +80,38 @@ class GameplaySceneInteractor: Interactor {
                 return
         }
         let levelLayer = LevelLayer(windowSize: view.frame.size, tileSet: tileSet)
-        levelLayer.setVelocity(value: CGPoint(x: -150.0, y: 0.0))
-        
         scene?.levelLayer = levelLayer
+    }
+}
+
+// MARK: - Gesture recognizer handling
+extension GameplaySceneInteractor {
+    @objc private func handleTapGestureRecognizer() {
+        if currentGameplayMode == .yetToStart {
+            currentGameplayMode = .playing
+        }
+    }
+}
+
+// MARK: - Gameplay mode handling
+extension GameplaySceneInteractor {
+    enum GameplayMode {
+        case yetToStart
+        case playing
+        case gameOver
+    }
+    
+    private func enterGameplayMode(_ gameplayMode: GameplayMode) {
+        switch gameplayMode {
+        case .playing:
+            scene?.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
+            scene?.levelLayer?.setVelocity(value: CGPoint(x: -150, y: 0))
+        case .gameOver:
+            scene?.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+            scene?.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+        default:
+            Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
+            fatalError()
+        }
     }
 }

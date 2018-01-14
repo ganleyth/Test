@@ -15,7 +15,7 @@ final class LevelLayer: Layer {
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     
-    private var currentBottomBoundaryMaxRow = 2
+    private var currentBottomBoundaryMaxRow = 1
     
     private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
@@ -178,7 +178,7 @@ extension LevelLayer {
             segmentXPositions.append(segmentXPosition)
         }
         
-        let minY = currentBottomBoundaryMaxRow + 2
+        let minY = currentBottomBoundaryMaxRow + 1
         
         var positions = [CoordinatePosition]()
         
