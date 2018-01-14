@@ -21,6 +21,7 @@ final class LevelLayer: Layer {
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
     
     var difficulty = 1
+    var done = 0
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
@@ -136,6 +137,12 @@ extension LevelLayer {
         }
     }
     
+    private func randomObstacleLength() -> Int {
+        let randomLengthZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: 4)
+        let randomLength = randomLengthZeroIndexed + 1
+        return randomLength
+    }
+    
     private func addObstacleTo(_ tileMap: SKTileMapNode, length: Int, xIndex: Int, yIndex: Int) {
         guard length > 0 && length <= Constants.TileMapLayer.maxObstacleHeight else {
             Logger.severe("Invalid obstacle length", filePath: #file, funcName: #function, lineNumber: #line)
@@ -177,9 +184,10 @@ extension LevelLayer {
         
         for i in 0..<lengths.count {
             let length = lengths[i]
+            let lengthPlusEndCaps = length + 2
             let minX = segmentXPositions[i]
             let maxX = segmentXPositions[i + 1] - 1
-            let maxY = tileMap.numberOfRows - length - 2
+            let maxY = tileMap.numberOfRows - lengthPlusEndCaps - currentBottomBoundaryMaxRow
             
             guard maxX - minX >= 0,
                 maxY - minY >= 0 else {
@@ -199,12 +207,6 @@ extension LevelLayer {
         return positions
     }
     
-    private func randomObstacleLength() -> Int {
-        let randomLengthZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: 4)
-        let randomLength = randomLengthZeroIndexed + 1
-        return randomLength
-    }
-    
     private func clearAllObstaclesInTileMap(_ tileMap: SKTileMapNode) {
         for position in leadingTileMapObstaclePositions {
             tileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
@@ -221,9 +223,52 @@ extension LevelLayer {
         leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset, y: leadingTileMap.position.y)
         swap(&leadingTileMap, &trailingTileMap)
         swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
+        
+        if let tileGroup = trailingTileMap.tileGroup(atColumn: 0, row: currentBottomBoundaryMaxRow) {
+            if let name = tileGroup.name, name == Constants.BottomBoundaryTileName.topIncrease.rawValue {
+                // New trailing tile map needs to sync its bottom boundary level
+                syncBottomBoundaryLevelForTrailingTileMap()
+            }
+        } else {
+            // New trailing tile map needs to sync its bottom boundary level
+            syncBottomBoundaryLevelForTrailingTileMap()
+        }
+        
+        if done == 0 {
+            increaseBottomBoundaryLevelForTrailingTileMap()
+            done = 1
+        }
         populateTrailingTileMap()
     }
 }
+
+// MARK: - Dynamic bottom boundary
+extension LevelLayer {
+    func increaseBottomBoundaryLevelForTrailingTileMap() {
+        for j in 0..<trailingTileMap.numberOfColumns {
+            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
+        }
+        
+        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
+        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow + 1)
+        
+        currentBottomBoundaryMaxRow += 1
+    }
+    
+    func syncBottomBoundaryLevelForTrailingTileMap() {
+        for j in 0..<trailingTileMap.numberOfColumns {
+            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
+            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+        }
+    }
+    
+    func decreaseBottomBoundaryLevelForTrailingTileMap() {
+        currentBottomBoundaryMaxRow -= 1
+    }
+}
+
+// MARK: - Support types
 
 struct ObstacleBuildingBlocks {
     let topTile: SKTileGroup

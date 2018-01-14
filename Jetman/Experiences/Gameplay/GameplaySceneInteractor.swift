@@ -57,7 +57,7 @@ class GameplaySceneInteractor: Interactor {
                 return
         }
         let levelLayer = LevelLayer(windowSize: view.frame.size, tileSet: tileSet)
-        levelLayer.setVelocity(value: CGPoint(x: -75.0, y: 0.0))
+        levelLayer.setVelocity(value: CGPoint(x: -150.0, y: 0.0))
         
         scene?.levelLayer = levelLayer
     }
