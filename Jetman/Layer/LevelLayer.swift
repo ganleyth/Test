@@ -20,11 +20,14 @@ final class LevelLayer: Layer {
     
     private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
+    private var platformPositions: [CoordinatePosition] = []
     
     private var lastBottomBoundaryChangeDirection: BoundaryChangeDirection?
     
     private let minNumberOfObstacles = 4
     private let maxNumberOfObstacles = 5
+    
+    private var platformRemoved = false
     
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
@@ -71,6 +74,8 @@ final class LevelLayer: Layer {
         
         trailingTileMap.position = CGPoint(x: leadingTileMap.frame.maxX, y: 0.0)
         populateTrailingTileMap()
+        
+        addPlatformToFirstTileMap()
         
         addChild(leadingTileMap)
         addChild(trailingTileMap)
@@ -126,6 +131,17 @@ extension LevelLayer {
                 tileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentRow)
             }
             currentRow -= 1
+        }
+    }
+    
+    private func addPlatformToFirstTileMap() {
+        let middleRow = Int(leadingTileMap.numberOfRows / 2)
+        leadingTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 1, row: middleRow)
+        leadingTileMap.setTileGroup(platformBuildingBlocks.middleTile, forColumn: 2, row: middleRow)
+        leadingTileMap.setTileGroup(platformBuildingBlocks.trailingTile, forColumn: 3, row: middleRow)
+        
+        for i in 1...3 {
+            platformPositions.append(CoordinatePosition(x: i, y: middleRow))
         }
     }
     
@@ -231,6 +247,11 @@ extension LevelLayer {
 extension LevelLayer {
     private func shiftLeadingTileMapToTrailingPosition() {
         clearAllObstaclesInTileMap(leadingTileMap)
+        if !platformRemoved {
+            removePlatform()
+            platformRemoved = true
+        }
+        
         leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset, y: leadingTileMap.position.y)
         swap(&leadingTileMap, &trailingTileMap)
         swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
@@ -256,6 +277,12 @@ extension LevelLayer {
         }
 
         populateTrailingTileMap()
+    }
+    
+    private func removePlatform() {
+        for position in platformPositions {
+            leadingTileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
+        }
     }
 }
 
