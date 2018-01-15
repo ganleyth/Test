@@ -14,6 +14,7 @@ final class LevelLayer: Layer {
     private var trailingTileMap: SKTileMapNode
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
+    private let platformBuildingBlocks: PlatformBuildingBlocks
     
     private var currentBottomBoundaryMaxRow = 1
     
@@ -49,6 +50,16 @@ final class LevelLayer: Layer {
         }
         
         bottomBoundaryBuildingBlocks = BottomBoundaryBuildingBlocks(topMiddleTile: bottomBoundaryTopMiddleTile, topIncreaseTile: bottomBoundaryTopIncreaseTile, topDecreaseTile: bottomBoundaryTopDecreaseTile, middleTile: bottomBoundaryMiddleTile, middleIncreaseTile: bottomBoundaryMiddleIncreaseTile, middleDecreaseTile: bottomBoundaryMiddleDecreaseTile)
+        
+        guard
+            let platformLeadingTile = tileSet.tileGroups.filter({ $0.name == Constants.PlatformTileName.leading }).first,
+            let platformMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.PlatformTileName.middle }).first,
+            let platformTrailingTile = tileSet.tileGroups.filter({ $0.name == Constants.PlatformTileName.trailing }).first else {
+                Logger.severe("Invalid tile set for level layer - platform", filePath: #file, funcName: #function, lineNumber: #line)
+                fatalError()
+        }
+        
+        platformBuildingBlocks = PlatformBuildingBlocks(leadingTile: platformLeadingTile, middleTile: platformMiddleTile, trailingTile: platformTrailingTile)
         
         leadingTileMap = SKTileMapNode()
         trailingTileMap = SKTileMapNode()
@@ -330,6 +341,12 @@ struct BottomBoundaryBuildingBlocks {
     let middleTile: SKTileGroup
     let middleIncreaseTile: SKTileGroup
     let middleDecreaseTile: SKTileGroup
+}
+
+struct PlatformBuildingBlocks {
+    let leadingTile: SKTileGroup
+    let middleTile: SKTileGroup
+    let trailingTile: SKTileGroup
 }
 
 struct CoordinatePosition {

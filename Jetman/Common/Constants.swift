@@ -44,6 +44,12 @@ struct Constants {
         case middleDecrease = "bottomBoundaryMiddleDecrease"
     }
     
+    struct PlatformTileName {
+        static let leading = "platformLeading"
+        static let middle = "platformMiddle"
+        static let trailing = "platformTrailing"
+    }
+    
     enum ZPosition: Int {
         case backgroundLayer = 0
         case foregroundLayer
@@ -52,6 +58,11 @@ struct Constants {
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)
         }
+    }
+    
+    struct Player {
+        static let defaultSize = CGSize(width: 59, height: 123)
+        static let animationKey = "animation"
     }
     
 }
