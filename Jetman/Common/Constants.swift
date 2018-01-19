@@ -11,8 +11,34 @@ import CoreGraphics
 
 struct Constants {
     
+    enum BottomBoundaryTileName: String {
+        case topMiddle = "bottomBoundaryTopMiddle"
+        case topIncrease = "bottomBoundaryTopIncrease"
+        case topDecrease = "bottomBoundaryTopDecrease"
+        case middle = "bottomBoundaryMiddle"
+        case middleIncrease = "bottomBoundaryMiddleIncrease"
+        case middleDecrease = "bottomBoundaryMiddleDecrease"
+    }
+    
     struct LoggerDefaults {
         static let defaultFormat = "yyyy-MM-dd hh:mm:ss.SSS"
+    }
+    
+    enum ObstacleTileName: String {
+        case top = "obstacleTileTop"
+        case middle = "obstacleTileMiddle"
+        case bottom = "obstacleTileBottom"
+    }
+    
+    struct PlatformTileName {
+        static let leading = "platformLeading"
+        static let middle = "platformMiddle"
+        static let trailing = "platformTrailing"
+    }
+    
+    struct Player {
+        static let defaultSize = CGSize(width: 59, height: 123)
+        static let animationKey = "animation"
     }
     
     struct RepeatingLayer {
@@ -29,27 +55,6 @@ struct Constants {
         }
     }
     
-    enum ObstacleTileName: String {
-        case top = "obstacleTileTop"
-        case middle = "obstacleTileMiddle"
-        case bottom = "obstacleTileBottom"
-    }
-    
-    enum BottomBoundaryTileName: String {
-        case topMiddle = "bottomBoundaryTopMiddle"
-        case topIncrease = "bottomBoundaryTopIncrease"
-        case topDecrease = "bottomBoundaryTopDecrease"
-        case middle = "bottomBoundaryMiddle"
-        case middleIncrease = "bottomBoundaryMiddleIncrease"
-        case middleDecrease = "bottomBoundaryMiddleDecrease"
-    }
-    
-    struct PlatformTileName {
-        static let leading = "platformLeading"
-        static let middle = "platformMiddle"
-        static let trailing = "platformTrailing"
-    }
-    
     enum ZPosition: Int {
         case backgroundLayer = 0
         case foregroundLayer
@@ -58,11 +63,6 @@ struct Constants {
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)
         }
-    }
-    
-    struct Player {
-        static let defaultSize = CGSize(width: 59, height: 123)
-        static let animationKey = "animation"
     }
     
 }

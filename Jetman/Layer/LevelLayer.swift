@@ -143,6 +143,8 @@ extension LevelLayer {
         for i in 1...3 {
             platformPositions.append(CoordinatePosition(x: i, y: middleRow))
         }
+        
+        leadingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 1, y: middleRow), numberOfRows: 1, numberOfColumns: 3, type: .platform)
     }
     
     private func populateTrailingTileMap() {

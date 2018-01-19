@@ -36,4 +36,35 @@ extension SKTileMapNode {
         return unscaledPosition * scale
     }
     
+    func addRectangularPhysicsBody(with coordinatePosition: CoordinatePosition, numberOfRows: Int, numberOfColumns: Int, type: TileType) {
+        let width = CGFloat(numberOfColumns) * tileSize.width
+        let height = CGFloat(numberOfRows) * tileSize.height
+        
+        let sprite = SKSpriteNode(color: .clear, size: CGSize(width: width, height: height))
+        sprite.anchorPoint = CGPoint.zero
+        let x = CGFloat(coordinatePosition.x) * tileSize.width
+        let y = CGFloat(coordinatePosition.y) * tileSize.height
+        sprite.position = CGPoint(x: x, y: y)
+        
+        let physicsBody: SKPhysicsBody
+        
+        switch type {
+        case .bottomBoundary: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+        case .obstacle: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+        case .platform: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+        }
+        
+        sprite.physicsBody = physicsBody
+        
+        addChild(sprite)
+    }
+    
+}
+
+extension SKTileMapNode {
+    enum TileType {
+        case bottomBoundary
+        case obstacle
+        case platform
+    }
 }
