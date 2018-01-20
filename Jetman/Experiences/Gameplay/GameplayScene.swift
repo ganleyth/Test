@@ -31,7 +31,7 @@ class GameplayScene: SKScene {
         interactor = GameplaySceneInteractor(scene: self)
         interactor.configureAndAddLayers()
         
-        physicsWorld.gravity = CGVector(dx: 0.0, dy: -2.0)
+        physicsWorld.gravity = CGVector(dx: 0.0, dy: -3.0)
         
         guard
             let player = player,

@@ -37,9 +37,9 @@ struct Constants {
     }
     
     struct Player {
-        static let defaultWidthIdle: CGFloat = 59.0
-        static let defaultWidthFlying: CGFloat = 59.0
-        static let defaultWidthDead: CGFloat = 59.0
+        static let defaultWidthIdle: CGFloat = 80
+        static let defaultWidthFlying: CGFloat = 100
+        static let defaultWidthDead: CGFloat = 100
         static let animationKey = "animation"
     }
     
