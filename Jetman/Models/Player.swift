@@ -16,13 +16,22 @@ class Player: SKSpriteNode {
         }
     }
     
+    private var textureWidth: CGFloat
+    private var textureAspectRatio: CGFloat
+    
+    private var textureSize: CGSize {
+        return CGSize(width: textureWidth, height: textureWidth / textureAspectRatio)
+    }
+    
     init(gender: Gender) {
         self.gender = gender
         let texture = SKTexture(image: gender == .boy ? #imageLiteral(resourceName: "JetmanIdle0") : #imageLiteral(resourceName: "MsJetmanIdle0"))
+        textureWidth = Constants.Player.defaultWidthIdle
+        textureAspectRatio = texture.size().width / texture.size().height
         
-        super.init(texture: texture, color: .clear, size: Constants.Player.defaultSize)
+        super.init(texture: texture, color: .clear, size: textureSize)
         
-        self.physicsBody = SKPhysicsBody(texture: texture, size: Constants.Player.defaultSize)
+        self.physicsBody = SKPhysicsBody(texture: texture, size: textureSize)
         physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
         physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
         physicsBody?.restitution = 0.0
@@ -42,7 +51,7 @@ extension Player {
     
     private func updateAnimation() {
         removeAction(forKey: Constants.Player.animationKey)
-        let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.1))
+        let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.08))
         run(animation, withKey: Constants.Player.animationKey)
     }
     
