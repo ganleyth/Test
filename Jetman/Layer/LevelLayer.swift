@@ -146,7 +146,7 @@ extension LevelLayer {
     }
     
     private func addPlatformToFirstTileMap() {
-        let middleRow = Int(leadingTileMap.numberOfRows / 2)
+        let middleRow = Int(leadingTileMap.numberOfRows / 2) - 1
         leadingTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 1, row: middleRow)
         leadingTileMap.setTileGroup(platformBuildingBlocks.middleTile, forColumn: 2, row: middleRow)
         leadingTileMap.setTileGroup(platformBuildingBlocks.trailingTile, forColumn: 3, row: middleRow)
