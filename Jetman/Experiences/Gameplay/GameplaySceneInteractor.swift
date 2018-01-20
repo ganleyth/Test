@@ -115,3 +115,10 @@ extension GameplaySceneInteractor {
         }
     }
 }
+
+// MARK: - Player handling
+extension GameplaySceneInteractor {
+    func addPlayer(of gender: Player.Gender) {
+        
+    }
+}

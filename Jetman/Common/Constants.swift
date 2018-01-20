@@ -41,6 +41,19 @@ struct Constants {
         static let animationKey = "animation"
     }
     
+    enum PhysicsBodyCategoryBitMask: UInt32 {
+        case bottomBoundary = 0b00000000000000000000000000000001
+        case player         = 0b00000000000000000000000000000010
+        case platform       = 0b00000000000000000000000000000100
+        case obstacle       = 0b00000000000000000000000000001000
+    }
+    
+    enum PhysicsBodyContactTestBitMask: UInt32 {
+        case none                       = 0b00000000000000000000000000000000
+        case player                     = 0b00000000000000000000000000000010
+        case bottomBoundaryAndObstacle  = 0b00000000000000000000000000001001
+    }
+    
     struct RepeatingLayer {
         static let repeatedNodeOffset: CGFloat = -0.01
     }

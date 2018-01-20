@@ -29,6 +29,17 @@ final class LevelLayer: Layer {
     
     private var platformRemoved = false
     
+    var startingPositionForPlayer: CGPoint {
+        let sumOfX = platformPositions.reduce(0.0) { (sum, nextPosition) -> CGFloat in
+            return sum + CGFloat(nextPosition.x) * leadingTileMap.scaledTileSize.width
+        }
+        
+        let x = sumOfX / CGFloat(platformPositions.count)
+        let y = CGFloat(leadingTileMap.numberOfRows-1) * leadingTileMap.scaledTileSize.height
+        let xOffsetForCentering = 0.5 * leadingTileMap.scaledTileSize.width
+        return CGPoint(x: x + xOffsetForCentering, y: y)
+    }
+    
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
         guard
@@ -90,6 +101,18 @@ final class LevelLayer: Layer {
         populateBottomBoundary(for: tileMap)
     }
     
+    private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
+        tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
+        let numberOfRows = Constants.TileMapLayer.defaultRowCount
+        tileMap.numberOfRows = numberOfRows
+        let numberOfColumnsToFillWindow = Int(windowSize.width / (windowSize.height / CGFloat(numberOfRows)))
+        
+        // Multiply by 1.5 to provide enough columns to always fill screen
+        tileMap.numberOfColumns = Int(Double(numberOfColumnsToFillWindow) * 1.5)
+        
+        tileMap.scaleToWindowSize(windowSize)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -104,18 +127,6 @@ final class LevelLayer: Layer {
 
 // MARK: - Tile map population
 extension LevelLayer {
-    
-    private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
-        tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
-        let numberOfRows = Constants.TileMapLayer.defaultRowCount
-        tileMap.numberOfRows = numberOfRows
-        let numberOfColumnsToFillWindow = Int(windowSize.width / (windowSize.height / CGFloat(numberOfRows)))
-        
-        // Multiply by 1.5 to provide enough columns to always fill screen
-        tileMap.numberOfColumns = Int(Double(numberOfColumnsToFillWindow) * 1.5)
-        
-        tileMap.scaleToWindowSize(windowSize)
-    }
 
     private func populateBottomBoundary(for tileMap: SKTileMapNode) {
         var currentRow = currentBottomBoundaryMaxRow

@@ -10,6 +10,11 @@ import SpriteKit
 
 extension SKTileMapNode {
     
+    var scaledTileSize: CGSize {
+        let scale = self.scale ?? 1
+        return CGSize(width: tileSize.width * scale, height: tileSize.height * scale)
+    }
+
     func positionForTileAt(row: Int, column: Int) -> CGPoint? {
         guard
             row <= numberOfRows,
@@ -41,6 +46,7 @@ extension SKTileMapNode {
         let height = CGFloat(numberOfRows) * tileSize.height
         
         let sprite = SKSpriteNode(color: .clear, size: CGSize(width: width, height: height))
+        sprite.alpha = 0.2
         sprite.anchorPoint = CGPoint.zero
         let x = CGFloat(coordinatePosition.x) * tileSize.width
         let y = CGFloat(coordinatePosition.y) * tileSize.height
@@ -49,11 +55,21 @@ extension SKTileMapNode {
         let physicsBody: SKPhysicsBody
         
         switch type {
-        case .bottomBoundary: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
-        case .obstacle: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
-        case .platform: physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+        case .bottomBoundary:
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+        case .obstacle:
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+        case .platform:
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.platform.rawValue
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.none.rawValue
         }
         
+        physicsBody.restitution = 0.05
         sprite.physicsBody = physicsBody
         
         addChild(sprite)

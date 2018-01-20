@@ -21,6 +21,14 @@ class Player: SKSpriteNode {
         let texture = SKTexture(image: gender == .boy ? #imageLiteral(resourceName: "JetmanIdle0") : #imageLiteral(resourceName: "MsJetmanIdle0"))
         
         super.init(texture: texture, color: .clear, size: Constants.Player.defaultSize)
+        
+        self.physicsBody = SKPhysicsBody(texture: texture, size: Constants.Player.defaultSize)
+        physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
+        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
+        physicsBody?.restitution = 0.0
+        
+        zPosition = Constants.ZPosition.playerAndObstacles.floatValue
+        
         updateAnimation()
     }
     
