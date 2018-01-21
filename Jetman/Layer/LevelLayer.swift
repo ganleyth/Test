@@ -255,6 +255,10 @@ extension LevelLayer {
         }
         
         leadingTileMapObstaclePositions.removeAll()
+        
+        tileMap.enumerateChildNodes(withName: Constants.SpriteName.obstacle) { (childNode, _) in
+            childNode.removeFromParent()
+        }
     }
 }
 
