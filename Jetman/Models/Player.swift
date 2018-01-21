@@ -55,12 +55,19 @@ extension Player {
     
     private func updateAnimationAndPhysics() {
         // Update physics
-        physicsBody = SKPhysicsBody(texture: firstTextureForGenderAndState, size: textureSize)
+        guard
+            let textures = SpriteLoader.shared.texturesForGenderAndState[state],
+            let firstTexture = textures.first else {
+                Logger.severe("Sprites not property loaded for state", filePath: #file, funcName: #function, lineNumber: #line)
+                return
+        }
+        
+        physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
         setPhysicsBodyProperties()
         
         // Update action
         removeAction(forKey: Constants.Player.animationKey)
-        let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.08))
+        let animation = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.08))
         run(animation, withKey: Constants.Player.animationKey)
     }
     
@@ -68,43 +75,6 @@ extension Player {
         physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
         physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
         physicsBody?.restitution = 0.0
-    }
-    
-    private var firstTextureForGenderAndState: SKTexture {
-        switch (gender, state) {
-        case (.boy, .idle):
-            return SKTexture(image: #imageLiteral(resourceName: "JetmanIdle0"))
-        case (.boy, .flying):
-            return SKTexture(image: #imageLiteral(resourceName: "JetmanFlying0"))
-        case (.boy, .dead):
-            return SKTexture(image: #imageLiteral(resourceName: "JetmanDead0"))
-        case (.girl, .idle):
-            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanIdle0"))
-        case (.girl, .flying):
-            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanFlying0"))
-        case (.girl, .dead):
-            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanDead0"))
-        }
-    }
-    
-    private var texturesForGenderAndState: [SKTexture] {
-        let images: [UIImage]
-        switch (gender, state) {
-        case (.boy, .idle):
-            images = [#imageLiteral(resourceName: "JetmanIdle0"), #imageLiteral(resourceName: "JetmanIdle1"), #imageLiteral(resourceName: "JetmanIdle2"), #imageLiteral(resourceName: "JetmanIdle3"), #imageLiteral(resourceName: "JetmanIdle4"), #imageLiteral(resourceName: "JetmanIdle5"), #imageLiteral(resourceName: "JetmanIdle6"), #imageLiteral(resourceName: "JetmanIdle7"), #imageLiteral(resourceName: "JetmanIdle8"), #imageLiteral(resourceName: "JetmanIdle9")]
-        case (.boy, .flying):
-            images = [#imageLiteral(resourceName: "JetmanFlying0"), #imageLiteral(resourceName: "JetmanFlying1"), #imageLiteral(resourceName: "JetmanFlying2"), #imageLiteral(resourceName: "JetmanFlying3"), #imageLiteral(resourceName: "JetmanFlying4"), #imageLiteral(resourceName: "JetmanFlying5"), #imageLiteral(resourceName: "JetmanFlying6"), #imageLiteral(resourceName: "JetmanFlying7"), #imageLiteral(resourceName: "JetmanFlying8"), #imageLiteral(resourceName: "JetmanFlying9")]
-        case (.boy, .dead):
-            images = [#imageLiteral(resourceName: "JetmanDead0"), #imageLiteral(resourceName: "JetmanDead1"), #imageLiteral(resourceName: "JetmanDead2"), #imageLiteral(resourceName: "JetmanDead3"), #imageLiteral(resourceName: "JetmanDead4"), #imageLiteral(resourceName: "JetmanDead5"), #imageLiteral(resourceName: "JetmanDead6"), #imageLiteral(resourceName: "JetmanDead7")]
-        case (.girl, .idle):
-            images = [#imageLiteral(resourceName: "MsJetmanIdle0"), #imageLiteral(resourceName: "MsJetmanIdle1"), #imageLiteral(resourceName: "MsJetmanIdle2"), #imageLiteral(resourceName: "MsJetmanIdle3"), #imageLiteral(resourceName: "MsJetmanIdle4"), #imageLiteral(resourceName: "MsJetmanIdle5"), #imageLiteral(resourceName: "MsJetmanIdle6"), #imageLiteral(resourceName: "MsJetmanIdle7"), #imageLiteral(resourceName: "MsJetmanIdle8"), #imageLiteral(resourceName: "MsJetmanIdle9")]
-        case (.girl, .flying):
-            images = [#imageLiteral(resourceName: "MsJetmanFlying0"), #imageLiteral(resourceName: "MsJetmanFlying1"), #imageLiteral(resourceName: "MsJetmanFlying2"), #imageLiteral(resourceName: "MsJetmanFlying3"), #imageLiteral(resourceName: "MsJetmanFlying4"), #imageLiteral(resourceName: "MsJetmanFlying5"), #imageLiteral(resourceName: "MsJetmanFlying6"), #imageLiteral(resourceName: "MsJetmanFlying7"), #imageLiteral(resourceName: "MsJetmanFlying8"), #imageLiteral(resourceName: "MsJetmanFlying9")]
-        case (.girl, .dead):
-            images = [#imageLiteral(resourceName: "MsJetmanDead0"), #imageLiteral(resourceName: "MsJetmanDead1"), #imageLiteral(resourceName: "MsJetmanDead2"), #imageLiteral(resourceName: "MsJetmanDead3"), #imageLiteral(resourceName: "MsJetmanDead4"), #imageLiteral(resourceName: "MsJetmanDead5"), #imageLiteral(resourceName: "MsJetmanDead6"), #imageLiteral(resourceName: "MsJetmanDead7")]
-        }
-        
-        return images.flatMap { SKTexture(image: $0) }
     }
     
     enum Gender {

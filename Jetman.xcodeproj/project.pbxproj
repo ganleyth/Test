@@ -13,6 +13,7 @@
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
+		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
@@ -98,6 +99,7 @@
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
+		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
 				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
 				180C88AE1FC77F5F00D19F85 /* Info.plist */,
+				1842D6DD2014427800571BD2 /* SpriteLoader.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				18B32FF71FDC4F4200D59107 /* LoginViewInteractor.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
+				1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */,
 				18B330091FDC563400D59107 /* DataManager.swift in Sources */,
 				18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */,
 				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,
