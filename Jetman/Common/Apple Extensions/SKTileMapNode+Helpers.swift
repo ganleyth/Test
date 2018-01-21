@@ -59,14 +59,17 @@ extension SKTileMapNode {
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
             physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue
             physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+            sprite.name = Constants.SpriteName.bottomBoundary
         case .obstacle:
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
             physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
             physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+            sprite.name = Constants.SpriteName.obstacle
         case .platform:
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
             physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.platform.rawValue
             physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.none.rawValue
+            sprite.name = Constants.SpriteName.platform
         }
         
         physicsBody.restitution = 0.05

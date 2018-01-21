@@ -296,6 +296,10 @@ extension LevelLayer {
         for position in platformPositions {
             leadingTileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
         }
+        
+        for childToRemove in leadingTileMap.children.filter({ $0.name == Constants.SpriteName.platform }) {
+            leadingTileMap.removeChildren(in: [childToRemove])
+        }
     }
 }
 

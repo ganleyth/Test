@@ -61,6 +61,13 @@ struct Constants {
         static let repeatedNodeOffset: CGFloat = -0.01
     }
     
+    struct SpriteName {
+        static let bottomBoundary = "bottomBoundary"
+        static let obstacle = "obstacle"
+        static let platform = "platform"
+        static let player = "player"
+    }
+    
     struct TileMapLayer {
         static let defaultTileWidth: CGFloat = 128.0
         static let defaultTileHeight: CGFloat = 128.0
