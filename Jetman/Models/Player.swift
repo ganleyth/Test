@@ -46,15 +46,21 @@ class Player: SKSpriteNode {
 // MARK: - Player states
 extension Player {
     
+    private func updateRotation() {
+        if state == .flying {
+            let rotation = SKAction.rotate(toAngle: CGFloat(-60.0).degreesToRadians, duration: 0.5)
+            run(rotation)
+        }
+    }
+    
     private func updateAnimationAndPhysics() {
         // Update physics
-        guard let firstTexture = texturesForGenderAndState.first else { return }
-        physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
+        physicsBody = SKPhysicsBody(texture: firstTextureForGenderAndState, size: textureSize)
         setPhysicsBodyProperties()
         
         // Update action
-        let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.08))
         removeAction(forKey: Constants.Player.animationKey)
+        let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.08))
         run(animation, withKey: Constants.Player.animationKey)
     }
     
@@ -62,6 +68,23 @@ extension Player {
         physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
         physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
         physicsBody?.restitution = 0.0
+    }
+    
+    private var firstTextureForGenderAndState: SKTexture {
+        switch (gender, state) {
+        case (.boy, .idle):
+            return SKTexture(image: #imageLiteral(resourceName: "JetmanIdle0"))
+        case (.boy, .flying):
+            return SKTexture(image: #imageLiteral(resourceName: "JetmanFlying0"))
+        case (.boy, .dead):
+            return SKTexture(image: #imageLiteral(resourceName: "JetmanDead0"))
+        case (.girl, .idle):
+            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanIdle0"))
+        case (.girl, .flying):
+            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanFlying0"))
+        case (.girl, .dead):
+            return SKTexture(image: #imageLiteral(resourceName: "MsJetmanDead0"))
+        }
     }
     
     private var texturesForGenderAndState: [SKTexture] {
@@ -82,13 +105,6 @@ extension Player {
         }
         
         return images.flatMap { SKTexture(image: $0) }
-    }
-    
-    private func updateRotation() {
-        if state == .flying {
-            let rotation = SKAction.rotate(toAngle: CGFloat(-60.0).degreesToRadians, duration: 0.5)
-            run(rotation)
-        }
     }
     
     enum Gender {
