@@ -46,7 +46,6 @@ extension SKTileMapNode {
         let height = CGFloat(numberOfRows) * tileSize.height
         
         let sprite = SKSpriteNode(color: .clear, size: CGSize(width: width, height: height))
-        sprite.alpha = 0.2
         sprite.anchorPoint = CGPoint.zero
         let x = CGFloat(coordinatePosition.x) * tileSize.width
         let y = CGFloat(coordinatePosition.y) * tileSize.height
@@ -56,12 +55,12 @@ extension SKTileMapNode {
         
         switch type {
         case .bottomBoundary:
-            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
             physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue
             physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
             sprite.name = Constants.SpriteName.bottomBoundary
         case .obstacle:
-            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: x, y: y, width: width, height: height))
+            physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
             physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
             physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
             sprite.name = Constants.SpriteName.obstacle

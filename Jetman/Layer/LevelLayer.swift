@@ -202,6 +202,8 @@ extension LevelLayer {
             tileMap.setTileGroup(obstacleBuildingBlocks.middleTile, forColumn: xIndex, row: i)
             trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: i))
         }
+        
+        trailingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: xIndex, y: yIndex), numberOfRows: length + 2, numberOfColumns: 1, type: .obstacle)
     }
     
     private func generateRandomObstaclePositions(for tileMap: SKTileMapNode, numberOfSegments: Int, lengths: [Int]) -> [CoordinatePosition] {
