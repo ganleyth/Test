@@ -110,6 +110,8 @@ extension Player {
         physicsBody?.velocity = CGVector.zero
         let ascend = SKAction.moveBy(x: 0.0, y: 20.0, duration: 0.1)
         let repeatAscend = SKAction.repeatForever(ascend)
+        let rotate = SKAction.rotate(byAngle: CGFloat(10.0).degreesToRadians, duration: 0.15)
+        run(rotate)
         run(repeatAscend, withKey: Constants.Player.ascendKey)
     }
     
@@ -117,5 +119,7 @@ extension Player {
         physicsBody?.velocity = CGVector.zero
         physicsBody?.affectedByGravity = true
         removeAction(forKey: Constants.Player.ascendKey)
+        let rotate = SKAction.rotate(byAngle: CGFloat(-10.0).degreesToRadians, duration: 0.15)
+        run(rotate)
     }
 }
