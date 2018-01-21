@@ -86,3 +86,20 @@ extension Player {
         case dead
     }
 }
+
+// MARK: - Gameplay
+extension Player {
+    func beginAscension() {
+        physicsBody?.affectedByGravity = false
+        physicsBody?.velocity = CGVector.zero
+        let ascend = SKAction.moveBy(x: 0.0, y: 20.0, duration: 0.1)
+        let repeatAscend = SKAction.repeatForever(ascend)
+        run(repeatAscend, withKey: Constants.Player.ascendKey)
+    }
+    
+    func endAscension() {
+        physicsBody?.velocity = CGVector.zero
+        physicsBody?.affectedByGravity = true
+        removeAction(forKey: Constants.Player.ascendKey)
+    }
+}

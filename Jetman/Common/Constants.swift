@@ -38,9 +38,10 @@ struct Constants {
     
     struct Player {
         static let defaultWidthIdle: CGFloat = 80
-        static let defaultWidthFlying: CGFloat = 100
+        static let defaultWidthFlying: CGFloat = 80
         static let defaultWidthDead: CGFloat = 100
         static let animationKey = "animation"
+        static let ascendKey = "ascend"
     }
     
     enum PhysicsBodyCategoryBitMask: UInt32 {

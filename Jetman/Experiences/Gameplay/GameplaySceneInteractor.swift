@@ -34,8 +34,9 @@ class GameplaySceneInteractor {
 // MARK: - Class initialization
 extension GameplaySceneInteractor {
     private func addGestureRecognizers() {
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapGestureRecognizer))
-        scene?.view?.addGestureRecognizer(tapGestureRecognizer)
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGestureRecognizer(gesture:)))
+        longPress.minimumPressDuration = 0.1
+        scene?.view?.addGestureRecognizer(longPress)
     }
 }
 
@@ -86,9 +87,18 @@ extension GameplaySceneInteractor {
 
 // MARK: - Gesture recognizer handling
 extension GameplaySceneInteractor {
-    @objc private func handleTapGestureRecognizer() {
-        if currentGameplayMode == .yetToStart {
-            currentGameplayMode = .playing
+    @objc private func handleLongPressGestureRecognizer(gesture: UILongPressGestureRecognizer) {
+        guard let scene = scene, let player = scene.player else { return }
+        switch gesture.state {
+        case .began:
+            player.beginAscension()
+            if currentGameplayMode == .yetToStart {
+                currentGameplayMode = .playing
+            }
+        case .ended:
+            player.endAscension()
+        default:
+            break
         }
     }
 }
@@ -102,13 +112,16 @@ extension GameplaySceneInteractor {
     }
     
     private func enterGameplayMode(_ gameplayMode: GameplayMode) {
+        guard let scene = scene,
+            let player = scene.player else { return }
         switch gameplayMode {
         case .playing:
-            scene?.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
-            scene?.levelLayer?.setVelocity(value: CGPoint(x: -150, y: 0))
+            scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
+            scene.levelLayer?.setVelocity(value: CGPoint(x: -150, y: 0))
+            player.state = .flying
         case .gameOver:
-            scene?.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
-            scene?.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+            scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+            scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
         default:
             Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
