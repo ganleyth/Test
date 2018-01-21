@@ -12,6 +12,7 @@
 		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
+		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
@@ -96,6 +97,7 @@
 		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
+		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */,
 				18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */,
 				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
+				1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */,
 			);
 			path = "Apple Extensions";
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
 				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
+				1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */,
 				18B32FE91FDC3F9300D59107 /* LaunchScene.swift in Sources */,
 				18B32FDD1FDA558500D59107 /* SettingsView.swift in Sources */,
 				18B330171FDC7B5300D59107 /* Outbox.swift in Sources */,

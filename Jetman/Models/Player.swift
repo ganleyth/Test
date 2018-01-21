@@ -12,7 +12,10 @@ class Player: SKSpriteNode {
     let gender: Gender
     var state: State = .idle {
         didSet {
-            updateAnimation()
+            if state != oldValue {
+                updateRotation()
+                updateAnimationAndPhysics()
+            }
         }
     }
     
@@ -30,15 +33,9 @@ class Player: SKSpriteNode {
         textureAspectRatio = texture.size().width / texture.size().height
         
         super.init(texture: texture, color: .clear, size: textureSize)
-        
-        self.physicsBody = SKPhysicsBody(texture: texture, size: textureSize)
-        physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
-        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
-        physicsBody?.restitution = 0.0
-        
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         
-        updateAnimation()
+        updateAnimationAndPhysics()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,10 +46,22 @@ class Player: SKSpriteNode {
 // MARK: - Player states
 extension Player {
     
-    private func updateAnimation() {
-        removeAction(forKey: Constants.Player.animationKey)
+    private func updateAnimationAndPhysics() {
+        // Update physics
+        guard let firstTexture = texturesForGenderAndState.first else { return }
+        physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
+        setPhysicsBodyProperties()
+        
+        // Update action
         let animation = SKAction.repeatForever(SKAction.animate(with: texturesForGenderAndState, timePerFrame: 0.08))
+        removeAction(forKey: Constants.Player.animationKey)
         run(animation, withKey: Constants.Player.animationKey)
+    }
+    
+    private func setPhysicsBodyProperties() {
+        physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
+        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
+        physicsBody?.restitution = 0.0
     }
     
     private var texturesForGenderAndState: [SKTexture] {
@@ -73,6 +82,13 @@ extension Player {
         }
         
         return images.flatMap { SKTexture(image: $0) }
+    }
+    
+    private func updateRotation() {
+        if state == .flying {
+            let rotation = SKAction.rotate(toAngle: CGFloat(-60.0).degreesToRadians, duration: 0.5)
+            run(rotation)
+        }
     }
     
     enum Gender {

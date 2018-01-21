@@ -35,7 +35,7 @@ final class LevelLayer: Layer {
         }
         
         let x = sumOfX / CGFloat(platformPositions.count)
-        let y = CGFloat(leadingTileMap.numberOfRows-1) * leadingTileMap.scaledTileSize.height
+        let y = CGFloat(leadingTileMap.numberOfRows - 2) * leadingTileMap.scaledTileSize.height
         let xOffsetForCentering = 0.5 * leadingTileMap.scaledTileSize.width
         return CGPoint(x: x + xOffsetForCentering, y: y)
     }

@@ -91,6 +91,7 @@ extension GameplaySceneInteractor {
         guard let scene = scene, let player = scene.player else { return }
         switch gesture.state {
         case .began:
+            player.state = .flying
             player.beginAscension()
             if currentGameplayMode == .yetToStart {
                 currentGameplayMode = .playing
@@ -112,13 +113,11 @@ extension GameplaySceneInteractor {
     }
     
     private func enterGameplayMode(_ gameplayMode: GameplayMode) {
-        guard let scene = scene,
-            let player = scene.player else { return }
+        guard let scene = scene else { return }
         switch gameplayMode {
         case .playing:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
-            scene.levelLayer?.setVelocity(value: CGPoint(x: -150, y: 0))
-            player.state = .flying
+            scene.levelLayer?.setVelocity(value: CGPoint(x: -200, y: 0))
         case .gameOver:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
