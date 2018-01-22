@@ -35,7 +35,7 @@ class GameplaySceneInteractor {
 extension GameplaySceneInteractor {
     private func addGestureRecognizers() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGestureRecognizer(gesture:)))
-        longPress.minimumPressDuration = 0.1
+        longPress.minimumPressDuration = 0.05
         scene?.view?.addGestureRecognizer(longPress)
     }
 }
