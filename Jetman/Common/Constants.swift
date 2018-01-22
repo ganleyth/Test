@@ -73,6 +73,10 @@ struct Constants {
         static let defaultTileHeight: CGFloat = 128.0
         static let defaultRowCount = 16
         
+        static var defaultTileSize: CGSize {
+            return CGSize(width: defaultTileWidth, height: defaultTileHeight)
+        }
+        
         static var maxObstacleHeight: Int {
             return Int(defaultRowCount / 2)
         }

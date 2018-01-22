@@ -39,7 +39,7 @@ final class LevelLayer: Layer {
         let xOffsetForCentering = 0.5 * leadingTileMap.scaledTileSize.width
         return CGPoint(x: x + xOffsetForCentering, y: y)
     }
-    
+
     init(windowSize: CGSize, tileSet: SKTileSet) {
         
         guard
@@ -203,7 +203,9 @@ extension LevelLayer {
             trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: i))
         }
         
-        trailingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: xIndex, y: yIndex), numberOfRows: length + 2, numberOfColumns: 1, type: .obstacle)
+        guard let middleIndexesMin = middleIndexes.min() else { return }
+        
+        trailingTileMap.addObstaclePhysicsBodies(with: CoordinatePosition(x: xIndex, y: middleIndexesMin), length: length)
     }
     
     private func generateRandomObstaclePositions(for tileMap: SKTileMapNode, numberOfSegments: Int, lengths: [Int]) -> [CoordinatePosition] {
