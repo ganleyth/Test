@@ -99,6 +99,7 @@ final class LevelLayer: Layer {
         tileMap.zPosition = Constants.ZPosition.foregroundLayer.floatValue
         configureTileMap(tileMap, forWindowSize: windowSize)
         populateBottomBoundary(for: tileMap)
+        addPhysicsBodyToUpperBoundary(of: tileMap)
     }
     
     private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
@@ -261,6 +262,12 @@ extension LevelLayer {
         tileMap.enumerateChildNodes(withName: Constants.SpriteName.obstacle) { (childNode, _) in
             childNode.removeFromParent()
         }
+    }
+    
+    private func addPhysicsBodyToUpperBoundary(of tileMap: SKTileMapNode) {
+        let physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: tileMap.frame.minX, y: tileMap.frame.maxY), to: CGPoint(x: tileMap.frame.maxX, y: tileMap.frame.maxY))
+        physicsBody.restitution = 0.5
+        tileMap.physicsBody = physicsBody
     }
 }
 
