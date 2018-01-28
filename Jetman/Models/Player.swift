@@ -73,7 +73,7 @@ extension Player {
     
     private func setPhysicsBodyProperties() {
         physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
-        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.bottomBoundaryAndObstacle.rawValue
+        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.boundariesAndObstacles.rawValue
         physicsBody?.restitution = 0.0
     }
     

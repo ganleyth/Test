@@ -266,7 +266,8 @@ extension LevelLayer {
     
     private func addPhysicsBodyToUpperBoundary(of tileMap: SKTileMapNode) {
         let physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: tileMap.frame.minX, y: tileMap.frame.maxY), to: CGPoint(x: tileMap.frame.maxX, y: tileMap.frame.maxY))
-        physicsBody.restitution = 0.5
+        physicsBody.restitution = 1.0
+        physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.topBoundary.rawValue
         tileMap.physicsBody = physicsBody
     }
 }
