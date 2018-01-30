@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameplaySceneInteractor {
+class GameplaySceneInteractor: NSObject {
     
     weak var scene: GameplayScene?
     private var currentGameplayMode: GameplayMode = .yetToStart {
@@ -26,6 +26,8 @@ class GameplaySceneInteractor {
     }
     
     init(scene: GameplayScene) {
+        super.init()
+        
         self.scene = scene
         addGestureRecognizers()
     }
@@ -128,9 +130,29 @@ extension GameplaySceneInteractor {
     }
 }
 
-// MARK: - Player handling
-extension GameplaySceneInteractor {
-    func addPlayer(of gender: Player.Gender) {
+// MARK: - Contact delegate
+extension GameplaySceneInteractor: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player.rawValue
+            || contact.bodyB.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player.rawValue else {
+                Logger.severe("Player must be one of the physics bodies of the contact", filePath: #file, funcName: #function, lineNumber: #line)
+                fatalError()
+        }
         
+        let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player.rawValue ? contact.bodyA : contact.bodyB
+        let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
+        
+        switch otherBody.categoryBitMask {
+        case Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue:
+            break
+        case Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue:
+            break
+        case Constants.PhysicsBodyCategoryBitMask.topBoundary.rawValue:
+            guard let player = playerBody.node as? Player else { return }
+            player.bounceOffTopBoundary()
+        default:
+            Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
+            fatalError()
+        }
     }
 }

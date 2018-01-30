@@ -10,12 +10,22 @@ import SpriteKit
 
 class Player: SKSpriteNode {
     let gender: Gender
+    private var isAscending = false
     var state: State = .idle {
         didSet {
             if state != oldValue {
                 updateRotation()
                 updateAnimationAndPhysics()
             }
+        }
+    }
+    
+    var stateRestitution: CGFloat {
+        switch state {
+        case .flying:
+            return 1.0
+        default:
+            return 0.0
         }
     }
     
@@ -63,6 +73,7 @@ extension Player {
         }
         
         physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
+        physicsBody?.allowsRotation = false
         setPhysicsBodyProperties()
         
         // Update action
@@ -74,7 +85,8 @@ extension Player {
     private func setPhysicsBodyProperties() {
         physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
         physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.boundariesAndObstacles.rawValue
-        physicsBody?.restitution = 0.0
+        physicsBody?.restitution = stateRestitution
+        physicsBody?.friction = 0.0
     }
     
     enum Gender {
@@ -92,6 +104,7 @@ extension Player {
 // MARK: - Gameplay
 extension Player {
     func beginAscension() {
+        isAscending = true
         physicsBody?.affectedByGravity = false
         physicsBody?.velocity = CGVector.zero
         let ascend = SKAction.moveBy(x: 0.0, y: 20.0, duration: 0.1)
@@ -107,5 +120,11 @@ extension Player {
         removeAction(forKey: Constants.Player.ascendKey)
         let rotate = SKAction.rotate(byAngle: CGFloat(-10.0).degreesToRadians, duration: 0.15)
         run(rotate)
+        isAscending = false
+    }
+    
+    func bounceOffTopBoundary() {
+        if isAscending { endAscension() }
+        physicsBody?.applyImpulse(CGVector(dx: 0, dy: -0.5))
     }
 }
