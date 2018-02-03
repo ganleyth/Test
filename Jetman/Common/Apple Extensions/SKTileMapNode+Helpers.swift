@@ -56,18 +56,18 @@ extension SKTileMapNode {
         switch type {
         case .bottomBoundary:
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
-            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue
-            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
             sprite.name = Constants.SpriteName.bottomBoundary
         case .obstacle:
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
-            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
-            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
             sprite.name = Constants.SpriteName.obstacle
         case .platform:
             physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: CGSize(width: width, height: height)))
-            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.platform.rawValue
-            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.none.rawValue
+            physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.platform
+            physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.none
             sprite.name = Constants.SpriteName.platform
         }
         
@@ -85,8 +85,8 @@ extension SKTileMapNode {
         let lengthY = CGFloat(lengthCoordinatePosition.y) * tileSize.height
         lengthSprite.position = CGPoint(x: x, y: lengthY)
         let lengthPhysicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: lengthSpriteSize))
-        lengthPhysicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
-        lengthPhysicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+        lengthPhysicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle
+        lengthPhysicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
         lengthPhysicsBody.restitution = 0.05
         lengthSprite.physicsBody = lengthPhysicsBody
         lengthSprite.name = Constants.SpriteName.obstacle
@@ -96,8 +96,8 @@ extension SKTileMapNode {
         topSprite.anchorPoint = CGPoint.zero
         topSprite.position = CGPoint(x: x, y: lengthY + CGFloat(length) * tileSize.height)
         topSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: tileSize))
-        topSprite.physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
-        topSprite.physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+        topSprite.physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle
+        topSprite.physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
         topSprite.physicsBody?.restitution = 0.05
         topSprite.name = Constants.SpriteName.obstacle
         addChild(topSprite)
@@ -106,8 +106,8 @@ extension SKTileMapNode {
         bottomSprite.anchorPoint = CGPoint.zero
         bottomSprite.position = CGPoint(x: x, y: lengthY - tileSize.height)
         bottomSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: UIBezierPath.triangle(of: tileSize).cgPath)
-        bottomSprite.physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue
-        bottomSprite.physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player.rawValue
+        bottomSprite.physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle
+        bottomSprite.physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
         bottomSprite.physicsBody?.restitution = 0.05
         bottomSprite.name = Constants.SpriteName.obstacle
         addChild(bottomSprite)

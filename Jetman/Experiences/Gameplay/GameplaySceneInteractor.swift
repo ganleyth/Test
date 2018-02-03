@@ -93,10 +93,14 @@ extension GameplaySceneInteractor {
         guard let scene = scene, let player = scene.player else { return }
         switch gesture.state {
         case .began:
-            player.state = .flying
-            player.beginAscension()
-            if currentGameplayMode == .yetToStart {
+            switch currentGameplayMode {
+            case .yetToStart:
                 currentGameplayMode = .playing
+                fallthrough
+            case .playing:
+                player.state = .flying
+                player.beginAscension()
+            default: break
             }
         case .ended:
             player.endAscension()
@@ -115,7 +119,9 @@ extension GameplaySceneInteractor {
     }
     
     private func enterGameplayMode(_ gameplayMode: GameplayMode) {
-        guard let scene = scene else { return }
+        guard
+            let scene = scene,
+            let player = scene.player else { return }
         switch gameplayMode {
         case .playing:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
@@ -123,6 +129,8 @@ extension GameplaySceneInteractor {
         case .gameOver:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+            player.state = .dead
+            
         default:
             Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
@@ -133,26 +141,6 @@ extension GameplaySceneInteractor {
 // MARK: - Contact delegate
 extension GameplaySceneInteractor: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        guard contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player.rawValue
-            || contact.bodyB.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player.rawValue else {
-                Logger.severe("Player must be one of the physics bodies of the contact", filePath: #file, funcName: #function, lineNumber: #line)
-                fatalError()
-        }
-        
-        let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player.rawValue ? contact.bodyA : contact.bodyB
-        let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
-        
-        switch otherBody.categoryBitMask {
-        case Constants.PhysicsBodyCategoryBitMask.bottomBoundary.rawValue:
-            break
-        case Constants.PhysicsBodyCategoryBitMask.obstacle.rawValue:
-            break
-        case Constants.PhysicsBodyCategoryBitMask.topBoundary.rawValue:
-            guard let player = playerBody.node as? Player else { return }
-            player.bounceOffTopBoundary()
-        default:
-            Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
-            fatalError()
-        }
+        currentGameplayMode = .gameOver
     }
 }

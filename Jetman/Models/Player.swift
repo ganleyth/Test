@@ -20,7 +20,7 @@ class Player: SKSpriteNode {
         }
     }
     
-    var stateRestitution: CGFloat {
+    private var stateRestitution: CGFloat {
         switch state {
         case .flying:
             return 1.0
@@ -72,21 +72,29 @@ extension Player {
                 return
         }
         
-        physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
-        physicsBody?.allowsRotation = false
-        setPhysicsBodyProperties()
-        
-        // Update action
         removeAction(forKey: Constants.Player.animationKey)
-        let animation = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.08))
-        run(animation, withKey: Constants.Player.animationKey)
+        
+        switch state {
+        case .dead:
+            self.texture = firstTexture
+            if isAscending { endAscension() }
+        default:
+            physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
+            setPhysicsBodyProperties()
+            
+            // Update action
+            let animation = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.08))
+            run(animation, withKey: Constants.Player.animationKey)
+        }
     }
     
     private func setPhysicsBodyProperties() {
-        physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player.rawValue
-        physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.boundariesAndObstacles.rawValue
-        physicsBody?.restitution = stateRestitution
-        physicsBody?.friction = 0.0
+        guard let physicsBody = physicsBody else { return }
+        physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.player
+        physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.boundariesAndObstacles
+        physicsBody.collisionBitMask = Constants.PhysicsBodyCollisionBitMask.platform
+        physicsBody.restitution = stateRestitution
+        physicsBody.friction = 0.0
     }
     
     enum Gender {
@@ -115,16 +123,11 @@ extension Player {
     }
     
     func endAscension() {
-        physicsBody?.velocity = CGVector.zero
+        if state != .dead { physicsBody?.velocity = CGVector.zero }
         physicsBody?.affectedByGravity = true
         removeAction(forKey: Constants.Player.ascendKey)
         let rotate = SKAction.rotate(byAngle: CGFloat(-10.0).degreesToRadians, duration: 0.15)
         run(rotate)
         isAscending = false
-    }
-    
-    func bounceOffTopBoundary() {
-        if isAscending { endAscension() }
-        physicsBody?.applyImpulse(CGVector(dx: 0, dy: -0.5))
     }
 }

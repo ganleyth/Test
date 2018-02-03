@@ -54,5 +54,4 @@ class GameplayScene: SKScene {
         }
         lastTime = currentTime
     }
-
 }

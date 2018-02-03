@@ -44,18 +44,22 @@ struct Constants {
         static let ascendKey = "ascend"
     }
     
-    enum PhysicsBodyCategoryBitMask: UInt32 {
-        case bottomBoundary = 0b00000000000000000000000000000001
-        case player         = 0b00000000000000000000000000000010
-        case platform       = 0b00000000000000000000000000000100
-        case obstacle       = 0b00000000000000000000000000001000
-        case topBoundary    = 0b00000000000000000000000000010000
+    struct PhysicsBodyCategoryBitMask {
+        static let bottomBoundary: UInt32 = 0b00000000000000000000000000000001
+        static let player: UInt32         = 0b00000000000000000000000000000010
+        static let platform: UInt32       = 0b00000000000000000000000000000100
+        static let obstacle: UInt32       = 0b00000000000000000000000000001000
+        static let topBoundary: UInt32    = 0b00000000000000000000000000010000
     }
     
-    enum PhysicsBodyContactTestBitMask: UInt32 {
-        case none                       = 0b00000000000000000000000000000000
-        case player                     = 0b00000000000000000000000000000010
-        case boundariesAndObstacles     = 0b00000000000000000000000000011001
+    struct PhysicsBodyContactTestBitMask {
+        static let boundariesAndObstacles: UInt32 = 0b00000000000000000000000000011001
+        static let none: UInt32                   = 0b00000000000000000000000000000000
+        static let player: UInt32                 = 0b00000000000000000000000000000010
+    }
+    
+    struct PhysicsBodyCollisionBitMask {
+        static let platform: UInt32 = 0b00000000000000000000000000000100
     }
     
     struct RepeatingLayer {
