@@ -383,6 +383,23 @@ extension LevelLayer {
         }
         return Int.max
     }
+    
+    private func addSpriteWithPhysics(for tileMap: SKTileMapNode, position: CoordinatePosition) {
+        guard
+            let tileGroupName = tileMap.tileGroup(atColumn: position.x, row: position.y)?.name,
+            let bottomBoundaryName = Constants.BottomBoundaryTileName(rawValue: tileGroupName),
+            let spriteEndPoints = Constants.TileMapLayer.waterLevelDict[bottomBoundaryName],
+            let spritePosition = tileMap.positionForTileAt(row: position.x, column: position.y) else { return }
+        
+        let sprite = SKSpriteNode(color: .clear, size: tileMap.tileSize)
+        sprite.anchorPoint = CGPoint.zero
+        sprite.position = spritePosition
+        
+        let physicsBody = SKPhysicsBody(edgeFrom: spriteEndPoints.leading, to: spriteEndPoints.trailing)
+        sprite.physicsBody = physicsBody
+        
+        tileMap.addChild(sprite)
+    }
 }
 
 // MARK: - Support types

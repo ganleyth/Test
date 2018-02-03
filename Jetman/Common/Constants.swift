@@ -85,6 +85,14 @@ struct Constants {
         static var maxObstacleHeight: Int {
             return Int(defaultRowCount / 2)
         }
+        
+        static let waterLevelDict: [BottomBoundaryTileName: (leading: CGPoint, trailing: CGPoint)] = [
+            .topMiddle: (CGPoint(x: 0, y: 85), CGPoint(x: 128, y: 85)),
+            .topIncrease: (CGPoint(x: 35, y: 0), CGPoint(x: 128, y: 85)),
+            .topDecrease: (CGPoint(x: 0, y: 85), CGPoint(x: 98, y: 0)),
+            .middleIncrease: (CGPoint(x: 0, y: 85), CGPoint(x: 30, y: 128)),
+            .middleDecrease: (CGPoint(x: 98, y: 128), CGPoint(x: 128, y: 85))
+        ]
     }
     
     enum ZPosition: Int {
