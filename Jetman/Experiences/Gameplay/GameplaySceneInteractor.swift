@@ -171,7 +171,15 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             emitter.setScale(0.4)
             scene.addChild(emitter)
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
-            break
+            guard
+                let emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter"),
+                currentGameplayMode == .playing else { return }
+            emitter.position = contact.contactPoint
+            emitter.zPosition = Constants.ZPosition.emitter.floatValue
+            emitter.numParticlesToEmit = 15
+            emitter.setScale(0.4)
+            emitter.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
+            scene.addChild(emitter)
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
