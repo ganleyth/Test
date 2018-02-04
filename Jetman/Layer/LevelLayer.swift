@@ -134,6 +134,7 @@ extension LevelLayer {
 
         for j in 0..<tileMap.numberOfColumns {
             tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentRow)
+            addSpriteWithPhysics(for: tileMap, position: CoordinatePosition(x: j, y: currentRow))
         }
 
         currentRow -= 1
@@ -327,13 +328,17 @@ extension LevelLayer {
     
     
     private func increaseBottomBoundaryLevelForTrailingTileMap() {
-        for j in 0..<trailingTileMap.numberOfColumns {
+        for j in 1..<trailingTileMap.numberOfColumns {
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+            removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
+            addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow + 1))
         }
         
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
+        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow))
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow + 1)
+        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow + 1))
         
         currentBottomBoundaryMaxRow += 1
         lastBottomBoundaryChangeDirection = .increase
@@ -345,11 +350,15 @@ extension LevelLayer {
             case .increase:
                 if currentBottomBoundaryMaxRow - 1 >= 0 {
                     trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
+                    removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow - 1))
                 }
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             case .decrease:
                 trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
+                removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow + 1))
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
+                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             }
         }
     }
@@ -357,14 +366,18 @@ extension LevelLayer {
     private func decreaseBottomBoundaryLevelForTrailingTileMap() {
         for j in 0..<trailingTileMap.numberOfColumns {
             trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow)
+            removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             if currentBottomBoundaryMaxRow - 1 >= 0 {
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
+                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow - 1))
             }
         }
         
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
+        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow))
         if currentBottomBoundaryMaxRow - 1 >= 0 {
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow - 1)
+            addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow - 1))
         }
         
         
@@ -389,16 +402,25 @@ extension LevelLayer {
             let tileGroupName = tileMap.tileGroup(atColumn: position.x, row: position.y)?.name,
             let bottomBoundaryName = Constants.BottomBoundaryTileName(rawValue: tileGroupName),
             let spriteEndPoints = Constants.TileMapLayer.waterLevelDict[bottomBoundaryName],
-            let spritePosition = tileMap.positionForTileAt(row: position.x, column: position.y) else { return }
+            let spritePosition = tileMap.positionForTileAt(row: position.y, column: position.x) else { return }
         
         let sprite = SKSpriteNode(color: .clear, size: tileMap.tileSize)
         sprite.anchorPoint = CGPoint.zero
         sprite.position = spritePosition
         
         let physicsBody = SKPhysicsBody(edgeFrom: spriteEndPoints.leading, to: spriteEndPoints.trailing)
+        physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary
+        physicsBody.collisionBitMask = 0
+        physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
         sprite.physicsBody = physicsBody
+        sprite.setName(for: position)
         
         tileMap.addChild(sprite)
+    }
+    
+    private func removeSprite(in tileMap: SKTileMapNode, at position: CoordinatePosition) {
+        guard let node = tileMap.childNode(withName: SKSpriteNode.name(for: position)) else { return }
+        node.removeFromParent()
     }
 }
 

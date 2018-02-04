@@ -9,9 +9,16 @@
 import SpriteKit
 
 extension SKSpriteNode {
+    static func name(for positionInMap: CoordinatePosition) -> String {
+        return "\(positionInMap.x),\(positionInMap.y)"
+    }
     
     func setAnchorPointToZero() {
         anchorPoint = CGPoint.zero
+    }
+    
+    func setName(for positionInMap: CoordinatePosition) {
+        name =  "\(positionInMap.x),\(positionInMap.y)"
     }
     
 }
