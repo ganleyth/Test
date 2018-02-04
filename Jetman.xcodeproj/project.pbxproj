@@ -65,6 +65,8 @@
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
+		18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BD9202778D300BF0502 /* WaterEmitter.sks */; };
+		18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDA202778D300BF0502 /* Assets.xcassets */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -153,6 +155,8 @@
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18DF6BD9202778D300BF0502 /* WaterEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterEmitter.sks; sourceTree = "<group>"; };
+		18DF6BDA202778D300BF0502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 				18B32FD71FDA510D00D59107 /* ReusableViews */,
 				18CEF3121FD32EF1005C3980 /* Scene Editor Files */,
 				18CEF3111FD32EE3005C3980 /* Tilesets */,
+				18DF6BD82027786200BF0502 /* Emitters */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -467,6 +472,15 @@
 				18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */,
 			);
 			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		18DF6BD82027786200BF0502 /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				18DF6BD9202778D300BF0502 /* WaterEmitter.sks */,
+				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
+			);
+			path = Emitters;
 			sourceTree = "<group>";
 		};
 		18F4DE8E1FE5BEE7007FE471 /* Layer */ = {
@@ -613,9 +627,11 @@
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
 				18B32FD91FDA515400D59107 /* WindowView.xib in Resources */,
+				18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */,
 				18B32FD01FDA4ED600D59107 /* LoginView.storyboard in Resources */,
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */,
+				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
