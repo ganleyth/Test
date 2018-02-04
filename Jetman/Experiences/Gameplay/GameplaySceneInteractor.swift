@@ -142,5 +142,34 @@ extension GameplaySceneInteractor {
 extension GameplaySceneInteractor: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         currentGameplayMode = .gameOver
+        
+        guard contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player
+            || contact.bodyB.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player else {
+                Logger.severe("Player must be one of the physics bodies of the contact", filePath: #file, funcName: #function, lineNumber: #line)
+                fatalError()
+        }
+        
+        let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player ? contact.bodyA : contact.bodyB
+        let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
+        
+        switch otherBody.categoryBitMask {
+        case Constants.PhysicsBodyCategoryBitMask.bottomBoundary:
+            guard
+                let emitter = SKEmitterNode(fileNamed: "WaterEmitter"),
+                let scene = scene else { return }
+            emitter.position = contact.contactPoint - CGPoint(x: 0, y: 10)
+            emitter.zPosition = Constants.ZPosition.emitter.floatValue
+            emitter.numParticlesToEmit = 8
+            emitter.setScale(0.4)
+            scene.addChild(emitter)
+        case Constants.PhysicsBodyCategoryBitMask.obstacle:
+            break
+        case Constants.PhysicsBodyCategoryBitMask.topBoundary:
+            break
+        default:
+            Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
+            fatalError()
+        }
+
     }
 }
