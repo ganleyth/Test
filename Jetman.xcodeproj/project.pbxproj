@@ -67,6 +67,7 @@
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
 		18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BD9202778D300BF0502 /* WaterEmitter.sks */; };
 		18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDA202778D300BF0502 /* Assets.xcassets */; };
+		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -157,6 +158,7 @@
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18DF6BD9202778D300BF0502 /* WaterEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterEmitter.sks; sourceTree = "<group>"; };
 		18DF6BDA202778D300BF0502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				18DF6BD9202778D300BF0502 /* WaterEmitter.sks */,
+				18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */,
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -622,6 +625,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B32FCC1FD991D900D59107 /* LaunchView.storyboard in Resources */,
+				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,

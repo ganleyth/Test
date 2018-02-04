@@ -141,12 +141,12 @@ extension GameplaySceneInteractor {
 // MARK: - Contact delegate
 extension GameplaySceneInteractor: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        currentGameplayMode = .gameOver
-        
+        defer { currentGameplayMode = .gameOver }
+        guard let scene = scene else { return }
         guard contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player
             || contact.bodyB.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player else {
                 Logger.severe("Player must be one of the physics bodies of the contact", filePath: #file, funcName: #function, lineNumber: #line)
-                fatalError()
+                return
         }
         
         let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player ? contact.bodyA : contact.bodyB
@@ -155,21 +155,26 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
         switch otherBody.categoryBitMask {
         case Constants.PhysicsBodyCategoryBitMask.bottomBoundary:
             guard
-                let emitter = SKEmitterNode(fileNamed: "WaterEmitter"),
-                let scene = scene else { return }
+                let emitter = SKEmitterNode(fileNamed: "WaterEmitter") else { return }
             emitter.position = contact.contactPoint - CGPoint(x: 0, y: 10)
             emitter.zPosition = Constants.ZPosition.emitter.floatValue
             emitter.numParticlesToEmit = 8
             emitter.setScale(0.4)
             scene.addChild(emitter)
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
-            break
+            guard
+                let emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter"),
+                currentGameplayMode == .playing else { return }
+            emitter.position = contact.contactPoint
+            emitter.zPosition = Constants.ZPosition.emitter.floatValue
+            emitter.numParticlesToEmit = 15
+            emitter.setScale(0.4)
+            scene.addChild(emitter)
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
             break
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
         }
-
     }
 }
