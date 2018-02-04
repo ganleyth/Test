@@ -152,37 +152,30 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
         let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player ? contact.bodyA : contact.bodyB
         let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
         
+        let emitter: SKEmitterNode
         switch otherBody.categoryBitMask {
         case Constants.PhysicsBodyCategoryBitMask.bottomBoundary:
-            guard
-                let emitter = SKEmitterNode(fileNamed: "WaterEmitter") else { return }
+            emitter = SKEmitterNode(fileNamed: "WaterEmitter") ?? SKEmitterNode()
             emitter.position = contact.contactPoint - CGPoint(x: 0, y: 10)
-            emitter.zPosition = Constants.ZPosition.emitter.floatValue
             emitter.numParticlesToEmit = 8
-            emitter.setScale(0.4)
-            scene.addChild(emitter)
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
-            guard
-                let emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter"),
-                currentGameplayMode == .playing else { return }
+            guard currentGameplayMode == .playing else { return }
+            emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
             emitter.position = contact.contactPoint
-            emitter.zPosition = Constants.ZPosition.emitter.floatValue
             emitter.numParticlesToEmit = 15
-            emitter.setScale(0.4)
-            scene.addChild(emitter)
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
-            guard
-                let emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter"),
-                currentGameplayMode == .playing else { return }
+            guard currentGameplayMode == .playing else { return }
+            emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
             emitter.position = contact.contactPoint
-            emitter.zPosition = Constants.ZPosition.emitter.floatValue
             emitter.numParticlesToEmit = 15
-            emitter.setScale(0.4)
             emitter.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
-            scene.addChild(emitter)
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
         }
+        
+        emitter.zPosition = Constants.ZPosition.emitter.floatValue
+        emitter.setScale(0.4)
+        scene.addChild(emitter)
     }
 }
