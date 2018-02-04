@@ -16,6 +16,11 @@ class Player: SKSpriteNode {
             if state != oldValue {
                 updateRotation()
                 updateAnimationAndPhysics()
+                switch state {
+                case .flying: addSmokeEmitter()
+                case .dead: removeSmokeEmitter()
+                default: break
+                }
             }
         }
     }
@@ -95,6 +100,21 @@ extension Player {
         physicsBody.collisionBitMask = Constants.PhysicsBodyCollisionBitMask.platform
         physicsBody.restitution = stateRestitution
         physicsBody.friction = 0.0
+    }
+    
+    private func addSmokeEmitter() {
+        guard let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
+        emitter.position = CGPoint(x: -22, y: -27) * Constants.Player.defaultWidthScaleFlying
+        emitter.zPosition = Constants.ZPosition.emitter.floatValue
+        emitter.setScale(0.4)
+        emitter.emissionAngle = CGFloat(Double.pi)
+        emitter.name = Constants.Player.smokeEmitterName
+        addChild(emitter)
+    }
+    
+    private func removeSmokeEmitter() {
+        guard let emitter = childNode(withName: Constants.Player.smokeEmitterName) else { return }
+        emitter.removeFromParent()
     }
     
     enum Gender {

@@ -42,6 +42,20 @@ struct Constants {
         static let defaultWidthDead: CGFloat = 30
         static let animationKey = "animation"
         static let ascendKey = "ascend"
+        
+        static var defaultWidthScaleIdle: CGFloat {
+            return defaultWidthIdle / 98.0
+        }
+        
+        static var defaultWidthScaleFlying: CGFloat {
+            return defaultWidthFlying / 98.0
+        }
+        
+        static var defaultWidthScaleDead: CGFloat {
+            return defaultWidthDead / 98.0
+        }
+        
+        static let smokeEmitterName = "smokeEmitter"
     }
     
     struct PhysicsBodyCategoryBitMask {
