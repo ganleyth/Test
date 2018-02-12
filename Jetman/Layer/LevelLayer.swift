@@ -29,6 +29,15 @@ final class LevelLayer: Layer {
     
     private var platformRemoved = false
     
+    var completedTileMaps = 0
+    lazy var absoluteTileMapWidth: CGFloat = {
+        return (leadingTileMap.frame.width + trailingTileMap.frame.width) / 2.0
+    }()
+    var currentPosition: CGPoint {
+        guard let scale = leadingTileMap.scale else { return CGPoint.zero }
+        return -leadingTileMap.position
+    }
+    
     var startingPositionForPlayer: CGPoint {
         let sumOfX = platformPositions.reduce(0.0) { (sum, nextPosition) -> CGFloat in
             return sum + CGFloat(nextPosition.x) * leadingTileMap.scaledTileSize.width
@@ -272,6 +281,7 @@ extension LevelLayer {
 // MARK: - Update
 extension LevelLayer {
     private func shiftLeadingTileMapToTrailingPosition() {
+        completedTileMaps += 1
         clearAllObstaclesInTileMap(leadingTileMap)
         if !platformRemoved {
             removePlatform()

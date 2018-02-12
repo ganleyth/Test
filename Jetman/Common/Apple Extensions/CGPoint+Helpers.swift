@@ -29,6 +29,10 @@ public func *(scalar: CGFloat, point: CGPoint) -> CGPoint {
     return CGPoint(x: point.x * scalar, y: point.y * scalar)
 }
 
+public prefix func -(point: CGPoint) -> CGPoint {
+    return CGPoint(x: -point.x, y: -point.y)
+}
+
 extension CGPoint {
     func scaledBy(_ scale: CGFloat) -> CGPoint {
         return CGPoint(x: self.x * scale, y: self.y * scale)

@@ -24,6 +24,8 @@ class GameplayScene: SKScene {
     }()
     
     var lastTime: TimeInterval?
+    
+    private let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
 
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -53,5 +55,8 @@ class GameplayScene: SKScene {
             levelLayer?.update(with: delta, in: view.frame.size)
         }
         lastTime = currentTime
+        
+        guard let levelLayer = levelLayer else { return }
+        scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: levelLayer.completedTileMaps)
     }
 }
