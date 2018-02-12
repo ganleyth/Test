@@ -105,7 +105,7 @@ extension SKTileMapNode {
         let bottomSprite = SKSpriteNode(color: .clear, size: tileSize)
         bottomSprite.anchorPoint = CGPoint.zero
         bottomSprite.position = CGPoint(x: x, y: lengthY - tileSize.height)
-        bottomSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: UIBezierPath.triangle(of: tileSize).cgPath)
+        bottomSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: UIBezierPath.triangleOfDefaultSize.cgPath)
         bottomSprite.physicsBody?.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.obstacle
         bottomSprite.physicsBody?.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
         bottomSprite.physicsBody?.restitution = 0.05

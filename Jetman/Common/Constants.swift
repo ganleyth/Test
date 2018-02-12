@@ -6,7 +6,7 @@
 //  Copyright © 2017 Thomas Ganley. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreGraphics
 
 struct Constants {
@@ -100,6 +100,14 @@ struct Constants {
             return Int(defaultRowCount / 2)
         }
         
+        static var defaultColumnCount: Int {
+            let windowSize = UIWindow().frame.size
+            let numberOfColumnsToFillWindow = Int(windowSize.width / (windowSize.height / CGFloat(defaultRowCount)))
+            
+            // Multiply by 1.5 to provide enough columns to always fill screen
+            return Int(Double(numberOfColumnsToFillWindow) * 1.5)
+        }
+        
         static let waterLevelDict: [BottomBoundaryTileName: (leading: CGPoint, trailing: CGPoint)] = [
             .topMiddle: (CGPoint(x: 0, y: 85), CGPoint(x: 128, y: 85)),
             .topIncrease: (CGPoint(x: 35, y: 0), CGPoint(x: 128, y: 85)),
@@ -107,6 +115,8 @@ struct Constants {
             .middleIncrease: (CGPoint(x: 0, y: 85), CGPoint(x: 30, y: 128)),
             .middleDecrease: (CGPoint(x: 98, y: 128), CGPoint(x: 128, y: 85))
         ]
+        
+        static let waterLevelYPosition: CGFloat = 85.0
     }
     
     enum ZPosition: Int {

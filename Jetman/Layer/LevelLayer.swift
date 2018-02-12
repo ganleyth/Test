@@ -104,12 +104,8 @@ final class LevelLayer: Layer {
     
     private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
         tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
-        let numberOfRows = Constants.TileMapLayer.defaultRowCount
-        tileMap.numberOfRows = numberOfRows
-        let numberOfColumnsToFillWindow = Int(windowSize.width / (windowSize.height / CGFloat(numberOfRows)))
-        
-        // Multiply by 1.5 to provide enough columns to always fill screen
-        tileMap.numberOfColumns = Int(Double(numberOfColumnsToFillWindow) * 1.5)
+        tileMap.numberOfRows = Constants.TileMapLayer.defaultRowCount
+        tileMap.numberOfColumns = Constants.TileMapLayer.defaultColumnCount
         
         tileMap.scaleToWindowSize(windowSize)
     }
@@ -134,9 +130,9 @@ extension LevelLayer {
 
         for j in 0..<tileMap.numberOfColumns {
             tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentRow)
-            addSpriteWithPhysics(for: tileMap, position: CoordinatePosition(x: j, y: currentRow))
         }
 
+        addBottomBoundaryPhysicsBody(to: tileMap, atLevel: currentRow)
         currentRow -= 1
 
         while currentRow >= 0 {
@@ -145,6 +141,7 @@ extension LevelLayer {
             }
             currentRow -= 1
         }
+        
     }
     
     private func addPlatformToFirstTileMap() {
@@ -330,15 +327,14 @@ extension LevelLayer {
     private func increaseBottomBoundaryLevelForTrailingTileMap() {
         for j in 1..<trailingTileMap.numberOfColumns {
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-            removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
-            addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow + 1))
         }
         
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
-        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow))
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow + 1)
-        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow + 1))
+        
+        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
+        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow + 1)
         
         currentBottomBoundaryMaxRow += 1
         lastBottomBoundaryChangeDirection = .increase
@@ -350,36 +346,33 @@ extension LevelLayer {
             case .increase:
                 if currentBottomBoundaryMaxRow - 1 >= 0 {
                     trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
-                    removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow - 1))
                 }
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             case .decrease:
                 trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
-                removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow + 1))
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             }
         }
+        
+        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
+        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow)
     }
     
     private func decreaseBottomBoundaryLevelForTrailingTileMap() {
         for j in 0..<trailingTileMap.numberOfColumns {
             trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow)
-            removeSprite(in: trailingTileMap, at: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow))
             if currentBottomBoundaryMaxRow - 1 >= 0 {
                 trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
-                addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: j, y: currentBottomBoundaryMaxRow - 1))
             }
         }
         
         trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
-        addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow))
         if currentBottomBoundaryMaxRow - 1 >= 0 {
             trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow - 1)
-            addSpriteWithPhysics(for: trailingTileMap, position: CoordinatePosition(x: 0, y: currentBottomBoundaryMaxRow - 1))
         }
         
+        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
+        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow - 1)
         
         if currentBottomBoundaryMaxRow - 1 >= 0 {
             currentBottomBoundaryMaxRow -= 1
@@ -397,30 +390,21 @@ extension LevelLayer {
         return Int.max
     }
     
-    private func addSpriteWithPhysics(for tileMap: SKTileMapNode, position: CoordinatePosition) {
-        guard
-            let tileGroupName = tileMap.tileGroup(atColumn: position.x, row: position.y)?.name,
-            let bottomBoundaryName = Constants.BottomBoundaryTileName(rawValue: tileGroupName),
-            let spriteEndPoints = Constants.TileMapLayer.waterLevelDict[bottomBoundaryName],
-            let spritePosition = tileMap.positionForTileAt(row: position.y, column: position.x) else { return }
-        
-        let sprite = SKSpriteNode(color: .clear, size: tileMap.tileSize)
-        sprite.anchorPoint = CGPoint.zero
-        sprite.position = spritePosition
-        
-        let physicsBody = SKPhysicsBody(edgeFrom: spriteEndPoints.leading, to: spriteEndPoints.trailing)
+    private func addBottomBoundaryPhysicsBody(to tileMap: SKTileMapNode, atLevel boundaryLevel: Int) {
+        let boundaryYPosition = CGFloat(boundaryLevel) * tileMap.tileSize.height + Constants.TileMapLayer.waterLevelYPosition
+        let node = SKShapeNode(path: UIBezierPath.bottomBoundaryOfDefaultWidth.cgPath)
+        node.position = CGPoint(x: 0, y: boundaryYPosition)
+        node.name = Constants.SpriteName.bottomBoundary
+        let physicsBodyWidth = tileMap.tileSize.width * CGFloat(tileMap.numberOfColumns)
+        let physicsBody = SKPhysicsBody(edgeFrom: CGPoint.zero, to: CGPoint(x: physicsBodyWidth, y: 0))
         physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.bottomBoundary
-        physicsBody.collisionBitMask = 0
-        physicsBody.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
-        sprite.physicsBody = physicsBody
-        sprite.setName(for: position)
-        
-        tileMap.addChild(sprite)
+        node.physicsBody = physicsBody
+        tileMap.addChild(node)
     }
     
-    private func removeSprite(in tileMap: SKTileMapNode, at position: CoordinatePosition) {
-        guard let node = tileMap.childNode(withName: SKSpriteNode.name(for: position)) else { return }
-        node.removeFromParent()
+    private func removeBottomBoundaryPhysicsBody(of tileMap: SKTileMapNode) {
+        guard let nodeToRemove = tileMap.childNode(withName: Constants.SpriteName.bottomBoundary) else { return }
+        nodeToRemove.removeFromParent()
     }
 }
 

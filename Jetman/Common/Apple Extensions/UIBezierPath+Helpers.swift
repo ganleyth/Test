@@ -10,7 +10,8 @@ import UIKit
 import CoreGraphics
 
 extension UIBezierPath {
-    static func triangle(of size: CGSize) -> UIBezierPath {
+    static let triangleOfDefaultSize: UIBezierPath = {
+        let size = Constants.TileMapLayer.defaultTileSize
         let path = UIBezierPath()
         path.move(to: CGPoint(x: 0, y: size.height))
         path.addLine(to: CGPoint(x: size.width, y: size.height))
@@ -18,5 +19,14 @@ extension UIBezierPath {
         path.close()
         
         return path
-    }
+    }()
+    
+    static let bottomBoundaryOfDefaultWidth: UIBezierPath = {
+        let defaultWidth = Constants.TileMapLayer.defaultTileWidth * CGFloat(Constants.TileMapLayer.defaultColumnCount)
+        let path = UIBezierPath()
+        path.move(to: CGPoint.zero)
+        path.addLine(to: CGPoint(x: defaultWidth, y: 0))
+        
+        return path
+    }()
 }
