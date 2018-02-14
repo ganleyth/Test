@@ -8,6 +8,10 @@
 
 import SpriteKit
 
+protocol GameplaySceneDelegate: class {
+    func gameplaySceneDidUpdateScore(newScore: Int)
+}
+
 class GameplayScene: SKScene {
     
     var playerGender: Player.Gender = .boy
@@ -26,6 +30,8 @@ class GameplayScene: SKScene {
     var lastTime: TimeInterval?
     
     private let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
+    
+    weak var scoreDelegate: GameplaySceneDelegate?
 
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -45,6 +51,8 @@ class GameplayScene: SKScene {
         
         player.position = playerPosition
         addChild(player)
+        
+        scoreDelegate?.gameplaySceneDidUpdateScore(newScore: 0)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -56,7 +64,10 @@ class GameplayScene: SKScene {
         }
         lastTime = currentTime
         
-        guard let levelLayer = levelLayer else { return }
+        guard
+            let levelLayer = levelLayer else { return }
         scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: levelLayer.completedTileMaps)
+
+        scoreDelegate?.gameplaySceneDidUpdateScore(newScore: scoreKeeper.currentScore)
     }
 }

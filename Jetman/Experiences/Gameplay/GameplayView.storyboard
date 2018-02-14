@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Af-7c-xQP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Af-7c-xQP">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,16 +13,54 @@
         <scene sceneID="6hn-pe-wid">
             <objects>
                 <viewController id="2Af-7c-xQP" customClass="GameplayViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sql-cf-KyZ" customClass="SKView">
+                    <view key="view" contentMode="scaleToFill" id="Sql-cf-KyZ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-s9-WvD">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </skView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-P4-fIB">
+                                <rect key="frame" x="543" y="339" width="108" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsb-RO-H9D">
+                                        <rect key="frame" x="0.0" y="0.0" width="56" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-HZ-oD2">
+                                        <rect key="frame" x="60" y="0.0" width="48" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="BB8-zR-KHY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="bottom" secondItem="vvb-P4-fIB" secondAttribute="bottom" constant="12" id="8zy-Re-ABa"/>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
+                            <constraint firstItem="Izn-s9-WvD" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" id="Wsa-VI-f9q"/>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="trailing" secondItem="vvb-P4-fIB" secondAttribute="trailing" constant="16" id="g07-cl-WMo"/>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
+                            <constraint firstItem="Izn-s9-WvD" firstAttribute="leading" secondItem="3cD-BQ-kkw" secondAttribute="leading" id="s7D-1Z-tiX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
+                        <outlet property="scoreNameLabel" destination="Dsb-RO-H9D" id="jFC-sC-HXr"/>
+                        <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym8-xv-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="213"/>
+            <point key="canvasLocation" x="198.35082458770617" y="212"/>
         </scene>
     </scenes>
 </document>
