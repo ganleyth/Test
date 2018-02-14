@@ -34,7 +34,6 @@ final class LevelLayer: Layer {
         return (leadingTileMap.frame.width + trailingTileMap.frame.width) / 2.0
     }()
     var currentPosition: CGPoint {
-        guard let scale = leadingTileMap.scale else { return CGPoint.zero }
         return -leadingTileMap.position
     }
     
@@ -239,7 +238,7 @@ extension LevelLayer {
             let lengthPlusEndCaps = length + 2
             let minX = segmentXPositions[i]
             let maxX = segmentXPositions[i + 1] - 1
-            let maxY = tileMap.numberOfRows - lengthPlusEndCaps - currentBottomBoundaryMaxRow
+            let maxY = tileMap.numberOfRows - lengthPlusEndCaps - currentBottomBoundaryMaxRow + 1
             
             guard maxX - minX >= 0,
                 maxY - minY >= 0 else {

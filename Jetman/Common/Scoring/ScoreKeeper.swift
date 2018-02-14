@@ -19,6 +19,5 @@ class ScoreKeeper {
     
     func update(forPosition position: CGPoint, maxPosition: CGFloat, completedTileMaps: Int) {
         currentScore = Int((CGFloat(completedTileMaps) + position.x / maxPosition) * CGFloat(pointsPerTileMap))
-        print(currentScore)
     }
 }
