@@ -33,21 +33,11 @@ class Player: SKSpriteNode {
             return 0.0
         }
     }
-    
-    private var textureWidth: CGFloat
-    private var textureAspectRatio: CGFloat
-    
-    private var textureSize: CGSize {
-        return CGSize(width: textureWidth, height: textureWidth / textureAspectRatio)
-    }
-    
+
     init(gender: Gender) {
         self.gender = gender
         let texture = SKTexture(image: gender == .boy ? #imageLiteral(resourceName: "JetmanIdle0") : #imageLiteral(resourceName: "MsJetmanIdle0"))
-        textureWidth = Constants.Player.defaultWidthIdle
-        textureAspectRatio = texture.size().width / texture.size().height
-        
-        super.init(texture: texture, color: .clear, size: textureSize)
+        super.init(texture: texture, color: .clear, size: texture.size())
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         
         updateAnimationAndPhysics()
@@ -84,7 +74,7 @@ extension Player {
             self.texture = firstTexture
             if isAscending { endAscension() }
         default:
-            physicsBody = SKPhysicsBody(texture: firstTexture, size: textureSize)
+            physicsBody = SKPhysicsBody(texture: firstTexture, size: frame.size)
             setPhysicsBodyProperties()
             
             // Update action
@@ -103,10 +93,11 @@ extension Player {
     }
     
     private func addSmokeEmitter() {
-        guard let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
-        emitter.position = CGPoint(x: -22, y: -27) * Constants.Player.defaultWidthScaleFlying
+        guard
+            let scale = scale,
+            let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
+        emitter.position = CGPoint(x: -22, y: -27)
         emitter.zPosition = Constants.ZPosition.emitter.floatValue
-        emitter.setScale(0.4)
         emitter.emissionAngle = CGFloat(Double.pi)
         emitter.name = Constants.Player.smokeEmitterName
         addChild(emitter)

@@ -22,8 +22,11 @@ class GameplayScene: SKScene {
     var levelLayer: LevelLayer?
     
     lazy var player: Player? = {
-        guard let playerPosition = levelLayer?.startingPositionForPlayer else { return nil }
+        guard
+            let view = view,
+            let playerPosition = levelLayer?.startingPositionForPlayer else { return nil }
         let player = Player(gender: playerGender)
+        player.scaleToWindowSize(view.bounds.size, height: true, multiplier: 0.1)
         return player
     }()
     
