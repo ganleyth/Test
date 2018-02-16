@@ -14,13 +14,12 @@ class GameplaySceneInteractor: NSObject {
     private var currentGameplayMode: GameplayMode = .yetToStart {
         didSet {
             switch currentGameplayMode {
+            case .yetToStart:
+                enterGameplayMode(.yetToStart)
             case .playing:
                 enterGameplayMode(.playing)
             case .gameOver:
                 enterGameplayMode(.gameOver)
-            default:
-                Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
-                fatalError()
             }
         }
     }
@@ -30,6 +29,10 @@ class GameplaySceneInteractor: NSObject {
         
         self.scene = scene
         addGestureRecognizers()
+    }
+    
+    func reset() {
+        currentGameplayMode = .yetToStart
     }
 }
 
@@ -123,6 +126,8 @@ extension GameplaySceneInteractor {
             let scene = scene,
             let player = scene.player else { return }
         switch gameplayMode {
+        case .yetToStart:
+            player.state = .idle
         case .playing:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: -200, y: 0))
@@ -130,10 +135,7 @@ extension GameplaySceneInteractor {
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             player.state = .dead
-            
-        default:
-            Logger.severe("Cannot change current gameplay mode to .yetToStart", filePath: #file, funcName: #function, lineNumber: #line)
-            fatalError()
+            scene.gameplayDelegate?.gameplayDidEnd()
         }
     }
 }

@@ -15,7 +15,8 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-
+    @IBOutlet weak var playAgainButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +30,7 @@ class GameplayViewController: UIViewController {
         skView.showsNodeCount = true
         skView.showsPhysics = true
         
-        (skView.scene as? GameplayScene)?.scoreDelegate = self
+        (skView.scene as? GameplayScene)?.gameplayDelegate = self
         
         configureSubviews()
     }
@@ -42,6 +43,11 @@ class GameplayViewController: UIViewController {
         scoreNameLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
         scoreLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
     }
+
+    // Temporary play again button handling
+    @IBAction func playAgain(_ sender: UIButton) {
+        (UIApplication.shared.delegate as? AppDelegate)?.reset()
+    }
 }
 
 extension GameplayViewController: GameplaySceneDelegate {
@@ -52,5 +58,9 @@ extension GameplayViewController: GameplaySceneDelegate {
             newScore != displayedScoreInt else { return }
         
         scoreLabel.text = "\(newScore)"
+    }
+    
+    func gameplayDidEnd() {
+        playAgainButton.isHidden = false
     }
 }
