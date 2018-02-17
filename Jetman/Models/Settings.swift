@@ -6,8 +6,9 @@
 //  Copyright © 2017 Thomas Ganley. All rights reserved.
 //
 
-import Foundation
+import GameKit
 
-struct Settings {
-    
+class Settings {
+    var allowHaptics = true
+    var allowSounds = true
 }

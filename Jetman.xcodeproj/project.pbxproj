@@ -12,6 +12,7 @@
 		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
+		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
@@ -105,6 +106,7 @@
 		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
+		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
 				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
 				180C88AE1FC77F5F00D19F85 /* Info.plist */,
+				183E756B2038AFAF00092B2A /* GameSession.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				18B330051FDC556400D59107 /* StandingsManager.swift in Sources */,
 				1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
+				183E756C2038AFAF00092B2A /* GameSession.swift in Sources */,
 				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
 				1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */,
