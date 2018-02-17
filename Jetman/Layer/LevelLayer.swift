@@ -401,6 +401,7 @@ extension LevelLayer {
     private func addBottomBoundaryPhysicsBody(to tileMap: SKTileMapNode, atLevel boundaryLevel: Int) {
         let boundaryYPosition = CGFloat(boundaryLevel) * tileMap.tileSize.height + Constants.TileMapLayer.waterLevelYPosition
         let node = SKShapeNode(path: UIBezierPath.bottomBoundaryOfDefaultWidth.cgPath)
+        node.strokeColor = .clear
         node.position = CGPoint(x: 0, y: boundaryYPosition)
         node.name = Constants.SpriteName.bottomBoundary
         let physicsBodyWidth = tileMap.tileSize.width * CGFloat(tileMap.numberOfColumns)
