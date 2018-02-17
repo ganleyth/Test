@@ -154,15 +154,14 @@ extension LevelLayer {
     
     private func addPlatformToFirstTileMap() {
         let middleRow = Int(leadingTileMap.numberOfRows / 2) - 1
-        leadingTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 1, row: middleRow)
-        leadingTileMap.setTileGroup(platformBuildingBlocks.middleTile, forColumn: 2, row: middleRow)
+        leadingTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 2, row: middleRow)
         leadingTileMap.setTileGroup(platformBuildingBlocks.trailingTile, forColumn: 3, row: middleRow)
         
-        for i in 1...3 {
+        for i in 2...3 {
             platformPositions.append(CoordinatePosition(x: i, y: middleRow))
         }
         
-        leadingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 1, y: middleRow), numberOfRows: 1, numberOfColumns: 3, type: .platform)
+        leadingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 2, y: middleRow), numberOfRows: 1, numberOfColumns: 2, type: .platform)
     }
     
     private func populateTrailingTileMap() {
