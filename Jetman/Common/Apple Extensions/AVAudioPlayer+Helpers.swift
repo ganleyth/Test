@@ -10,7 +10,7 @@ import AVFoundation
 
 extension AVAudioPlayer {
 
-    static func audioPlayer(for file: SoundFile, looping: Bool) -> AVAudioPlayer? {
+    static func audioPlayer(for file: SoundFile, looping: Bool, volumeLevel: VolumeLevel = .medium) -> AVAudioPlayer? {
         guard let urlString = Bundle.main.path(forResource: file.rawValue, ofType: ".wav") else {
             Logger.error("Could not get path for jetpack loop sound.", filePath: #file, funcName: #function, lineNumber: #line)
             return nil
@@ -28,7 +28,7 @@ extension AVAudioPlayer {
         }
         
         player.numberOfLoops = looping ? -1 : 0
-        player.volume = 0.3
+        player.volume = volumeLevel.floatValue
         player.prepareToPlay()
         return player
     }
@@ -36,7 +36,18 @@ extension AVAudioPlayer {
     enum SoundFile: String {
         case crash
         case descent
+        case music
         case propulsion = "bubblePop"
         case splash
+    }
+    
+    enum VolumeLevel: Int {
+        case low = 1
+        case medium = 3
+        case high = 5
+        
+        var floatValue: Float {
+            return Float(rawValue) / 10.0
+        }
     }
 }

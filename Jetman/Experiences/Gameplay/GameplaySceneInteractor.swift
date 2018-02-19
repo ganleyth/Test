@@ -31,6 +31,7 @@ class GameplaySceneInteractor: NSObject {
     private let splashAudioPlayer = AVAudioPlayer.audioPlayer(for: .splash, looping: false)
     private let collisionAudioPlayer = AVAudioPlayer.audioPlayer(for: .crash, looping: false)
     private let descentAudioPlayer = AVAudioPlayer.audioPlayer(for: .descent, looping: false)
+    private let musicAudioPlayer = AVAudioPlayer.audioPlayer(for: .music, looping: true, volumeLevel: .low)
     
     init(scene: GameplayScene) {
         super.init()
@@ -42,6 +43,7 @@ class GameplaySceneInteractor: NSObject {
         collisionAudioPlayer?.prepareToPlay()
         collisionAudioPlayer?.delegate = self
         descentAudioPlayer?.prepareToPlay()
+        musicAudioPlayer?.play()
     }
     
     func reset() {
@@ -149,6 +151,7 @@ extension GameplaySceneInteractor {
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             player.state = .dead
             scene.gameplayDelegate?.gameplayDidEnd()
+            musicAudioPlayer?.stop()
         }
     }
 }

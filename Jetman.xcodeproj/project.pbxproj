@@ -19,6 +19,7 @@
 		183E759F203B83C100092B2A /* crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759C203B83C100092B2A /* crash.wav */; };
 		183E75A0203B83C100092B2A /* splash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759D203B83C100092B2A /* splash.wav */; };
 		183E75A1203B83C100092B2A /* descent.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759E203B83C100092B2A /* descent.wav */; };
+		183E75A3203B962C00092B2A /* music.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E75A2203B962C00092B2A /* music.wav */; };
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
@@ -119,6 +120,7 @@
 		183E759C203B83C100092B2A /* crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crash.wav; sourceTree = "<group>"; };
 		183E759D203B83C100092B2A /* splash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.wav; sourceTree = "<group>"; };
 		183E759E203B83C100092B2A /* descent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = descent.wav; sourceTree = "<group>"; };
+		183E75A2203B962C00092B2A /* music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music.wav; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		183E7595203A781B00092B2A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				183E75A2203B962C00092B2A /* music.wav */,
 				183E759C203B83C100092B2A /* crash.wav */,
 				183E759E203B83C100092B2A /* descent.wav */,
 				183E759D203B83C100092B2A /* splash.wav */,
@@ -670,6 +673,7 @@
 				18B32FCC1FD991D900D59107 /* LaunchView.storyboard in Resources */,
 				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
+				183E75A3203B962C00092B2A /* music.wav in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
 				183E759B203B335700092B2A /* bubblePop.wav in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
