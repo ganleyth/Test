@@ -9,6 +9,6 @@
 import GameKit
 
 class Settings {
-    var allowHaptics = true
+    var allowHaptics = false
     var allowSounds = true
 }

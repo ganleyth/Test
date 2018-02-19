@@ -20,7 +20,6 @@ class Player: SKSpriteNode {
                 switch state {
                 case .flying:
                     addSmokeEmitter()
-                    propulsionSoundPlayer?.play()
                 case .dead:
                     removeSmokeEmitter()
                     propulsionSoundPlayer?.stop()
@@ -39,6 +38,13 @@ class Player: SKSpriteNode {
         }
     }
     
+    private let soundQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInteractive
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
     let propulsionSoundPlayer = AVAudioPlayer.propulsionSoundLoopPlayer
 
     init(gender: Gender) {
@@ -46,6 +52,7 @@ class Player: SKSpriteNode {
         let texture = SKTexture(image: gender == .boy ? #imageLiteral(resourceName: "JetmanIdle0") : #imageLiteral(resourceName: "MsJetmanIdle0"))
         super.init(texture: texture, color: .clear, size: texture.size())
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
+        propulsionSoundPlayer?.prepareToPlay()
         
         updateAnimationAndPhysics()
     }
@@ -136,7 +143,10 @@ extension Player {
         let rotate = SKAction.rotate(byAngle: CGFloat(10.0).degreesToRadians, duration: 0.15)
         run(rotate)
         run(repeatAscend, withKey: Constants.Player.ascendKey)
-        propulsionSoundPlayer?.play()
+        
+        soundQueue.addOperation {
+            self.propulsionSoundPlayer?.play()
+        }
     }
     
     func endAscension() {
@@ -146,6 +156,9 @@ extension Player {
         let rotate = SKAction.rotate(byAngle: CGFloat(-10.0).degreesToRadians, duration: 0.15)
         run(rotate)
         isAscending = false
-        propulsionSoundPlayer?.pause()
+
+        soundQueue.addOperation {
+            self.propulsionSoundPlayer?.pause()
+        }
     }
 }
