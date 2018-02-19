@@ -12,6 +12,7 @@ import GameplayKit
 
 class GameplayViewController: UIViewController {
     
+    @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var playAgainButton: UIButton!
@@ -19,9 +20,8 @@ class GameplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let skView = view as? SKView else { assertionFailure(); return }
-        
-        let scene = GameplayScene(size: skView.frame.size)
+        skView.frame = view.frame
+        let scene = GameplayScene(size: view.frame.size)
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
         

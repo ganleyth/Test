@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Af-7c-xQP">
-    <device id="retina5_9" orientation="landscape">
+    <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,12 +13,15 @@
         <scene sceneID="6hn-pe-wid">
             <objects>
                 <viewController id="2Af-7c-xQP" customClass="GameplayViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Sql-cf-KyZ" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
+                    <view key="view" contentMode="scaleToFill" id="Sql-cf-KyZ">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-P4-fIB">
-                                <rect key="frame" x="644" y="339" width="108" height="24"/>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-s9-WvD">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </skView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-P4-fIB">
+                                <rect key="frame" x="519" y="339" width="132" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsb-RO-H9D">
                                         <rect key="frame" x="0.0" y="0.0" width="56" height="24"/>
@@ -27,9 +30,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-HZ-oD2">
-                                        <rect key="frame" x="60" y="0.0" width="48" height="24"/>
+                                        <rect key="frame" x="60" y="0.0" width="72" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="BB8-zR-KHY"/>
+                                            <constraint firstAttribute="width" constant="72" id="BB8-zR-KHY"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +41,7 @@
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVJ-UF-ZHr">
-                                <rect key="frame" x="356" y="167.66666666666666" width="100" height="40"/>
+                                <rect key="frame" x="283" y="167" width="100" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="5Ph-e9-kqI"/>
@@ -56,20 +59,24 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="vvb-P4-fIB" secondAttribute="bottom" constant="12" id="8zy-Re-ABa"/>
-                            <constraint firstItem="rVJ-UF-ZHr" firstAttribute="centerX" secondItem="Tc4-bK-IGD" secondAttribute="centerX" id="ATq-H6-2WE"/>
+                            <constraint firstItem="rVJ-UF-ZHr" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="ATq-H6-2WE"/>
+                            <constraint firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
                             <constraint firstItem="rVJ-UF-ZHr" firstAttribute="centerY" secondItem="Sql-cf-KyZ" secondAttribute="centerY" id="UeD-JM-ON6"/>
-                            <constraint firstItem="Tc4-bK-IGD" firstAttribute="trailing" secondItem="vvb-P4-fIB" secondAttribute="trailing" constant="16" id="g07-cl-WMo"/>
+                            <constraint firstItem="Izn-s9-WvD" firstAttribute="top" secondItem="Sql-cf-KyZ" secondAttribute="top" id="Wsa-VI-f9q"/>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="trailing" secondItem="vvb-P4-fIB" secondAttribute="trailing" constant="16" id="g07-cl-WMo"/>
+                            <constraint firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
+                            <constraint firstItem="Izn-s9-WvD" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" id="s7D-1Z-tiX"/>
                         </constraints>
-                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                        <viewLayoutGuide key="safeArea" id="Tc4-bK-IGD"/>
+                        <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
                     <connections>
                         <outlet property="playAgainButton" destination="rVJ-UF-ZHr" id="NSu-mO-pRH"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
                         <outlet property="scoreNameLabel" destination="Dsb-RO-H9D" id="jFC-sC-HXr"/>
+                        <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym8-xv-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
