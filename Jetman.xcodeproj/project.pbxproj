@@ -14,6 +14,8 @@
 		180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
+		183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */; };
+		183E759B203B335700092B2A /* bubblePop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759A203B335700092B2A /* bubblePop.wav */; };
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
@@ -109,6 +111,8 @@
 		180C88DF1FC9D8F500D19F85 /* Riffic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Riffic-Bold.ttf"; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
+		183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Helpers.swift"; sourceTree = "<group>"; };
+		183E759A203B335700092B2A /* bubblePop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bubblePop.wav; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
@@ -254,6 +258,14 @@
 			path = JetmanUITests;
 			sourceTree = "<group>";
 		};
+		183E7595203A781B00092B2A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				183E759A203B335700092B2A /* bubblePop.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		18B32FD71FDA510D00D59107 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,14 +342,15 @@
 		18CEF3071FD32E03005C3980 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				18CEF3081FD32E35005C3980 /* Managers */,
-				18CEF3091FD32E3D005C3980 /* Fonts */,
 				18CEF3181FD4E55E005C3980 /* Apple Extensions */,
+				18CEF3091FD32E3D005C3980 /* Fonts */,
+				18CEF3081FD32E35005C3980 /* Managers */,
 				18DF6BE3203165EF00BF0502 /* Scoring */,
-				18CEF3161FD489D7005C3980 /* Logger.swift */,
+				183E7595203A781B00092B2A /* Sounds */,
 				18CEF31B1FD4E8D7005C3980 /* Constants.swift */,
-				1842D6DD2014427800571BD2 /* SpriteLoader.swift */,
 				183E7593203A727300092B2A /* CustomSubclasses.swift */,
+				18CEF3161FD489D7005C3980 /* Logger.swift */,
+				1842D6DD2014427800571BD2 /* SpriteLoader.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -474,14 +487,15 @@
 		18CEF3181FD4E55E005C3980 /* Apple Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */,
+				1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */,
 				18B330241FDCA51B00D59107 /* CGPoint+Helpers.swift */,
 				18CEF3191FD4E585005C3980 /* Date+Helpers.swift */,
 				18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */,
 				18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */,
+				1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */,
 				18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */,
 				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
-				1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */,
-				1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */,
 				18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */,
 			);
 			path = "Apple Extensions";
@@ -648,6 +662,7 @@
 				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
+				183E759B203B335700092B2A /* bubblePop.wav in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
@@ -762,6 +777,7 @@
 				18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */,
 				18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */,
 				18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */,
+				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,

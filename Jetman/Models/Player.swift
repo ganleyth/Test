@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVKit
 
 class Player: SKSpriteNode {
     let gender: Gender
@@ -17,8 +18,12 @@ class Player: SKSpriteNode {
                 updateRotation()
                 updateAnimationAndPhysics()
                 switch state {
-                case .flying: addSmokeEmitter()
-                case .dead: removeSmokeEmitter()
+                case .flying:
+                    addSmokeEmitter()
+                    propulsionSoundPlayer?.play()
+                case .dead:
+                    removeSmokeEmitter()
+                    propulsionSoundPlayer?.stop()
                 default: break
                 }
             }
@@ -33,6 +38,8 @@ class Player: SKSpriteNode {
             return 0.0
         }
     }
+    
+    let propulsionSoundPlayer = AVAudioPlayer.propulsionSoundLoopPlayer
 
     init(gender: Gender) {
         self.gender = gender
@@ -93,9 +100,7 @@ extension Player {
     }
     
     private func addSmokeEmitter() {
-        guard
-            let scale = scale,
-            let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
+        guard let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
         emitter.position = CGPoint(x: -22, y: -27)
         emitter.zPosition = Constants.ZPosition.emitter.floatValue
         emitter.emissionAngle = CGFloat(Double.pi)
@@ -131,6 +136,7 @@ extension Player {
         let rotate = SKAction.rotate(byAngle: CGFloat(10.0).degreesToRadians, duration: 0.15)
         run(rotate)
         run(repeatAscend, withKey: Constants.Player.ascendKey)
+        propulsionSoundPlayer?.play()
     }
     
     func endAscension() {
@@ -140,5 +146,6 @@ extension Player {
         let rotate = SKAction.rotate(byAngle: CGFloat(-10.0).degreesToRadians, duration: 0.15)
         run(rotate)
         isAscending = false
+        propulsionSoundPlayer?.pause()
     }
 }
