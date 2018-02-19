@@ -11,6 +11,7 @@ import AVFoundation
 extension AVAudioPlayer {
 
     static func audioPlayer(for file: SoundFile, looping: Bool, volumeLevel: VolumeLevel = .medium) -> AVAudioPlayer? {
+        guard GameSession.shared.settings.allowSounds else { return nil }
         guard let urlString = Bundle.main.path(forResource: file.rawValue, ofType: ".wav") else {
             Logger.error("Could not get path for jetpack loop sound.", filePath: #file, funcName: #function, lineNumber: #line)
             return nil
