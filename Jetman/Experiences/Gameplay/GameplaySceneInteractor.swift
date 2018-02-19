@@ -143,7 +143,6 @@ extension GameplaySceneInteractor {
 // MARK: - Contact delegate
 extension GameplaySceneInteractor: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        defer { currentGameplayMode = .gameOver }
         guard let scene = scene else { return }
         guard contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player
             || contact.bodyB.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player else {
@@ -154,30 +153,42 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
         let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player ? contact.bodyA : contact.bodyB
         let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
         
-        let emitter: SKEmitterNode
+        let emitter: SKEmitterNode?
+        let feedbackGenerator: UIImpactFeedbackGenerator?
         switch otherBody.categoryBitMask {
+        case Constants.PhysicsBodyCategoryBitMask.platform:
+            emitter = nil
+            feedbackGenerator = currentGameplayMode == .yetToStart ? UIImpactFeedbackGenerator(style: .medium) : nil
         case Constants.PhysicsBodyCategoryBitMask.bottomBoundary:
             emitter = SKEmitterNode(fileNamed: "WaterEmitter") ?? SKEmitterNode()
-            emitter.position = contact.contactPoint - CGPoint(x: 0, y: 10)
-            emitter.numParticlesToEmit = 8
+            emitter?.position = contact.contactPoint - CGPoint(x: 0, y: 10)
+            emitter?.numParticlesToEmit = 8
+            feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
             guard currentGameplayMode == .playing else { return }
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
-            emitter.position = contact.contactPoint
-            emitter.numParticlesToEmit = 15
+            emitter?.position = contact.contactPoint
+            emitter?.numParticlesToEmit = 15
+            feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
             guard currentGameplayMode == .playing else { return }
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
-            emitter.position = contact.contactPoint
-            emitter.numParticlesToEmit = 15
-            emitter.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
+            emitter?.position = contact.contactPoint
+            emitter?.numParticlesToEmit = 15
+            emitter?.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
+            feedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
         }
         
-        emitter.zPosition = Constants.ZPosition.emitter.floatValue
-        emitter.setScale(0.4)
-        scene.addChild(emitter)
+        if otherBody.categoryBitMask != Constants.PhysicsBodyCategoryBitMask.platform { currentGameplayMode = .gameOver }
+        
+        if let e = emitter {
+            emitter?.zPosition = Constants.ZPosition.emitter.floatValue
+            emitter?.setScale(0.4)
+            scene.addChild(e)
+        }
+        feedbackGenerator?.impactOccurred()
     }
 }
