@@ -38,14 +38,7 @@ class Player: SKSpriteNode {
         }
     }
     
-    private let soundQueue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInteractive
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
-    
-    let propulsionSoundPlayer = AVAudioPlayer.propulsionSoundLoopPlayer
+    let propulsionSoundPlayer = AVAudioPlayer.audioPlayer(for: .propulsion, looping: true)
 
     init(gender: Gender) {
         self.gender = gender
@@ -144,8 +137,9 @@ extension Player {
         run(rotate)
         run(repeatAscend, withKey: Constants.Player.ascendKey)
         
-        soundQueue.addOperation {
-            self.propulsionSoundPlayer?.play()
+        GameSession.shared.soundQueue.addOperation { [weak self] in
+            guard let this = self else { return }
+            this.propulsionSoundPlayer?.play()
         }
     }
     
@@ -157,8 +151,9 @@ extension Player {
         run(rotate)
         isAscending = false
 
-        soundQueue.addOperation {
-            self.propulsionSoundPlayer?.pause()
+        GameSession.shared.soundQueue.addOperation { [weak self] in
+            guard let this = self else { return }
+            this.propulsionSoundPlayer?.pause()
         }
     }
 }

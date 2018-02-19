@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import AVFoundation
 
 class GameplaySceneInteractor: NSObject {
     
@@ -23,12 +24,24 @@ class GameplaySceneInteractor: NSObject {
             }
         }
     }
+
+    var hasCollided = false
+    var hasSplashed = false
+    
+    private let splashAudioPlayer = AVAudioPlayer.audioPlayer(for: .splash, looping: false)
+    private let collisionAudioPlayer = AVAudioPlayer.audioPlayer(for: .crash, looping: false)
+    private let descentAudioPlayer = AVAudioPlayer.audioPlayer(for: .descent, looping: false)
     
     init(scene: GameplayScene) {
         super.init()
         
         self.scene = scene
         addGestureRecognizers()
+        
+        splashAudioPlayer?.prepareToPlay()
+        collisionAudioPlayer?.prepareToPlay()
+        collisionAudioPlayer?.delegate = self
+        descentAudioPlayer?.prepareToPlay()
     }
     
     func reset() {
@@ -155,21 +168,28 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
         
         let emitter: SKEmitterNode?
         let feedbackGenerator: CustomUIImpactFeedbackGenerator?
+        let audioPlayer: AVAudioPlayer?
+        
         switch otherBody.categoryBitMask {
         case Constants.PhysicsBodyCategoryBitMask.platform:
             emitter = nil
             feedbackGenerator = currentGameplayMode == .yetToStart ? CustomUIImpactFeedbackGenerator(style: .medium) : nil
+            audioPlayer = nil
         case Constants.PhysicsBodyCategoryBitMask.bottomBoundary:
             emitter = SKEmitterNode(fileNamed: "WaterEmitter") ?? SKEmitterNode()
             emitter?.position = contact.contactPoint - CGPoint(x: 0, y: 10)
             emitter?.numParticlesToEmit = 8
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .light)
+            audioPlayer = hasSplashed ? nil : splashAudioPlayer
+            hasSplashed = true
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
             guard currentGameplayMode == .playing else { return }
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
             emitter?.position = contact.contactPoint
             emitter?.numParticlesToEmit = 15
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .heavy)
+            audioPlayer = hasCollided ? nil : collisionAudioPlayer
+            hasCollided = true
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
             guard currentGameplayMode == .playing else { return }
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
@@ -177,6 +197,8 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             emitter?.numParticlesToEmit = 15
             emitter?.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .heavy)
+            audioPlayer = hasCollided ? nil : collisionAudioPlayer
+            hasCollided = true
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
@@ -185,10 +207,39 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
         if otherBody.categoryBitMask != Constants.PhysicsBodyCategoryBitMask.platform { currentGameplayMode = .gameOver }
         
         if let e = emitter {
-            emitter?.zPosition = Constants.ZPosition.emitter.floatValue
-            emitter?.setScale(0.4)
+            e.zPosition = Constants.ZPosition.emitter.floatValue
+            e.setScale(0.4)
             scene.addChild(e)
         }
         feedbackGenerator?.impactOccurred()
+        
+        if let ap = audioPlayer {
+            cancelAllSounds()
+            GameSession.shared.soundQueue.addOperation {
+                ap.play()
+            }
+        }
+    }
+}
+
+// Private
+private extension GameplaySceneInteractor {
+    func cancelAllSounds() {
+        GameSession.shared.soundQueue.cancelAllOperations()
+        if splashAudioPlayer?.isPlaying ?? false { splashAudioPlayer?.stop() }
+        if collisionAudioPlayer?.isPlaying ?? false { collisionAudioPlayer?.stop() }
+        if descentAudioPlayer?.isPlaying ?? false { descentAudioPlayer?.stop() }
+    }
+}
+
+extension GameplaySceneInteractor: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        if player == collisionAudioPlayer {
+            GameSession.shared.soundQueue.cancelAllOperations()
+            GameSession.shared.soundQueue.addOperation { [weak self] in
+                guard let this = self else { return }
+                this.descentAudioPlayer?.play()
+            }
+        }
     }
 }

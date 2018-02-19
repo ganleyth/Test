@@ -9,11 +9,14 @@
 import AVFoundation
 
 extension AVAudioPlayer {
-    static var propulsionSoundLoopPlayer: AVAudioPlayer? {
-        guard let urlString = Bundle.main.path(forResource: "bubblePop", ofType: ".wav") else {
+
+    static func audioPlayer(for file: SoundFile, looping: Bool) -> AVAudioPlayer? {
+        guard let urlString = Bundle.main.path(forResource: file.rawValue, ofType: ".wav") else {
             Logger.error("Could not get path for jetpack loop sound.", filePath: #file, funcName: #function, lineNumber: #line)
             return nil
         }
+        
+        print(urlString)
         
         let player: AVAudioPlayer
         do {
@@ -24,9 +27,16 @@ extension AVAudioPlayer {
             return nil
         }
         
-        player.numberOfLoops = -1
+        player.numberOfLoops = looping ? -1 : 0
         player.volume = 0.3
         player.prepareToPlay()
         return player
+    }
+    
+    enum SoundFile: String {
+        case crash
+        case descent
+        case propulsion = "bubblePop"
+        case splash
     }
 }

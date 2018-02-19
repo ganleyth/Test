@@ -16,6 +16,9 @@
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
 		183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */; };
 		183E759B203B335700092B2A /* bubblePop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759A203B335700092B2A /* bubblePop.wav */; };
+		183E759F203B83C100092B2A /* crash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759C203B83C100092B2A /* crash.wav */; };
+		183E75A0203B83C100092B2A /* splash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759D203B83C100092B2A /* splash.wav */; };
+		183E75A1203B83C100092B2A /* descent.wav in Resources */ = {isa = PBXBuildFile; fileRef = 183E759E203B83C100092B2A /* descent.wav */; };
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
@@ -113,6 +116,9 @@
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
 		183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Helpers.swift"; sourceTree = "<group>"; };
 		183E759A203B335700092B2A /* bubblePop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bubblePop.wav; sourceTree = "<group>"; };
+		183E759C203B83C100092B2A /* crash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crash.wav; sourceTree = "<group>"; };
+		183E759D203B83C100092B2A /* splash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.wav; sourceTree = "<group>"; };
+		183E759E203B83C100092B2A /* descent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = descent.wav; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
@@ -261,6 +267,9 @@
 		183E7595203A781B00092B2A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				183E759C203B83C100092B2A /* crash.wav */,
+				183E759E203B83C100092B2A /* descent.wav */,
+				183E759D203B83C100092B2A /* splash.wav */,
 				183E759A203B335700092B2A /* bubblePop.wav */,
 			);
 			path = Sounds;
@@ -664,6 +673,7 @@
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
 				183E759B203B335700092B2A /* bubblePop.wav in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
+				183E759F203B83C100092B2A /* crash.wav in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
 				18B32FD91FDA515400D59107 /* WindowView.xib in Resources */,
@@ -671,6 +681,8 @@
 				18B32FD01FDA4ED600D59107 /* LoginView.storyboard in Resources */,
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				180C88E01FC9D8F500D19F85 /* Riffic-Bold.ttf in Resources */,
+				183E75A0203B83C100092B2A /* splash.wav in Resources */,
+				183E75A1203B83C100092B2A /* descent.wav in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
