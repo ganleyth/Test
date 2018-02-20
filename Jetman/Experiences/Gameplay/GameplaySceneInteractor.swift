@@ -214,14 +214,14 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             e.setScale(0.4)
             scene.addChild(e)
         }
-        feedbackGenerator?.impactOccurred()
-        
         if let ap = audioPlayer {
             cancelAllSounds()
             GameSession.shared.soundQueue.addOperation {
                 ap.play()
             }
         }
+        
+        feedbackGenerator?.impactOccurred()
     }
 }
 

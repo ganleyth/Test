@@ -17,14 +17,7 @@ class Player: SKSpriteNode {
             if state != oldValue {
                 updateRotation()
                 updateAnimationAndPhysics()
-                switch state {
-                case .flying:
-                    addSmokeEmitter()
-                case .dead:
-                    removeSmokeEmitter()
-                    propulsionSoundPlayer?.stop()
-                default: break
-                }
+                if state == .dead { propulsionSoundPlayer?.stop() }
             }
         }
     }
@@ -39,6 +32,15 @@ class Player: SKSpriteNode {
     }
     
     let propulsionSoundPlayer = AVAudioPlayer.audioPlayer(for: .propulsion, looping: true)
+    
+    private lazy var smokeEmitter: SKEmitterNode? = {
+        guard let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return nil }
+        emitter.position = CGPoint(x: -22, y: -27)
+        emitter.zPosition = Constants.ZPosition.emitter.floatValue
+        emitter.name = Constants.Player.smokeEmitterName
+        emitter.particleBirthRate = 0
+        return emitter
+    }()
 
     init(gender: Gender) {
         self.gender = gender
@@ -46,6 +48,7 @@ class Player: SKSpriteNode {
         super.init(texture: texture, color: .clear, size: texture.size())
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         propulsionSoundPlayer?.prepareToPlay()
+        if let se = smokeEmitter { addChild(se) }
         
         updateAnimationAndPhysics()
     }
@@ -99,15 +102,6 @@ extension Player {
         physicsBody.friction = 0.0
     }
     
-    private func addSmokeEmitter() {
-        guard let emitter = SKEmitterNode(fileNamed: "JetpackSmokeEmitter") else { return }
-        emitter.position = CGPoint(x: -22, y: -27)
-        emitter.zPosition = Constants.ZPosition.emitter.floatValue
-        emitter.emissionAngle = CGFloat(Double.pi)
-        emitter.name = Constants.Player.smokeEmitterName
-        addChild(emitter)
-    }
-    
     private func removeSmokeEmitter() {
         guard let emitter = childNode(withName: Constants.Player.smokeEmitterName) else { return }
         emitter.removeFromParent()
@@ -141,6 +135,8 @@ extension Player {
             guard let this = self else { return }
             this.propulsionSoundPlayer?.play()
         }
+        
+        smokeEmitter?.particleBirthRate = 6
     }
     
     func endAscension() {
@@ -155,5 +151,7 @@ extension Player {
             guard let this = self else { return }
             this.propulsionSoundPlayer?.pause()
         }
+        
+        smokeEmitter?.particleBirthRate = 0
     }
 }
