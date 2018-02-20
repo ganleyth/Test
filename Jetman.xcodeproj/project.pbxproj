@@ -121,6 +121,7 @@
 		183E759D203B83C100092B2A /* splash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = splash.wav; sourceTree = "<group>"; };
 		183E759E203B83C100092B2A /* descent.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = descent.wav; sourceTree = "<group>"; };
 		183E75A2203B962C00092B2A /* music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music.wav; sourceTree = "<group>"; };
+		183E75A4203BADAB00092B2A /* Jetman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jetman.entitlements; sourceTree = "<group>"; };
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 		180C889B1FC77F5F00D19F85 /* Jetman */ = {
 			isa = PBXGroup;
 			children = (
+				183E75A4203BADAB00092B2A /* Jetman.entitlements */,
 				18CEF3051FD32DED005C3980 /* Main */,
 				18CEF3061FD32DF3005C3980 /* Models */,
 				18F4DE8E1FE5BEE7007FE471 /* Layer */,
@@ -631,6 +633,11 @@
 					180C88981FC77F5F00D19F85 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					180C88B21FC77F5F00D19F85 = {
 						CreatedOnToolsVersion = 9.1;
@@ -990,6 +997,7 @@
 			baseConfigurationReference = 311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
 				INFOPLIST_FILE = Jetman/Main/Info.plist;
@@ -1007,6 +1015,7 @@
 			baseConfigurationReference = AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
 				INFOPLIST_FILE = Jetman/Main/Info.plist;
