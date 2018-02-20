@@ -190,7 +190,7 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
             emitter?.position = contact.contactPoint
             emitter?.numParticlesToEmit = 15
-            feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .heavy)
+            feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .medium)
             audioPlayer = hasCollided ? nil : collisionAudioPlayer
             hasCollided = true
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
@@ -199,7 +199,7 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             emitter?.position = contact.contactPoint
             emitter?.numParticlesToEmit = 15
             emitter?.emissionAngle = CGFloat(Double.pi * 3.0 / 2.0)
-            feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .heavy)
+            feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .medium)
             audioPlayer = hasCollided ? nil : collisionAudioPlayer
             hasCollided = true
         default:

@@ -80,6 +80,11 @@ extension Player {
         removeAction(forKey: Constants.Player.animationKey)
         
         switch state {
+        case .flying:
+            let inverseForPlatfom = ~Constants.PhysicsBodyCategoryBitMask.platform
+            if let collisionBitmask = physicsBody?.collisionBitMask {
+                physicsBody?.collisionBitMask = collisionBitmask & inverseForPlatfom
+            }
         case .dead:
             self.texture = firstTexture
             if isAscending { endAscension() }
