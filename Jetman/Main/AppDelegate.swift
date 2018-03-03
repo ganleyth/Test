@@ -12,10 +12,19 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var gameCenterVC: UIViewController? {
+        didSet {
+            NotificationCenter.default.post(name: Constants.Notifications.gameCenterVCReceived, object: self)
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        autheticateLocalPlayer()
+
         // Load sprites into memory on launch
         SpriteLoader.shared.loadSprites(for: .boy)
+        
         return true
     }
 
@@ -44,6 +53,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func reset() {
         guard let newGameplayVC = UIStoryboard(name: "GameplayView", bundle: nil).instantiateInitialViewController() else { return }
         UIApplication.shared.keyWindow?.rootViewController = newGameplayVC        
+    }
+    
+    func autheticateLocalPlayer() {
+        GameCenterManager.shared.authenticateLocalPlayer { [weak self] (gameCenterVC, error) in
+            guard let this = self else { return }
+            if let gameCenterVC = gameCenterVC {
+                this.gameCenterVC = gameCenterVC
+            }
+            
+            if let error = error {
+                Logger.error("Error authenticating local player: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+            }
+        }
     }
 }
 

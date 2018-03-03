@@ -24,6 +24,10 @@ struct Constants {
         static let defaultFormat = "yyyy-MM-dd hh:mm:ss.SSS"
     }
     
+    struct Notifications {
+        static let gameCenterVCReceived = Notification.Name(rawValue: "GameCenterVCReceived")
+    }
+    
     enum ObstacleTileName: String {
         case top = "obstacleTileTop"
         case middle = "obstacleTileMiddle"

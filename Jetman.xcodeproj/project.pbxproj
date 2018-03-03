@@ -78,6 +78,8 @@
 		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
 		18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */; };
 		18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */; };
+		18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */; };
+		18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E1CFFB204B0FA700B4B506 /* GameKit.framework */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -180,6 +182,8 @@
 		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
 		18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JetpackSmokeEmitter.sks; sourceTree = "<group>"; };
 		18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
+		18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
+		18E1CFFB204B0FA700B4B506 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
+				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +383,7 @@
 				18B330041FDC556400D59107 /* StandingsManager.swift */,
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18B330081FDC563400D59107 /* DataManager.swift */,
+				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -547,6 +553,7 @@
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18E1CFFB204B0FA700B4B506 /* GameKit.framework */,
 				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
 			);
 			name = Frameworks;
@@ -634,8 +641,14 @@
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};
@@ -787,6 +800,7 @@
 				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
+				18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
 				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
 				18B3300D1FDC7A7B00D59107 /* User.swift in Sources */,

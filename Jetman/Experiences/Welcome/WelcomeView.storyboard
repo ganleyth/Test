@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,20 +13,42 @@
         <scene sceneID="uqc-tG-Oba">
             <objects>
                 <viewController id="Ivu-xo-Au8" customClass="WelcomeViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7ts-lK-NCn" customClass="SKView">
+                    <view key="view" contentMode="scaleToFill" id="Qv5-OB-HLh">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="t4q-6N-0qM"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcp-Un-A4m">
+                                <rect key="frame" x="298.5" y="172" width="69" height="30"/>
+                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Gameplay"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rcp-Un-A4m" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="SqV-zK-SOI"/>
+                            <constraint firstItem="rcp-Un-A4m" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="jC6-zn-C2P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
                     <connections>
+                        <outlet property="gameplayButton" destination="rcp-Un-A4m" id="7Pg-Wo-SEg"/>
                         <outlet property="interactor" destination="5j1-1C-2uz" id="SwN-dI-GoQ"/>
+                        <segue destination="hiQ-FA-phj" kind="presentation" id="zXL-e4-QT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRC-Yy-ek2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="5j1-1C-2uz" customClass="WelcomeViewInteractor" customModule="Jetman" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1" y="83"/>
+        </scene>
+        <!--GameplayView-->
+        <scene sceneID="QSb-Vr-cdd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="GameplayView" id="hiQ-FA-phj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17t-lW-yKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="82"/>
         </scene>
     </scenes>
 </document>

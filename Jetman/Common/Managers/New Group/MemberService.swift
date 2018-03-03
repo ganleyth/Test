@@ -7,9 +7,18 @@
 //
 
 import Foundation
+import GameKit
 
 class MemberService {
     
     static let shared = MemberService()
+    
+    var localPlayer: GKLocalPlayer {
+        return GKLocalPlayer.localPlayer()
+    }
+    
+    var localPlayerIsAuthenticated: Bool {
+        return localPlayer.isAuthenticated
+    }
     
 }
