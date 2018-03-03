@@ -22,6 +22,9 @@
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Gameplay"/>
+                                <connections>
+                                    <segue destination="hiQ-FA-phj" kind="presentation" id="VMt-2e-m1v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -34,7 +37,6 @@
                     <connections>
                         <outlet property="gameplayButton" destination="rcp-Un-A4m" id="7Pg-Wo-SEg"/>
                         <outlet property="interactor" destination="5j1-1C-2uz" id="SwN-dI-GoQ"/>
-                        <segue destination="hiQ-FA-phj" kind="presentation" id="zXL-e4-QT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRC-Yy-ek2" userLabel="First Responder" sceneMemberID="firstResponder"/>

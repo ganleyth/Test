@@ -12,7 +12,7 @@
         <!--Gameplay View Controller-->
         <scene sceneID="6hn-pe-wid">
             <objects>
-                <viewController id="2Af-7c-xQP" customClass="GameplayViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="2Af-7c-xQP" customClass="GameplayViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sql-cf-KyZ">
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -19,9 +19,9 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(presentGameCenterVCIfNeeded), name: Constants.Notifications.gameCenterVCReceived, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(unlockApp), name: Notification.Name.GKPlayerAuthenticationDidChangeNotificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAccess), name: Notification.Name.GKPlayerAuthenticationDidChangeNotificationName, object: nil)
         
-        unlockApp()
+        updateFeatureAccess()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,7 +37,7 @@ final class WelcomeViewController: UIViewController {
         present(gameCenterVC, animated: true, completion: nil)
     }
     
-    @objc func unlockApp() {
+    @objc func updateFeatureAccess() {
         gameplayButton.isEnabled = MemberService.shared.localPlayerIsAuthenticated
     }
 }
