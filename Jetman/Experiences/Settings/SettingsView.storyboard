@@ -36,25 +36,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Selection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUn-PD-WQi">
-                                <rect key="frame" x="32" y="149.5" width="123" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jrN-qg-nGc">
-                                <rect key="frame" x="515" y="146" width="120" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="11v-X2-Ly5"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Boy"/>
-                                    <segment title="Girl"/>
-                                </segments>
-                                <connections>
-                                    <action selector="updatePlayerSelectionSetting:" destination="WvN-Vv-BuU" eventType="valueChanged" id="AYG-fa-pgQ"/>
-                                </connections>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-b1-cQ5">
                                 <rect key="frame" x="293" y="265" width="80" height="30"/>
                                 <color key="backgroundColor" name="AppRed"/>
@@ -77,26 +58,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CSs-b1-cQ5" firstAttribute="centerX" secondItem="0G4-Ng-Hoy" secondAttribute="centerX" id="11K-Lq-se6"/>
-                            <constraint firstItem="dUn-PD-WQi" firstAttribute="centerY" secondItem="jrN-qg-nGc" secondAttribute="centerY" id="33R-eX-GKX"/>
                             <constraint firstItem="IH3-0X-VzK" firstAttribute="leading" secondItem="e2Y-jn-MZU" secondAttribute="leading" constant="32" id="5tD-90-xL1"/>
-                            <constraint firstItem="dUn-PD-WQi" firstAttribute="leading" secondItem="e2Y-jn-MZU" secondAttribute="leading" constant="32" id="ERi-Xi-KTE"/>
                             <constraint firstItem="e2Y-jn-MZU" firstAttribute="trailing" secondItem="aJN-VV-jrB" secondAttribute="trailing" constant="32" id="MXv-dD-aay"/>
                             <constraint firstItem="QMZ-i6-Bfc" firstAttribute="top" secondItem="e2Y-jn-MZU" secondAttribute="top" constant="20" id="Mfj-zH-aiF"/>
                             <constraint firstItem="e2Y-jn-MZU" firstAttribute="trailing" secondItem="QMZ-i6-Bfc" secondAttribute="trailing" constant="32" id="Naf-t7-YfB"/>
                             <constraint firstItem="IH3-0X-VzK" firstAttribute="centerY" secondItem="QMZ-i6-Bfc" secondAttribute="centerY" id="S3H-kK-qIj"/>
                             <constraint firstItem="e2Y-jn-MZU" firstAttribute="bottom" secondItem="CSs-b1-cQ5" secondAttribute="bottom" constant="80" id="Wdc-Hk-5ed"/>
-                            <constraint firstItem="e2Y-jn-MZU" firstAttribute="trailing" secondItem="jrN-qg-nGc" secondAttribute="trailing" constant="32" id="a13-sY-jmg"/>
                             <constraint firstItem="aJN-VV-jrB" firstAttribute="top" secondItem="QMZ-i6-Bfc" secondAttribute="bottom" constant="32" id="cxj-X7-zeR"/>
                             <constraint firstItem="ilA-1e-eYs" firstAttribute="centerY" secondItem="aJN-VV-jrB" secondAttribute="centerY" id="mZt-bv-93g"/>
                             <constraint firstItem="ilA-1e-eYs" firstAttribute="leading" secondItem="e2Y-jn-MZU" secondAttribute="leading" constant="32" id="ozk-Ud-rnU"/>
-                            <constraint firstItem="jrN-qg-nGc" firstAttribute="top" secondItem="aJN-VV-jrB" secondAttribute="bottom" constant="32" id="q6w-kx-2c0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e2Y-jn-MZU"/>
                     </view>
                     <connections>
                         <outlet property="enableHapticsSwitch" destination="aJN-VV-jrB" id="ajs-M6-lU9"/>
                         <outlet property="enableSoundsSwitch" destination="QMZ-i6-Bfc" id="pI1-yF-SBy"/>
-                        <outlet property="genderSelectionSegmentedControl" destination="jrN-qg-nGc" id="fGf-Gt-YHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzA-7C-Vkl" userLabel="First Responder" sceneMemberID="firstResponder"/>

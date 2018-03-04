@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         autheticateLocalPlayer()
 
         // Load sprites into memory on launch
-        SpriteLoader.shared.loadSprites(for: .boy)
+        SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
         
         return true
     }
