@@ -11,4 +11,12 @@ import GameKit
 class Settings {
     var allowHaptics = true
     var allowSounds = true
+    var playerGender = Player.Gender.boy {
+        didSet {
+            switch playerGender {
+            case .boy: if !SpriteLoader.shared.hasLoadedForBoy { SpriteLoader.shared.loadSprites(for: .boy) }
+            case .girl: if !SpriteLoader.shared.hasLoadedForGirl { SpriteLoader.shared.loadSprites(for: .girl) }
+            }
+        }
+    }
 }

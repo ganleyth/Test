@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcp-Un-A4m">
-                                <rect key="frame" x="298.5" y="172" width="69" height="30"/>
+                                <rect key="frame" x="299" y="172" width="69" height="30"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Gameplay"/>
@@ -26,11 +27,22 @@
                                     <segue destination="hiQ-FA-phj" kind="presentation" id="VMt-2e-m1v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-PZ-4JC">
+                                <rect key="frame" x="305" y="210" width="57" height="30"/>
+                                <color key="backgroundColor" name="AppRed"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <segue destination="08Z-wO-x3y" kind="presentation" id="LaQ-o0-ogr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="rcp-Un-A4m" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="SqV-zK-SOI"/>
-                            <constraint firstItem="rcp-Un-A4m" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="jC6-zn-C2P"/>
+                            <constraint firstItem="qrt-Gm-bbn" firstAttribute="bottom" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="135" id="CDr-Dv-4K1"/>
+                            <constraint firstItem="Uf7-PZ-4JC" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehl-eZ-7g6"/>
+                            <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="rcp-Un-A4m" secondAttribute="centerX" id="cX1-as-IDp"/>
+                            <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="woB-Kz-AD9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
@@ -52,5 +64,18 @@
             </objects>
             <point key="canvasLocation" x="514" y="82"/>
         </scene>
+        <!--SettingsView-->
+        <scene sceneID="EuS-px-nlY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SettingsView" id="08Z-wO-x3y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="inU-4S-rvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="518" y="233"/>
+        </scene>
     </scenes>
+    <resources>
+        <namedColor name="AppRed">
+            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

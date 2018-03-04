@@ -15,8 +15,6 @@ protocol GameplaySceneDelegate: class {
 
 class GameplayScene: SKScene {
     
-    var playerGender: Player.Gender = .boy
-    
     var interactor: GameplaySceneInteractor!
     
     var backgroundLayer: RepeatingLayer?
@@ -26,7 +24,7 @@ class GameplayScene: SKScene {
         guard
             let view = view,
             let playerPosition = levelLayer?.startingPositionForPlayer else { return nil }
-        let player = Player(gender: playerGender)
+        let player = Player(gender: GameSession.shared.settings.playerGender)
         player.scaleToWindowSize(view.bounds.size, height: true, multiplier: 0.1)
         return player
     }()
