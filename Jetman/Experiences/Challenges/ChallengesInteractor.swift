@@ -15,8 +15,9 @@ class ChallengesInteractor: Interactor {
     
     override init() {
         super.init()
-        
         challengesViewController?.tableView.dataSource = self
+        challengesViewController?.loadViewIfNeeded()
+        initiateFriendsFetch()
     }
 }
 
@@ -24,7 +25,14 @@ class ChallengesInteractor: Interactor {
 private extension ChallengesInteractor {
     
     func initiateFriendsFetch() {
-        
+        GameCenterManager.shared.fetchFriends { [weak self] in
+            guard let this = self else { return }
+            this.refreshUI()
+        }
+    }
+    
+    func refreshUI() {
+        challengesViewController?.tableView.reloadData()
     }
 }
 
@@ -33,11 +41,15 @@ private extension ChallengesInteractor {
 extension ChallengesInteractor: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return GameCenterManager.shared.friends?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let friend = GameCenterManager.shared.friends?[indexPath.row] else { return UITableViewCell() }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
+        cell.textLabel?.text = friend.displayName
+        
+        return cell
     }
-    
 }
