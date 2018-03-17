@@ -13,6 +13,8 @@ class GameCenterManager {
 
     static let shared = GameCenterManager()
     
+    lazy var challengeManager = ChallengeManager()
+    
     // MARK: - User authentication
     func authenticateLocalPlayer(completion: @escaping (_ gameCenterVC: UIViewController?, _ error: Error?) -> Void) {
         MemberService.shared.localPlayer.authenticateHandler = { (gameCenterVC, error) in

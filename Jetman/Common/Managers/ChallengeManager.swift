@@ -10,4 +10,7 @@ import Foundation
 
 class ChallengeManager: Manager {
     
+    let inbox = Inbox()
+    let outbox = Outbox()
+    
 }
