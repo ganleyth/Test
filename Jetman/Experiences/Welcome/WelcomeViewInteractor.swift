@@ -10,4 +10,6 @@ import SpriteKit
 
 class WelcomeViewInteractor: NSObject {
     
+    @IBAction func initiateNewChallenge(_ sender: UIButton) {
+    }
 }

@@ -36,9 +36,20 @@
                                     <segue destination="08Z-wO-x3y" kind="presentation" id="LaQ-o0-ogr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q75-Dj-h8G">
+                                <rect key="frame" x="399" y="172" width="104" height="30"/>
+                                <color key="backgroundColor" name="AppBlue"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="New Challenge"/>
+                                <connections>
+                                    <action selector="initiateNewChallenge:" destination="5j1-1C-2uz" eventType="touchUpInside" id="xHw-Mc-lN8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="q75-Dj-h8G" firstAttribute="leading" secondItem="rcp-Un-A4m" secondAttribute="trailing" constant="31" id="90i-HK-6qy"/>
+                            <constraint firstItem="q75-Dj-h8G" firstAttribute="baseline" secondItem="rcp-Un-A4m" secondAttribute="baseline" id="Bxm-jI-Y0R"/>
                             <constraint firstItem="qrt-Gm-bbn" firstAttribute="bottom" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="135" id="CDr-Dv-4K1"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehl-eZ-7g6"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="rcp-Un-A4m" secondAttribute="centerX" id="cX1-as-IDp"/>
@@ -74,6 +85,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AppBlue">
+            <color red="0.62745098039215685" green="0.85098039215686272" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="AppRed">
             <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
