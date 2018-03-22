@@ -8,8 +8,10 @@
 
 import SpriteKit
 
-class WelcomeViewInteractor: NSObject {
+class WelcomeViewInteractor: Interactor {
     
-    @IBAction func initiateNewChallenge(_ sender: UIButton) {
+    var welcomeViewController: WelcomeViewController? {
+        return viewController as? WelcomeViewController
     }
+
 }

@@ -42,7 +42,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="New Challenge"/>
                                 <connections>
-                                    <action selector="initiateNewChallenge:" destination="5j1-1C-2uz" eventType="touchUpInside" id="xHw-Mc-lN8"/>
+                                    <segue destination="NKT-5c-MDf" kind="presentation" id="lIz-4f-xbD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,7 +73,7 @@
                 <viewControllerPlaceholder storyboardName="GameplayView" id="hiQ-FA-phj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17t-lW-yKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="514" y="82"/>
+            <point key="canvasLocation" x="508" y="-88"/>
         </scene>
         <!--SettingsView-->
         <scene sceneID="EuS-px-nlY">
@@ -81,7 +81,15 @@
                 <viewControllerPlaceholder storyboardName="SettingsView" id="08Z-wO-x3y" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="inU-4S-rvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="233"/>
+            <point key="canvasLocation" x="508" y="82"/>
+        </scene>
+        <!--ChallengesView-->
+        <scene sceneID="Gtc-Yb-UrI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChallengesView" id="NKT-5c-MDf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0R-2T-jc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="508" y="248"/>
         </scene>
     </scenes>
     <resources>
