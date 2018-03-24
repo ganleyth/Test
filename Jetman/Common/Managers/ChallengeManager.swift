@@ -18,7 +18,7 @@ class ChallengeManager: Manager {
         case global = "GlobalLeaderboard"
     }
     
-    func report(scoreValue: Int, to leaderboard: Leaderboard, completion: @escaping () -> Void) {
+    func report(scoreValue: Int, to leaderboard: Leaderboard, completion: (() -> Void)?) {
         let score = GKScore(leaderboardIdentifier: leaderboard.rawValue)
         score.value = Int64(scoreValue)
         GKScore.report([score]) { (error) in
@@ -26,7 +26,7 @@ class ChallengeManager: Manager {
                 Logger.error("Could not report score: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
-            completion()
+            completion?()
         }
     }
     

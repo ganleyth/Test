@@ -36,7 +36,7 @@
                                     <segue destination="08Z-wO-x3y" kind="presentation" id="LaQ-o0-ogr"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q75-Dj-h8G">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q75-Dj-h8G">
                                 <rect key="frame" x="399" y="172" width="104" height="30"/>
                                 <color key="backgroundColor" name="AppBlue"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,6 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
                     <connections>
+                        <outlet property="challengeButton" destination="q75-Dj-h8G" id="b3g-4s-uQv"/>
                         <outlet property="gameplayButton" destination="rcp-Un-A4m" id="7Pg-Wo-SEg"/>
                         <outlet property="interactor" destination="5j1-1C-2uz" id="SwN-dI-GoQ"/>
                     </connections>

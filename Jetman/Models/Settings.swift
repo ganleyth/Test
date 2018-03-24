@@ -9,8 +9,8 @@
 import GameKit
 
 class Settings {
-    var allowHaptics = true
-    var allowSounds = true
+    var allowHaptics = false
+    var allowSounds = false
     var playerGender = Player.Gender.boy {
         didSet {
             switch playerGender {

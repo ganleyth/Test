@@ -31,7 +31,7 @@ class GameplayScene: SKScene {
     
     var lastTime: TimeInterval?
     
-    private let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
+    let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
     
     weak var gameplayDelegate: GameplaySceneDelegate?
 

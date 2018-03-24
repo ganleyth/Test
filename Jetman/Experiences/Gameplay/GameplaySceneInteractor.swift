@@ -152,6 +152,7 @@ extension GameplaySceneInteractor {
             player.state = .dead
             scene.gameplayDelegate?.gameplayDidEnd()
             musicAudioPlayer?.stop()
+            GameCenterManager.shared.challengeManager.report(scoreValue: scene.scoreKeeper.currentScore, to: .global, completion: nil)
         }
     }
 }

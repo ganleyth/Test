@@ -14,6 +14,7 @@ final class WelcomeViewController: UIViewController {
     // MARK: Properties
     @IBOutlet private var interactor: WelcomeViewInteractor!
     @IBOutlet private var gameplayButton: UIButton!
+    @IBOutlet private var challengeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,5 +40,6 @@ final class WelcomeViewController: UIViewController {
     
     @objc func updateFeatureAccess() {
         gameplayButton.isEnabled = MemberService.shared.localPlayerIsAuthenticated
+        
     }
 }
