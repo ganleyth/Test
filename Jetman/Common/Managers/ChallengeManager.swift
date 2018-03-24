@@ -20,6 +20,7 @@ class ChallengeManager: Manager {
     
     func report(scoreValue: Int, to leaderboard: Leaderboard, completion: (() -> Void)?) {
         let score = GKScore(leaderboardIdentifier: leaderboard.rawValue)
+        score.shouldSetDefaultLeaderboard = true
         score.value = Int64(scoreValue)
         GKScore.report([score]) { (error) in
             if let error = error {
@@ -28,6 +29,10 @@ class ChallengeManager: Manager {
             
             completion?()
         }
+    }
+    
+    func fetch(leaderboard: Leaderboard, completion: (Leaderboard?) -> Void) {
+        
     }
     
 }

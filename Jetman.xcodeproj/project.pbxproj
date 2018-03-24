@@ -50,7 +50,6 @@
 		18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FFE1FDC546B00D59107 /* MemberService.swift */; };
 		18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330001FDC549900D59107 /* FacebookLoginManager.swift */; };
 		18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330021FDC553E00D59107 /* ChallengeManager.swift */; };
-		18B330051FDC556400D59107 /* StandingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330041FDC556400D59107 /* StandingsManager.swift */; };
 		18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330061FDC55E200D59107 /* NetworkManager.swift */; };
 		18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300A1FDC564800D59107 /* LoginManager.swift */; };
 		18B3300D1FDC7A7B00D59107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300C1FDC7A7B00D59107 /* User.swift */; };
@@ -154,7 +153,6 @@
 		18B32FFE1FDC546B00D59107 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
 		18B330001FDC549900D59107 /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		18B330021FDC553E00D59107 /* ChallengeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
-		18B330041FDC556400D59107 /* StandingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsManager.swift; sourceTree = "<group>"; };
 		18B330061FDC55E200D59107 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18B3300A1FDC564800D59107 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		18B3300C1FDC7A7B00D59107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -379,7 +377,6 @@
 				18B32FFD1FDC544B00D59107 /* MemberService */,
 				18B32FF21FDC4B8600D59107 /* Manager.swift */,
 				18B330021FDC553E00D59107 /* ChallengeManager.swift */,
-				18B330041FDC556400D59107 /* StandingsManager.swift */,
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
 				18A671EC205DA1F000EB4BB8 /* Interactor.swift */,
@@ -814,7 +811,6 @@
 				18B330151FDC7B3C00D59107 /* Inbox.swift in Sources */,
 				18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */,
 				18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */,
-				18B330051FDC556400D59107 /* StandingsManager.swift in Sources */,
 				1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */,
 				18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
