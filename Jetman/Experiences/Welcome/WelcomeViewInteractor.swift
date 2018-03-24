@@ -7,6 +7,7 @@
 //
 
 import SpriteKit
+import GameKit
 
 class WelcomeViewInteractor: Interactor {
     
@@ -14,4 +15,19 @@ class WelcomeViewInteractor: Interactor {
         return viewController as? WelcomeViewController
     }
 
+    @IBAction func showLeaderboard(_ sender: UIButton) {
+        let leaderboardController = GKGameCenterViewController()
+        leaderboardController.delegate = self
+        leaderboardController.viewState = .leaderboards
+        leaderboardController.leaderboardIdentifier = Constants.Leaderboard.global
+        leaderboardController.leaderboardTimeScope = .today
+        
+        viewController.present(leaderboardController, animated: true, completion: nil)
+    }
+}
+
+extension WelcomeViewInteractor: GKGameCenterControllerDelegate, UINavigationControllerDelegate {
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
 }

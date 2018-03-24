@@ -20,6 +20,10 @@ struct Constants {
         case middleDecrease = "bottomBoundaryMiddleDecrease"
     }
     
+    struct Leaderboard {
+        static let global: LeaderboardName = "GlobalLeaderboard"
+    }
+    
     struct LoggerDefaults {
         static let defaultFormat = "yyyy-MM-dd hh:mm:ss.SSS"
     }
@@ -119,3 +123,5 @@ struct Constants {
     }
     
 }
+
+typealias LeaderboardName = String
