@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Load sprites into memory on launch
         SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
+        FirebaseApp.configure()
         
         return true
     }

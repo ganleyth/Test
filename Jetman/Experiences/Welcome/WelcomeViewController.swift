@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import FirebaseAuth
 
 final class WelcomeViewController: UIViewController {
 
@@ -16,6 +17,8 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet private var gameplayButton: UIButton!
     @IBOutlet private var challengeButton: UIButton!
     @IBOutlet weak var leaderboardButton: UIButton!
+    
+    private var authStateChangeHandler: AuthStateDidChangeListenerHandle?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +29,22 @@ final class WelcomeViewController: UIViewController {
         updateFeatureAccess()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        authStateChangeHandler = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            //
+        })
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         presentGameCenterVCIfNeeded()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        guard let handler = authStateChangeHandler else { return }
+        Auth.auth().removeStateDidChangeListener(handler)
     }
     
     @objc func presentGameCenterVCIfNeeded() {

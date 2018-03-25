@@ -67,6 +67,7 @@
 		18B3302C1FDD8F1500D59107 /* LayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302B1FDD8F1500D59107 /* LayerTests.swift */; };
 		18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */; };
 		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
+		18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC220681A2500D05040 /* GoogleService-Info.plist */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -170,6 +171,7 @@
 		18B3302B1FDD8F1500D59107 /* LayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTests.swift; sourceTree = "<group>"; };
 		18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Helpers.swift"; sourceTree = "<group>"; };
 		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
+		18B7BBC220681A2500D05040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
 				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
 				180C88AE1FC77F5F00D19F85 /* Info.plist */,
+				18B7BBC220681A2500D05040 /* GoogleService-Info.plist */,
 				183E756B2038AFAF00092B2A /* GameSession.swift */,
 			);
 			path = Main;
@@ -688,6 +691,7 @@
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				183E75A0203B83C100092B2A /* splash.wav in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
+				18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
