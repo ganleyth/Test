@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="32O-Lu-Hhi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1rm-33-DuJ">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,16 +18,17 @@
                         <viewControllerLayoutGuide type="bottom" id="pZW-Qe-aA4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fEf-je-wFl">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthLandingView" translatesAutoresizingMaskIntoConstraints="NO" id="OEi-Wa-bjp">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AuthLandingView" translatesAutoresizingMaskIntoConstraints="NO" id="OEi-Wa-bjp">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="343"/>
+                                <color key="backgroundColor" name="AppRed"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rvE-kg-Ev5">
-                                <rect key="frame" x="273" y="235" width="120" height="80"/>
+                                <rect key="frame" x="273" y="215" width="120" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpd-gP-13w">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpd-gP-13w">
                                         <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
                                         <color key="backgroundColor" name="AppBlue"/>
                                         <constraints>
@@ -36,12 +37,25 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="New Player"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="K2x-D8-jlm" kind="show" identifier="showSignupView" id="Z7R-Tb-2MX"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-H0-hZv">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-H0-hZv">
                                         <rect key="frame" x="0.0" y="48" width="120" height="32"/>
                                         <color key="backgroundColor" name="AppYellow"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Sign In"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -54,22 +68,53 @@
                         <constraints>
                             <constraint firstItem="OEi-Wa-bjp" firstAttribute="top" secondItem="hbr-Gj-yWK" secondAttribute="bottom" id="4b0-wA-Hh2"/>
                             <constraint firstItem="rvE-kg-Ev5" firstAttribute="centerX" secondItem="fEf-je-wFl" secondAttribute="centerX" id="HrR-EW-c82"/>
-                            <constraint firstItem="pZW-Qe-aA4" firstAttribute="top" secondItem="rvE-kg-Ev5" secondAttribute="bottom" constant="60" id="IRp-Ec-EeA"/>
+                            <constraint firstItem="pZW-Qe-aA4" firstAttribute="top" secondItem="rvE-kg-Ev5" secondAttribute="bottom" constant="48" id="IRp-Ec-EeA"/>
                             <constraint firstItem="OEi-Wa-bjp" firstAttribute="leading" secondItem="fEf-je-wFl" secondAttribute="leading" id="LAE-2z-Xd9"/>
                             <constraint firstAttribute="bottom" secondItem="OEi-Wa-bjp" secondAttribute="bottom" id="Ve1-DR-vxp"/>
                             <constraint firstAttribute="trailing" secondItem="OEi-Wa-bjp" secondAttribute="trailing" id="oyw-RO-9YZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="df7-bb-1Cs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZI7-Jp-CLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198.35082458770617" y="82.400000000000006"/>
+            <point key="canvasLocation" x="-7.6461769115442282" y="82.400000000000006"/>
+        </scene>
+        <!--SignupView-->
+        <scene sceneID="uZ4-8Q-DBy">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SignupView" id="K2x-D8-jlm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iOa-df-Uy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609.44527736131943" y="81.599999999999994"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SUb-kg-KKi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1rm-33-DuJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="BxA-wQ-f9M">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="AppRed"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="32O-Lu-Hhi" kind="relationship" relationship="rootViewController" id="HvK-38-KsG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LG7-o8-Mz0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-782" y="82"/>
         </scene>
     </scenes>
     <resources>
         <image name="AuthLandingView" width="667" height="375"/>
         <namedColor name="AppBlue">
             <color red="0.62745098039215685" green="0.85098039215686272" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppRed">
+            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="AppYellow">
             <color red="0.97254901960784312" green="0.80000000000000004" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
