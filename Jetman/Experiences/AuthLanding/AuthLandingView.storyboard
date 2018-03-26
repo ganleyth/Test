@@ -38,7 +38,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="New Player"/>
                                         <connections>
-                                            <segue destination="K2x-D8-jlm" kind="show" identifier="showSignupView" id="Z7R-Tb-2MX"/>
+                                            <segue destination="K2x-D8-jlm" kind="show" identifier="showSignInView" id="Z7R-Tb-2MX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxC-H0-hZv">
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="-7.6461769115442282" y="82.400000000000006"/>
         </scene>
-        <!--SignupView-->
+        <!--SignInView-->
         <scene sceneID="uZ4-8Q-DBy">
             <objects>
-                <viewControllerPlaceholder storyboardName="SignupView" id="K2x-D8-jlm" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SignInView" id="K2x-D8-jlm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOa-df-Uy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609.44527736131943" y="81.599999999999994"/>
