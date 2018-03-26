@@ -22,11 +22,11 @@ class GameCenterManager {
     
     // MARK: - User authentication
     func authenticateLocalPlayer(completion: @escaping (_ gameCenterVC: UIViewController?, _ error: Error?) -> Void) {
-        MemberService.shared.localPlayer.authenticateHandler = { (gameCenterVC, error) in
-            DispatchQueue.main.async {
-                completion(gameCenterVC, error)
-            }
-        }
+//        MemberService.shared.localPlayer.authenticateHandler = { (gameCenterVC, error) in
+//            DispatchQueue.main.async {
+//                completion(gameCenterVC, error)
+//            }
+//        }
     }
     
     // MARK: - Friend fetching

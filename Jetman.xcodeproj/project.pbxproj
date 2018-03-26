@@ -16,6 +16,7 @@
 		183E675D20685F7400E6DB57 /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E675920685F7400E6DB57 /* SignupInteractor.swift */; };
 		183E675F20685FC200E6DB57 /* SignupView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183E675E20685FC200E6DB57 /* SignupView.storyboard */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
+		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
 		183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */; };
@@ -46,14 +47,10 @@
 		18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE41FDC3DDC00D59107 /* GameplayViewController.swift */; };
 		18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE61FDC3ECC00D59107 /* GameplayScene.swift */; };
 		18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FEC1FDC408400D59107 /* WelcomeScene.swift */; };
-		18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF21FDC4B8600D59107 /* Manager.swift */; };
 		18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FF81FDC4F6100D59107 /* WelcomeViewInteractor.swift */; };
-		18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FFE1FDC546B00D59107 /* MemberService.swift */; };
-		18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330001FDC549900D59107 /* FacebookLoginManager.swift */; };
 		18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330021FDC553E00D59107 /* ChallengeManager.swift */; };
 		18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330061FDC55E200D59107 /* NetworkManager.swift */; };
 		18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300A1FDC564800D59107 /* LoginManager.swift */; };
-		18B3300D1FDC7A7B00D59107 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300C1FDC7A7B00D59107 /* User.swift */; };
 		18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3300E1FDC7A9900D59107 /* Statistics.swift */; };
 		18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330101FDC7AAF00D59107 /* Challenge.swift */; };
 		18B330151FDC7B3C00D59107 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330141FDC7B3C00D59107 /* Inbox.swift */; };
@@ -121,6 +118,7 @@
 		183E675920685F7400E6DB57 /* SignupInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
 		183E675E20685FC200E6DB57 /* SignupView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignupView.storyboard; sourceTree = "<group>"; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
+		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
 		183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Helpers.swift"; sourceTree = "<group>"; };
@@ -152,14 +150,10 @@
 		18B32FE41FDC3DDC00D59107 /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		18B32FE61FDC3ECC00D59107 /* GameplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
 		18B32FEC1FDC408400D59107 /* WelcomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScene.swift; sourceTree = "<group>"; };
-		18B32FF21FDC4B8600D59107 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		18B32FF81FDC4F6100D59107 /* WelcomeViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewInteractor.swift; sourceTree = "<group>"; };
-		18B32FFE1FDC546B00D59107 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
-		18B330001FDC549900D59107 /* FacebookLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookLoginManager.swift; sourceTree = "<group>"; };
 		18B330021FDC553E00D59107 /* ChallengeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
 		18B330061FDC55E200D59107 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18B3300A1FDC564800D59107 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		18B3300C1FDC7A7B00D59107 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18B3300E1FDC7A9900D59107 /* Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statistics.swift; sourceTree = "<group>"; };
 		18B330101FDC7AAF00D59107 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		18B330141FDC7B3C00D59107 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
@@ -309,17 +303,6 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
-		18B32FFD1FDC544B00D59107 /* MemberService */ = {
-			isa = PBXGroup;
-			children = (
-				18B32FFE1FDC546B00D59107 /* MemberService.swift */,
-				18B330001FDC549900D59107 /* FacebookLoginManager.swift */,
-				18B3300A1FDC564800D59107 /* LoginManager.swift */,
-			);
-			name = MemberService;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		18B330261FDCA80000D59107 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,7 +353,6 @@
 		18CEF3061FD32DF3005C3980 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				18B3300C1FDC7A7B00D59107 /* User.swift */,
 				18B3300E1FDC7A9900D59107 /* Statistics.swift */,
 				18B330221FDC7CEE00D59107 /* Standings.swift */,
 				18B330101FDC7AAF00D59107 /* Challenge.swift */,
@@ -400,12 +382,12 @@
 		18CEF3081FD32E35005C3980 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				18B32FFD1FDC544B00D59107 /* MemberService */,
-				18B32FF21FDC4B8600D59107 /* Manager.swift */,
+				18B3300A1FDC564800D59107 /* LoginManager.swift */,
 				18B330021FDC553E00D59107 /* ChallengeManager.swift */,
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
 				18A671EC205DA1F000EB4BB8 /* Interactor.swift */,
+				183E6762206874B700E6DB57 /* FirebaseManager.swift */,
 				18A671EE205DACD900EB4BB8 /* FriendManager.swift */,
 			);
 			path = Managers;
@@ -797,14 +779,12 @@
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
-				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
 				183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
 				18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
 				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
-				18B3300D1FDC7A7B00D59107 /* User.swift in Sources */,
 				18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */,
 				18A671EB205DA13500EB4BB8 /* ChallengesInteractor.swift in Sources */,
 				18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */,
@@ -814,13 +794,13 @@
 				18B330231FDC7CEE00D59107 /* Standings.swift in Sources */,
 				18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */,
 				18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */,
-				18B32FF31FDC4B8600D59107 /* Manager.swift in Sources */,
 				183E675A20685F7400E6DB57 /* SignupViewController.swift in Sources */,
 				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
+				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				18B32FDF1FDA558F00D59107 /* StandingsView.swift in Sources */,
 				1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */,
@@ -828,7 +808,6 @@
 				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,
 				18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */,
 				183E675B20685F7400E6DB57 /* SignupTableViewCell.swift in Sources */,
-				18B330011FDC549900D59107 /* FacebookLoginManager.swift in Sources */,
 				18B330151FDC7B3C00D59107 /* Inbox.swift in Sources */,
 				18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */,
 				18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */,

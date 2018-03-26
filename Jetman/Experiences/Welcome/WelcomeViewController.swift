@@ -56,8 +56,8 @@ final class WelcomeViewController: UIViewController {
     }
     
     @objc func updateFeatureAccess() {
-        gameplayButton.isEnabled = MemberService.shared.localPlayerIsAuthenticated
-        challengeButton.isEnabled = MemberService.shared.localPlayerIsAuthenticated
-        leaderboardButton.isEnabled = MemberService.shared.localPlayerIsAuthenticated
+        gameplayButton.isEnabled = true
+        challengeButton.isEnabled = true
+        leaderboardButton.isEnabled = true
     }
 }

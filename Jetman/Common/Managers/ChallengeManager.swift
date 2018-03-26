@@ -9,7 +9,7 @@
 import Foundation
 import GameKit
 
-class ChallengeManager: Manager {
+class ChallengeManager {
     
     let inbox = Inbox()
     let outbox = Outbox()
