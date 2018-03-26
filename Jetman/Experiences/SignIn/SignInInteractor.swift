@@ -41,7 +41,18 @@ extension SignInInteractor: SignInDelegate {
                 this.viewController.presentInfoAlertWith(title: "Signup Error", message: error.localizedDescription)
             }
             
-            this.viewController?.performSegue(withIdentifier: "showWelcomeView", sender: this.viewController)
+            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: this.viewController)
+        }
+    }
+    
+    func signInCellDidTapSignInWith(email: String, password: String) {
+        FirebaseManager.shared.loginManager.signInUserWith(email: email, password: password) { [weak self] (error) in
+            guard let this = self else { return }
+            if let error = error {
+                this.viewController.presentInfoAlertWith(title: "Sign In Error", message: error.localizedDescription)
+            }
+            
+            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: this.viewController)
         }
     }
     

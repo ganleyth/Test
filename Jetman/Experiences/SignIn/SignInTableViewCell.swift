@@ -10,6 +10,7 @@ import UIKit
 
 protocol SignInDelegate: class {
     func signInCellDidTapSignupWith(email: String, password: String)
+    func signInCellDidTapSignInWith(email: String, password: String)
     func signInCellDidRegisterInvalidCredentials()
 }
 
@@ -41,7 +42,14 @@ class SignInTableViewCell: UITableViewCell {
                 return
         }
         
-        delegate?.signInCellDidTapSignupWith(email: email, password: password)
+        switch style {
+        case .signup?:
+            delegate?.signInCellDidTapSignupWith(email: email, password: password)
+        case .signIn?:
+            delegate?.signInCellDidTapSignInWith(email: email, password: password)
+        default:
+            delegate?.signInCellDidTapSignInWith(email: email, password: password)
+        }
     }
 }
 

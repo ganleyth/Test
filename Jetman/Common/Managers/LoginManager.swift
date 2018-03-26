@@ -32,4 +32,21 @@ class LoginManager {
         }
     }
     
+    func signInUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            defer { completion(error) }
+            if let error = error {
+                Logger.error("Login user error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+                return
+            }
+            
+            guard let user = user else {
+                Logger.info("Returned user object is nil", filePath: #file, funcName: #function, lineNumber: #line)
+                return
+            }
+            
+            self.user = user
+        }
+    }
+    
 }
