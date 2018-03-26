@@ -17,6 +17,7 @@
 		183E676920688AF900E6DB57 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676820688AF900E6DB57 /* SignInInteractor.swift */; };
 		183E676B20688B0700E6DB57 /* SignInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676A20688B0700E6DB57 /* SignInTableViewCell.swift */; };
 		183E676D20688B1000E6DB57 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676C20688B1000E6DB57 /* SignInViewController.swift */; };
+		183E676F2068917E00E6DB57 /* AuthLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
 		183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */; };
@@ -119,6 +120,7 @@
 		183E676820688AF900E6DB57 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		183E676A20688B0700E6DB57 /* SignInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewCell.swift; sourceTree = "<group>"; };
 		183E676C20688B1000E6DB57 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLandingViewController.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
 		183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Helpers.swift"; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */,
+				183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */,
 			);
 			path = AuthLanding;
 			sourceTree = "<group>";
@@ -775,6 +778,7 @@
 			files = (
 				18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */,
 				18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */,
+				183E676F2068917E00E6DB57 /* AuthLandingViewController.swift in Sources */,
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,

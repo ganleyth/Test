@@ -8,10 +8,21 @@
 
 import UIKit
 
+enum SignInStyle {
+    case signup
+    case signIn
+}
+
 class SignInViewController: UIViewController {
     
     @IBOutlet var interactor: SignInInteractor!
     @IBOutlet weak var tableView: UITableView!
+    
+    var style = SignInStyle.signIn {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

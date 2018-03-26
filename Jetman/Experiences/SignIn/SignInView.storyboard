@@ -109,6 +109,7 @@
                                         <connections>
                                             <outlet property="emailTextField" destination="H3h-y5-Cus" id="sJf-kW-WbB"/>
                                             <outlet property="passwordTextField" destination="GHM-j8-7hO" id="UIW-kr-cFg"/>
+                                            <outlet property="signInButton" destination="5JU-YG-WVd" id="7CV-kb-3xT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -8,7 +8,11 @@
 
 import UIKit
 
-final class SignInInteractor: Interactor {}
+final class SignInInteractor: Interactor {
+    private var signInViewController: SignInViewController? {
+        return viewController as? SignInViewController
+    }
+}
 
 // MARK: - Table view data source
 extension SignInInteractor: UITableViewDataSource {
@@ -18,8 +22,11 @@ extension SignInInteractor: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "signupCell", for: indexPath) as? SignInTableViewCell else { return SignInTableViewCell() }
+        guard
+            let signInVC = signInViewController,
+            let cell = tableView.dequeueReusableCell(withIdentifier: "signupCell", for: indexPath) as? SignInTableViewCell else { return SignInTableViewCell() }
         cell.delegate = self
+        cell.configure(for: signInVC.style)
         return cell
     }
 }

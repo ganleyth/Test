@@ -14,11 +14,25 @@ protocol SignInDelegate: class {
 }
 
 class SignInTableViewCell: UITableViewCell {
-    
+
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    
+    var style: SignInStyle?
     
     weak var delegate: SignInDelegate?
+    
+    func configure(for style: SignInStyle) {
+        switch style {
+        case .signup:
+            signInButton.setTitle("Create Account", for: UIControlState())
+        case .signIn:
+            signInButton.setTitle("Sign In", for: UIControlState())
+        }
+        
+        self.style = style
+    }
     
     @IBAction func signUp(_ sender: UIButton) {
         guard let email = emailTextField.text, !email.isEmpty,
