@@ -15,6 +15,7 @@
 		183E675B20685F7400E6DB57 /* SignupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E675720685F7300E6DB57 /* SignupTableViewCell.swift */; };
 		183E675D20685F7400E6DB57 /* SignupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E675920685F7400E6DB57 /* SignupInteractor.swift */; };
 		183E675F20685FC200E6DB57 /* SignupView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183E675E20685FC200E6DB57 /* SignupView.storyboard */; };
+		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
 		183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */; };
@@ -119,6 +120,7 @@
 		183E675720685F7300E6DB57 /* SignupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupTableViewCell.swift; sourceTree = "<group>"; };
 		183E675920685F7400E6DB57 /* SignupInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupInteractor.swift; sourceTree = "<group>"; };
 		183E675E20685FC200E6DB57 /* SignupView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignupView.storyboard; sourceTree = "<group>"; };
+		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
 		183E7598203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Helpers.swift"; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */,
 				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
 				18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */,
+				183E67602068724700E6DB57 /* UIViewController+Helpers.swift */,
 			);
 			path = "Apple Extensions";
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
 				18B32FFF1FDC546B00D59107 /* MemberService.swift in Sources */,
+				183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
 				18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */,
 				18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */,
