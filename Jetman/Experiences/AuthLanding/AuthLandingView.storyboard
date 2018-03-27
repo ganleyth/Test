@@ -68,6 +68,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="df7-bb-1Cs"/>
+                    <connections>
+                        <segue destination="qAi-7A-xkL" kind="presentation" identifier="showWelcomeView" id="vEt-LD-OPM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZI7-Jp-CLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -79,7 +82,15 @@
                 <viewControllerPlaceholder storyboardName="SignInView" id="K2x-D8-jlm" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOa-df-Uy7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609.44527736131943" y="81.599999999999994"/>
+            <point key="canvasLocation" x="606" y="38"/>
+        </scene>
+        <!--WelcomeView-->
+        <scene sceneID="Y4Y-E5-x62">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WelcomeView" id="qAi-7A-xkL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dyK-uc-K4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="606" y="158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SUb-kg-KKi">
@@ -115,6 +126,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Z7R-Tb-2MX"/>
+        <segue reference="9um-mH-5Ug"/>
     </inferredMetricsTieBreakers>
 </document>

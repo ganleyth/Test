@@ -111,6 +111,10 @@ struct Constants {
         static let waterLevelYPosition: CGFloat = 85.0
     }
     
+    struct UserDefaults {
+        static let uid = "uid"
+    }
+    
     enum ZPosition: Int {
         case backgroundLayer = 0
         case playerAndObstacles

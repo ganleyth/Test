@@ -16,8 +16,9 @@ class LoginManager {
     var user: User?
     
     func signupUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
             defer { completion(error) }
+            guard let this = self else { return }
             if let error = error {
                 Logger.error("Create user error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 return
@@ -28,13 +29,14 @@ class LoginManager {
                 return
             }
             
-            self.user = user
+            this.user = user
         }
     }
     
     func signInUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] (user, error) in
             defer { completion(error) }
+            guard let this = self else { return }
             if let error = error {
                 Logger.error("Login user error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 return
@@ -45,7 +47,7 @@ class LoginManager {
                 return
             }
             
-            self.user = user
+            this.user = user
         }
     }
     

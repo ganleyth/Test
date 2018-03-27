@@ -41,7 +41,7 @@ extension SignInInteractor: SignInDelegate {
                 this.viewController.presentInfoAlertWith(title: "Signup Error", message: error.localizedDescription)
             }
             
-            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: this.viewController)
+            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: nil)
         }
     }
     
@@ -52,7 +52,7 @@ extension SignInInteractor: SignInDelegate {
                 this.viewController.presentInfoAlertWith(title: "Sign In Error", message: error.localizedDescription)
             }
             
-            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: this.viewController)
+            this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: nil)
         }
     }
     
