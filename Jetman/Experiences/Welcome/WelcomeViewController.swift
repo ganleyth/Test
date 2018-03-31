@@ -17,6 +17,8 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet private var gameplayButton: UIButton!
     @IBOutlet private var challengeButton: UIButton!
     @IBOutlet weak var leaderboardButton: UIButton!
+    @IBOutlet weak var dimmingView: UIView!
+    @IBOutlet weak var embeddedControllerContainerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ final class WelcomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAccess), name: Notification.Name.GKPlayerAuthenticationDidChangeNotificationName, object: nil)
         
         updateFeatureAccess()
+        prepareEmbeddedController()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -44,5 +47,9 @@ final class WelcomeViewController: UIViewController {
         gameplayButton.isEnabled = true
         challengeButton.isEnabled = true
         leaderboardButton.isEnabled = true
+    }
+    
+    private func prepareEmbeddedController() {
+        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: embeddedControllerContainerView.frame.size.height)
     }
 }
