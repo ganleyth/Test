@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var enableSoundsSwitch: UISwitch!
     @IBOutlet weak var enableHapticsSwitch: UISwitch!
     
+    weak var delegate: WelcomeViewEmbeddedControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +30,6 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func dismissSettingsView(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
+        delegate?.embeddedControllerShouldDismiss()
     }
 }

@@ -10,6 +10,10 @@ import UIKit
 import GameKit
 import FirebaseAuth
 
+protocol WelcomeViewEmbeddedControllerDelegate: class {
+    func embeddedControllerShouldDismiss()
+}
+
 final class WelcomeViewController: UIViewController {
 
     // MARK: Properties
@@ -60,8 +64,9 @@ final class WelcomeViewController: UIViewController {
     
     @IBAction func showSettingsView(_ sender: UIButton) {
         guard let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
+        settingsView.delegate = self
         castedEmbeddedController?.addChild(settingsView)
-        animateEmbeddedControllerVisibility(isVisible: true)
+        animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
     private func prepareEmbeddedController() {
@@ -78,21 +83,33 @@ final class WelcomeViewController: UIViewController {
 // MARK: - Animation
 private extension WelcomeViewController {
     
-    func animateEmbeddedControllerVisibility(isVisible: Bool) {
+    func animateEmbeddedControllerVisibility(isVisible: Bool, completion: (() -> Void)?) {
         let transform: CGAffineTransform
         let dimmingViewAlpha: CGFloat
         if isVisible {
             transform = CGAffineTransform.identity
-            dimmingViewAlpha = 0.6
+            dimmingViewAlpha = 0.5
         } else {
             transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
             dimmingViewAlpha = 0.0
         }
-        
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { [weak self] in
+
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { [weak self] in
             guard let this = self else { return }
             this.embeddedControllerContainerView.transform = transform
             this.dimmingView.alpha = dimmingViewAlpha
-        }, completion: nil)
+        }) { (_) in
+            completion?()
+        }
+    }
+}
+
+// MARK: - Embedded controller delegate
+extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
+    func embeddedControllerShouldDismiss() {
+        animateEmbeddedControllerVisibility(isVisible: false) { [weak self] in
+            guard let this = self else { return }
+            this.castedEmbeddedController?.removeChildren()
+        }
     }
 }
