@@ -34,7 +34,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <segue destination="08Z-wO-x3y" kind="presentation" id="LaQ-o0-ogr"/>
+                                    <action selector="showSettingsView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="UKo-dN-trs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q75-Dj-h8G">
@@ -57,36 +57,32 @@
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K45-9c-P6w">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
-                                <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bh-Yfg">
-                                        <rect key="frame" x="67" y="38" width="534" height="300"/>
-                                        <connections>
-                                            <segue destination="T8Y-1o-vLr" kind="embed" id="581-vb-Xxl"/>
-                                        </connections>
-                                    </containerView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerX" secondItem="K45-9c-P6w" secondAttribute="centerX" id="oCT-oq-wcB"/>
-                                    <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="K45-9c-P6w" secondAttribute="centerY" id="wc4-jf-5ig"/>
-                                </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bh-Yfg">
+                                <rect key="frame" x="66" y="37" width="534" height="300"/>
+                                <connections>
+                                    <segue destination="T8Y-1o-vLr" kind="embed" identifier="embedController" id="581-vb-Xxl"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="5BT-Pe-ETd"/>
+                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="6WI-ER-v1v"/>
                             <constraint firstItem="q75-Dj-h8G" firstAttribute="leading" secondItem="rcp-Un-A4m" secondAttribute="trailing" constant="31" id="90i-HK-6qy"/>
                             <constraint firstAttribute="bottom" secondItem="K45-9c-P6w" secondAttribute="bottom" id="Bu5-7n-i1X"/>
                             <constraint firstItem="q75-Dj-h8G" firstAttribute="baseline" secondItem="rcp-Un-A4m" secondAttribute="baseline" id="Bxm-jI-Y0R"/>
                             <constraint firstItem="qrt-Gm-bbn" firstAttribute="bottom" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="135" id="CDr-Dv-4K1"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehl-eZ-7g6"/>
-                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="K5d-wV-wIZ"/>
                             <constraint firstItem="MuH-zL-U1I" firstAttribute="leading" secondItem="q75-Dj-h8G" secondAttribute="leading" id="KLj-hc-ntP"/>
                             <constraint firstItem="MuH-zL-U1I" firstAttribute="baseline" secondItem="Uf7-PZ-4JC" secondAttribute="baseline" id="LC2-zr-jlX"/>
                             <constraint firstAttribute="trailing" secondItem="K45-9c-P6w" secondAttribute="trailing" id="NZs-Wa-KCQ"/>
+                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="OTC-ML-Lxr"/>
+                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
+                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="rcp-Un-A4m" secondAttribute="centerX" id="cX1-as-IDp"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
-                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="m7J-ws-emu"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="woB-Kz-AD9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
@@ -117,14 +113,6 @@
             </objects>
             <point key="canvasLocation" x="508" y="-88"/>
         </scene>
-        <!--SettingsView-->
-        <scene sceneID="EuS-px-nlY">
-            <objects>
-                <viewControllerPlaceholder storyboardName="SettingsView" id="08Z-wO-x3y" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="inU-4S-rvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="508" y="82"/>
-        </scene>
         <!--ChallengesView-->
         <scene sceneID="Gtc-Yb-UrI">
             <objects>
@@ -136,14 +124,15 @@
         <!--Welcome View Embedded Controller-->
         <scene sceneID="6N5-m6-XzH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12s-Hz-dlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="T8Y-1o-vLr" customClass="WelcomeViewEmbeddedController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmbeddedViewController" id="T8Y-1o-vLr" customClass="WelcomeViewEmbeddedController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rw4-1p-OAQ">
                         <rect key="frame" x="0.0" y="0.0" width="534" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="q7k-IQ-xxT"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12s-Hz-dlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="1010"/>
         </scene>

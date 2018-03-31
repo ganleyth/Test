@@ -8,4 +8,20 @@
 
 import UIKit
 
-class WelcomeViewEmbeddedController: UIViewController {}
+class WelcomeViewEmbeddedController: UIViewController {
+    
+    func addChild(_ controller: UIViewController) {
+        addChildViewController(controller)
+        view.addSubview(controller.view)
+        controller.view.frame = view.frame
+        controller.didMove(toParentViewController: self)
+    }
+    
+    func removeChildren() {
+        childViewControllers.forEach { (childController) in
+            childController.willMove(toParentViewController: nil)
+            childController.removeFromParentViewController()
+            childController.view.removeFromSuperview()
+        }
+    }
+}

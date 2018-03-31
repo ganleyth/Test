@@ -20,6 +20,15 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet weak var dimmingView: UIView!
     @IBOutlet weak var embeddedControllerContainerView: UIView!
     
+    private var embeddedController: UIViewController?
+    private var castedEmbeddedController: WelcomeViewEmbeddedController? {
+        return embeddedController as? WelcomeViewEmbeddedController
+    }
+    
+    private var containerViewYTranslation: CGFloat {
+        return view.frame.size.height - embeddedControllerContainerView.frame.minY
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +58,41 @@ final class WelcomeViewController: UIViewController {
         leaderboardButton.isEnabled = true
     }
     
+    @IBAction func showSettingsView(_ sender: UIButton) {
+        guard let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
+        castedEmbeddedController?.addChild(settingsView)
+        animateEmbeddedControllerVisibility(isVisible: true)
+    }
+    
     private func prepareEmbeddedController() {
-        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: embeddedControllerContainerView.frame.size.height)
+        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedController" {
+            embeddedController = segue.destination
+        }
+    }
+}
+
+// MARK: - Animation
+private extension WelcomeViewController {
+    
+    func animateEmbeddedControllerVisibility(isVisible: Bool) {
+        let transform: CGAffineTransform
+        let dimmingViewAlpha: CGFloat
+        if isVisible {
+            transform = CGAffineTransform.identity
+            dimmingViewAlpha = 0.6
+        } else {
+            transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+            dimmingViewAlpha = 0.0
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn, animations: { [weak self] in
+            guard let this = self else { return }
+            this.embeddedControllerContainerView.transform = transform
+            this.dimmingView.alpha = dimmingViewAlpha
+        }, completion: nil)
     }
 }
