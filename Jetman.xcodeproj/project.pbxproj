@@ -30,6 +30,7 @@
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
 		1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */; };
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
+		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
@@ -138,6 +139,7 @@
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
 		1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewController.swift; sourceTree = "<group>"; };
 		1853AAC020715665007EEC62 /* MyChallengesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesBox.swift; sourceTree = "<group>"; };
+		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -390,6 +392,7 @@
 				18B330181FDC7B6D00D59107 /* Settings.swift */,
 				18B3301A1FDC7B7D00D59107 /* Player.swift */,
 				1853AAC020715665007EEC62 /* MyChallengesBox.swift */,
+				1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -827,6 +830,7 @@
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
+				1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
 				1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */,
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,

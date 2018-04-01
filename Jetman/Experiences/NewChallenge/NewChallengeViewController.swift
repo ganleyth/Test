@@ -22,6 +22,7 @@ class NewChallengeViewController: UIViewController {
     @IBAction func challengeContact(_ sender: UIButton) {
         let messageController = MFMessageComposeViewController()
         messageController.messageComposeDelegate = interactor
+        messageController.message = MessagesChallenge()
         present(messageController, animated: true, completion: nil)
     }
     
