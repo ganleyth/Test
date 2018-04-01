@@ -8,6 +8,22 @@
 
 import Foundation
 
-struct Challenge {
+struct Challenge: Codable {
+    let id: String
+    let opponentID: String
+    let selfInitiated: Bool
+    var score: Int? = nil
     
+    init(opponentID: String) {
+        id = UUID().uuidString
+        self.opponentID = opponentID
+        selfInitiated = true
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case opponentID = "opponent_id"
+        case selfInitiated = "self_initiated"
+        case score
+    }
 }
