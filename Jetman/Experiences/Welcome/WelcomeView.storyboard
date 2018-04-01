@@ -43,7 +43,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="New Challenge"/>
                                 <connections>
-                                    <segue destination="NKT-5c-MDf" kind="presentation" id="lIz-4f-xbD"/>
+                                    <action selector="showNewChallengeView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="qGu-Id-lmj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-zL-U1I">
@@ -88,7 +88,6 @@
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
                     <connections>
-                        <outlet property="challengeButton" destination="q75-Dj-h8G" id="b3g-4s-uQv"/>
                         <outlet property="dimmingView" destination="K45-9c-P6w" id="BLI-Rf-RBH"/>
                         <outlet property="embeddedControllerContainerView" destination="43M-Bh-Yfg" id="KCm-eW-ML3"/>
                         <outlet property="gameplayButton" destination="rcp-Un-A4m" id="7Pg-Wo-SEg"/>
@@ -110,15 +109,7 @@
                 <viewControllerPlaceholder storyboardName="GameplayView" id="hiQ-FA-phj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17t-lW-yKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="-88"/>
-        </scene>
-        <!--ChallengesView-->
-        <scene sceneID="Gtc-Yb-UrI">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ChallengesView" id="NKT-5c-MDf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="P0R-2T-jc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="508" y="248"/>
+            <point key="canvasLocation" x="542" y="82"/>
         </scene>
         <!--Welcome View Embedded Controller-->
         <scene sceneID="6N5-m6-XzH">

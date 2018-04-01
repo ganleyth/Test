@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cpu-xi-qdK">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Yko-ne-92U">
+            <objects>
+                <viewController id="cpu-xi-qdK" customClass="NewChallengeViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LVg-Gq-uqD">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w8o-HI-1ly">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contactCell" textLabel="egd-sB-By7" detailTextLabel="N2h-Xe-elw" style="IBUITableViewCellStyleValue1" id="wuk-eA-YVT">
+                                        <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wuk-eA-YVT" id="HEp-Ke-S1y">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="egd-sB-By7">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="N2h-Xe-elw">
+                                                    <rect key="frame" x="608" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kz4-ig-WVj">
+                                <rect key="frame" x="303" y="285" width="60" height="30"/>
+                                <color key="backgroundColor" name="AppRed"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WvB-cf-shA"/>
+                                    <constraint firstAttribute="width" constant="60" id="nex-Qh-tg0"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="cpu-xi-qdK" eventType="touchUpInside" id="Iob-sT-8dK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="w8o-HI-1ly" secondAttribute="trailing" id="Dan-Wd-zAt"/>
+                            <constraint firstAttribute="bottom" secondItem="w8o-HI-1ly" secondAttribute="bottom" id="IkT-a7-5g6"/>
+                            <constraint firstItem="w8o-HI-1ly" firstAttribute="leading" secondItem="LVg-Gq-uqD" secondAttribute="leading" id="KXS-qg-tuK"/>
+                            <constraint firstItem="w8o-HI-1ly" firstAttribute="top" secondItem="LVg-Gq-uqD" secondAttribute="top" id="LhJ-Rl-blv"/>
+                            <constraint firstItem="GJI-Pg-WBS" firstAttribute="bottom" secondItem="Kz4-ig-WVj" secondAttribute="bottom" constant="60" id="gYJ-gN-4gw"/>
+                            <constraint firstItem="Kz4-ig-WVj" firstAttribute="centerX" secondItem="LVg-Gq-uqD" secondAttribute="centerX" id="r2Y-IM-Tns"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GJI-Pg-WBS"/>
+                    </view>
+                    <connections>
+                        <outlet property="interactor" destination="ANz-nT-w7a" id="mFJ-Ls-Mjj"/>
+                        <outlet property="tableView" destination="w8o-HI-1ly" id="eFx-Xt-Kmc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6mB-vl-kex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="ANz-nT-w7a" customClass="NewChallengeInteractor" customModule="Jetman" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="cpu-xi-qdK" id="sMv-Mg-bgc"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-39" y="126"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppRed">
+            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

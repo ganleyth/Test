@@ -18,7 +18,6 @@ final class WelcomeViewController: UIViewController {
     // MARK: Properties
     @IBOutlet private var interactor: WelcomeViewInteractor!
     @IBOutlet private var gameplayButton: UIButton!
-    @IBOutlet private var challengeButton: UIButton!
     @IBOutlet weak var dimmingView: UIView!
     @IBOutlet weak var embeddedControllerContainerView: UIView!
     
@@ -57,6 +56,13 @@ final class WelcomeViewController: UIViewController {
         guard let statsView = UIStoryboard(name: "StatsView", bundle: nil).instantiateInitialViewController() as? StatsViewController else { return }
         statsView.delegate = self
         castedEmbeddedController?.addChild(statsView)
+        animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
+    }
+    
+    @IBAction func showNewChallengeView(_ sender: UIButton) {
+        guard let newChallengeView = UIStoryboard(name: "NewChallengeView", bundle: nil).instantiateInitialViewController() as? NewChallengeViewController else { return }
+        newChallengeView.delegate = self
+        castedEmbeddedController?.addChild(newChallengeView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
