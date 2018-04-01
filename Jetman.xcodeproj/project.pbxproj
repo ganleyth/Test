@@ -31,6 +31,11 @@
 		1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */; };
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
+		1853AACA20716253007EEC62 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853AAC920716253007EEC62 /* Messages.framework */; };
+		1853AACD20716253007EEC62 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AACC20716253007EEC62 /* MessagesViewController.swift */; };
+		1853AAD020716253007EEC62 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853AACE20716253007EEC62 /* MainInterface.storyboard */; };
+		1853AAD220716255007EEC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853AAD120716255007EEC62 /* Assets.xcassets */; };
+		1853AAD620716255007EEC62 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1853AAC820716253007EEC62 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
@@ -106,7 +111,28 @@
 			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
 			remoteInfo = Jetman;
 		};
+		1853AAD420716255007EEC62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1853AAC720716253007EEC62;
+			remoteInfo = MessagesExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1853AADA20716255007EEC62 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1853AAD620716255007EEC62 /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		180C88991FC77F5F00D19F85 /* Jetman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +166,12 @@
 		1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewController.swift; sourceTree = "<group>"; };
 		1853AAC020715665007EEC62 /* MyChallengesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesBox.swift; sourceTree = "<group>"; };
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
+		1853AAC820716253007EEC62 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		1853AACC20716253007EEC62 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		1853AACF20716253007EEC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1853AAD120716255007EEC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1853AAD320716255007EEC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +258,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1853AAC520716253007EEC62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1853AACA20716253007EEC62 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -235,6 +275,7 @@
 				180C889B1FC77F5F00D19F85 /* Jetman */,
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
+				1853AACB20716253007EEC62 /* MessagesExtension */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
 				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
@@ -247,6 +288,7 @@
 				180C88991FC77F5F00D19F85 /* Jetman.app */,
 				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
 				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
+				1853AAC820716253007EEC62 /* MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +346,17 @@
 				183E759A203B335700092B2A /* bubblePop.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		1853AACB20716253007EEC62 /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1853AACC20716253007EEC62 /* MessagesViewController.swift */,
+				1853AACE20716253007EEC62 /* MainInterface.storyboard */,
+				1853AAD120716255007EEC62 /* Assets.xcassets */,
+				1853AAD320716255007EEC62 /* Info.plist */,
+			);
+			path = MessagesExtension;
 			sourceTree = "<group>";
 		};
 		18847EAE20706A2900B90C9C /* NewChallenge */ = {
@@ -561,6 +614,7 @@
 			children = (
 				18E1CFFB204B0FA700B4B506 /* GameKit.framework */,
 				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
+				1853AAC920716253007EEC62 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -587,10 +641,12 @@
 				180C88971FC77F5F00D19F85 /* Resources */,
 				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
 				7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */,
+				1853AADA20716255007EEC62 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1853AAD520716255007EEC62 /* PBXTargetDependency */,
 			);
 			name = Jetman;
 			productName = Jetman;
@@ -633,13 +689,30 @@
 			productReference = 180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1853AAC720716253007EEC62 /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1853AAD720716255007EEC62 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				1853AAC420716253007EEC62 /* Sources */,
+				1853AAC520716253007EEC62 /* Frameworks */,
+				1853AAC620716253007EEC62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 1853AAC820716253007EEC62 /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		180C88911FC77F5F00D19F85 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Thomas Ganley";
 				TargetAttributes = {
@@ -669,6 +742,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180C88981FC77F5F00D19F85;
 					};
+					1853AAC720716253007EEC62 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 180C88941FC77F5F00D19F85 /* Build configuration list for PBXProject "Jetman" */;
@@ -687,6 +764,7 @@
 				180C88981FC77F5F00D19F85 /* Jetman */,
 				180C88B21FC77F5F00D19F85 /* JetmanTests */,
 				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
+				1853AAC720716253007EEC62 /* MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -733,6 +811,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1853AAC620716253007EEC62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1853AAD220716255007EEC62 /* Assets.xcassets in Resources */,
+				1853AAD020716253007EEC62 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,6 +962,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1853AAC420716253007EEC62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1853AACD20716253007EEC62 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -887,6 +982,11 @@
 			isa = PBXTargetDependency;
 			target = 180C88981FC77F5F00D19F85 /* Jetman */;
 			targetProxy = 180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */;
+		};
+		1853AAD520716255007EEC62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1853AAC720716253007EEC62 /* MessagesExtension */;
+			targetProxy = 1853AAD420716255007EEC62 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -905,6 +1005,14 @@
 				180C88AC1FC77F5F00D19F85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1853AACE20716253007EEC62 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1853AACF20716253007EEC62 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1021,6 +1129,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1039,6 +1148,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1122,6 +1232,46 @@
 			};
 			name = Release;
 		};
+		1853AAD820716255007EEC62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1853AAD920716255007EEC62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1157,6 +1307,15 @@
 			buildConfigurations = (
 				180C88CE1FC77F6000D19F85 /* Debug */,
 				180C88CF1FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1853AAD720716255007EEC62 /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1853AAD820716255007EEC62 /* Debug */,
+				1853AAD920716255007EEC62 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

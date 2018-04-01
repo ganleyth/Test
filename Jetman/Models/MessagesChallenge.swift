@@ -15,6 +15,7 @@ class MessagesChallenge: MSMessage {
         let template = MSMessageTemplateLayout()
         template.image = #imageLiteral(resourceName: "LaunchScreen")
         template.caption = "I challenge you to a ProjectYelnag match!"
+        self.layout = template
     }
     
     required init?(coder aDecoder: NSCoder) {
