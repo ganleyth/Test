@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import GameKit
 import FirebaseAuth
 
 protocol WelcomeViewEmbeddedControllerDelegate: class {
@@ -20,7 +19,6 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet private var interactor: WelcomeViewInteractor!
     @IBOutlet private var gameplayButton: UIButton!
     @IBOutlet private var challengeButton: UIButton!
-    @IBOutlet weak var leaderboardButton: UIButton!
     @IBOutlet weak var dimmingView: UIView!
     @IBOutlet weak var embeddedControllerContainerView: UIView!
     
@@ -36,16 +34,8 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(presentGameCenterVCIfNeeded), name: Constants.Notifications.gameCenterVCReceived, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateFeatureAccess), name: Notification.Name.GKPlayerAuthenticationDidChangeNotificationName, object: nil)
-        
-        updateFeatureAccess()
-        prepareEmbeddedController()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presentGameCenterVCIfNeeded()
+        // Move the embedded controller container view off-screen initially
+        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
     }
 
     @objc func presentGameCenterVCIfNeeded() {
@@ -55,13 +45,7 @@ final class WelcomeViewController: UIViewController {
         
         present(gameCenterVC, animated: true, completion: nil)
     }
-    
-    @objc func updateFeatureAccess() {
-        gameplayButton.isEnabled = true
-        challengeButton.isEnabled = true
-        leaderboardButton.isEnabled = true
-    }
-    
+
     @IBAction func showSettingsView(_ sender: UIButton) {
         guard let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
         settingsView.delegate = self
@@ -69,8 +53,11 @@ final class WelcomeViewController: UIViewController {
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
-    private func prepareEmbeddedController() {
-        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+    @IBAction func showStatsView(_ sender: UIButton) {
+        guard let statsView = UIStoryboard(name: "StatsView", bundle: nil).instantiateInitialViewController() as? StatsViewController else { return }
+        statsView.delegate = self
+        castedEmbeddedController?.addChild(statsView)
+        animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

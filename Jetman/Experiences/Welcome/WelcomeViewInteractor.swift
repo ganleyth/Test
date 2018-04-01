@@ -14,16 +14,6 @@ class WelcomeViewInteractor: Interactor {
     var welcomeViewController: WelcomeViewController? {
         return viewController as? WelcomeViewController
     }
-
-    @IBAction func showLeaderboard(_ sender: UIButton) {
-        let leaderboardController = GKGameCenterViewController()
-        leaderboardController.delegate = self
-        leaderboardController.viewState = .leaderboards
-        leaderboardController.leaderboardIdentifier = Constants.Leaderboard.global
-        leaderboardController.leaderboardTimeScope = .today
-        
-        viewController.present(leaderboardController, animated: true, completion: nil)
-    }
 }
 
 extension WelcomeViewInteractor: GKGameCenterControllerDelegate, UINavigationControllerDelegate {
