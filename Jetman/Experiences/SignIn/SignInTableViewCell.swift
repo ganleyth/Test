@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SignInDelegate: class {
-    func signInCellDidTapSignupWith(email: String, password: String)
+    func signInCellDidTapSignupWith(displayName: String, email: String, password: String)
     func signInCellDidTapSignInWith(email: String, password: String)
     func signInCellDidRegisterInvalidCredentials()
 }
@@ -18,7 +18,9 @@ class SignInTableViewCell: UITableViewCell {
 
     @IBOutlet private var emailTextField: UITextField!
     @IBOutlet private var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet var signInButton: UIButton!
+    @IBOutlet private var displayNameStackView: UIStackView!
+    @IBOutlet private var displayNameTextField: UITextField!
     
     var style: SignInStyle?
     
@@ -28,8 +30,10 @@ class SignInTableViewCell: UITableViewCell {
         switch style {
         case .signup:
             signInButton.setTitle("Create Account", for: UIControlState())
+            displayNameStackView.isHidden = false
         case .signIn:
             signInButton.setTitle("Sign In", for: UIControlState())
+            displayNameStackView.isHidden = true
         }
         
         self.style = style
@@ -44,7 +48,11 @@ class SignInTableViewCell: UITableViewCell {
         
         switch style {
         case .signup?:
-            delegate?.signInCellDidTapSignupWith(email: email, password: password)
+            guard let displayName = displayNameTextField.text, !displayName.isEmpty else {
+                delegate?.signInCellDidRegisterInvalidCredentials()
+                return
+            }
+            delegate?.signInCellDidTapSignupWith(displayName: displayName, email: email, password: password)
         case .signIn?:
             delegate?.signInCellDidTapSignInWith(email: email, password: password)
         default:

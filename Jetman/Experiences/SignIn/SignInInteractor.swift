@@ -34,12 +34,14 @@ extension SignInInteractor: UITableViewDataSource {
 // MARK: - Sign up delegate
 extension SignInInteractor: SignInDelegate {
     
-    func signInCellDidTapSignupWith(email: String, password: String) {
+    func signInCellDidTapSignupWith(displayName: String, email: String, password: String) {
         FirebaseManager.shared.loginManager.signupUserWith(email: email, password: password) { [weak self] (error) in
             guard let this = self else { return }
             if let error = error {
                 this.viewController.presentInfoAlertWith(title: "Signup Error", message: error.localizedDescription)
             }
+            
+            FirebaseManager.shared.loginManager.setUserDisplayName(to: displayName, completion: { (_) in })
             
             this.viewController.performSegue(withIdentifier: "showWelcomeView", sender: nil)
         }

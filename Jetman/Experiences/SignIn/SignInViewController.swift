@@ -15,8 +15,8 @@ enum SignInStyle {
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet var interactor: SignInInteractor!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet fileprivate var interactor: SignInInteractor!
+    @IBOutlet fileprivate var tableView: UITableView!
     
     var style = SignInStyle.signIn {
         didSet {

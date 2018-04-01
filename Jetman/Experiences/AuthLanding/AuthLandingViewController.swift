@@ -17,7 +17,6 @@ class AuthLandingViewController: UIViewController {
         super.viewWillAppear(animated)
         stateChangeHandler = Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
             guard let this = self else { return }
-            FirebaseManager.shared.loginManager.user = user
             if user != nil { this.performSegue(withIdentifier: "showWelcomeView", sender: nil) }
         }
     }
