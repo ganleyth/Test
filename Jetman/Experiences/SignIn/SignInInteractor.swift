@@ -9,25 +9,8 @@
 import UIKit
 
 final class SignInInteractor: Interactor {
-    private var signInViewController: SignInViewController? {
-        return viewController as? SignInViewController
-    }
-}
-
-// MARK: - Table view data source
-extension SignInInteractor: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let signInVC = signInViewController,
-            let cell = tableView.dequeueReusableCell(withIdentifier: "signupCell", for: indexPath) as? SignInTableViewCell else { return SignInTableViewCell() }
-        cell.delegate = self
-        cell.configure(for: signInVC.style)
-        return cell
+    private var signInTableViewController: SignInTableViewController? {
+        return viewController as? SignInTableViewController
     }
 }
 

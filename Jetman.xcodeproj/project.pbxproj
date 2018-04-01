@@ -16,7 +16,6 @@
 		183E676720688ACA00E6DB57 /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183E676620688ACA00E6DB57 /* SignInView.storyboard */; };
 		183E676920688AF900E6DB57 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676820688AF900E6DB57 /* SignInInteractor.swift */; };
 		183E676B20688B0700E6DB57 /* SignInTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676A20688B0700E6DB57 /* SignInTableViewCell.swift */; };
-		183E676D20688B1000E6DB57 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676C20688B1000E6DB57 /* SignInViewController.swift */; };
 		183E676F2068917E00E6DB57 /* AuthLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
 		183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E7593203A727300092B2A /* CustomSubclasses.swift */; };
@@ -29,6 +28,7 @@
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
+		1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */; };
 		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
@@ -124,7 +124,6 @@
 		183E676620688ACA00E6DB57 /* SignInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInView.storyboard; sourceTree = "<group>"; };
 		183E676820688AF900E6DB57 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		183E676A20688B0700E6DB57 /* SignInTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewCell.swift; sourceTree = "<group>"; };
-		183E676C20688B1000E6DB57 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLandingViewController.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
 		183E7593203A727300092B2A /* CustomSubclasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSubclasses.swift; sourceTree = "<group>"; };
@@ -138,6 +137,7 @@
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
+		1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTableViewController.swift; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				183E676620688ACA00E6DB57 /* SignInView.storyboard */,
-				183E676C20688B1000E6DB57 /* SignInViewController.swift */,
+				1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */,
 				183E676820688AF900E6DB57 /* SignInInteractor.swift */,
 				183E676A20688B0700E6DB57 /* SignInTableViewCell.swift */,
 			);
@@ -826,11 +826,11 @@
 				18B3300F1FDC7A9900D59107 /* Statistics.swift in Sources */,
 				18B330111FDC7AAF00D59107 /* Challenge.swift in Sources */,
 				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
-				183E676D20688B1000E6DB57 /* SignInViewController.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
+				1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */,
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */,

@@ -28,7 +28,7 @@ class AuthLandingViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destiationVC = segue.destination as? SignInViewController else { return }
+        guard let destiationVC = segue.destination as? SignInTableViewController else { return }
         
         switch segue.identifier {
         case "showSignUpView"?:
