@@ -16,10 +16,6 @@ class GameCenterManager {
     lazy var challengeManager = ChallengeManager()
     lazy var friendManager = FriendManager()
     
-    var friends: [GKPlayer]? {
-        return friendManager.friends
-    }
-    
     // MARK: - User authentication
     func authenticateLocalPlayer(completion: @escaping (_ gameCenterVC: UIViewController?, _ error: Error?) -> Void) {
 //        MemberService.shared.localPlayer.authenticateHandler = { (gameCenterVC, error) in
@@ -28,13 +24,4 @@ class GameCenterManager {
 //            }
 //        }
     }
-    
-    // MARK: - Friend fetching
-    func fetchFriends(completion: @escaping () -> Void) {
-        friendManager.fetchFriends {
-            completion()
-        }
-    }
 }
-
-

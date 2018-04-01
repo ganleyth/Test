@@ -13,5 +13,6 @@ final class FirebaseManager {
     static let shared = FirebaseManager()
     
     let loginManager = LoginManager()
+    let friendManager = FriendManager()
     
 }

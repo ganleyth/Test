@@ -19,6 +19,15 @@ class NewChallengeViewController: UIViewController {
         super.viewDidLoad()
 
         tableView.dataSource = interactor
+        FirebaseManager.shared.friendManager.fetchContacts { [weak self] (error) in
+            guard let this = self else { return }
+            if let error = error {
+                this.presentInfoAlertWith(title: "Could not access contacts", message: error.localizedDescription)
+                return
+            }
+            
+            this.tableView.reloadData()
+        }
     }
     
     @IBAction func dismissView(_ sender: UIButton) {
