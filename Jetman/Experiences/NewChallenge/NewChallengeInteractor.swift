@@ -7,19 +7,14 @@
 //
 
 import UIKit
+import MessageUI
+import Messages
 
 class NewChallengeInteractor: Interactor {}
 
-extension NewChallengeInteractor: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FirebaseManager.shared.friendManager.contacts?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        guard let contact = FirebaseManager.shared.friendManager.contacts?[indexPath.row] else { return cell }
-        cell.textLabel?.text = "\(contact.givenName) \(contact.familyName)"
-        return cell
+// Message compose delegate
+extension NewChallengeInteractor: MFMessageComposeViewControllerDelegate, UINavigationControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

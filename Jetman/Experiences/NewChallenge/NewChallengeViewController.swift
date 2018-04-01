@@ -7,27 +7,22 @@
 //
 
 import UIKit
+import MessageUI
 
 class NewChallengeViewController: UIViewController {
     
-    @IBOutlet fileprivate var tableView: UITableView!
     @IBOutlet fileprivate var interactor: NewChallengeInteractor!
     
     weak var delegate: WelcomeViewEmbeddedControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = interactor
-        FirebaseManager.shared.friendManager.fetchContacts { [weak self] (error) in
-            guard let this = self else { return }
-            if let error = error {
-                this.presentInfoAlertWith(title: "Could not access contacts", message: error.localizedDescription)
-                return
-            }
-            
-            this.tableView.reloadData()
-        }
+    }
+    
+    @IBAction func challengeContact(_ sender: UIButton) {
+        let messageController = MFMessageComposeViewController()
+        messageController.messageComposeDelegate = interactor
+        present(messageController, animated: true, completion: nil)
     }
     
     @IBAction func dismissView(_ sender: UIButton) {

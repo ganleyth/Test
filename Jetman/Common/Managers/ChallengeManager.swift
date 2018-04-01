@@ -10,10 +10,7 @@ import Foundation
 import GameKit
 
 class ChallengeManager {
-    
-    let inbox = Inbox()
-    let outbox = Outbox()
-    
+
     func report(scoreValue: Int, to leaderboard: LeaderboardName, completion: (() -> Void)?) {
         let score = GKScore(leaderboardIdentifier: leaderboard)
         score.shouldSetDefaultLeaderboard = true
