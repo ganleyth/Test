@@ -15,6 +15,7 @@ class FriendManager {
     
     func fetchContacts(with completion: @escaping (Error?) -> Void) {
         guard contacts == nil else { completion(nil); return }
+        var fetchedContacts: [CNContact] = []
         let store = CNContactStore()
         store.requestAccess(for: .contacts) { [weak self] (granted, error) in
             var returnError = error
@@ -27,15 +28,19 @@ class FriendManager {
             
             if granted {
                 do {
-                    let predicate = CNContact.predicateForContactsInContainer(withIdentifier: store.defaultContainerIdentifier())
-                    let unsortedContacts = try store.unifiedContacts(matching: predicate, keysToFetch: [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)])
-                    let sortedContacts = unsortedContacts.sorted { "\($0.givenName) \($0.familyName)" < "\($1.givenName) \($1.familyName)" }
-                    this.contacts = sortedContacts.filter { (contact) -> Bool in
-                        guard let firstCharacter = contact.givenName.first else { return false }
-                        let alphabet = CharacterSet.letters
-                        let firstCharacterSet = CharacterSet(charactersIn: String(firstCharacter))
-                        return firstCharacterSet.isSubset(of: alphabet)
+                    let containers = try store.containers(matching: nil)
+                    for container in containers {
+                        let predicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
+                        let unsortedContacts = try store.unifiedContacts(matching: predicate, keysToFetch: [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)])
+                        let filteredContacts = unsortedContacts.filter { (contact) -> Bool in
+                            guard let firstCharacter = contact.givenName.first else { return false }
+                            let alphabet = CharacterSet.letters
+                            let firstCharacterSet = CharacterSet(charactersIn: String(firstCharacter))
+                            return firstCharacterSet.isSubset(of: alphabet)
+                        }
+                        fetchedContacts += filteredContacts
                     }
+                    this.contacts = fetchedContacts.sorted { "\($0.givenName) \($0.familyName)" < "\($1.givenName) \($1.familyName)" }
                 } catch {
                     returnError = error
                 }
