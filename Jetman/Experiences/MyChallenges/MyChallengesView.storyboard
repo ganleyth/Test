@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gGD-EV-SQf">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Neo-Bq-Tkq">
+            <objects>
+                <viewController id="gGD-EV-SQf" customClass="MyChallengesViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ugp-ug-c27">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4wF-cS-FRE">
+                                <rect key="frame" x="0.0" y="68" width="667" height="307"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="challengeCell" textLabel="6PV-92-0iE" detailTextLabel="IWf-5N-ijX" style="IBUITableViewCellStyleValue1" id="GKR-gQ-GTR">
+                                        <rect key="frame" x="0.0" y="28" width="667" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GKR-gQ-GTR" id="TKh-Rb-p2z">
+                                            <rect key="frame" x="0.0" y="0.0" width="667" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6PV-92-0iE">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IWf-5N-ijX">
+                                                    <rect key="frame" x="608" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fnE-3l-ZQ2">
+                                <rect key="frame" x="243.5" y="20" width="180" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="SOe-Xc-7mf"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Received"/>
+                                    <segment title="Sent"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeMailboxSelection:" destination="gGD-EV-SQf" eventType="valueChanged" id="nmM-qh-YVg"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Llv-aR-JHr">
+                                <rect key="frame" x="303" y="285" width="60" height="30"/>
+                                <color key="backgroundColor" name="AppRed"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ar7-KZ-yW6"/>
+                                    <constraint firstAttribute="width" constant="60" id="tEE-MY-kEY"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="gGD-EV-SQf" eventType="touchUpInside" id="JWh-6y-IHs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4wF-cS-FRE" firstAttribute="top" secondItem="fnE-3l-ZQ2" secondAttribute="bottom" constant="20" id="2rv-wn-XAi"/>
+                            <constraint firstItem="Y0Q-kY-TCU" firstAttribute="bottom" secondItem="Llv-aR-JHr" secondAttribute="bottom" constant="60" id="3YP-n2-NHk"/>
+                            <constraint firstAttribute="trailing" secondItem="4wF-cS-FRE" secondAttribute="trailing" id="Fya-In-BF6"/>
+                            <constraint firstItem="Llv-aR-JHr" firstAttribute="centerX" secondItem="Ugp-ug-c27" secondAttribute="centerX" id="NnA-Lm-Usw"/>
+                            <constraint firstAttribute="bottom" secondItem="4wF-cS-FRE" secondAttribute="bottom" id="RPx-1F-dj6"/>
+                            <constraint firstItem="4wF-cS-FRE" firstAttribute="leading" secondItem="Ugp-ug-c27" secondAttribute="leading" id="Zsf-S0-ObP"/>
+                            <constraint firstItem="fnE-3l-ZQ2" firstAttribute="centerX" secondItem="Ugp-ug-c27" secondAttribute="centerX" id="g2b-BI-Dsf"/>
+                            <constraint firstItem="fnE-3l-ZQ2" firstAttribute="top" secondItem="Ugp-ug-c27" secondAttribute="top" constant="20" id="qFl-xp-ajU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y0Q-kY-TCU"/>
+                    </view>
+                    <connections>
+                        <outlet property="interactor" destination="EqA-Y4-IN3" id="cle-VU-pR8"/>
+                        <outlet property="tableView" destination="4wF-cS-FRE" id="Lnz-gQ-meL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N3E-uH-23e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="EqA-Y4-IN3" customClass="MyChallengesInteractor" customModule="Jetman" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="gGD-EV-SQf" id="JkY-Az-gHv"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="77.811094452773617" y="16.800000000000001"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppRed">
+            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

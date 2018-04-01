@@ -66,6 +66,13 @@ final class WelcomeViewController: UIViewController {
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
+    @IBAction func showMyChallengesView(_ sender: UIButton) {
+        guard let myChallengesView = UIStoryboard(name: "MyChallengesView", bundle: nil).instantiateInitialViewController() as? MyChallengesViewController else { return }
+        myChallengesView.delegate = self
+        castedEmbeddedController?.addChild(myChallengesView)
+        animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embedController" {
             embeddedController = segue.destination

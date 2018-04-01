@@ -55,6 +55,15 @@
                                     <action selector="showStatsView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="Gz3-cY-1kM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5i-Al-8Si">
+                                <rect key="frame" x="278" y="248" width="111" height="30"/>
+                                <color key="backgroundColor" name="shadowColor" catalog="System" colorSpace="catalog"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="My Challenges"/>
+                                <connections>
+                                    <action selector="showMyChallengesView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="P4i-6n-t2l"/>
+                                </connections>
+                            </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K45-9c-P6w">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,6 +77,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="S5i-Al-8Si" firstAttribute="top" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="8" symbolic="YES" id="1tp-x1-H9j"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="5BT-Pe-ETd"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="6WI-ER-v1v"/>
                             <constraint firstItem="q75-Dj-h8G" firstAttribute="leading" secondItem="rcp-Un-A4m" secondAttribute="trailing" constant="31" id="90i-HK-6qy"/>
@@ -77,8 +87,10 @@
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="8" symbolic="YES" id="Ehl-eZ-7g6"/>
                             <constraint firstItem="MuH-zL-U1I" firstAttribute="leading" secondItem="q75-Dj-h8G" secondAttribute="leading" id="KLj-hc-ntP"/>
                             <constraint firstItem="MuH-zL-U1I" firstAttribute="baseline" secondItem="Uf7-PZ-4JC" secondAttribute="baseline" id="LC2-zr-jlX"/>
+                            <constraint firstItem="S5i-Al-8Si" firstAttribute="centerX" secondItem="Uf7-PZ-4JC" secondAttribute="centerX" id="NPm-ac-gws"/>
                             <constraint firstAttribute="trailing" secondItem="K45-9c-P6w" secondAttribute="trailing" id="NZs-Wa-KCQ"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="OTC-ML-Lxr"/>
+                            <constraint firstItem="S5i-Al-8Si" firstAttribute="leading" secondItem="qrt-Gm-bbn" secondAttribute="leading" constant="278" id="TMG-d3-bjg"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="rcp-Un-A4m" secondAttribute="centerX" id="cX1-as-IDp"/>
