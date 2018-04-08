@@ -73,11 +73,6 @@
 		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
 		18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC220681A2500D05040 /* GoogleService-Info.plist */; };
 		18B7BBC620681DA000D05040 /* AuthLandingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */; };
-		18BF518E207A96B900F1F385 /* SharedJetman.h in Headers */ = {isa = PBXBuildFile; fileRef = 18BF518C207A96B900F1F385 /* SharedJetman.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		18BF5191207A96B900F1F385 /* SharedJetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF518A207A96B900F1F385 /* SharedJetman.framework */; };
-		18BF5192207A96B900F1F385 /* SharedJetman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18BF518A207A96B900F1F385 /* SharedJetman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		18BF5198207A971B00F1F385 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF5197207A971B00F1F385 /* SharedAssets.xcassets */; };
-		18BF5199207A985A00F1F385 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18BF5197207A971B00F1F385 /* SharedAssets.xcassets */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -111,28 +106,7 @@
 			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
 			remoteInfo = Jetman;
 		};
-		18BF518F207A96B900F1F385 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18BF5189207A96B900F1F385;
-			remoteInfo = SharedJetman;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		18BF5196207A96B900F1F385 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				18BF5192207A96B900F1F385 /* SharedJetman.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		180C88991FC77F5F00D19F85 /* Jetman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jetman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,10 +182,6 @@
 		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
 		18B7BBC220681A2500D05040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthLandingView.storyboard; sourceTree = "<group>"; };
-		18BF518A207A96B900F1F385 /* SharedJetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedJetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		18BF518C207A96B900F1F385 /* SharedJetman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedJetman.h; sourceTree = "<group>"; };
-		18BF518D207A96B900F1F385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18BF5197207A971B00F1F385 /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -237,7 +207,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BF5191207A96B900F1F385 /* SharedJetman.framework in Frameworks */,
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
 				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
 			);
@@ -257,13 +226,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18BF5186207A96B900F1F385 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -273,7 +235,6 @@
 				180C889B1FC77F5F00D19F85 /* Jetman */,
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
-				18BF518B207A96B900F1F385 /* SharedJetman */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
 				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
@@ -286,7 +247,6 @@
 				180C88991FC77F5F00D19F85 /* Jetman.app */,
 				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
 				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
-				18BF518A207A96B900F1F385 /* SharedJetman.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -407,16 +367,6 @@
 				183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */,
 			);
 			path = AuthLanding;
-			sourceTree = "<group>";
-		};
-		18BF518B207A96B900F1F385 /* SharedJetman */ = {
-			isa = PBXGroup;
-			children = (
-				18BF518C207A96B900F1F385 /* SharedJetman.h */,
-				18BF518D207A96B900F1F385 /* Info.plist */,
-				18BF5197207A971B00F1F385 /* SharedAssets.xcassets */,
-			);
-			path = SharedJetman;
 			sourceTree = "<group>";
 		};
 		18CEF3051FD32DED005C3980 /* Main */ = {
@@ -626,17 +576,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		18BF5187207A96B900F1F385 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18BF518E207A96B900F1F385 /* SharedJetman.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		180C88981FC77F5F00D19F85 /* Jetman */ = {
 			isa = PBXNativeTarget;
@@ -648,12 +587,10 @@
 				180C88971FC77F5F00D19F85 /* Resources */,
 				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
 				7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */,
-				18BF5196207A96B900F1F385 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				18BF5190207A96B900F1F385 /* PBXTargetDependency */,
 			);
 			name = Jetman;
 			productName = Jetman;
@@ -696,24 +633,6 @@
 			productReference = 180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		18BF5189207A96B900F1F385 /* SharedJetman */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18BF5195207A96B900F1F385 /* Build configuration list for PBXNativeTarget "SharedJetman" */;
-			buildPhases = (
-				18BF5185207A96B900F1F385 /* Sources */,
-				18BF5186207A96B900F1F385 /* Frameworks */,
-				18BF5187207A96B900F1F385 /* Headers */,
-				18BF5188207A96B900F1F385 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SharedJetman;
-			productName = SharedJetman;
-			productReference = 18BF518A207A96B900F1F385 /* SharedJetman.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -750,10 +669,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180C88981FC77F5F00D19F85;
 					};
-					18BF5189207A96B900F1F385 = {
-						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 180C88941FC77F5F00D19F85 /* Build configuration list for PBXProject "Jetman" */;
@@ -772,7 +687,6 @@
 				180C88981FC77F5F00D19F85 /* Jetman */,
 				180C88B21FC77F5F00D19F85 /* JetmanTests */,
 				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
-				18BF5189207A96B900F1F385 /* SharedJetman */,
 			);
 		};
 /* End PBXProject section */
@@ -785,7 +699,6 @@
 				18847EB020706B1B00B90C9C /* NewChallengeView.storyboard in Resources */,
 				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
-				18BF5199207A985A00F1F385 /* SharedAssets.xcassets in Resources */,
 				18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */,
 				183E75A3203B962C00092B2A /* music.wav in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
@@ -820,14 +733,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18BF5188207A96B900F1F385 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18BF5198207A971B00F1F385 /* SharedAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -970,13 +875,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		18BF5185207A96B900F1F385 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -989,11 +887,6 @@
 			isa = PBXTargetDependency;
 			target = 180C88981FC77F5F00D19F85 /* Jetman */;
 			targetProxy = 180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */;
-		};
-		18BF5190207A96B900F1F385 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18BF5189207A96B900F1F385 /* SharedJetman */;
-			targetProxy = 18BF518F207A96B900F1F385 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1229,62 +1122,6 @@
 			};
 			name = Release;
 		};
-		18BF5193207A96B900F1F385 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SharedJetman/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		18BF5194207A96B900F1F385 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SharedJetman/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1320,15 +1157,6 @@
 			buildConfigurations = (
 				180C88CE1FC77F6000D19F85 /* Debug */,
 				180C88CF1FC77F6000D19F85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18BF5195207A96B900F1F385 /* Build configuration list for PBXNativeTarget "SharedJetman" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18BF5193207A96B900F1F385 /* Debug */,
-				18BF5194207A96B900F1F385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
