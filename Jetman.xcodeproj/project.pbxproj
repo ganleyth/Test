@@ -11,6 +11,12 @@
 		180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A61FC77F5F00D19F85 /* Main.storyboard */; };
 		180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180C88A91FC77F5F00D19F85 /* Assets.xcassets */; };
 		180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180C88AB1FC77F5F00D19F85 /* LaunchScreen.storyboard */; };
+		18172932207B0C8700D6F35E /* SharedJetman.h in Headers */ = {isa = PBXBuildFile; fileRef = 18172930207B0C8700D6F35E /* SharedJetman.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18172935207B0C8700D6F35E /* SharedJetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1817292E207B0C8600D6F35E /* SharedJetman.framework */; };
+		18172936207B0C8700D6F35E /* SharedJetman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1817292E207B0C8600D6F35E /* SharedJetman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
+		1817293D207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
+		1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E676720688ACA00E6DB57 /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183E676620688ACA00E6DB57 /* SignInView.storyboard */; };
@@ -112,6 +118,13 @@
 			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
 			remoteInfo = Jetman;
 		};
+		18172933207B0C8700D6F35E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1817292D207B0C8600D6F35E;
+			remoteInfo = SharedJetman;
+		};
 		1853AAD420716255007EEC62 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
@@ -122,6 +135,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		1817293A207B0C8700D6F35E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18172936207B0C8700D6F35E /* SharedJetman.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1853AADA20716255007EEC62 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -146,6 +170,10 @@
 		180C88B91FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1817292E207B0C8600D6F35E /* SharedJetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedJetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18172930207B0C8700D6F35E /* SharedJetman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedJetman.h; sourceTree = "<group>"; };
+		18172931207B0C8700D6F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E676620688ACA00E6DB57 /* SignInView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInView.storyboard; sourceTree = "<group>"; };
@@ -241,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18172935207B0C8700D6F35E /* SharedJetman.framework in Frameworks */,
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
 				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
 			);
@@ -254,6 +283,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		180C88BB1FC77F6000D19F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1817292A207B0C8600D6F35E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,6 +314,7 @@
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
 				1853AACB20716253007EEC62 /* MessagesExtension */,
+				1817292F207B0C8700D6F35E /* SharedJetman */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
 				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
@@ -291,6 +328,7 @@
 				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
 				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
 				1853AAC820716253007EEC62 /* MessagesExtension.appex */,
+				1817292E207B0C8600D6F35E /* SharedJetman.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -325,6 +363,16 @@
 				180C88C41FC77F6000D19F85 /* Info.plist */,
 			);
 			path = JetmanUITests;
+			sourceTree = "<group>";
+		};
+		1817292F207B0C8700D6F35E /* SharedJetman */ = {
+			isa = PBXGroup;
+			children = (
+				18172930207B0C8700D6F35E /* SharedJetman.h */,
+				18172931207B0C8700D6F35E /* Info.plist */,
+				1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */,
+			);
+			path = SharedJetman;
 			sourceTree = "<group>";
 		};
 		183E676520688AA600E6DB57 /* SignIn */ = {
@@ -633,6 +681,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		1817292B207B0C8600D6F35E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18172932207B0C8700D6F35E /* SharedJetman.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		180C88981FC77F5F00D19F85 /* Jetman */ = {
 			isa = PBXNativeTarget;
@@ -645,11 +704,13 @@
 				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
 				7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */,
 				1853AADA20716255007EEC62 /* Embed App Extensions */,
+				1817293A207B0C8700D6F35E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				1853AAD520716255007EEC62 /* PBXTargetDependency */,
+				18172934207B0C8700D6F35E /* PBXTargetDependency */,
 			);
 			name = Jetman;
 			productName = Jetman;
@@ -691,6 +752,24 @@
 			productName = JetmanUITests;
 			productReference = 180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		1817292D207B0C8600D6F35E /* SharedJetman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18172939207B0C8700D6F35E /* Build configuration list for PBXNativeTarget "SharedJetman" */;
+			buildPhases = (
+				18172929207B0C8600D6F35E /* Sources */,
+				1817292A207B0C8600D6F35E /* Frameworks */,
+				1817292B207B0C8600D6F35E /* Headers */,
+				1817292C207B0C8600D6F35E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SharedJetman;
+			productName = SharedJetman;
+			productReference = 1817292E207B0C8600D6F35E /* SharedJetman.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 		1853AAC720716253007EEC62 /* MessagesExtension */ = {
 			isa = PBXNativeTarget;
@@ -745,6 +824,10 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180C88981FC77F5F00D19F85;
 					};
+					1817292D207B0C8600D6F35E = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
 					1853AAC720716253007EEC62 = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
@@ -768,6 +851,7 @@
 				180C88B21FC77F5F00D19F85 /* JetmanTests */,
 				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
 				1853AAC720716253007EEC62 /* MessagesExtension */,
+				1817292D207B0C8600D6F35E /* SharedJetman */,
 			);
 		};
 /* End PBXProject section */
@@ -780,6 +864,7 @@
 				18847EB020706B1B00B90C9C /* NewChallengeView.storyboard in Resources */,
 				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
+				1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */,
 				18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */,
 				183E75A3203B962C00092B2A /* music.wav in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
@@ -817,10 +902,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1817292C207B0C8600D6F35E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1853AAC620716253007EEC62 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1817293D207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */,
 				1853AAD220716255007EEC62 /* Assets.xcassets in Resources */,
 				1853AAD020716253007EEC62 /* MainInterface.storyboard in Resources */,
 			);
@@ -965,6 +1059,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18172929207B0C8600D6F35E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1853AAC420716253007EEC62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -986,6 +1087,11 @@
 			isa = PBXTargetDependency;
 			target = 180C88981FC77F5F00D19F85 /* Jetman */;
 			targetProxy = 180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */;
+		};
+		18172934207B0C8700D6F35E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1817292D207B0C8600D6F35E /* SharedJetman */;
+			targetProxy = 18172933207B0C8700D6F35E /* PBXContainerItemProxy */;
 		};
 		1853AAD520716255007EEC62 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1236,6 +1342,62 @@
 			};
 			name = Release;
 		};
+		18172937207B0C8700D6F35E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SharedJetman/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		18172938207B0C8700D6F35E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SharedJetman/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		1853AAD820716255007EEC62 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1311,6 +1473,15 @@
 			buildConfigurations = (
 				180C88CE1FC77F6000D19F85 /* Debug */,
 				180C88CF1FC77F6000D19F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18172939207B0C8700D6F35E /* Build configuration list for PBXNativeTarget "SharedJetman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18172937207B0C8700D6F35E /* Debug */,
+				18172938207B0C8700D6F35E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
