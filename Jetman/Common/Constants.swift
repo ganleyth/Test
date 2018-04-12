@@ -20,6 +20,11 @@ struct Constants {
         case middleDecrease = "bottomBoundaryMiddleDecrease"
     }
     
+    struct Challenges {
+        static let challengeID = "challengeID"
+        static let senderID = "senderID"
+    }
+    
     struct Leaderboard {
         static let global: LeaderboardName = "GlobalLeaderboard"
     }

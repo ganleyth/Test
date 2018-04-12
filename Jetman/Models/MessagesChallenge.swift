@@ -10,8 +10,14 @@ import Foundation
 import Messages
 
 class MessagesChallenge: MSMessage {
-    override init() {
+    
+    init(senderID: String) {
         super.init()
+
+        let challengeID = UUID().uuidString
+        let url = URL(string: "https://ganleytom.com")?.appending(challengeID: challengeID, senderID: senderID)
+        self.url = url
+        
         let template = MSMessageTemplateLayout()
         template.image = #imageLiteral(resourceName: "LaunchScreen")
         template.caption = "I challenge you to a ProjectYelnag match!"
@@ -20,5 +26,18 @@ class MessagesChallenge: MSMessage {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+fileprivate extension URL {
+    func appending(challengeID: String, senderID: String) -> URL {
+        var components = URLComponents(url: self, resolvingAgainstBaseURL: false)
+        let queryItems = [
+            URLQueryItem(name: Constants.Challenges.challengeID, value: challengeID),
+            URLQueryItem(name: Constants.Challenges.senderID, value: senderID)
+        ]
+        components?.queryItems = queryItems
+        
+        return components?.url ?? self
     }
 }

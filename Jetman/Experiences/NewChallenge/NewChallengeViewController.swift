@@ -20,9 +20,10 @@ class NewChallengeViewController: UIViewController {
     }
     
     @IBAction func challengeContact(_ sender: UIButton) {
+        guard let currentUser = FirebaseManager.shared.loginManager.currentUser else { return }
         let messageController = MFMessageComposeViewController()
         messageController.messageComposeDelegate = interactor
-        messageController.message = MessagesChallenge()
+        messageController.message = MessagesChallenge(senderID: currentUser.uid)
         present(messageController, animated: true, completion: nil)
     }
     
