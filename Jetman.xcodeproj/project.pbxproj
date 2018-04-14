@@ -38,11 +38,7 @@
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		1853AACA20716253007EEC62 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853AAC920716253007EEC62 /* Messages.framework */; };
-		1853AACD20716253007EEC62 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AACC20716253007EEC62 /* MessagesViewController.swift */; };
-		1853AAD020716253007EEC62 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1853AACE20716253007EEC62 /* MainInterface.storyboard */; };
-		1853AAD220716255007EEC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1853AAD120716255007EEC62 /* Assets.xcassets */; };
 		1853AAD620716255007EEC62 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1853AAC820716253007EEC62 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1853AADD2075BD8F007EEC62 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AADC2075BD8E007EEC62 /* ChallengeResponseViewController.swift */; };
 		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
@@ -197,11 +193,6 @@
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC820716253007EEC62 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
-		1853AACC20716253007EEC62 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		1853AACF20716253007EEC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		1853AAD120716255007EEC62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1853AAD320716255007EEC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1853AADC2075BD8E007EEC62 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +304,6 @@
 				180C889B1FC77F5F00D19F85 /* Jetman */,
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
-				1853AACB20716253007EEC62 /* MessagesExtension */,
 				1817292F207B0C8700D6F35E /* SharedJetman */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
@@ -396,18 +386,6 @@
 				183E759A203B335700092B2A /* bubblePop.wav */,
 			);
 			path = Sounds;
-			sourceTree = "<group>";
-		};
-		1853AACB20716253007EEC62 /* MessagesExtension */ = {
-			isa = PBXGroup;
-			children = (
-				1853AACC20716253007EEC62 /* MessagesViewController.swift */,
-				1853AACE20716253007EEC62 /* MainInterface.storyboard */,
-				1853AAD120716255007EEC62 /* Assets.xcassets */,
-				1853AAD320716255007EEC62 /* Info.plist */,
-				1853AADC2075BD8E007EEC62 /* ChallengeResponseViewController.swift */,
-			);
-			path = MessagesExtension;
 			sourceTree = "<group>";
 		};
 		18847EAE20706A2900B90C9C /* NewChallenge */ = {
@@ -915,8 +893,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1817293D207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */,
-				1853AAD220716255007EEC62 /* Assets.xcassets in Resources */,
-				1853AAD020716253007EEC62 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,8 +1046,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1853AACD20716253007EEC62 /* MessagesViewController.swift in Sources */,
-				1853AADD2075BD8F007EEC62 /* ChallengeResponseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1115,14 +1089,6 @@
 				180C88AC1FC77F5F00D19F85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		1853AACE20716253007EEC62 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1853AACF20716253007EEC62 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1239,7 +1205,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1258,7 +1223,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
