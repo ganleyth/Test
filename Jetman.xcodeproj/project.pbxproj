@@ -46,6 +46,9 @@
 		18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EB62070726C00B90C9C /* MyChallengesView.storyboard */; };
 		18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EB8207073E300B90C9C /* MyChallengesViewController.swift */; };
 		18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */; };
+		188CAA282083AC8100E2AC6B /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */; };
+		188CAA2A2083AC8C00E2AC6B /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */; };
+		188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
@@ -206,6 +209,9 @@
 		18847EB62070726C00B90C9C /* MyChallengesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyChallengesView.storyboard; sourceTree = "<group>"; };
 		18847EB8207073E300B90C9C /* MyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesViewController.swift; sourceTree = "<group>"; };
 		18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesInteractor.swift; sourceTree = "<group>"; };
+		188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
+		188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
+		188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultCompactView.storyboard; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
@@ -418,6 +424,15 @@
 			path = MyChallenges;
 			sourceTree = "<group>";
 		};
+		188CAA262083AC4C00E2AC6B /* ChallengeResponseView */ = {
+			isa = PBXGroup;
+			children = (
+				188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */,
+				188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */,
+			);
+			path = ChallengeResponseView;
+			sourceTree = "<group>";
+		};
 		18B32FD71FDA510D00D59107 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,7 +480,6 @@
 			isa = PBXGroup;
 			children = (
 				18C857682082A20700E30EA9 /* Experiences */,
-				18C8576A2082A21A00E30EA9 /* DefaultCompactView */,
 				18C8575A20829A2F00E30EA9 /* Assets.xcassets */,
 				18C8575C20829A2F00E30EA9 /* Info.plist */,
 			);
@@ -476,6 +490,8 @@
 			isa = PBXGroup;
 			children = (
 				18C857692082A21000E30EA9 /* Main */,
+				18C8576A2082A21A00E30EA9 /* DefaultCompactView */,
+				188CAA262083AC4C00E2AC6B /* ChallengeResponseView */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -483,8 +499,8 @@
 		18C857692082A21000E30EA9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				18C8575520829A2E00E30EA9 /* MessagesViewController.swift */,
 				18C8575720829A2E00E30EA9 /* MainInterface.storyboard */,
+				18C8575520829A2E00E30EA9 /* MessagesViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -492,6 +508,7 @@
 		18C8576A2082A21A00E30EA9 /* DefaultCompactView */ = {
 			isa = PBXGroup;
 			children = (
+				188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */,
 				18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */,
 			);
 			path = DefaultCompactView;
@@ -943,7 +960,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188CAA282083AC8100E2AC6B /* ChallengeResponseView.storyboard in Resources */,
 				18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */,
+				188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */,
 				18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */,
 				18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */,
 			);
@@ -1099,6 +1118,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188CAA2A2083AC8C00E2AC6B /* ChallengeResponseViewController.swift in Sources */,
 				18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */,
 				18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */,
 			);

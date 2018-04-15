@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eaz-t5-knL">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Challenge Response View Controller-->
+        <scene sceneID="lcO-Yj-PaR">
+            <objects>
+                <viewController id="Eaz-t5-knL" customClass="ChallengeResponseViewController" customModule="JetpackJimmyMessages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mS7-4n-0VE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NX2-lN-wpx">
+                                <rect key="frame" x="25.5" y="237" width="324" height="193.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JetmanFlying0" translatesAutoresizingMaskIntoConstraints="NO" id="2pw-u9-g2g">
+                                        <rect key="frame" x="127" y="0.0" width="70" height="92.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2pw-u9-g2g" secondAttribute="height" multiplier="98:130" id="FTi-Xp-2H9"/>
+                                            <constraint firstAttribute="width" constant="70" id="gx2-Cd-msB"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you accept the challenge?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-U0-oYP">
+                                        <rect key="frame" x="0.0" y="108.5" width="324" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-YY-oV3">
+                                        <rect key="frame" x="70" y="153.5" width="184" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-Fa-lGD">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" name="AppGray"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Decline"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="declineChallenge:" destination="Eaz-t5-knL" eventType="touchUpInside" id="hMf-XB-Ddf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFS-74-Fue">
+                                                <rect key="frame" x="104" y="0.0" width="80" height="40"/>
+                                                <color key="backgroundColor" name="AppYellow"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="Lal-pf-kBT"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Accept"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="acceptChallenge:" destination="Eaz-t5-knL" eventType="touchUpInside" id="G5V-ja-hId"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4Qe-su-ql0"/>
+                                            <constraint firstItem="fFS-74-Fue" firstAttribute="width" secondItem="UDe-Fa-lGD" secondAttribute="width" id="Bif-HC-TNf"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="AppRed"/>
+                        <constraints>
+                            <constraint firstItem="NX2-lN-wpx" firstAttribute="centerX" secondItem="mS7-4n-0VE" secondAttribute="centerX" id="13N-Hb-FrX"/>
+                            <constraint firstItem="eID-ky-1JM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NX2-lN-wpx" secondAttribute="trailing" constant="8" id="F61-QA-pSr"/>
+                            <constraint firstItem="NX2-lN-wpx" firstAttribute="centerY" secondItem="mS7-4n-0VE" secondAttribute="centerY" id="ZNR-eT-Men"/>
+                            <constraint firstItem="NX2-lN-wpx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eID-ky-1JM" secondAttribute="leading" constant="8" id="lc3-JI-VW1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eID-ky-1JM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YsK-5l-i4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2511" y="134"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="JetmanFlying0" width="98" height="130"/>
+        <namedColor name="AppGray">
+            <color red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppRed">
+            <color red="0.89411764709999997" green="0.3294117647" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppYellow">
+            <color red="0.97254901959999995" green="0.80000000000000004" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

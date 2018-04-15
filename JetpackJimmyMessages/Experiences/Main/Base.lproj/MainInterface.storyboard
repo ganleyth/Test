@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,53 +26,5 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Default Compact View Controller-->
-        <scene sceneID="max-3U-MSa">
-            <objects>
-                <viewController storyboardIdentifier="CompactDefaultView" id="ztl-Pl-ula" customClass="DefaultCompactViewController" customModule="JetpackJimmyMessages" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="np0-IF-J4g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="GVf-v5-H9j">
-                                <rect key="frame" x="78" y="273" width="217.5" height="121"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JetmanFlying0" translatesAutoresizingMaskIntoConstraints="NO" id="DeJ-F4-5NF">
-                                        <rect key="frame" x="74" y="0.0" width="70" height="92.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="Mnr-tJ-RiS"/>
-                                            <constraint firstAttribute="width" secondItem="DeJ-F4-5NF" secondAttribute="height" multiplier="98:130" id="Xyr-0b-a6M"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a received challenge!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx7-hj-4DF">
-                                        <rect key="frame" x="0.0" y="100.5" width="217.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="DeJ-F4-5NF" firstAttribute="width" secondItem="DeJ-F4-5NF" secondAttribute="height" multiplier="98:130" id="dqa-Ho-V6U"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" name="AppRed"/>
-                        <constraints>
-                            <constraint firstItem="GVf-v5-H9j" firstAttribute="centerY" secondItem="np0-IF-J4g" secondAttribute="centerY" id="cF4-3f-D0p"/>
-                            <constraint firstItem="GVf-v5-H9j" firstAttribute="centerX" secondItem="np0-IF-J4g" secondAttribute="centerX" id="uua-Ca-7Aj"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="whL-B0-qBa"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uBp-DQ-gVf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1298" y="53"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="JetmanFlying0" width="98" height="130"/>
-        <namedColor name="AppRed">
-            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
