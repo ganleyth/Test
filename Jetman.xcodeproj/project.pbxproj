@@ -49,6 +49,7 @@
 		188CAA282083AC8100E2AC6B /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */; };
 		188CAA2A2083AC8C00E2AC6B /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */; };
 		188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */; };
+		188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA382083C03800E2AC6B /* GoogleService-Info.plist */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
@@ -79,7 +80,6 @@
 		18B3302C1FDD8F1500D59107 /* LayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302B1FDD8F1500D59107 /* LayerTests.swift */; };
 		18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */; };
 		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
-		18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC220681A2500D05040 /* GoogleService-Info.plist */; };
 		18B7BBC620681DA000D05040 /* AuthLandingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */; };
 		18C8575320829A2E00E30EA9 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853AAC920716253007EEC62 /* Messages.framework */; };
 		18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8575520829A2E00E30EA9 /* MessagesViewController.swift */; };
@@ -212,6 +212,10 @@
 		188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
 		188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultCompactView.storyboard; sourceTree = "<group>"; };
+		188CAA2F2083B6F400E2AC6B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		188CAA302083B6F400E2AC6B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		188CAA322083B6F400E2AC6B /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		188CAA382083C03800E2AC6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
@@ -242,7 +246,6 @@
 		18B3302B1FDD8F1500D59107 /* LayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTests.swift; sourceTree = "<group>"; };
 		18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Helpers.swift"; sourceTree = "<group>"; };
 		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
-		18B7BBC220681A2500D05040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthLandingView.storyboard; sourceTree = "<group>"; };
 		18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JetpackJimmyMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		18C8575520829A2E00E30EA9 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +269,7 @@
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
 		311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.debug.xcconfig"; sourceTree = "<group>"; };
+		7891284CFCCD8A63C21A23F7 /* Pods_JetpackJimmyMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetpackJimmyMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.release.xcconfig"; sourceTree = "<group>"; };
 		EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -433,6 +437,25 @@
 			path = ChallengeResponseView;
 			sourceTree = "<group>";
 		};
+		188CAA2E2083B6F400E2AC6B /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				188CAA2F2083B6F400E2AC6B /* CHANGELOG.md */,
+				188CAA302083B6F400E2AC6B /* README.md */,
+				188CAA312083B6F400E2AC6B /* Frameworks */,
+			);
+			name = FirebaseAuth;
+			path = Pods/FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		188CAA312083B6F400E2AC6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				188CAA322083B6F400E2AC6B /* FirebaseAuth.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		18B32FD71FDA510D00D59107 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,7 +545,7 @@
 				180C889C1FC77F5F00D19F85 /* AppDelegate.swift */,
 				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
 				180C88AE1FC77F5F00D19F85 /* Info.plist */,
-				18B7BBC220681A2500D05040 /* GoogleService-Info.plist */,
+				188CAA382083C03800E2AC6B /* GoogleService-Info.plist */,
 				183E756B2038AFAF00092B2A /* GameSession.swift */,
 			);
 			path = Main;
@@ -704,9 +727,11 @@
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				188CAA2E2083B6F400E2AC6B /* FirebaseAuth */,
 				18E1CFFB204B0FA700B4B506 /* GameKit.framework */,
 				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
 				1853AAC920716253007EEC62 /* Messages.framework */,
+				7891284CFCCD8A63C21A23F7 /* Pods_JetpackJimmyMessages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -743,7 +768,6 @@
 				180C88961FC77F5F00D19F85 /* Frameworks */,
 				180C88971FC77F5F00D19F85 /* Resources */,
 				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
-				7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */,
 				1853AADA20716255007EEC62 /* Embed App Extensions */,
 				1817293A207B0C8700D6F35E /* Embed Frameworks */,
 			);
@@ -924,11 +948,11 @@
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
 				18B32FD91FDA515400D59107 /* WindowView.xib in Resources */,
 				18847EA92070634700B90C9C /* StatsView.storyboard in Resources */,
+				188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */,
 				18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */,
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				183E75A0203B83C100092B2A /* splash.wav in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
-				18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
@@ -991,21 +1015,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7A14AA8450C52FC18AEEF4F0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EDCEC23688E6BE6596F944F5 /* [CP] Check Pods Manifest.lock */ = {
@@ -1456,6 +1465,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
+				);
 				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1476,6 +1489,10 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
+				);
 				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

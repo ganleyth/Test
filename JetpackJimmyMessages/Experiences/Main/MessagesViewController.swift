@@ -10,15 +10,23 @@ import UIKit
 import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
-
+    
+    private var defaultCompactVC: DefaultCompactViewController? {
+        return UIStoryboard(name: "DefaultCompactView", bundle: nil).instantiateInitialViewController() as? DefaultCompactViewController
+    }
+    
+    private var challengeResponseVC: ChallengeResponseViewController? {
+        return UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController
+    }
+    
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
         
         if conversation.selectedMessage != nil {
-            guard let challengeResponseVC = UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController else { return }
+            guard let challengeResponseVC = challengeResponseVC else { return }
             presentViewController(challengeResponseVC)
         } else {
-            guard let defaultCompactVC = UIStoryboard(name: "DefaultCompactView", bundle: nil).instantiateInitialViewController() as? DefaultCompactViewController else { return }
+            guard let defaultCompactVC = defaultCompactVC else { return }
             presentViewController(defaultCompactVC)
         }
     }
@@ -28,7 +36,7 @@ class MessagesViewController: MSMessagesAppViewController {
         
         guard
             let selectedMessage = conversation.selectedMessage,
-            let challengeResponseVC = UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController else { return }
+            let challengeResponseVC = challengeResponseVC else { return }
         presentViewController(challengeResponseVC)
     }
 }
