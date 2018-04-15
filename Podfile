@@ -14,5 +14,6 @@ pod 'Firebase/AdMob'
 
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'Branch'
 
 end
