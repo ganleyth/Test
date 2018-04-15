@@ -21,17 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
-        // Load sprites into memory on launch
-        SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
-        FirebaseApp.configure()
         
+        // Initialize Branch session
         let branch = Branch.getInstance()
         branch?.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { (params, error) in
             if let error = error {
                 assertionFailure("Error initializing Branch: \(error.localizedDescription)")
             }
         })
+        
+        // Load sprites into memory on launch
+        SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
+        FirebaseApp.configure()
         
         return true
     }

@@ -100,6 +100,7 @@
 		18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E1CFFB204B0FA700B4B506 /* GameKit.framework */; };
 		18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */; };
 		18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFFF204B2A0100B4B506 /* SettingsViewController.swift */; };
+		18EFBA602083DF90007462CC /* Jetman.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 183E75A4203BADAB00092B2A /* Jetman.entitlements */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -934,6 +935,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EFBA602083DF90007462CC /* Jetman.entitlements in Resources */,
 				18847EB020706B1B00B90C9C /* NewChallengeView.storyboard in Resources */,
 				18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */,
 				180C88A81FC77F5F00D19F85 /* Main.storyboard in Resources */,
