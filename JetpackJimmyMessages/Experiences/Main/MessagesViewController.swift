@@ -13,26 +13,35 @@ class MessagesViewController: MSMessagesAppViewController {
 
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
-        presentViewController(for: conversation, with: presentationStyle, forReceivedMessage: false)
+        
+        if conversation.selectedMessage != nil {
+            guard let challengeResponseVC = UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController else { return }
+            presentViewController(challengeResponseVC)
+        } else {
+            guard let defaultCompactVC = UIStoryboard(name: "DefaultCompactView", bundle: nil).instantiateInitialViewController() as? DefaultCompactViewController else { return }
+            presentViewController(defaultCompactVC)
+        }
     }
-
-    override func didReceive(_ message: MSMessage, conversation: MSConversation) {
-        super.didReceive(message, conversation: conversation)
+    
+    override func didSelect(_ message: MSMessage, conversation: MSConversation) {
+        super.didSelect(message, conversation: conversation)
+        
+        guard
+            let selectedMessage = conversation.selectedMessage,
+            let challengeResponseVC = UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController else { return }
+        presentViewController(challengeResponseVC)
     }
 }
 
 // MARK: - Private
 private extension MessagesViewController {
     
-    func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle, forReceivedMessage: Bool) {
+    func presentViewController(_ viewController: UIViewController) {
         removeAllChildViewControllers()
-        
-        guard let defaultCompactVC = UIStoryboard(name: "DefaultCompactView", bundle: nil).instantiateInitialViewController() as? DefaultCompactViewController else { return }
-        
-        addChildViewController(defaultCompactVC)
-        defaultCompactVC.view.frame = view.frame
-        view.addSubview(defaultCompactVC.view)
-        defaultCompactVC.didMove(toParentViewController: self)
+        addChildViewController(viewController)
+        viewController.view.frame = view.frame
+        view.addSubview(viewController.view)
+        viewController.didMove(toParentViewController: self)
     }
     
     func removeAllChildViewControllers() {
