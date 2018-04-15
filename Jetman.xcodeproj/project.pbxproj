@@ -78,6 +78,13 @@
 		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
 		18B7BBC320681A2600D05040 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC220681A2500D05040 /* GoogleService-Info.plist */; };
 		18B7BBC620681DA000D05040 /* AuthLandingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */; };
+		18C8575320829A2E00E30EA9 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853AAC920716253007EEC62 /* Messages.framework */; };
+		18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8575520829A2E00E30EA9 /* MessagesViewController.swift */; };
+		18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575720829A2E00E30EA9 /* MainInterface.storyboard */; };
+		18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575A20829A2F00E30EA9 /* Assets.xcassets */; };
+		18C8575F20829A2F00E30EA9 /* JetpackJimmyMessages.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
+		18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -118,6 +125,13 @@
 			remoteGlobalIDString = 1817292D207B0C8600D6F35E;
 			remoteInfo = SharedJetman;
 		};
+		18C8575D20829A2F00E30EA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18C8575120829A2E00E30EA9;
+			remoteInfo = JetpackJimmyMessages;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -138,6 +152,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				18C8575F20829A2F00E30EA9 /* JetpackJimmyMessages.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +238,12 @@
 		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
 		18B7BBC220681A2500D05040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18B7BBC520681DA000D05040 /* AuthLandingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthLandingView.storyboard; sourceTree = "<group>"; };
+		18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JetpackJimmyMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		18C8575520829A2E00E30EA9 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		18C8575820829A2E00E30EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		18C8575A20829A2F00E30EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18C8575C20829A2F00E30EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCompactViewController.swift; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -275,6 +296,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18C8574F20829A2E00E30EA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C8575320829A2E00E30EA9 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -285,6 +314,7 @@
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
 				180C88C11FC77F6000D19F85 /* JetmanUITests */,
 				1817292F207B0C8700D6F35E /* SharedJetman */,
+				18C8575420829A2E00E30EA9 /* JetpackJimmyMessages */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
 				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
@@ -298,6 +328,7 @@
 				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
 				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
 				1817292E207B0C8600D6F35E /* SharedJetman.framework */,
+				18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -428,6 +459,42 @@
 				183E676E2068917E00E6DB57 /* AuthLandingViewController.swift */,
 			);
 			path = AuthLanding;
+			sourceTree = "<group>";
+		};
+		18C8575420829A2E00E30EA9 /* JetpackJimmyMessages */ = {
+			isa = PBXGroup;
+			children = (
+				18C857682082A20700E30EA9 /* Experiences */,
+				18C8576A2082A21A00E30EA9 /* DefaultCompactView */,
+				18C8575A20829A2F00E30EA9 /* Assets.xcassets */,
+				18C8575C20829A2F00E30EA9 /* Info.plist */,
+			);
+			path = JetpackJimmyMessages;
+			sourceTree = "<group>";
+		};
+		18C857682082A20700E30EA9 /* Experiences */ = {
+			isa = PBXGroup;
+			children = (
+				18C857692082A21000E30EA9 /* Main */,
+			);
+			path = Experiences;
+			sourceTree = "<group>";
+		};
+		18C857692082A21000E30EA9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				18C8575520829A2E00E30EA9 /* MessagesViewController.swift */,
+				18C8575720829A2E00E30EA9 /* MainInterface.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		18C8576A2082A21A00E30EA9 /* DefaultCompactView */ = {
+			isa = PBXGroup;
+			children = (
+				18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */,
+			);
+			path = DefaultCompactView;
 			sourceTree = "<group>";
 		};
 		18CEF3051FD32DED005C3980 /* Main */ = {
@@ -667,6 +734,7 @@
 			);
 			dependencies = (
 				18172934207B0C8700D6F35E /* PBXTargetDependency */,
+				18C8575E20829A2F00E30EA9 /* PBXTargetDependency */,
 			);
 			name = Jetman;
 			productName = Jetman;
@@ -727,6 +795,23 @@
 			productReference = 1817292E207B0C8600D6F35E /* SharedJetman.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18C8576220829A2F00E30EA9 /* Build configuration list for PBXNativeTarget "JetpackJimmyMessages" */;
+			buildPhases = (
+				18C8574E20829A2E00E30EA9 /* Sources */,
+				18C8574F20829A2E00E30EA9 /* Frameworks */,
+				18C8575020829A2E00E30EA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JetpackJimmyMessages;
+			productName = JetpackJimmyMessages;
+			productReference = 18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -767,6 +852,15 @@
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
 					};
+					18C8575120829A2E00E30EA9 = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = 180C88941FC77F5F00D19F85 /* Build configuration list for PBXProject "Jetman" */;
@@ -786,6 +880,7 @@
 				180C88B21FC77F5F00D19F85 /* JetmanTests */,
 				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
 				1817292D207B0C8600D6F35E /* SharedJetman */,
+				18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */,
 			);
 		};
 /* End PBXProject section */
@@ -841,6 +936,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18C8575020829A2E00E30EA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */,
+				18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */,
+				18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -990,6 +1095,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		18C8574E20829A2E00E30EA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */,
+				18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1008,6 +1122,11 @@
 			target = 1817292D207B0C8600D6F35E /* SharedJetman */;
 			targetProxy = 18172933207B0C8700D6F35E /* PBXContainerItemProxy */;
 		};
+		18C8575E20829A2F00E30EA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */;
+			targetProxy = 18C8575D20829A2F00E30EA9 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1025,6 +1144,14 @@
 				180C88AC1FC77F5F00D19F85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		18C8575720829A2E00E30EA9 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18C8575820829A2E00E30EA9 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1078,7 +1205,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1129,7 +1256,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1141,6 +1268,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1159,6 +1287,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Jetman/Jetman.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1298,6 +1427,46 @@
 			};
 			name = Release;
 		};
+		18C8576020829A2F00E30EA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		18C8576120829A2F00E30EA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QFVJ6KY7E2;
+				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1342,6 +1511,15 @@
 			buildConfigurations = (
 				18172937207B0C8700D6F35E /* Debug */,
 				18172938207B0C8700D6F35E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18C8576220829A2F00E30EA9 /* Build configuration list for PBXNativeTarget "JetpackJimmyMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18C8576020829A2F00E30EA9 /* Debug */,
+				18C8576120829A2F00E30EA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
