@@ -10,7 +10,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseCore
 
-class LoginManager {
+class LoginManager: Manager {
     
     var currentUser: User? {
         return Auth.auth().currentUser

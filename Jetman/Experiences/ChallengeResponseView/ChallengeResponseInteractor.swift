@@ -11,8 +11,20 @@ import UIKit
 
 class ChallengeResponseInteractor: Interactor {
     
+    private var operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInitiated
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
+    var challengeResponseVC: ChallengeResponseViewController? {
+        return viewController as? ChallengeResponseViewController
+    }
+    
     @IBAction func acceptChallenge(sender: UIButton) {
-        
+        guard let challenge = challengeResponseVC?.challenge else { return }
+        FirebaseManager.shared.friendManager.verifyFriendStatus(forSender: challenge.opponentID) {}
     }
     
     @IBAction func declineChallenge(sender: UIButton) {

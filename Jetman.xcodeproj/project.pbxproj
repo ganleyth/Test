@@ -93,6 +93,7 @@
 		18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */; };
 		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */; };
+		18DD3509208BDEB90077E7B1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3508208BDEB90077E7B1 /* Manager.swift */; };
 		18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BD9202778D300BF0502 /* WaterEmitter.sks */; };
 		18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDA202778D300BF0502 /* Assets.xcassets */; };
 		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
@@ -261,6 +262,7 @@
 		18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
 		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseInteractor.swift; sourceTree = "<group>"; };
+		18DD3508208BDEB90077E7B1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		18DF6BD9202778D300BF0502 /* WaterEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterEmitter.sks; sourceTree = "<group>"; };
 		18DF6BDA202778D300BF0502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
@@ -578,13 +580,14 @@
 		18CEF3081FD32E35005C3980 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				18DD3508208BDEB90077E7B1 /* Manager.swift */,
+				183E6762206874B700E6DB57 /* FirebaseManager.swift */,
 				18B3300A1FDC564800D59107 /* LoginManager.swift */,
+				18A671EE205DACD900EB4BB8 /* FriendManager.swift */,
 				18B330021FDC553E00D59107 /* ChallengeManager.swift */,
+				18A671EC205DA1F000EB4BB8 /* Interactor.swift */,
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
-				18A671EC205DA1F000EB4BB8 /* Interactor.swift */,
-				183E6762206874B700E6DB57 /* FirebaseManager.swift */,
-				18A671EE205DACD900EB4BB8 /* FriendManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1110,6 +1113,7 @@
 				183E676B20688B0700E6DB57 /* SignInTableViewCell.swift in Sources */,
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
 				18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */,
+				18DD3509208BDEB90077E7B1 /* Manager.swift in Sources */,
 				18847EAD2070637700B90C9C /* StatsInteractor.swift in Sources */,
 				1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */,
 			);

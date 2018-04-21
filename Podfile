@@ -11,6 +11,7 @@ pod 'Firebase'
 pod 'Firebase/Auth'
 pod 'Firebase/Performance'
 pod 'Firebase/AdMob'
+pod 'Firebase/Database'
 
 pod 'Fabric'
 pod 'Crashlytics'
