@@ -20,6 +20,13 @@ struct Challenge: Codable {
         selfInitiated = true
     }
     
+    init(id: String, opponentID: String, selfInitiated: Bool, score: Int? = nil) {
+        self.id = id
+        self.opponentID = opponentID
+        self.selfInitiated = selfInitiated
+        self.score = score
+    }
+    
     enum CodingKeys: String, CodingKey {
         case id
         case opponentID = "opponent_id"

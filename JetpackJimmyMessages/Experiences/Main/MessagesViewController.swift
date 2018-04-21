@@ -15,10 +15,6 @@ class MessagesViewController: MSMessagesAppViewController {
         return UIStoryboard(name: "DefaultCompactView", bundle: nil).instantiateInitialViewController() as? DefaultCompactViewController
     }
     
-    private var challengeResponseVC: ChallengeResponseViewController? {
-        return UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController
-    }
-    
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
         

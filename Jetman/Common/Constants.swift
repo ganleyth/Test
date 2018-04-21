@@ -35,6 +35,7 @@ struct Constants {
     
     struct Notifications {
         static let gameCenterVCReceived = Notification.Name(rawValue: "GameCenterVCReceived")
+        static let challengeReceived = Notification.Name(rawValue: "ChallengeReceived")
     }
     
     enum ObstacleTileName: String {

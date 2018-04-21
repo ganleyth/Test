@@ -33,8 +33,15 @@ final class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(presentDeferredViewController), name: Constants.Notifications.challengeReceived, object: nil)
+        
         // Move the embedded controller container view off-screen initially
         embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presentDeferredViewController()
     }
 
     @objc func presentGameCenterVCIfNeeded() {
@@ -77,6 +84,15 @@ final class WelcomeViewController: UIViewController {
         if segue.identifier == "embedController" {
             embeddedController = segue.destination
         }
+    }
+}
+
+// MARK: - Private
+private extension WelcomeViewController {
+    @objc func presentDeferredViewController() {
+        guard let vc = AppDelegate.shared.viewControllerToPresent else { return }
+        present(vc, animated: true, completion: nil)
+        AppDelegate.shared.viewControllerToPresent = nil
     }
 }
 

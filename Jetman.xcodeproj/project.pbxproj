@@ -36,6 +36,7 @@
 		1853AABD20713CCB007EEC62 /* SignInTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AABC20713CCB007EEC62 /* SignInTableViewController.swift */; };
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
+		187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */; };
 		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
@@ -46,8 +47,6 @@
 		18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EB62070726C00B90C9C /* MyChallengesView.storyboard */; };
 		18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EB8207073E300B90C9C /* MyChallengesViewController.swift */; };
 		18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */; };
-		188CAA282083AC8100E2AC6B /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */; };
-		188CAA2A2083AC8C00E2AC6B /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */; };
 		188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */; };
 		188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA382083C03800E2AC6B /* GoogleService-Info.plist */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
@@ -91,6 +90,8 @@
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
+		18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */; };
+		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BD9202778D300BF0502 /* WaterEmitter.sks */; };
 		18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDA202778D300BF0502 /* Assets.xcassets */; };
 		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
@@ -200,6 +201,7 @@
 		1853AAC020715665007EEC62 /* MyChallengesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesBox.swift; sourceTree = "<group>"; };
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AppExtensions.swift"; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -210,8 +212,6 @@
 		18847EB62070726C00B90C9C /* MyChallengesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyChallengesView.storyboard; sourceTree = "<group>"; };
 		18847EB8207073E300B90C9C /* MyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesViewController.swift; sourceTree = "<group>"; };
 		18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesInteractor.swift; sourceTree = "<group>"; };
-		188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
-		188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultCompactView.storyboard; sourceTree = "<group>"; };
 		188CAA2F2083B6F400E2AC6B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		188CAA302083B6F400E2AC6B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -257,6 +257,8 @@
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
+		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DF6BD9202778D300BF0502 /* WaterEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterEmitter.sks; sourceTree = "<group>"; };
 		18DF6BDA202778D300BF0502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
@@ -429,15 +431,6 @@
 			path = MyChallenges;
 			sourceTree = "<group>";
 		};
-		188CAA262083AC4C00E2AC6B /* ChallengeResponseView */ = {
-			isa = PBXGroup;
-			children = (
-				188CAA272083AC8100E2AC6B /* ChallengeResponseView.storyboard */,
-				188CAA292083AC8C00E2AC6B /* ChallengeResponseViewController.swift */,
-			);
-			path = ChallengeResponseView;
-			sourceTree = "<group>";
-		};
 		188CAA2E2083B6F400E2AC6B /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,7 +508,6 @@
 			children = (
 				18C857692082A21000E30EA9 /* Main */,
 				18C8576A2082A21A00E30EA9 /* DefaultCompactView */,
-				188CAA262083AC4C00E2AC6B /* ChallengeResponseView */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -606,6 +598,7 @@
 				18847EAE20706A2900B90C9C /* NewChallenge */,
 				18847EB52070724800B90C9C /* MyChallenges */,
 				18CEF3101FD32EB6005C3980 /* Gameplay */,
+				18DD3501208BC9A60077E7B1 /* ChallengeResponseView */,
 			);
 			path = Experiences;
 			sourceTree = "<group>";
@@ -692,8 +685,18 @@
 				18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */,
 				18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */,
 				183E67602068724700E6DB57 /* UIViewController+Helpers.swift */,
+				187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */,
 			);
 			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		18DD3501208BC9A60077E7B1 /* ChallengeResponseView */ = {
+			isa = PBXGroup;
+			children = (
+				18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */,
+				18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */,
+			);
+			path = ChallengeResponseView;
 			sourceTree = "<group>";
 		};
 		18DF6BD82027786200BF0502 /* Emitters */ = {
@@ -947,6 +950,7 @@
 				183E676720688ACA00E6DB57 /* SignInView.storyboard in Resources */,
 				18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
+				18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */,
 				18B7BBC620681DA000D05040 /* AuthLandingView.storyboard in Resources */,
 				183E759F203B83C100092B2A /* crash.wav in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
@@ -989,7 +993,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188CAA282083AC8100E2AC6B /* ChallengeResponseView.storyboard in Resources */,
 				18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */,
 				188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */,
 				18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */,
@@ -1052,6 +1055,7 @@
 				18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */,
 				18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */,
 				183E676F2068917E00E6DB57 /* AuthLandingViewController.swift in Sources */,
+				187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */,
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
@@ -1097,6 +1101,7 @@
 				183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */,
 				183E756C2038AFAF00092B2A /* GameSession.swift in Sources */,
 				18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */,
+				18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */,
 				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
 				183E676B20688B0700E6DB57 /* SignInTableViewCell.swift in Sources */,
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
@@ -1134,7 +1139,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188CAA2A2083AC8C00E2AC6B /* ChallengeResponseViewController.swift in Sources */,
 				18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */,
 				18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */,
 			);

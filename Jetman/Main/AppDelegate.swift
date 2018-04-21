@@ -12,6 +12,8 @@ import Branch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    static var shared = AppDelegate()
 
     var window: UIWindow?
     var gameCenterVC: UIViewController? {
@@ -19,6 +21,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationCenter.default.post(name: Constants.Notifications.gameCenterVCReceived, object: self)
         }
     }
+    
+    var keyWindow: UIWindow? {
+        return UIApplication.shared.keyWindow
+    }
+    
+    var topViewController: UIViewController? {
+        var topVC: UIViewController
+        if let navController = keyWindow?.rootViewController as? UINavigationController,
+            let vc = navController.topViewController {
+            topVC = vc
+        } else if let vc = keyWindow?.rootViewController {
+            topVC = vc
+        } else {
+            assertionFailure("Unhandled topVC case")
+            return nil
+        }
+        
+        while let vc = topVC.presentedViewController {
+            topVC = vc
+        }
+        
+        return topVC
+    }
+    
+    var viewControllerToPresent: UIViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     open func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         Branch.getInstance().application(app, open: url, options: options)
+        handleDeepLink(for: url)
         return true
     }
     
@@ -53,12 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-extension AppDelegate {
-    
-    func reset() {
-        guard let newGameplayVC = UIStoryboard(name: "GameplayView", bundle: nil).instantiateInitialViewController() else { return }
-        UIApplication.shared.keyWindow?.rootViewController = newGameplayVC
-    }
+private extension AppDelegate {
     
     func autheticateLocalPlayer() {
         GameCenterManager.shared.authenticateLocalPlayer { [weak self] (gameCenterVC, error) in
@@ -72,5 +95,29 @@ extension AppDelegate {
             }
         }
     }
+    
+    func handleDeepLink(for url: URL) {
+        guard
+            let params = url.getURLParameters(),
+            let challengeID = params[Constants.Challenges.challengeID],
+            let senderID = params[Constants.Challenges.senderID] else { return }
+        
+        let challenge = Challenge(id: challengeID, opponentID: senderID, selfInitiated: false)
+        presentChallengeVCFor(challenge: challenge)
+        NotificationCenter.default.post(name: Constants.Notifications.challengeReceived, object: self)
+    }
+    
+    func presentChallengeVCFor(challenge: Challenge) {
+        guard let challengeResponseVC = UIStoryboard(name: "ChallengeResponseView", bundle: nil).instantiateInitialViewController() as? ChallengeResponseViewController else { return }
+        
+        challengeResponseVC.challenge = challenge
+        AppDelegate.shared.viewControllerToPresent = challengeResponseVC
+    }
 }
 
+extension AppDelegate {
+    func reset() {
+        guard let newGameplayVC = UIStoryboard(name: "GameplayView", bundle: nil).instantiateInitialViewController() else { return }
+        UIApplication.shared.keyWindow?.rootViewController = newGameplayVC
+    }
+}

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eaz-t5-knL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h0I-wa-sK3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,33 +12,33 @@
     </dependencies>
     <scenes>
         <!--Challenge Response View Controller-->
-        <scene sceneID="lcO-Yj-PaR">
+        <scene sceneID="Hkk-Xm-BOV">
             <objects>
-                <viewController id="Eaz-t5-knL" customClass="ChallengeResponseViewController" customModule="JetpackJimmyMessages" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mS7-4n-0VE">
+                <viewController id="h0I-wa-sK3" customClass="ChallengeResponseViewController" customModule="JetpackJimmyMessages" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iwz-L9-Ilb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="NX2-lN-wpx">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vNG-aA-nyr">
                                 <rect key="frame" x="25.5" y="237" width="324" height="193.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JetmanFlying0" translatesAutoresizingMaskIntoConstraints="NO" id="2pw-u9-g2g">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="JetmanFlying0" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-uS-7qN">
                                         <rect key="frame" x="127" y="0.0" width="70" height="92.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="2pw-u9-g2g" secondAttribute="height" multiplier="98:130" id="FTi-Xp-2H9"/>
-                                            <constraint firstAttribute="width" constant="70" id="gx2-Cd-msB"/>
+                                            <constraint firstAttribute="width" secondItem="EHB-uS-7qN" secondAttribute="height" multiplier="98:130" id="6jm-HY-111"/>
+                                            <constraint firstAttribute="width" constant="70" id="B06-XY-cnh"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you accept the challenge?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nL3-U0-oYP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you accept the challenge?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-Yb-M7B">
                                         <rect key="frame" x="0.0" y="108.5" width="324" height="29"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="2AP-YY-oV3">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="sBK-2a-ijn">
                                         <rect key="frame" x="70" y="153.5" width="184" height="40"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDe-Fa-lGD">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLH-Sm-LrD">
                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                                                 <color key="backgroundColor" name="AppGray"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,14 +49,14 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="declineChallenge:" destination="Eaz-t5-knL" eventType="touchUpInside" id="hMf-XB-Ddf"/>
+                                                    <action selector="declineChallenge:" destination="h0I-wa-sK3" eventType="touchUpInside" id="fHy-Cf-8dc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFS-74-Fue">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-wG-Lxw">
                                                 <rect key="frame" x="104" y="0.0" width="80" height="40"/>
                                                 <color key="backgroundColor" name="AppYellow"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="80" id="Lal-pf-kBT"/>
+                                                    <constraint firstAttribute="width" constant="80" id="eZx-Ca-CCn"/>
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Accept"/>
@@ -67,13 +66,13 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="acceptChallenge:" destination="Eaz-t5-knL" eventType="touchUpInside" id="G5V-ja-hId"/>
+                                                    <action selector="acceptChallenge:" destination="h0I-wa-sK3" eventType="touchUpInside" id="fdO-EE-2ma"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="4Qe-su-ql0"/>
-                                            <constraint firstItem="fFS-74-Fue" firstAttribute="width" secondItem="UDe-Fa-lGD" secondAttribute="width" id="Bif-HC-TNf"/>
+                                            <constraint firstItem="fQ6-wG-Lxw" firstAttribute="width" secondItem="eLH-Sm-LrD" secondAttribute="width" id="iN8-9M-AdW"/>
+                                            <constraint firstAttribute="height" constant="40" id="ne2-KZ-nHq"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -81,15 +80,15 @@
                         </subviews>
                         <color key="backgroundColor" name="AppRed"/>
                         <constraints>
-                            <constraint firstItem="NX2-lN-wpx" firstAttribute="centerX" secondItem="mS7-4n-0VE" secondAttribute="centerX" id="13N-Hb-FrX"/>
-                            <constraint firstItem="eID-ky-1JM" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NX2-lN-wpx" secondAttribute="trailing" constant="8" id="F61-QA-pSr"/>
-                            <constraint firstItem="NX2-lN-wpx" firstAttribute="centerY" secondItem="mS7-4n-0VE" secondAttribute="centerY" id="ZNR-eT-Men"/>
-                            <constraint firstItem="NX2-lN-wpx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eID-ky-1JM" secondAttribute="leading" constant="8" id="lc3-JI-VW1"/>
+                            <constraint firstItem="vNG-aA-nyr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="krt-xD-Xe9" secondAttribute="leading" constant="8" id="4cu-GB-Y0h"/>
+                            <constraint firstItem="krt-xD-Xe9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vNG-aA-nyr" secondAttribute="trailing" constant="8" id="Ch1-RD-UH3"/>
+                            <constraint firstItem="vNG-aA-nyr" firstAttribute="centerX" secondItem="iwz-L9-Ilb" secondAttribute="centerX" id="Ndk-Ps-aHa"/>
+                            <constraint firstItem="vNG-aA-nyr" firstAttribute="centerY" secondItem="iwz-L9-Ilb" secondAttribute="centerY" id="g6s-lT-OrA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eID-ky-1JM"/>
+                        <viewLayoutGuide key="safeArea" id="krt-xD-Xe9"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YsK-5l-i4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-3a-9Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2511" y="134"/>
         </scene>
