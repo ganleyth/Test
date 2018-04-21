@@ -11,11 +11,5 @@ import UIKit
 class ChallengeResponseViewController: UIViewController {
     
     var challenge: Challenge?
-    
-    @IBAction func acceptChallenge(_ sender: UIButton) {
-    }
-    
-    @IBAction func declineChallenge(_ sender: UIButton) {
-    }
 }
 

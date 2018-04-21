@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Challenge Response View Controller-->
+        <!--View Controller-->
         <scene sceneID="Hkk-Xm-BOV">
             <objects>
-                <viewController id="h0I-wa-sK3" customClass="ChallengeResponseViewController" customModule="JetpackJimmyMessages" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h0I-wa-sK3" customClass="ChallengeResponseViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iwz-L9-Ilb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="declineChallenge:" destination="h0I-wa-sK3" eventType="touchUpInside" id="fHy-Cf-8dc"/>
+                                                    <action selector="declineChallengeWithSender:" destination="wEr-5E-TBP" eventType="touchUpInside" id="3dn-q4-Zh0"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQ6-wG-Lxw">
@@ -66,7 +66,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="acceptChallenge:" destination="h0I-wa-sK3" eventType="touchUpInside" id="fdO-EE-2ma"/>
+                                                    <action selector="acceptChallengeWithSender:" destination="wEr-5E-TBP" eventType="touchUpInside" id="3vL-3w-Xjj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -89,6 +89,11 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-3a-9Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wEr-5E-TBP" customClass="ChallengeResponseInteractor" customModule="Jetman" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="h0I-wa-sK3" id="yfc-oL-lpk"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="2511" y="134"/>
         </scene>
