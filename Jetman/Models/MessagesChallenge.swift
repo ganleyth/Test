@@ -15,7 +15,8 @@ class MessagesChallenge: MSMessage {
         super.init()
 
         let challengeID = UUID().uuidString
-        let url = URL(string: "https://ganleytom.com")?.appending(challengeID: challengeID, senderID: senderID)
+//        let url = URL(string: "https://jetpackjimmyy04i.app.link/iGHwFeuP8L")?.appending(challengeID: challengeID, senderID: senderID)
+        let url = URL(string: "https://jetpackjimmyy04i.app.link/iGHwFeuP8L")
         self.url = url
         
         let template = MSMessageTemplateLayout()

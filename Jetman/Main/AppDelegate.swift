@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize Branch session
         let branch = Branch.getInstance()
+        branch?.setDebug()
         branch?.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { (params, error) in
             if let error = error {
                 assertionFailure("Error initializing Branch: \(error.localizedDescription)")
@@ -37,14 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        Branch.getInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+    open func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        Branch.getInstance().application(app, open: url, options: options)
         return true
     }
     
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
         Branch.getInstance().continue(userActivity)
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        Branch.getInstance().handlePushNotification(userInfo)
     }
 }
 

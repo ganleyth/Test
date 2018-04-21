@@ -22,9 +22,9 @@ class MessagesViewController: MSMessagesAppViewController {
     override func willBecomeActive(with conversation: MSConversation) {
         super.willBecomeActive(with: conversation)
         
-        if conversation.selectedMessage != nil {
-            guard let challengeResponseVC = challengeResponseVC else { return }
-            presentViewController(challengeResponseVC)
+        if let selectedMessage = conversation.selectedMessage {
+            guard let url = selectedMessage.url else { return }
+            extensionContext?.open(url) { _ in }
         } else {
             guard let defaultCompactVC = defaultCompactVC else { return }
             presentViewController(defaultCompactVC)
@@ -33,11 +33,8 @@ class MessagesViewController: MSMessagesAppViewController {
     
     override func didSelect(_ message: MSMessage, conversation: MSConversation) {
         super.didSelect(message, conversation: conversation)
-        
-        guard
-            let selectedMessage = conversation.selectedMessage,
-            let challengeResponseVC = challengeResponseVC else { return }
-        presentViewController(challengeResponseVC)
+        guard let url = message.url else { return }
+        extensionContext?.open(url) { _ in }
     }
 }
 
