@@ -9,7 +9,11 @@
 import SpriteKit
 import AVFoundation
 
-class GameplaySceneInteractor: NSObject {
+class GameplaySceneInteractor: Interactor {
+    
+    var gameplayViewController: GameplayViewController? {
+        return viewController as? GameplayViewController
+    }
     
     weak var scene: GameplayScene?
     private var currentGameplayMode: GameplayMode = .yetToStart {
@@ -152,6 +156,7 @@ extension GameplaySceneInteractor {
             player.state = .dead
             scene.gameplayDelegate?.gameplayDidEnd()
             musicAudioPlayer?.stop()
+            if gameplayViewController?.challenge != nil { updateChallenge() }
         }
     }
 }
@@ -232,6 +237,26 @@ private extension GameplaySceneInteractor {
         if splashAudioPlayer?.isPlaying ?? false { splashAudioPlayer?.stop() }
         if collisionAudioPlayer?.isPlaying ?? false { collisionAudioPlayer?.stop() }
         if descentAudioPlayer?.isPlaying ?? false { descentAudioPlayer?.stop() }
+    }
+    
+    func updateChallenge() {
+        guard var challenge = gameplayViewController?.challenge else { return }
+        challenge.score = scene?.scoreKeeper.currentScore
+        FirebaseManager.shared.challengeManager.reportFirstTurnScore(for: challenge) { [weak self] (error) in
+            guard let this = self else { return }
+            let title: String
+            let message: String
+            if error != nil {
+                title = "Score Submission Error"
+                message = "Could not successfully submit score"
+            } else {
+                title = "Score Submitted!"
+                message = "Your score for this challenge has been submitted"
+            }
+            DispatchQueue.main.async {
+                this.viewController.presentInfoAlertWith(title: title, message: message)
+            }
+        }
     }
 }
 

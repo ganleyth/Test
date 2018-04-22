@@ -14,5 +14,5 @@ final class FirebaseManager {
     
     let loginManager = LoginManager()
     let friendManager = FriendManager()
-    
+    let challengeManager = ChallengeManager()
 }

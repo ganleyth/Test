@@ -15,6 +15,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet var interactor: GameplaySceneInteractor!
     
     var challenge: Challenge?
     
