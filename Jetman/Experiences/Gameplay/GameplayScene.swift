@@ -16,6 +16,7 @@ protocol GameplaySceneDelegate: class {
 class GameplayScene: SKScene {
     
     var interactor: GameplaySceneInteractor!
+    weak var viewController: UIViewController?
     
     var backgroundLayer: RepeatingLayer?
     var levelLayer: LevelLayer?
@@ -39,6 +40,7 @@ class GameplayScene: SKScene {
         super.didMove(to: view)
         
         interactor = GameplaySceneInteractor(scene: self)
+        interactor.viewController = viewController
         interactor.configureAndAddLayers()
         
         physicsWorld.gravity = CGVector(dx: 0.0, dy: -3.0)

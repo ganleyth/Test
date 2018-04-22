@@ -15,7 +15,6 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet var interactor: GameplaySceneInteractor!
     
     var challenge: Challenge?
     
@@ -24,6 +23,7 @@ class GameplayViewController: UIViewController {
         
         skView.frame = view.frame
         let scene = GameplayScene(size: view.frame.size)
+        scene.viewController = self
         scene.scaleMode = .aspectFill
         skView.presentScene(scene)
         

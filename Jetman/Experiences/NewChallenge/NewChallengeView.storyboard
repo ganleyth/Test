@@ -41,7 +41,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Challenge a Contact"/>
                                 <connections>
-                                    <action selector="challengeContact:" destination="cpu-xi-qdK" eventType="touchUpInside" id="F9A-67-WWc"/>
+                                    <action selector="challengeContact:" destination="ANz-nT-w7a" eventType="touchUpInside" id="qJc-If-VgG"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -11,10 +11,9 @@ import Messages
 
 class MessagesChallenge: MSMessage {
     
-    init(senderID: String) {
+    init(challengeID: String, senderID: String) {
         super.init()
 
-        let challengeID = UUID().uuidString
         let url = URL(string: "https://jetpackjimmyy04i.app.link/iGHwFeuP8L")?.appending(challengeID: challengeID, senderID: senderID)
         self.url = url
         

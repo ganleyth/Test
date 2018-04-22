@@ -16,6 +16,7 @@
 		18172936207B0C8700D6F35E /* SharedJetman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1817292E207B0C8600D6F35E /* SharedJetman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
+		1823303E208D14FB00C867AE /* JetpackJimmyMessages.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E676720688ACA00E6DB57 /* SignInView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183E676620688ACA00E6DB57 /* SignInView.storyboard */; };
@@ -84,7 +85,6 @@
 		18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8575520829A2E00E30EA9 /* MessagesViewController.swift */; };
 		18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575720829A2E00E30EA9 /* MainInterface.storyboard */; };
 		18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575A20829A2F00E30EA9 /* Assets.xcassets */; };
-		18C8575F20829A2F00E30EA9 /* JetpackJimmyMessages.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
@@ -133,7 +133,7 @@
 			remoteGlobalIDString = 1817292D207B0C8600D6F35E;
 			remoteInfo = SharedJetman;
 		};
-		18C8575D20829A2F00E30EA9 /* PBXContainerItemProxy */ = {
+		1823303F208D14FB00C867AE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
 			proxyType = 1;
@@ -154,13 +154,13 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1853AADA20716255007EEC62 /* Embed App Extensions */ = {
+		18233041208D14FC00C867AE /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				18C8575F20829A2F00E30EA9 /* JetpackJimmyMessages.appex in Embed App Extensions */,
+				1823303E208D14FB00C867AE /* JetpackJimmyMessages.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,14 +781,14 @@
 				180C88961FC77F5F00D19F85 /* Frameworks */,
 				180C88971FC77F5F00D19F85 /* Resources */,
 				183B2EA143CE5EFF9C06DF95 /* [CP] Embed Pods Frameworks */,
-				1853AADA20716255007EEC62 /* Embed App Extensions */,
 				1817293A207B0C8700D6F35E /* Embed Frameworks */,
+				18233041208D14FC00C867AE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				18172934207B0C8700D6F35E /* PBXTargetDependency */,
-				18C8575E20829A2F00E30EA9 /* PBXTargetDependency */,
+				18233040208D14FB00C867AE /* PBXTargetDependency */,
 			);
 			name = Jetman;
 			productName = Jetman;
@@ -1174,10 +1174,10 @@
 			target = 1817292D207B0C8600D6F35E /* SharedJetman */;
 			targetProxy = 18172933207B0C8700D6F35E /* PBXContainerItemProxy */;
 		};
-		18C8575E20829A2F00E30EA9 /* PBXTargetDependency */ = {
+		18233040208D14FB00C867AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */;
-			targetProxy = 18C8575D20829A2F00E30EA9 /* PBXContainerItemProxy */;
+			targetProxy = 1823303F208D14FB00C867AE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1331,7 +1331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1350,7 +1350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1439,13 +1439,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SharedJetman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1467,13 +1467,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = SharedJetman/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.SharedJetman;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -1493,13 +1493,13 @@
 					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
 				);
 				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1517,13 +1517,13 @@
 					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
 				);
 				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -19,14 +19,6 @@ class NewChallengeViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBAction func challengeContact(_ sender: UIButton) {
-        guard let currentUser = FirebaseManager.shared.loginManager.currentUser else { return }
-        let messageController = MFMessageComposeViewController()
-        messageController.messageComposeDelegate = interactor
-        messageController.message = MessagesChallenge(senderID: currentUser.uid)
-        present(messageController, animated: true, completion: nil)
-    }
-    
     @IBAction func dismissView(_ sender: UIButton) {
         delegate?.embeddedControllerShouldDismiss()
     }

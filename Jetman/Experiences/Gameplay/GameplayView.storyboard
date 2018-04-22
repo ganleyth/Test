@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gameplay View Controller-->
         <scene sceneID="6hn-pe-wid">
             <objects>
                 <viewController modalTransitionStyle="crossDissolve" id="2Af-7c-xQP" customClass="GameplayViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
@@ -53,18 +53,12 @@
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
                     <connections>
-                        <outlet property="interactor" destination="gqN-Kw-SWF" id="tYl-bg-dIv"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
                         <outlet property="scoreNameLabel" destination="Dsb-RO-H9D" id="jFC-sC-HXr"/>
                         <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym8-xv-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="gqN-Kw-SWF" customClass="GameplaySceneInteractor" customModule="Jetman" customModuleProvider="target">
-                    <connections>
-                        <outlet property="viewController" destination="2Af-7c-xQP" id="NIJ-go-Jx5"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="198.35082458770617" y="212"/>
         </scene>
