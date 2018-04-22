@@ -147,4 +147,5 @@ typealias LeaderboardName = String
 
 enum GeneralError: Error {
     case userNotLoggedIn
+    case noOpponentID
 }

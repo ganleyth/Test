@@ -42,6 +42,7 @@ extension Challenge {
         
         d[Constants.Challenges.opponentID] = opponentID
         d[Constants.Challenges.selfInitiated] = selfInitiated
+        d[Constants.Challenges.score] = score
         
         return d
     }

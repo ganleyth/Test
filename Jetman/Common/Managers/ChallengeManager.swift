@@ -23,18 +23,19 @@ class ChallengeManager: Manager {
     
     func reportFirstTurnScore(for challenge: Challenge, with completion: @escaping (Error?) -> Void) {
         guard let currentUser = currentUser else { completion(GeneralError.userNotLoggedIn); return }
+        guard let opponentID = challenge.opponentID else { completion(GeneralError.noOpponentID); return }
         
         let group = DispatchGroup()
         var completionError: Error? = nil
         
-        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)/challenges/received/\(challenge.id)/score")
+        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)/challenges/received/\(challenge.id)")
         group.enter()
-        currentUserReference.setValue(challenge.score) { (error, _) in
+        currentUserReference.setValue(challenge.dictionaryRepresentation) { (error, _) in
             completionError = error
             group.leave()
         }
         
-        let opponentReference = defaultDatabaseReference.child("\(challenge.opponentID)/challenges/sent/\(challenge.id)/score")
+        let opponentReference = defaultDatabaseReference.child("\(opponentID)/challenges/sent/\(challenge.id)/score")
         group.enter()
         opponentReference.setValue(challenge.score) { (error, _) in
             completionError = error
