@@ -34,3 +34,16 @@ struct Challenge: Codable {
         case score
     }
 }
+
+// MARK: - Computed properties
+extension Challenge {
+    var dictionaryRepresentation: [String: Any] {
+        var d: [String: Any] = [:]
+        
+        d[Constants.Challenges.opponentID] = opponentID
+        d[Constants.Challenges.selfInitiated] = selfInitiated
+        d[Constants.Challenges.score] = score
+        
+        return d
+    }
+}

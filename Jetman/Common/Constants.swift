@@ -22,6 +22,10 @@ struct Constants {
     
     struct Challenges {
         static let challengeID = "challengeID"
+        static let id = "id"
+        static let opponentID = "opponentID"
+        static let score = "score"
+        static let selfInitiated = "self_initiated"
         static let senderID = "senderID"
     }
     
@@ -140,3 +144,7 @@ struct Constants {
 }
 
 typealias LeaderboardName = String
+
+enum GeneralError: Error {
+    case userNotLoggedIn
+}

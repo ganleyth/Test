@@ -14,7 +14,7 @@ class LoginManager: Manager {
     
     func signupUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            defer { completion(error) }
+            defer { DispatchQueue.main.async { completion(error) } }
             if let error = error {
                 Logger.error("Create user error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 return
@@ -24,7 +24,7 @@ class LoginManager: Manager {
     
     func signInUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            defer { completion(error) }
+            defer { DispatchQueue.main.async { completion(error) } }
             if let error = error {
                 Logger.error("Login user error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 return
@@ -36,7 +36,7 @@ class LoginManager: Manager {
         guard let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest() else { completion(nil); return }
         changeRequest.displayName = displayName
         changeRequest.commitChanges { (error) in
-            defer { completion(error) }
+            defer { DispatchQueue.main.async { completion(error) } }
             if let error = error {
                 Logger.error("Update display name error: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 return

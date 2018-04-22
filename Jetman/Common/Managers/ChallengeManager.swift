@@ -7,20 +7,31 @@
 //
 
 import Foundation
-import GameKit
 
-class ChallengeManager {
-
-    func report(scoreValue: Int, to leaderboard: LeaderboardName, completion: (() -> Void)?) {
-        let score = GKScore(leaderboardIdentifier: leaderboard)
-        score.shouldSetDefaultLeaderboard = true
-        score.value = Int64(scoreValue)
-        GKScore.report([score]) { (error) in
-            if let error = error {
-                Logger.error("Could not report score: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
-            }
-            
-            completion?()
+class ChallengeManager: Manager {
+    
+    func reportFirstTurnScore(for challenge: Challenge, with completion: @escaping (Error?) -> Void) {
+        guard let currentUser = currentUser else { completion(GeneralError.userNotLoggedIn); return }
+        
+        let group = DispatchGroup()
+        var completionError: Error? = nil
+        
+        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)challenges/received/\(challenge.id)/score")
+        group.enter()
+        currentUserReference.setValue(challenge.score) { (error, _) in
+            completionError = error
+            group.leave()
+        }
+        
+        let opponentReference = defaultDatabaseReference.child("\(challenge.opponentID)/challenges/sent/\(challenge.id)/score")
+        group.enter()
+        opponentReference.setValue(challenge.score) { (error, _) in
+            completionError = error
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            completion(completionError)
         }
     }
 }
