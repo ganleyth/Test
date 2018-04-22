@@ -72,6 +72,10 @@ final class WelcomeViewController: UIViewController {
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
+    @IBAction func signOut(_ sender: Any) {
+        try? Auth.auth().signOut()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embedController" {
             embeddedController = segue.destination

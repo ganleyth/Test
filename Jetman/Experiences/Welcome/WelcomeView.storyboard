@@ -74,6 +74,13 @@
                                     <segue destination="T8Y-1o-vLr" kind="embed" identifier="embedController" id="581-vb-Xxl"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kC5-BB-NUa">
+                                <rect key="frame" x="421" y="265" width="60" height="30"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="pcF-xv-QJ7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -94,8 +101,10 @@
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="rcp-Un-A4m" secondAttribute="centerX" id="cX1-as-IDp"/>
+                            <constraint firstItem="kC5-BB-NUa" firstAttribute="centerX" secondItem="q75-Dj-h8G" secondAttribute="centerX" id="d0A-hj-Fb2"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="woB-Kz-AD9"/>
+                            <constraint firstItem="kC5-BB-NUa" firstAttribute="top" secondItem="MuH-zL-U1I" secondAttribute="bottom" constant="25" id="xA5-ff-9Xf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>

@@ -35,9 +35,10 @@ class ChallengeManager: Manager {
             group.leave()
         }
         
-        let opponentReference = defaultDatabaseReference.child("\(opponentID)/challenges/sent/\(challenge.id)/score")
+        let opponentScoreReference = defaultDatabaseReference.child("\(opponentID)/challenges/sent/\(challenge.id)")
         group.enter()
-        opponentReference.setValue(challenge.score) { (error, _) in
+        let opponentChallenge = Challenge(id: challenge.id, opponentID: currentUser.uid, selfInitiated: true, score: challenge.score)
+        opponentScoreReference.setValue(opponentChallenge.dictionaryRepresentation) { (error, _) in
             completionError = error
             group.leave()
         }
