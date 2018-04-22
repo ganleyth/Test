@@ -9,6 +9,7 @@
 import UIKit
 
 class ChallengeResponseViewController: UIViewController {
+    @IBOutlet var interactor: ChallengeResponseInteractor!
     
     var challenge: Challenge?
 }

@@ -87,6 +87,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="krt-xD-Xe9"/>
                     </view>
+                    <connections>
+                        <outlet property="interactor" destination="wEr-5E-TBP" id="Ykc-E7-vp0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohn-3a-9Mn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="wEr-5E-TBP" customClass="ChallengeResponseInteractor" customModule="Jetman" customModuleProvider="target">

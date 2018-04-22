@@ -21,3 +21,9 @@ extension WelcomeViewInteractor: GKGameCenterControllerDelegate, UINavigationCon
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
 }
+
+extension WelcomeViewInteractor: ChallengeResponseDelegate {
+    func challengeWasAccepted(challenge: Challenge) {
+        viewController.performSegue(withIdentifier: "showGameplay", sender: challenge)
+    }
+}

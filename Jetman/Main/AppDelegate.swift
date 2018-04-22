@@ -114,10 +114,3 @@ private extension AppDelegate {
         AppDelegate.shared.viewControllerToPresent = challengeResponseVC
     }
 }
-
-extension AppDelegate {
-    func reset() {
-        guard let newGameplayVC = UIStoryboard(name: "GameplayView", bundle: nil).instantiateInitialViewController() else { return }
-        UIApplication.shared.keyWindow?.rootViewController = newGameplayVC
-    }
-}

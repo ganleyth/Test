@@ -9,7 +9,13 @@
 import Foundation
 import UIKit
 
+protocol ChallengeResponseDelegate: class {
+    func challengeWasAccepted(challenge: Challenge)
+}
+
 class ChallengeResponseInteractor: Interactor {
+    
+    weak var delegate: ChallengeResponseDelegate?
     
     private var operationQueue: OperationQueue = {
         let queue = OperationQueue()
@@ -23,12 +29,21 @@ class ChallengeResponseInteractor: Interactor {
     }
     
     @IBAction func acceptChallenge(sender: UIButton) {
-        guard let challenge = challengeResponseVC?.challenge else { return }
-        FirebaseManager.shared.friendManager.verifyFriendStatus(forSender: challenge.opponentID) { (isFriend) in
-            if !isFriend {
-                let friend = Friend(id: challenge.opponentID, recordAgainst: "0-0")
-                FirebaseManager.shared.friendManager.addFriend(friend)
+        guard let challenge = challengeResponseVC?.challenge,
+            let opponentID = challenge.opponentID else { return }
+        
+        DispatchQueue.global(qos: .background).async {
+            FirebaseManager.shared.friendManager.verifyFriendStatus(forSender: opponentID) { (isFriend) in
+                if !isFriend {
+                    let friend = Friend(id: opponentID, recordAgainst: "0-0")
+                    FirebaseManager.shared.friendManager.addFriend(friend)
+                }
             }
+        }
+        
+        viewController.dismiss(animated: true) { [weak self] in
+            guard let this = self else { return }
+            this.delegate?.challengeWasAccepted(challenge: challenge)
         }
     }
     

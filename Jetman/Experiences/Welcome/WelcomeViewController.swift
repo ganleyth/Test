@@ -44,14 +44,6 @@ final class WelcomeViewController: UIViewController {
         presentDeferredViewController()
     }
 
-    @objc func presentGameCenterVCIfNeeded() {
-        guard
-            let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let gameCenterVC = appDelegate.gameCenterVC else { return }
-        
-        present(gameCenterVC, animated: true, completion: nil)
-    }
-
     @IBAction func showSettingsView(_ sender: UIButton) {
         guard let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
         settingsView.delegate = self
@@ -83,6 +75,11 @@ final class WelcomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embedController" {
             embeddedController = segue.destination
+        } else if segue.identifier == "showGameplay" {
+            guard let gameplayVC = segue.destination as? GameplayViewController else { return }
+            if let challenge = sender as? Challenge {
+                gameplayVC.challenge = challenge
+            }
         }
     }
 }
@@ -91,6 +88,11 @@ final class WelcomeViewController: UIViewController {
 private extension WelcomeViewController {
     @objc func presentDeferredViewController() {
         guard let vc = AppDelegate.shared.viewControllerToPresent else { return }
+        
+        if let challengeResponseVC = vc as? ChallengeResponseViewController {
+            challengeResponseVC.interactor.delegate = interactor
+        }
+        
         present(vc, animated: true, completion: nil)
         AppDelegate.shared.viewControllerToPresent = nil
     }
