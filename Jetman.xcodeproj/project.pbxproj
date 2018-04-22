@@ -94,6 +94,7 @@
 		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */; };
 		18DD3509208BDEB90077E7B1 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3508208BDEB90077E7B1 /* Manager.swift */; };
+		18DD350D208CE9080077E7B1 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD350C208CE9080077E7B1 /* Friend.swift */; };
 		18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BD9202778D300BF0502 /* WaterEmitter.sks */; };
 		18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDA202778D300BF0502 /* Assets.xcassets */; };
 		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
@@ -263,6 +264,7 @@
 		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseInteractor.swift; sourceTree = "<group>"; };
 		18DD3508208BDEB90077E7B1 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		18DD350C208CE9080077E7B1 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		18DF6BD9202778D300BF0502 /* WaterEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WaterEmitter.sks; sourceTree = "<group>"; };
 		18DF6BDA202778D300BF0502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				18B3301A1FDC7B7D00D59107 /* Player.swift */,
 				1853AAC020715665007EEC62 /* MyChallengesBox.swift */,
 				1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */,
+				18DD350C208CE9080077E7B1 /* Friend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1065,6 +1068,7 @@
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
+				18DD350D208CE9080077E7B1 /* Friend.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
 				18847EB420706BB800B90C9C /* NewChallengeInteractor.swift in Sources */,
 				183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */,

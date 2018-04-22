@@ -24,7 +24,12 @@ class ChallengeResponseInteractor: Interactor {
     
     @IBAction func acceptChallenge(sender: UIButton) {
         guard let challenge = challengeResponseVC?.challenge else { return }
-        FirebaseManager.shared.friendManager.verifyFriendStatus(forSender: challenge.opponentID) {}
+        FirebaseManager.shared.friendManager.verifyFriendStatus(forSender: challenge.opponentID) { (isFriend) in
+            if !isFriend {
+                let friend = Friend(id: challenge.opponentID, recordAgainst: "0-0")
+                FirebaseManager.shared.friendManager.addFriend(friend)
+            }
+        }
     }
     
     @IBAction func declineChallenge(sender: UIButton) {

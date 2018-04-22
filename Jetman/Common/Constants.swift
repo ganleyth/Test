@@ -25,6 +25,11 @@ struct Constants {
         static let senderID = "senderID"
     }
     
+    struct Friend {
+        static let id = "id"
+        static let recordAgainst = "record_against"
+    }
+    
     struct Leaderboard {
         static let global: LeaderboardName = "GlobalLeaderboard"
     }

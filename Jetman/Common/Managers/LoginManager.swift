@@ -12,10 +12,6 @@ import FirebaseCore
 
 class LoginManager: Manager {
     
-    var currentUser: User? {
-        return Auth.auth().currentUser
-    }
-
     func signupUserWith(email: String, password: String, completion: @escaping (Error?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             defer { completion(error) }
