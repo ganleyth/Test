@@ -10,7 +10,7 @@ import Foundation
 
 struct Challenge: Codable {
     let id: String
-    let opponentID: String
+    var opponentID: String? = nil
     let selfInitiated: Bool
     var score: Int? = nil
     
@@ -20,7 +20,7 @@ struct Challenge: Codable {
         selfInitiated = true
     }
     
-    init(id: String, opponentID: String, selfInitiated: Bool, score: Int? = nil) {
+    init(id: String, opponentID: String?, selfInitiated: Bool, score: Int? = nil) {
         self.id = id
         self.opponentID = opponentID
         self.selfInitiated = selfInitiated
@@ -42,7 +42,6 @@ extension Challenge {
         
         d[Constants.Challenges.opponentID] = opponentID
         d[Constants.Challenges.selfInitiated] = selfInitiated
-        d[Constants.Challenges.score] = score
         
         return d
     }

@@ -10,13 +10,24 @@ import Foundation
 
 class ChallengeManager: Manager {
     
+    func initiateContactChallenge(_ challenge: Challenge, with completion: @escaping (Error?) -> Void) {
+        guard let currentUser = currentUser else { completion(GeneralError.userNotLoggedIn); return }
+        
+        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)/challenges/sent/\(challenge.id)")
+        currentUserReference.setValue(challenge.dictionaryRepresentation) { (error, _) in
+            DispatchQueue.main.async {
+                completion(error)
+            }
+        }
+    }
+    
     func reportFirstTurnScore(for challenge: Challenge, with completion: @escaping (Error?) -> Void) {
         guard let currentUser = currentUser else { completion(GeneralError.userNotLoggedIn); return }
         
         let group = DispatchGroup()
         var completionError: Error? = nil
         
-        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)challenges/received/\(challenge.id)/score")
+        let currentUserReference = defaultDatabaseReference.child("\(currentUser.uid)/challenges/received/\(challenge.id)/score")
         group.enter()
         currentUserReference.setValue(challenge.score) { (error, _) in
             completionError = error
