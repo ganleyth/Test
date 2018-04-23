@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import Branch
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -61,6 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load sprites into memory on launch
         SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
         FirebaseApp.configure()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [UNAuthorizationOptions.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                DispatchQueue.main.async { UIApplication.shared.registerForRemoteNotifications() }
+            }
+            if let error = error {
+                Logger.error("Error authorizing remote notification options: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+            }
+        }
         
         return true
     }
