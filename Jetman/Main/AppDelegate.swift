@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import Branch
 import UserNotifications
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -61,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Load sprites into memory on launch
         SpriteLoader.shared.loadSprites(for: GameSession.shared.settings.playerGender)
-        FirebaseApp.configure()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [UNAuthorizationOptions.alert, .badge, .sound]) { (granted, error) in
             if granted {
@@ -71,6 +71,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 Logger.error("Error authorizing remote notification options: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
         }
+        
+        // Messaging delegate
+        UNUserNotificationCenter.current().delegate = self
+        Messaging.messaging().remoteMessageDelegate = self
+        
+        FirebaseApp.configure()
         
         return true
     }
@@ -123,4 +129,14 @@ private extension AppDelegate {
         challengeResponseVC.challenge = challenge
         AppDelegate.shared.viewControllerToPresent = challengeResponseVC
     }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+}
+
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {}
+    
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {}
 }
