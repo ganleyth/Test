@@ -10,7 +10,7 @@ import Foundation
 import CoreGraphics
 
 protocol ScoreKeeperDelegate: class {
-    func scoreDidReachCheckpointMultiple(_ multiple: Int)
+    func scoreDidReachCheckpointMultiple()
 }
 
 class ScoreKeeper {
@@ -27,8 +27,9 @@ class ScoreKeeper {
     
     func update(forPosition position: CGPoint, maxPosition: CGFloat, completedTileMaps: Int) {
         currentScore = Int((CGFloat(completedTileMaps) + position.x / maxPosition) * CGFloat(pointsPerTileMap))
+        guard currentScore > 0 else { return }
         if currentScore % scoreCheckpointCount == 0 {
-            delegate?.scoreDidReachCheckpointMultiple(currentScore / scoreCheckpointCount)
+            delegate?.scoreDidReachCheckpointMultiple()
         }
     }
 }

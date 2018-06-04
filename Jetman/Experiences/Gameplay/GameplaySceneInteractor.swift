@@ -149,7 +149,7 @@ extension GameplaySceneInteractor {
             player.state = .idle
         case .playing:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
-            scene.levelLayer?.setVelocity(value: CGPoint(x: -200, y: 0))
+            scene.levelLayer?.setVelocity(value: CGPoint(x: Constants.TileMapLayer.startingVelocity, y: 0))
         case .gameOver:
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
@@ -273,7 +273,11 @@ extension GameplaySceneInteractor: AVAudioPlayerDelegate {
 }
 
 extension GameplaySceneInteractor: ScoreKeeperDelegate {
-    func scoreDidReachCheckpointMultiple(_ multiple: Int) {
-        
+    func scoreDidReachCheckpointMultiple() {
+        guard let levelLayer = scene?.levelLayer else {
+            fatalError("Level layer not available.")
+        }
+        let newVelocity = levelLayer.velocity + Constants.TileMapLayer.velocityDifficultyIncrement
+        levelLayer.setVelocity(value: newVelocity)
     }
 }
