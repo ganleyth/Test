@@ -9,15 +9,26 @@
 import Foundation
 import CoreGraphics
 
+protocol ScoreKeeperDelegate: class {
+    func scoreDidReachCheckpointMultiple(_ multiple: Int)
+}
+
 class ScoreKeeper {
     var currentScore = 0
     let pointsPerTileMap: Int
+    let scoreCheckpointCount: Int
     
-    init(pointsPerTileMap: Int) {
+    weak var delegate: ScoreKeeperDelegate?
+    
+    init(pointsPerTileMap: Int, scoreCheckpointCount: Int) {
         self.pointsPerTileMap = pointsPerTileMap
+        self.scoreCheckpointCount = scoreCheckpointCount
     }
     
     func update(forPosition position: CGPoint, maxPosition: CGFloat, completedTileMaps: Int) {
         currentScore = Int((CGFloat(completedTileMaps) + position.x / maxPosition) * CGFloat(pointsPerTileMap))
+        if currentScore % scoreCheckpointCount == 0 {
+            delegate?.scoreDidReachCheckpointMultiple(currentScore / scoreCheckpointCount)
+        }
     }
 }
