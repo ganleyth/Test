@@ -271,3 +271,9 @@ extension GameplaySceneInteractor: AVAudioPlayerDelegate {
         }
     }
 }
+
+extension GameplaySceneInteractor: ScoreKeeperDelegate {
+    func scoreDidReachCheckpointMultiple(_ multiple: Int) {
+        
+    }
+}

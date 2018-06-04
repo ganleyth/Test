@@ -32,7 +32,11 @@ class GameplayScene: SKScene {
     
     var lastTime: TimeInterval?
     
-    let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
+    lazy var scoreKeeper: ScoreKeeper = {
+        let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100, scoreCheckpointCount: 500)
+        scoreKeeper.delegate = interactor
+        return scoreKeeper
+    }()
     
     weak var gameplayDelegate: GameplaySceneDelegate?
 
