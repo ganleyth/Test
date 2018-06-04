@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,26 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="ZOs-MX-rro">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZOs-MX-rro">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xzd-Ff-BJC">
+                                <rect key="frame" x="121" y="60" width="424" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xzd-Ff-BJC" secondAttribute="height" multiplier="646:267" id="JHV-0N-0Hs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenAttribution" translatesAutoresizingMaskIntoConstraints="NO" id="eiy-wg-amU">
+                                <rect key="frame" x="205" y="335" width="257" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eiy-wg-amU" secondAttribute="height" multiplier="300:28" id="5KC-aI-sVY"/>
+                                    <constraint firstAttribute="height" constant="24" id="uKA-3R-101"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ZOs-MX-rro" firstAttribute="bottom" secondItem="eiy-wg-amU" secondAttribute="bottom" constant="16" id="AdP-hm-GwI"/>
                             <constraint firstAttribute="trailing" secondItem="ZOs-MX-rro" secondAttribute="trailing" id="DW0-Ig-Iot"/>
+                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="H0E-1d-CWF"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MV2-kp-5Tj"/>
+                            <constraint firstItem="eiy-wg-amU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SVz-JH-Dmg"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aDu-8A-rQc"/>
                             <constraint firstAttribute="bottom" secondItem="ZOs-MX-rro" secondAttribute="bottom" id="mUT-l3-1d0"/>
+                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="top" secondItem="ZOs-MX-rro" secondAttribute="top" constant="60" id="ruZ-uM-Sfg"/>
+                            <constraint firstItem="eiy-wg-amU" firstAttribute="top" secondItem="xzd-Ff-BJC" secondAttribute="bottom" constant="100" id="xCF-ij-JFa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.623688155922046" y="373.60000000000002"/>
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchScreen" width="667" height="375"/>
+        <image name="LaunchScreenAttribution" width="300" height="28"/>
+        <image name="LaunchScreenBackground" width="888" height="500"/>
+        <image name="LaunchScreenTitle" width="646" height="267"/>
     </resources>
 </document>
