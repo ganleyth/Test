@@ -22,8 +22,6 @@ final class LevelLayer: Layer {
     private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
     private var platformPositions: [CoordinatePosition] = []
     
-    private var lastBottomBoundaryChangeDirection: BoundaryChangeDirection?
-    
     private let minNumberOfObstacles = 4
     private let maxNumberOfObstacles = 5
     
@@ -289,26 +287,6 @@ extension LevelLayer {
         leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset, y: leadingTileMap.position.y)
         swap(&leadingTileMap, &trailingTileMap)
         swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
-        
-        let trailingMapMax = maxBottomBoundaryLevelForTrailingTileMap()
-        
-        switch trailingMapMax {
-        case 0..<currentBottomBoundaryMaxRow:
-            syncBottomBoundaryLevelForTrailingTileMap(with: .increase)
-        case (currentBottomBoundaryMaxRow + 1)..<Int.max:
-            syncBottomBoundaryLevelForTrailingTileMap(with: .decrease)
-        default: break
-        }
-        
-        // Determine whether the bottom boundary should change levels
-        let random = GKRandomSource.sharedRandom().nextInt(upperBound: 100)
-        if random < 50 {
-            let lastDirectionChange = lastBottomBoundaryChangeDirection ?? .decrease
-            switch lastDirectionChange {
-            case .increase: decreaseBottomBoundaryLevelForTrailingTileMap()
-            case .decrease: increaseBottomBoundaryLevelForTrailingTileMap()
-            }
-        }
 
         populateTrailingTileMap()
     }
@@ -324,80 +302,9 @@ extension LevelLayer {
     }
 }
 
-// MARK: - Dynamic bottom boundary
+// MARK: - Bottom boundary physics
 extension LevelLayer {
-    private enum BoundaryChangeDirection {
-        case increase
-        case decrease
-    }
-    
-    
-    private func increaseBottomBoundaryLevelForTrailingTileMap() {
-        for j in 1..<trailingTileMap.numberOfColumns {
-            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
-        }
-        
-        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
-        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topIncreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow + 1)
-        
-        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
-        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow + 1)
-        
-        currentBottomBoundaryMaxRow += 1
-        lastBottomBoundaryChangeDirection = .increase
-    }
-    
-    private func syncBottomBoundaryLevelForTrailingTileMap(with direction: BoundaryChangeDirection) {
-        for j in 0..<trailingTileMap.numberOfColumns {
-            switch direction {
-            case .increase:
-                if currentBottomBoundaryMaxRow - 1 >= 0 {
-                    trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
-                }
-                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-            case .decrease:
-                trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow + 1)
-                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
-            }
-        }
-        
-        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
-        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow)
-    }
-    
-    private func decreaseBottomBoundaryLevelForTrailingTileMap() {
-        for j in 0..<trailingTileMap.numberOfColumns {
-            trailingTileMap.setTileGroup(nil, forColumn: j, row: currentBottomBoundaryMaxRow)
-            if currentBottomBoundaryMaxRow - 1 >= 0 {
-                trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow - 1)
-            }
-        }
-        
-        trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.topDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow)
-        if currentBottomBoundaryMaxRow - 1 >= 0 {
-            trailingTileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleDecreaseTile, forColumn: 0, row: currentBottomBoundaryMaxRow - 1)
-        }
-        
-        removeBottomBoundaryPhysicsBody(of: trailingTileMap)
-        addBottomBoundaryPhysicsBody(to: trailingTileMap, atLevel: currentBottomBoundaryMaxRow - 1)
-        
-        if currentBottomBoundaryMaxRow - 1 >= 0 {
-            currentBottomBoundaryMaxRow -= 1
-        }
-        
-        lastBottomBoundaryChangeDirection = .decrease
-    }
-    
-    private func maxBottomBoundaryLevelForTrailingTileMap() -> Int {
-        for i in 0..<trailingTileMap.numberOfRows {
-            if trailingTileMap.tileGroup(atColumn: 0, row: i) == nil {
-                return i - 1
-            }
-        }
-        return Int.max
-    }
-    
+
     private func addBottomBoundaryPhysicsBody(to tileMap: SKTileMapNode, atLevel boundaryLevel: Int) {
         let boundaryYPosition = CGFloat(boundaryLevel) * tileMap.tileSize.height + Constants.TileMapLayer.waterLevelYPosition
         let node = SKShapeNode(path: UIBezierPath.bottomBoundaryOfDefaultWidth.cgPath)
@@ -418,7 +325,6 @@ extension LevelLayer {
 }
 
 // MARK: - Support types
-
 struct ObstacleBuildingBlocks {
     let topTile: SKTileGroup
     let middleTile: SKTileGroup
