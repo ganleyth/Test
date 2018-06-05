@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseAuth
+//import FirebaseAuth
 
 protocol WelcomeViewEmbeddedControllerDelegate: class {
     func embeddedControllerShouldDismiss()
@@ -73,7 +73,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     @IBAction func signOut(_ sender: Any) {
-        try? Auth.auth().signOut()
+//        try? Auth.auth().signOut()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

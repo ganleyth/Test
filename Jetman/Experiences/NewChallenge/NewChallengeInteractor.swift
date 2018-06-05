@@ -15,12 +15,12 @@ class NewChallengeInteractor: Interactor {
     private var challenge: Challenge?
     
     @IBAction func challengeContact(_ sender: UIButton) {
-        guard let currentUser = FirebaseManager.shared.loginManager.currentUser else { return }
+//        guard let currentUser = FirebaseManager.shared.loginManager.currentUser else { return }
         let messageController = MFMessageComposeViewController()
         messageController.messageComposeDelegate = self
         let challenge = Challenge(id: UUID().uuidString, opponentID: nil, selfInitiated: true)
         self.challenge = challenge
-        messageController.message = MessagesChallenge(challengeID: challenge.id, senderID: currentUser.uid)
+//        messageController.message = MessagesChallenge(challengeID: challenge.id, senderID: currentUser.uid)
         
         viewController.present(messageController, animated: true, completion: nil)
     }

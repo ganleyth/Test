@@ -7,21 +7,21 @@
 //
 
 import Foundation
-import FirebaseDatabase
-import FirebaseAuth
+//import FirebaseDatabase
+//import FirebaseAuth
 
 class Manager {
     
-    var database: Database {
-        return Database.database()
-    }
-    
-    var defaultDatabaseReference: DatabaseReference {
-        return database.reference()
-    }
-    
-    var currentUser: User? {
-        return Auth.auth().currentUser
-    }
+//    var database: Database {
+//        return Database.database()
+//    }
+//    
+//    var defaultDatabaseReference: DatabaseReference {
+//        return database.reference()
+//    }
+//    
+//    var currentUser: User? {
+//        return Auth.auth().currentUser
+//    }
     
 }

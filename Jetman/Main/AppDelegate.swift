@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
 import Branch
 import UserNotifications
-import FirebaseMessaging
+//import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -74,9 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Messaging delegate
         UNUserNotificationCenter.current().delegate = self
-        Messaging.messaging().remoteMessageDelegate = self
+//        Messaging.messaging().remoteMessageDelegate = self
         
-        FirebaseApp.configure()
+//        FirebaseApp.configure()
         
         return true
     }
@@ -135,8 +135,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
 }
 
-extension AppDelegate: MessagingDelegate {
-    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {}
-    
-    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {}
-}
+//extension AppDelegate: MessagingDelegate {
+//    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {}
+//
+//    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {}
+//}

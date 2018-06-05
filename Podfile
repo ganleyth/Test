@@ -6,16 +6,6 @@ target 'Jetman' do
 use_frameworks!
 
 # Pods for Jetman
-
-pod 'Firebase'
-pod 'Firebase/Auth'
-pod 'Firebase/Performance'
-pod 'Firebase/AdMob'
-pod 'Firebase/Database'
-pod 'Firebase/Messaging'
-
-pod 'Fabric'
-pod 'Crashlytics'
 pod 'Branch'
 
 end
