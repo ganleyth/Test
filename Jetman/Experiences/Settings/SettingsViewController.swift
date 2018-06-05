@@ -9,26 +9,30 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-    @IBOutlet weak var enableSoundsSwitch: UISwitch!
-    @IBOutlet weak var enableHapticsSwitch: UISwitch!
+    @IBOutlet fileprivate var soundsSwitch: UIButton!
+    @IBOutlet fileprivate var hapticsSwitch: UIButton!
+    
+    fileprivate var soundsIsOn = false
+    fileprivate var hapticsIsOn = false
     
     weak var delegate: WelcomeViewEmbeddedControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        enableSoundsSwitch.setOn(GameSession.shared.settings.allowSounds, animated: false)
-        enableHapticsSwitch.setOn(GameSession.shared.settings.allowHaptics, animated: false)
     }
     
-    @IBAction func updateSoundsSetting(_ sender: UISwitch) {
-        GameSession.shared.settings.allowSounds = sender.isOn
+    @IBAction func toggleSounds(_ sender: UIButton) {
+        soundsIsOn = !soundsIsOn
+        soundsSwitch.setImage((soundsIsOn ? #imageLiteral(resourceName: "SwitchOn") : #imageLiteral(resourceName: "SwitchOff")), for: .normal)
+        GameSession.shared.settings.allowSounds = soundsIsOn
     }
     
-    @IBAction func updateHapticsSetting(_ sender: UISwitch) {
-        GameSession.shared.settings.allowHaptics = sender.isOn
+    @IBAction func toggleHaptics(_ sender: UIButton) {
+        hapticsIsOn = !hapticsIsOn
+        hapticsSwitch.setImage((hapticsIsOn ? #imageLiteral(resourceName: "SwitchOn") : #imageLiteral(resourceName: "SwitchOff")), for: .normal)
+        GameSession.shared.settings.allowHaptics = hapticsIsOn
     }
-
+    
     @IBAction func dismissSettingsView(_ sender: UIButton) {
         delegate?.embeddedControllerShouldDismiss()
     }

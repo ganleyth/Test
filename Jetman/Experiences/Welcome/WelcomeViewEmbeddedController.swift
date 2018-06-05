@@ -13,6 +13,7 @@ class WelcomeViewEmbeddedController: UIViewController {
     func addChild(_ controller: UIViewController) {
         addChildViewController(controller)
         view.addSubview(controller.view)
+        view.backgroundColor = .clear
         controller.view.frame = view.frame
         controller.didMove(toParentViewController: self)
     }

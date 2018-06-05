@@ -27,7 +27,7 @@ final class WelcomeViewController: UIViewController {
     }
     
     private var containerViewYTranslation: CGFloat {
-        return view.frame.size.height - embeddedControllerContainerView.frame.minY
+        return view.frame.size.height - embeddedControllerContainerView.frame.minY + 60
     }
     
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ final class WelcomeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(presentDeferredViewController), name: Constants.Notifications.challengeReceived, object: nil)
         
         // Move the embedded controller container view off-screen initially
-        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+        embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation + 60)
     }
     
     override func viewDidAppear(_ animated: Bool) {
