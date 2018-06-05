@@ -63,7 +63,7 @@ extension Player {
     
     private func updateRotation() {
         if state == .flying {
-            let rotation = SKAction.rotate(toAngle: CGFloat(-30.0).degreesToRadians, duration: 0.3)
+            let rotation = SKAction.rotate(toAngle: CGFloat(-45.0).degreesToRadians, duration: 0.3)
             run(rotation)
         }
     }
