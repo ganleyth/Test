@@ -10,7 +10,7 @@ import UIKit
 
 class WelcomeViewEmbeddedController: UIViewController {
     
-    func addChild(_ controller: UIViewController) {
+    func addEmbeddedChild(_ controller: UIViewController) {
         addChildViewController(controller)
         view.addSubview(controller.view)
         view.backgroundColor = .clear

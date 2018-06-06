@@ -47,28 +47,28 @@ final class WelcomeViewController: UIViewController {
     @IBAction func showSettingsView(_ sender: UIButton) {
         guard let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
         settingsView.delegate = self
-        castedEmbeddedController?.addChild(settingsView)
+        castedEmbeddedController?.addEmbeddedChild(settingsView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
     @IBAction func showStatsView(_ sender: UIButton) {
         guard let statsView = UIStoryboard(name: "StatsView", bundle: nil).instantiateInitialViewController() as? StatsViewController else { return }
         statsView.delegate = self
-        castedEmbeddedController?.addChild(statsView)
+        castedEmbeddedController?.addEmbeddedChild(statsView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
     @IBAction func showNewChallengeView(_ sender: UIButton) {
         guard let newChallengeView = UIStoryboard(name: "NewChallengeView", bundle: nil).instantiateInitialViewController() as? NewChallengeViewController else { return }
         newChallengeView.delegate = self
-        castedEmbeddedController?.addChild(newChallengeView)
+        castedEmbeddedController?.addEmbeddedChild(newChallengeView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
     @IBAction func showMyChallengesView(_ sender: UIButton) {
         guard let myChallengesView = UIStoryboard(name: "MyChallengesView", bundle: nil).instantiateInitialViewController() as? MyChallengesViewController else { return }
         myChallengesView.delegate = self
-        castedEmbeddedController?.addChild(myChallengesView)
+        castedEmbeddedController?.addEmbeddedChild(myChallengesView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
