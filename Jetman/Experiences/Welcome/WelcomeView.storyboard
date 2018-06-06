@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,24 +23,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-gL-mcX">
-                                <rect key="frame" x="121.5" y="60" width="423" height="175"/>
+                                <rect key="frame" x="110" y="40" width="447" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Sfx-gL-mcX" secondAttribute="height" multiplier="646:267" id="2y9-uu-l1N"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenAttribution" translatesAutoresizingMaskIntoConstraints="NO" id="iMu-cv-G4F">
-                                <rect key="frame" x="205" y="335" width="257" height="24"/>
+                                <rect key="frame" x="233" y="340.5" width="201" height="18.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="8gI-O3-9eP"/>
                                     <constraint firstAttribute="width" secondItem="iMu-cv-G4F" secondAttribute="height" multiplier="300:28" id="Jn7-hc-LKI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcp-Un-A4m">
-                                <rect key="frame" x="256" y="251" width="155" height="64"/>
+                                <rect key="frame" x="252" y="249" width="163" height="67.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rcp-Un-A4m" secondAttribute="height" multiplier="372:154" id="Ng4-UT-frs"/>
-                                    <constraint firstAttribute="height" constant="64" id="ssn-Ub-bXr"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="PlayButton"/>
@@ -50,11 +47,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-PZ-4JC">
-                                <rect key="frame" x="32" y="279" width="64" height="64"/>
+                                <rect key="frame" x="32" y="275.5" width="67.5" height="67.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uf7-PZ-4JC" secondAttribute="height" multiplier="1:1" id="byR-ns-eEz"/>
-                                    <constraint firstAttribute="height" constant="64" id="o7I-VF-VnJ"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" image="SettingsButton"/>
@@ -80,7 +76,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bh-Yfg">
-                                <rect key="frame" x="66" y="37" width="534" height="300"/>
+                                <rect key="frame" x="66.5" y="37.5" width="534" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="T8Y-1o-vLr" kind="embed" identifier="embedController" id="581-vb-Xxl"/>
@@ -95,22 +91,25 @@
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="6WI-ER-v1v"/>
                             <constraint firstItem="rcp-Un-A4m" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="9O6-v4-bCn"/>
                             <constraint firstAttribute="bottom" secondItem="K45-9c-P6w" secondAttribute="bottom" id="Bu5-7n-i1X"/>
-                            <constraint firstItem="rcp-Un-A4m" firstAttribute="top" secondItem="Sfx-gL-mcX" secondAttribute="bottom" constant="16" id="Mvz-fU-NaL"/>
+                            <constraint firstItem="rcp-Un-A4m" firstAttribute="top" secondItem="Sfx-gL-mcX" secondAttribute="bottom" constant="24" id="Mvz-fU-NaL"/>
                             <constraint firstAttribute="trailing" secondItem="K45-9c-P6w" secondAttribute="trailing" id="NZs-Wa-KCQ"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="OTC-ML-Lxr"/>
+                            <constraint firstItem="Uf7-PZ-4JC" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="QOB-1E-kGB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="Qv5-OB-HLh" secondAttribute="bottom" id="S6x-bZ-tQU"/>
                             <constraint firstItem="Sfx-gL-mcX" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="TaU-G8-wd5"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="trailing" secondItem="Qv5-OB-HLh" secondAttribute="trailing" id="Uha-3Z-Ws9"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
+                            <constraint firstItem="rcp-Un-A4m" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="Up8-lG-DrW"/>
                             <constraint firstAttribute="bottom" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="32" id="XFm-75-STe"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="XWO-dS-fte"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="YQz-gq-FqY"/>
-                            <constraint firstItem="iMu-cv-G4F" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="20" id="ayA-0p-tfi"/>
+                            <constraint firstItem="iMu-cv-G4F" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="24" id="ayA-0p-tfi"/>
                             <constraint firstAttribute="trailing" secondItem="MuH-zL-U1I" secondAttribute="trailing" constant="32" id="dJN-30-8fN"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="iMu-cv-G4F" secondAttribute="bottom" constant="16" id="gT4-IK-iVI"/>
-                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="top" secondItem="fYY-w6-hWI" secondAttribute="top" constant="60" id="sBv-Z2-ts0"/>
+                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="top" secondItem="fYY-w6-hWI" secondAttribute="top" constant="40" id="sBv-Z2-ts0"/>
+                            <constraint firstItem="iMu-cv-G4F" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.05" id="se1-Tq-nZQ"/>
                             <constraint firstAttribute="bottom" secondItem="MuH-zL-U1I" secondAttribute="bottom" constant="32" id="yIb-mD-PNG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
