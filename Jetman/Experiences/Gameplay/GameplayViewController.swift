@@ -24,7 +24,7 @@ class GameplayViewController: UIViewController {
     
     var challenge: Challenge?
     private lazy var containerViewYTranslation: CGFloat = {
-        return containerView.frame.height + (view.frame.maxY - containerView.frame.maxY)
+        return (containerView.frame.height + (view.frame.maxY - containerView.frame.maxY)) * 1.2
     }()
     
     override func viewDidLoad() {
@@ -102,6 +102,9 @@ extension GameplayViewController: GameplaySceneDelegate {
         endOfGameView.loadView()
         endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: scoreKeeper.currentScore)
         castedEmbeddedController?.addEmbeddedChild(endOfGameView)
-        animateEmbeddedControllerVisibility(isVisible: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            guard let this = self else { return }
+            this.animateEmbeddedControllerVisibility(isVisible: true)
+        }
     }
 }
