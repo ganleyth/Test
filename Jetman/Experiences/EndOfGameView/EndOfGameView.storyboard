@@ -31,25 +31,41 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xvA-B6-D7T">
-                                <rect key="frame" x="131" y="117" width="405" height="92"/>
+                                <rect key="frame" x="131" y="117" width="405" height="118"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-Vz-wMz">
-                                        <rect key="frame" x="92.5" y="0.0" width="220" height="30"/>
+                                        <rect key="frame" x="48" y="0.0" width="309" height="43"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScoreText" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-SX-AIV">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                <rect key="frame" x="0.0" y="6.5" width="220" height="30"/>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1876" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twH-BD-Lcx">
+                                                <rect key="frame" x="236" y="0.0" width="73" height="43"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.39252195367353215" green="0.39252195367353215" blue="0.39252195367353215" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <size key="shadowOffset" width="0.5" height="2"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D0i-M6-Zpt">
-                                        <rect key="frame" x="92.5" y="62" width="220" height="30"/>
+                                        <rect key="frame" x="48" y="75" width="309" height="43"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScoreText" translatesAutoresizingMaskIntoConstraints="NO" id="slp-l7-WUc">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                <rect key="frame" x="0.0" y="6.5" width="220" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="slp-l7-WUc" secondAttribute="height" multiplier="410:56" id="5Mm-g4-2sB"/>
                                                 </constraints>
                                             </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1876" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrH-5H-xQL">
+                                                <rect key="frame" x="236" y="0.0" width="73" height="43"/>
+                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" red="0.39252195369999998" green="0.39252195369999998" blue="0.39252195369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <size key="shadowOffset" width="0.5" height="2"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -76,8 +92,8 @@
                         <viewLayoutGuide key="safeArea" id="Zyn-BM-PS8"/>
                     </view>
                     <connections>
-                        <outlet property="highScoreStackView" destination="D0i-M6-Zpt" id="sE4-Yu-ynk"/>
-                        <outlet property="scoreStackView" destination="rXE-Vz-wMz" id="PLa-su-Dwc"/>
+                        <outlet property="highScoreLabel" destination="HrH-5H-xQL" id="4fn-zC-Dx2"/>
+                        <outlet property="scoreLabel" destination="twH-BD-Lcx" id="ia1-0s-Aci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2z0-ec-na4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -44,7 +44,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LO6-4x-CBu">
                                 <rect key="frame" x="66.5" y="37.5" width="534" height="300"/>
                                 <connections>
-                                    <segue destination="6nG-1f-djJ" kind="embed" id="BJC-cI-EaQ"/>
+                                    <segue destination="6nG-1f-djJ" kind="embed" identifier="embedController" id="BJC-cI-EaQ"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -74,14 +74,15 @@
             </objects>
             <point key="canvasLocation" x="35" y="-631"/>
         </scene>
-        <!--View Controller-->
+        <!--Embedded Controller-->
         <scene sceneID="NuQ-9U-Ysr">
             <objects>
-                <viewController id="6nG-1f-djJ" sceneMemberID="viewController">
+                <viewController id="6nG-1f-djJ" customClass="EmbeddedController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ne-km-9c4">
                         <rect key="frame" x="0.0" y="0.0" width="534" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="nyH-lY-5v7"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VFL-WE-bL2" userLabel="First Responder" sceneMemberID="firstResponder"/>

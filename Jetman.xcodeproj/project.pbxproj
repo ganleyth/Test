@@ -33,7 +33,7 @@
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */; };
-		18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */; };
+		18847EA72070122F00B90C9C /* EmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* EmbeddedController.swift */; };
 		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
 		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
 		18847EAD2070637700B90C9C /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAC2070637700B90C9C /* StatsInteractor.swift */; };
@@ -196,7 +196,7 @@
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AppExtensions.swift"; sourceTree = "<group>"; };
-		18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewEmbeddedController.swift; sourceTree = "<group>"; };
+		18847EA62070122F00B90C9C /* EmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedController.swift; sourceTree = "<group>"; };
 		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
 		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		18847EAC2070637700B90C9C /* StatsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
@@ -589,7 +589,7 @@
 				18B32FD51FDA506100D59107 /* WelcomeViewController.swift */,
 				18B32FF81FDC4F6100D59107 /* WelcomeViewInteractor.swift */,
 				18B32FEC1FDC408400D59107 /* WelcomeScene.swift */,
-				18847EA62070122F00B90C9C /* WelcomeViewEmbeddedController.swift */,
+				18847EA62070122F00B90C9C /* EmbeddedController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -1052,7 +1052,7 @@
 				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
 				18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */,
 				18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */,
-				18847EA72070122F00B90C9C /* WelcomeViewEmbeddedController.swift in Sources */,
+				18847EA72070122F00B90C9C /* EmbeddedController.swift in Sources */,
 				18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
 				18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */,

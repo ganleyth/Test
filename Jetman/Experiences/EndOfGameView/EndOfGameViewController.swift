@@ -9,18 +9,11 @@
 import UIKit
 
 class EndOfGameViewController: UIViewController {
-    @IBOutlet fileprivate var scoreStackView: UIStackView!
-    @IBOutlet fileprivate var highScoreStackView: UIStackView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet var scoreLabel: UILabel!
+    @IBOutlet var highScoreLabel: UILabel!
     
     func configureFor(score: Int, highScore: Int) {
-        let scoreView = score.phosphateRepresentationImage
-        let highScoreView = highScore.phosphateRepresentationImage
-        
-        scoreStackView.addArrangedSubview(scoreView)
-        highScoreStackView.addArrangedSubview(highScoreView)
+        scoreLabel.text = "\(score)"
+        highScoreLabel.text = "\(highScore)"
     }
 }

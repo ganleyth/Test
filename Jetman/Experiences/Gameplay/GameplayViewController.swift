@@ -17,6 +17,11 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet fileprivate var containerView: UIView!
     
+    var embeddedController: UIViewController?
+    var castedEmbeddedController: EmbeddedController? {
+        return embeddedController as? EmbeddedController
+    }
+    
     var challenge: Challenge?
     private lazy var containerViewYTranslation: CGFloat = {
         return containerView.frame.height + (view.frame.maxY - containerView.frame.maxY)
@@ -66,6 +71,12 @@ class GameplayViewController: UIViewController {
             this.containerView.transform = transform
         }, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "embedController" {
+            embeddedController = segue.destination
+        }
+    }
 }
 
 extension GameplayViewController: GameplaySceneDelegate {
@@ -79,6 +90,18 @@ extension GameplayViewController: GameplaySceneDelegate {
     }
     
     func gameplayDidEnd() {
-        let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController()
+        guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else {
+            assertionFailure("Could not instantiate end of game view")
+            return
+        }
+        guard let scoreKeeper = (skView.scene as? GameplayScene)?.scoreKeeper else {
+            assertionFailure("Couldn't get scorekeeper")
+            return
+        }
+        
+        endOfGameView.loadView()
+        endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: scoreKeeper.currentScore)
+        castedEmbeddedController?.addEmbeddedChild(endOfGameView)
+        animateEmbeddedControllerVisibility(isVisible: true)
     }
 }

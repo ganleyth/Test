@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeViewEmbeddedController: UIViewController {
+class EmbeddedController: UIViewController {
     
     func addEmbeddedChild(_ controller: UIViewController) {
         addChildViewController(controller)

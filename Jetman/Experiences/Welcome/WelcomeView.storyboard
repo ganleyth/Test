@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
-    <device id="retina4_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,26 +12,26 @@
             <objects>
                 <viewController id="Ivu-xo-Au8" customClass="WelcomeViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qv5-OB-HLh">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fYY-w6-hWI">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-gL-mcX">
-                                <rect key="frame" x="129.5" y="40" width="408" height="169"/>
+                                <rect key="frame" x="-26.5" y="40" width="653" height="270"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Sfx-gL-mcX" secondAttribute="height" multiplier="646:267" id="2y9-uu-l1N"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenAttribution" translatesAutoresizingMaskIntoConstraints="NO" id="iMu-cv-G4F">
-                                <rect key="frame" x="233" y="340.5" width="201" height="18.5"/>
+                                <rect key="frame" x="139.5" y="554" width="321" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iMu-cv-G4F" secondAttribute="height" multiplier="300:28" id="Jn7-hc-LKI"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcp-Un-A4m">
-                                <rect key="frame" x="252" y="249" width="163" height="67.5"/>
+                                <rect key="frame" x="169.5" y="422" width="261" height="108"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rcp-Un-A4m" secondAttribute="height" multiplier="372:154" id="Ng4-UT-frs"/>
@@ -47,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf7-PZ-4JC">
-                                <rect key="frame" x="32" y="275.5" width="67.5" height="67.5"/>
+                                <rect key="frame" x="32" y="460" width="108" height="108"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uf7-PZ-4JC" secondAttribute="height" multiplier="1:1" id="byR-ns-eEz"/>
@@ -59,7 +55,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-zL-U1I">
-                                <rect key="frame" x="571" y="279" width="64" height="64"/>
+                                <rect key="frame" x="504" y="504" width="64" height="64"/>
                                 <color key="backgroundColor" name="AppYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MuH-zL-U1I" secondAttribute="height" multiplier="1:1" id="jeu-VW-Shw"/>
@@ -72,11 +68,11 @@
                                 </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K45-9c-P6w">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bh-Yfg">
-                                <rect key="frame" x="66.5" y="37.5" width="534" height="300"/>
+                                <rect key="frame" x="60" y="60" width="480" height="480"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="T8Y-1o-vLr" kind="embed" identifier="embedController" id="581-vb-Xxl"/>
@@ -138,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="542" y="82"/>
         </scene>
-        <!--Welcome View Embedded Controller-->
+        <!--Embedded Controller-->
         <scene sceneID="6N5-m6-XzH">
             <objects>
-                <viewController storyboardIdentifier="EmbeddedViewController" id="T8Y-1o-vLr" customClass="WelcomeViewEmbeddedController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmbeddedViewController" id="T8Y-1o-vLr" customClass="EmbeddedController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rw4-1p-OAQ">
                         <rect key="frame" x="0.0" y="0.0" width="534" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

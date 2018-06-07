@@ -22,8 +22,8 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet weak var embeddedControllerContainerView: UIView!
     
     private var embeddedController: UIViewController?
-    private var castedEmbeddedController: WelcomeViewEmbeddedController? {
-        return embeddedController as? WelcomeViewEmbeddedController
+    private var castedEmbeddedController: EmbeddedController? {
+        return embeddedController as? EmbeddedController
     }
     
     private var containerViewYTranslation: CGFloat {
