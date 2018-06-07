@@ -101,6 +101,7 @@ extension GameplayViewController: GameplaySceneDelegate {
         
         endOfGameView.loadView()
         endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: scoreKeeper.currentScore)
+        endOfGameView.delegate = self
         castedEmbeddedController?.addEmbeddedChild(endOfGameView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let this = self else { return }
@@ -115,10 +116,10 @@ extension GameplayViewController: EndOfGameDelegate {
     }
     
     func didTapGoToHome() {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func didTapPlayAgain() {
-        
+        AppDelegate.shared.reset()
     }
 }
