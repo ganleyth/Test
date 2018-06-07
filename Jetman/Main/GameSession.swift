@@ -13,6 +13,14 @@ class GameSession: GKGameSession {
     static let shared = GameSession()
     
     let settings = Settings()
+    var highScore: Int? {
+        get {
+            return UserDefaults.standard.object(forKey: Constants.UserDefaults.highScore) as? Int
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Constants.UserDefaults.highScore)
+        }
+    }
     
     let soundQueue: OperationQueue = {
         let queue = OperationQueue()

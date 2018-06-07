@@ -99,8 +99,10 @@ extension GameplayViewController: GameplaySceneDelegate {
             return
         }
         
+        GameSession.shared.highScore = max(scoreKeeper.currentScore, GameSession.shared.highScore ?? 0)
+        
         endOfGameView.loadView()
-        endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: scoreKeeper.currentScore)
+        endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: GameSession.shared.highScore ?? 0)
         endOfGameView.delegate = self
         castedEmbeddedController?.addEmbeddedChild(endOfGameView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
