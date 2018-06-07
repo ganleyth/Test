@@ -129,6 +129,8 @@ struct Constants {
     }
     
     struct UserDefaults {
+        static let allowHaptics = "allowHaptics"
+        static let allowSounds = "allowSounds"
         static let uid = "uid"
     }
     
