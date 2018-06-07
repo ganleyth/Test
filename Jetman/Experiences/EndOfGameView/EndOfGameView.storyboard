@@ -76,7 +76,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="k3n-6H-7oX">
                                 <rect key="frame" x="160.5" y="260" width="346" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yve-2i-gPQ">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yve-2i-gPQ">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yve-2i-gPQ" secondAttribute="height" multiplier="234:242" id="9LE-gM-zG4"/>
