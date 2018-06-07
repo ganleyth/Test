@@ -108,3 +108,17 @@ extension GameplayViewController: GameplaySceneDelegate {
         }
     }
 }
+
+extension GameplayViewController: EndOfGameDelegate {
+    func didTapGoToStats() {
+        return
+    }
+    
+    func didTapGoToHome() {
+        
+    }
+    
+    func didTapPlayAgain() {
+        
+    }
+}

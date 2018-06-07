@@ -82,6 +82,9 @@
                                             <constraint firstAttribute="width" secondItem="yve-2i-gPQ" secondAttribute="height" multiplier="234:242" id="9LE-gM-zG4"/>
                                         </constraints>
                                         <state key="normal" image="StatsButton"/>
+                                        <connections>
+                                            <action selector="goToStats:" destination="Wee-Li-9id" eventType="touchUpInside" id="HOK-VG-Sy2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-P9-s84">
                                         <rect key="frame" x="136.5" y="0.0" width="73" height="75"/>
@@ -89,6 +92,9 @@
                                             <constraint firstAttribute="width" secondItem="bQb-P9-s84" secondAttribute="height" multiplier="234:242" id="IQz-VJ-KYr"/>
                                         </constraints>
                                         <state key="normal" image="HomeButton"/>
+                                        <connections>
+                                            <action selector="goToHome:" destination="Wee-Li-9id" eventType="touchUpInside" id="abI-zv-LmY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8p-T0-Yzk">
                                         <rect key="frame" x="273.5" y="0.0" width="72.5" height="75"/>
@@ -96,6 +102,9 @@
                                             <constraint firstAttribute="width" secondItem="w8p-T0-Yzk" secondAttribute="height" multiplier="234:242" id="YF9-CZ-AvZ"/>
                                         </constraints>
                                         <state key="normal" image="PlayButtonSmall"/>
+                                        <connections>
+                                            <action selector="playAgain:" destination="Wee-Li-9id" eventType="touchUpInside" id="Sfx-cT-pDF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
