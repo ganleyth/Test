@@ -15,8 +15,12 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet fileprivate var containerView: UIView!
     
     var challenge: Challenge?
+    private lazy var containerViewYTranslation: CGFloat = {
+        return containerView.frame.height + (view.frame.maxY - containerView.frame.maxY)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,8 @@ class GameplayViewController: UIViewController {
         
         (skView.scene as? GameplayScene)?.gameplayDelegate = self
         
+        containerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+        
         configureSubviews()
     }
     
@@ -45,6 +51,20 @@ class GameplayViewController: UIViewController {
     private func configureSubviews() {
         scoreNameLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
         scoreLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
+    }
+    
+    private func animateEmbeddedControllerVisibility(isVisible: Bool) {
+        let transform: CGAffineTransform
+        if isVisible {
+            transform = CGAffineTransform.identity
+        } else {
+            transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+        }
+        
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { [weak self] in
+            guard let this = self else { return }
+            this.containerView.transform = transform
+        }, completion: nil)
     }
 }
 
@@ -58,5 +78,7 @@ extension GameplayViewController: GameplaySceneDelegate {
         scoreLabel.text = "\(newScore)"
     }
     
-    func gameplayDidEnd() {}
+    func gameplayDidEnd() {
+        let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController()
+    }
 }

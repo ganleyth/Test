@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wee-Li-9id">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--End Of Game View Controller-->
+        <scene sceneID="Tfh-KJ-dC1">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="Wee-Li-9id" customClass="EndOfGameViewController" customModule="Jetman" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WG9-na-xi9">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="jqF-I5-Y8R">
+                                <rect key="frame" x="99" y="0.0" width="469" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jqF-I5-Y8R" secondAttribute="height" multiplier="1000:800" id="M7s-5m-TUQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GameOverText" translatesAutoresizingMaskIntoConstraints="NO" id="y56-HJ-CMu">
+                                <rect key="frame" x="165.5" y="32" width="336" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="y56-HJ-CMu" secondAttribute="height" multiplier="538:72" id="SkL-Md-VdP"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="xvA-B6-D7T">
+                                <rect key="frame" x="131" y="117" width="405" height="92"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-Vz-wMz">
+                                        <rect key="frame" x="92.5" y="0.0" width="220" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ScoreText" translatesAutoresizingMaskIntoConstraints="NO" id="6dc-SX-AIV">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="D0i-M6-Zpt">
+                                        <rect key="frame" x="92.5" y="62" width="220" height="30"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HighScoreText" translatesAutoresizingMaskIntoConstraints="NO" id="slp-l7-WUc">
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="slp-l7-WUc" secondAttribute="height" multiplier="410:56" id="5Mm-g4-2sB"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="slp-l7-WUc" firstAttribute="height" secondItem="6dc-SX-AIV" secondAttribute="height" id="Byk-2L-N6Q"/>
+                                    <constraint firstItem="6dc-SX-AIV" firstAttribute="width" secondItem="slp-l7-WUc" secondAttribute="width" id="qb4-Vw-TeB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jqF-I5-Y8R" firstAttribute="centerX" secondItem="WG9-na-xi9" secondAttribute="centerX" id="6zJ-ae-o0V"/>
+                            <constraint firstItem="xvA-B6-D7T" firstAttribute="top" secondItem="y56-HJ-CMu" secondAttribute="bottom" priority="750" constant="40" id="Fix-eW-anv"/>
+                            <constraint firstItem="jqF-I5-Y8R" firstAttribute="bottom" secondItem="WG9-na-xi9" secondAttribute="bottom" id="Icu-xg-eBk"/>
+                            <constraint firstItem="y56-HJ-CMu" firstAttribute="top" secondItem="WG9-na-xi9" secondAttribute="top" constant="32" id="Ood-vE-iwr"/>
+                            <constraint firstItem="6dc-SX-AIV" firstAttribute="height" secondItem="WG9-na-xi9" secondAttribute="height" multiplier="0.08" id="Q0Q-v4-fNZ"/>
+                            <constraint firstItem="xvA-B6-D7T" firstAttribute="leading" secondItem="jqF-I5-Y8R" secondAttribute="leading" constant="32" id="VBe-kY-7Qg"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xvA-B6-D7T" secondAttribute="bottom" constant="32" id="Xf1-Ry-D1h"/>
+                            <constraint firstItem="y56-HJ-CMu" firstAttribute="centerX" secondItem="WG9-na-xi9" secondAttribute="centerX" id="j43-rM-ptd"/>
+                            <constraint firstItem="jqF-I5-Y8R" firstAttribute="top" secondItem="WG9-na-xi9" secondAttribute="top" id="sWB-Lr-oNC"/>
+                            <constraint firstItem="y56-HJ-CMu" firstAttribute="height" secondItem="WG9-na-xi9" secondAttribute="height" multiplier="0.12" id="v4S-P3-y5T"/>
+                            <constraint firstItem="jqF-I5-Y8R" firstAttribute="trailing" secondItem="xvA-B6-D7T" secondAttribute="trailing" constant="32" id="ynY-r3-cOg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zyn-BM-PS8"/>
+                    </view>
+                    <connections>
+                        <outlet property="highScoreStackView" destination="D0i-M6-Zpt" id="sE4-Yu-ynk"/>
+                        <outlet property="scoreStackView" destination="rXE-Vz-wMz" id="PLa-su-Dwc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2z0-ec-na4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.313343328335833" y="151.19999999999999"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GameOverText" width="538" height="72"/>
+        <image name="HighScoreText" width="410" height="56"/>
+        <image name="ScoreText" width="216" height="56"/>
+        <image name="SettingsBackground" width="1000" height="800"/>
+    </resources>
+</document>
