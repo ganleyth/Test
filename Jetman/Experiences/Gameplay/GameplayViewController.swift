@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import Firebase
 
 protocol GameplayDelegate: class {
     func didTapPlayAgain()
@@ -20,6 +21,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet fileprivate var containerView: UIView!
+    @IBOutlet fileprivate var bannerView: GADBannerView!
     
     var embeddedController: UIViewController?
     var castedEmbeddedController: EmbeddedController? {
@@ -51,6 +53,8 @@ class GameplayViewController: UIViewController {
         (skView.scene as? GameplayScene)?.gameplayDelegate = self
         
         containerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
+        
+        configureBannerAd()
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -74,6 +78,12 @@ class GameplayViewController: UIViewController {
         if segue.identifier == "embedController" {
             embeddedController = segue.destination
         }
+    }
+    
+    private func configureBannerAd() {
+        bannerView.rootViewController = self
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.load(GADRequest())
     }
 }
 

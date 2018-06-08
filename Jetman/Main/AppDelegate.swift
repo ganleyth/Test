@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Firebase
+import Firebase
 import Branch
 import UserNotifications
 //import FirebaseMessaging
@@ -76,7 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
 //        Messaging.messaging().remoteMessageDelegate = self
         
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
+        GADMobileAds.configure(withApplicationID: "ca-app-pub-3667026795210788~2234868642")
         
         return true
     }

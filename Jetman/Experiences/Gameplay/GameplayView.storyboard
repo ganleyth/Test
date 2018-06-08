@@ -47,10 +47,19 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPf-qa-Akd" customClass="GADBannerView">
+                                <rect key="frame" x="173.5" y="325" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="98N-k2-2I3"/>
+                                    <constraint firstAttribute="width" constant="320" id="yxR-Q3-PcT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LO6-4x-CBu" firstAttribute="width" secondItem="Sql-cf-KyZ" secondAttribute="width" multiplier="0.8" id="0Qy-Z6-2vG"/>
+                            <constraint firstItem="UPf-qa-Akd" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="GvI-vH-FFV"/>
                             <constraint firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
                             <constraint firstItem="vvb-P4-fIB" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" constant="24" id="NpH-vw-LFl"/>
                             <constraint firstItem="LO6-4x-CBu" firstAttribute="height" secondItem="Sql-cf-KyZ" secondAttribute="height" multiplier="0.8" id="PwU-fl-xaZ"/>
@@ -59,11 +68,13 @@
                             <constraint firstItem="LO6-4x-CBu" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="b6V-qJ-bO4"/>
                             <constraint firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" id="s7D-1Z-tiX"/>
+                            <constraint firstItem="UPf-qa-Akd" firstAttribute="bottom" secondItem="3cD-BQ-kkw" secondAttribute="bottom" id="y7c-M9-KOY"/>
                             <constraint firstItem="LO6-4x-CBu" firstAttribute="centerY" secondItem="Sql-cf-KyZ" secondAttribute="centerY" id="yH1-M4-y6D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="UPf-qa-Akd" id="GVo-qs-mWr"/>
                         <outlet property="containerView" destination="LO6-4x-CBu" id="EEj-To-w6d"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
                         <outlet property="scoreNameLabel" destination="Dsb-RO-H9D" id="jFC-sC-HXr"/>
@@ -72,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym8-xv-kV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="-631"/>
+            <point key="canvasLocation" x="34.632683658170919" y="-631.20000000000005"/>
         </scene>
         <!--Embedded Controller-->
         <scene sceneID="NuQ-9U-Ysr">
