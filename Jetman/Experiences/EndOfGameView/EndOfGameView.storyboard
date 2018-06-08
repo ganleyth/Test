@@ -74,20 +74,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="k3n-6H-7oX">
-                                <rect key="frame" x="160.5" y="260" width="346" height="75"/>
+                                <rect key="frame" x="229" y="260" width="209" height="75"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yve-2i-gPQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="yve-2i-gPQ" secondAttribute="height" multiplier="234:242" id="9LE-gM-zG4"/>
-                                        </constraints>
-                                        <state key="normal" image="StatsButton"/>
-                                        <connections>
-                                            <action selector="goToStats:" destination="Wee-Li-9id" eventType="touchUpInside" id="HOK-VG-Sy2"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-P9-s84">
-                                        <rect key="frame" x="136.5" y="0.0" width="73" height="75"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="bQb-P9-s84" secondAttribute="height" multiplier="234:242" id="IQz-VJ-KYr"/>
                                         </constraints>
@@ -97,7 +87,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8p-T0-Yzk">
-                                        <rect key="frame" x="273.5" y="0.0" width="72.5" height="75"/>
+                                        <rect key="frame" x="136.5" y="0.0" width="72.5" height="75"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="w8p-T0-Yzk" secondAttribute="height" multiplier="234:242" id="YF9-CZ-AvZ"/>
                                         </constraints>
@@ -150,6 +140,5 @@
         <image name="PlayButtonSmall" width="234" height="242"/>
         <image name="ScoreText" width="216" height="56"/>
         <image name="SettingsBackground" width="1000" height="800"/>
-        <image name="StatsButton" width="234" height="242"/>
     </resources>
 </document>
