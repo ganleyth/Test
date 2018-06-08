@@ -140,10 +140,3 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 //
 //    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {}
 //}
-
-extension AppDelegate {
-    func reset() {
-        guard let newGameplayVC = UIStoryboard(name: "GameplayView", bundle: nil).instantiateInitialViewController() else { return }
-        UIApplication.shared.keyWindow?.rootViewController = newGameplayVC
-    }
-}

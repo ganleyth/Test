@@ -10,6 +10,10 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+protocol GameplayDelegate: class {
+    func didTapPlayAgain()
+}
+
 class GameplayViewController: UIViewController {
     
     @IBOutlet weak var skView: SKView!
@@ -21,6 +25,8 @@ class GameplayViewController: UIViewController {
     var castedEmbeddedController: EmbeddedController? {
         return embeddedController as? EmbeddedController
     }
+    
+    weak var delegate: GameplayDelegate?
     
     var challenge: Challenge?
     private lazy var containerViewYTranslation: CGFloat = {
@@ -122,6 +128,6 @@ extension GameplayViewController: EndOfGameDelegate {
     }
     
     func didTapPlayAgain() {
-        AppDelegate.shared.reset()
+        delegate?.didTapPlayAgain()
     }
 }

@@ -81,6 +81,7 @@ final class WelcomeViewController: UIViewController {
             embeddedController = segue.destination
         } else if segue.identifier == "showGameplay" {
             guard let gameplayVC = segue.destination as? GameplayViewController else { return }
+            gameplayVC.delegate = self
             if let challenge = sender as? Challenge {
                 gameplayVC.challenge = challenge
             }
@@ -132,6 +133,19 @@ extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
         animateEmbeddedControllerVisibility(isVisible: false) { [weak self] in
             guard let this = self else { return }
             this.castedEmbeddedController?.removeChildren()
+        }
+    }
+}
+
+extension WelcomeViewController: GameplayDelegate {
+    func didTapPlayAgain() {
+        resetGameplay()
+    }
+    
+    private func resetGameplay() {
+        guard let pvc = presentedViewController else { return }
+        pvc.dismiss(animated: false) {
+            self.performSegue(withIdentifier: "showGameplay", sender: nil)
         }
     }
 }
