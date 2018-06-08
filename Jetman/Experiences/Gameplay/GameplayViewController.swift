@@ -51,19 +51,11 @@ class GameplayViewController: UIViewController {
         (skView.scene as? GameplayScene)?.gameplayDelegate = self
         
         containerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation)
-        
-        configureSubviews()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    private func configureSubviews() {
-        scoreNameLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
-        scoreLabel.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
-    }
-    
     private func animateEmbeddedControllerVisibility(isVisible: Bool) {
         let transform: CGAffineTransform
         if isVisible {
