@@ -7,5 +7,7 @@ use_frameworks!
 
 # Pods for Jetman
 pod 'Branch'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
 
 end
