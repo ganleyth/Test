@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 //import FirebaseAuth
 
 protocol WelcomeViewEmbeddedControllerDelegate: class {
@@ -20,6 +21,7 @@ final class WelcomeViewController: UIViewController {
     @IBOutlet private var gameplayButton: UIButton!
     @IBOutlet weak var dimmingView: UIView!
     @IBOutlet weak var embeddedControllerContainerView: UIView!
+    @IBOutlet fileprivate var bannerView: GADBannerView!
     
     private var embeddedController: UIViewController?
     private var castedEmbeddedController: EmbeddedController? {
@@ -37,6 +39,8 @@ final class WelcomeViewController: UIViewController {
         
         // Move the embedded controller container view off-screen initially
         embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation + 60)
+        
+        configureBannerAd()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,6 +104,12 @@ private extension WelcomeViewController {
         
         present(vc, animated: true, completion: nil)
         AppDelegate.shared.viewControllerToPresent = nil
+    }
+    
+    func configureBannerAd() {
+        bannerView.rootViewController = self
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.load(GADRequest())
     }
 }
 

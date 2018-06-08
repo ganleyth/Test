@@ -22,8 +22,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="fYY-w6-hWI">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfV-jx-RuW" customClass="GADBannerView">
+                                <rect key="frame" x="173.5" y="0.0" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="TdB-tu-zap"/>
+                                    <constraint firstAttribute="width" constant="320" id="WEM-A3-bJu"/>
+                                </constraints>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Sfx-gL-mcX">
-                                <rect key="frame" x="129.5" y="40" width="408" height="169"/>
+                                <rect key="frame" x="152" y="66" width="363" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Sfx-gL-mcX" secondAttribute="height" multiplier="646:267" id="2y9-uu-l1N"/>
                                 </constraints>
@@ -91,7 +99,8 @@
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="6WI-ER-v1v"/>
                             <constraint firstItem="rcp-Un-A4m" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="9O6-v4-bCn"/>
                             <constraint firstAttribute="bottom" secondItem="K45-9c-P6w" secondAttribute="bottom" id="Bu5-7n-i1X"/>
-                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.45" id="ISb-WY-pIb"/>
+                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.4" id="ISb-WY-pIb"/>
+                            <constraint firstItem="zfV-jx-RuW" firstAttribute="top" secondItem="qrt-Gm-bbn" secondAttribute="top" id="J19-9O-Ach"/>
                             <constraint firstAttribute="trailing" secondItem="K45-9c-P6w" secondAttribute="trailing" id="NZs-Wa-KCQ"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="OTC-ML-Lxr"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="QOB-1E-kGB"/>
@@ -100,6 +109,7 @@
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="trailing" secondItem="Qv5-OB-HLh" secondAttribute="trailing" id="Uha-3Z-Ws9"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
                             <constraint firstItem="rcp-Un-A4m" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="Up8-lG-DrW"/>
+                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="top" secondItem="zfV-jx-RuW" secondAttribute="bottom" constant="16" id="Wy4-lP-Icl"/>
                             <constraint firstAttribute="bottom" secondItem="Uf7-PZ-4JC" secondAttribute="bottom" constant="32" id="XFm-75-STe"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="XWO-dS-fte"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
@@ -107,14 +117,15 @@
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="24" id="ayA-0p-tfi"/>
                             <constraint firstAttribute="trailing" secondItem="MuH-zL-U1I" secondAttribute="trailing" constant="32" id="dJN-30-8fN"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
+                            <constraint firstItem="zfV-jx-RuW" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="ejK-aI-ToB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="iMu-cv-G4F" secondAttribute="bottom" constant="16" id="gT4-IK-iVI"/>
-                            <constraint firstItem="Sfx-gL-mcX" firstAttribute="top" secondItem="fYY-w6-hWI" secondAttribute="top" constant="40" id="sBv-Z2-ts0"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.05" id="se1-Tq-nZQ"/>
                             <constraint firstAttribute="bottom" secondItem="MuH-zL-U1I" secondAttribute="bottom" constant="32" id="yIb-mD-PNG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
                     <connections>
+                        <outlet property="bannerView" destination="zfV-jx-RuW" id="7Af-57-k09"/>
                         <outlet property="dimmingView" destination="K45-9c-P6w" id="BLI-Rf-RBH"/>
                         <outlet property="embeddedControllerContainerView" destination="43M-Bh-Yfg" id="KCm-eW-ML3"/>
                         <outlet property="gameplayButton" destination="rcp-Un-A4m" id="7Pg-Wo-SEg"/>
