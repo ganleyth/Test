@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xzd-Ff-BJC">
-                                <rect key="frame" x="129.5" y="40" width="408" height="169"/>
+                                <rect key="frame" x="152" y="66" width="363" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xzd-Ff-BJC" secondAttribute="height" multiplier="646:267" id="JHV-0N-0Hs"/>
                                 </constraints>
@@ -43,9 +43,9 @@
                             <constraint firstItem="eiy-wg-amU" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.05" id="McZ-jQ-zI8"/>
                             <constraint firstItem="eiy-wg-amU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SVz-JH-Dmg"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aDu-8A-rQc"/>
-                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.45" id="cid-3e-x1Q"/>
+                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.4" id="cid-3e-x1Q"/>
                             <constraint firstAttribute="bottom" secondItem="ZOs-MX-rro" secondAttribute="bottom" id="mUT-l3-1d0"/>
-                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="top" secondItem="ZOs-MX-rro" secondAttribute="top" constant="40" id="ruZ-uM-Sfg"/>
+                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="top" secondItem="ZOs-MX-rro" secondAttribute="top" constant="66" id="ruZ-uM-Sfg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
