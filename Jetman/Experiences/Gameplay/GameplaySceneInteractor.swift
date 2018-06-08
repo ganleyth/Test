@@ -31,6 +31,7 @@ class GameplaySceneInteractor: Interactor {
 
     var hasCollided = false
     var hasSplashed = false
+    var hasEnded = false
     
     private let splashAudioPlayer = AVAudioPlayer.audioPlayer(for: .splash, looping: false)
     private let collisionAudioPlayer = AVAudioPlayer.audioPlayer(for: .crash, looping: false)
@@ -151,12 +152,14 @@ extension GameplaySceneInteractor {
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: Constants.TileMapLayer.startingVelocity, y: 0))
         case .gameOver:
+            guard !hasEnded else { return }
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             player.state = .dead
             scene.gameplayDelegate?.gameplayDidEnd()
             musicAudioPlayer?.stop()
             if gameplayViewController?.challenge != nil { updateChallenge() }
+            hasEnded = true
         }
     }
 }
