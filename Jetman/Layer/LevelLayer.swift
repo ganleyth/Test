@@ -234,7 +234,7 @@ extension LevelLayer {
             let length = lengths[i]
             let lengthPlusEndCaps = length + 2
             let minX = segmentXPositions[i]
-            let maxX = segmentXPositions[i + 1] - 1
+            let maxX = segmentXPositions[i + 1] - 2
             let maxY = tileMap.numberOfRows - lengthPlusEndCaps - currentBottomBoundaryMaxRow + 1
             
             guard maxX - minX >= 0,

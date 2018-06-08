@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,31 +22,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="ZOs-MX-rro">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="xzd-Ff-BJC">
-                                <rect key="frame" x="152" y="66" width="363" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xzd-Ff-BJC" secondAttribute="height" multiplier="646:267" id="JHV-0N-0Hs"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenAttribution" translatesAutoresizingMaskIntoConstraints="NO" id="eiy-wg-amU">
-                                <rect key="frame" x="233" y="340.5" width="201" height="18.5"/>
+                                <rect key="frame" x="234.5" y="340.5" width="198" height="18.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eiy-wg-amU" secondAttribute="height" multiplier="300:28" id="5KC-aI-sVY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Sto-wc-bb5">
+                                <rect key="frame" x="56.5" y="66" width="553" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Sto-wc-bb5" secondAttribute="height" multiplier="1216:264" id="Zbn-Kb-7do"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Sto-wc-bb5" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.32" id="6UO-Wh-uKi"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="bottom" secondItem="eiy-wg-amU" secondAttribute="bottom" constant="16" id="AdP-hm-GwI"/>
                             <constraint firstAttribute="trailing" secondItem="ZOs-MX-rro" secondAttribute="trailing" id="DW0-Ig-Iot"/>
-                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="H0E-1d-CWF"/>
+                            <constraint firstItem="Sto-wc-bb5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FyB-zv-DkA"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="MV2-kp-5Tj"/>
                             <constraint firstItem="eiy-wg-amU" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.05" id="McZ-jQ-zI8"/>
                             <constraint firstItem="eiy-wg-amU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="SVz-JH-Dmg"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aDu-8A-rQc"/>
-                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.4" id="cid-3e-x1Q"/>
+                            <constraint firstItem="Sto-wc-bb5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="66" id="jix-Jm-oug"/>
                             <constraint firstAttribute="bottom" secondItem="ZOs-MX-rro" secondAttribute="bottom" id="mUT-l3-1d0"/>
-                            <constraint firstItem="xzd-Ff-BJC" firstAttribute="top" secondItem="ZOs-MX-rro" secondAttribute="top" constant="66" id="ruZ-uM-Sfg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -58,6 +59,6 @@
     <resources>
         <image name="LaunchScreenAttribution" width="300" height="28"/>
         <image name="LaunchScreenBackground" width="888" height="500"/>
-        <image name="LaunchScreenTitle" width="646" height="267"/>
+        <image name="LaunchScreenTitle" width="1216" height="264"/>
     </resources>
 </document>

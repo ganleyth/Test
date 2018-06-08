@@ -108,7 +108,7 @@ private extension WelcomeViewController {
     
     func configureBannerAd() {
         bannerView.rootViewController = self
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        bannerView.adUnitID = "ca-app-pub-3667026795210788/2461550614"
         bannerView.load(GADRequest())
     }
 }
