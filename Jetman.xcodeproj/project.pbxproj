@@ -103,7 +103,6 @@
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
-		18F5FA3420CA0C47007DB374 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F5FA3320CA0C47007DB374 /* StoreKit.framework */; };
 		34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,7 +250,6 @@
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
-		18F5FA3320CA0C47007DB374 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		311A83004CB21FFA816DEBB7 /* Pods-Jetman.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.debug.xcconfig"; sourceTree = "<group>"; };
 		7891284CFCCD8A63C21A23F7 /* Pods_JetpackJimmyMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JetpackJimmyMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5CA22114BEA837365E73B4 /* Pods-Jetman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jetman.release.xcconfig"; path = "Pods/Target Support Files/Pods-Jetman/Pods-Jetman.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,7 +264,6 @@
 				18172935207B0C8700D6F35E /* SharedJetman.framework in Frameworks */,
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
 				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
-				18F5FA3420CA0C47007DB374 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,7 +701,6 @@
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18F5FA3320CA0C47007DB374 /* StoreKit.framework */,
 				188CAA2E2083B6F400E2AC6B /* FirebaseAuth */,
 				18E1CFFB204B0FA700B4B506 /* GameKit.framework */,
 				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
@@ -847,7 +843,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;

@@ -29,15 +29,15 @@
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Sto-wc-bb5">
-                                <rect key="frame" x="56.5" y="66" width="553" height="120"/>
+                                <rect key="frame" x="48.5" y="66" width="569" height="112.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Sto-wc-bb5" secondAttribute="height" multiplier="1216:264" id="Zbn-Kb-7do"/>
+                                    <constraint firstAttribute="width" secondItem="Sto-wc-bb5" secondAttribute="height" multiplier="1336:264" id="Zbn-Kb-7do"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Sto-wc-bb5" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.32" id="6UO-Wh-uKi"/>
+                            <constraint firstItem="Sto-wc-bb5" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.3" id="6UO-Wh-uKi"/>
                             <constraint firstItem="ZOs-MX-rro" firstAttribute="bottom" secondItem="eiy-wg-amU" secondAttribute="bottom" constant="16" id="AdP-hm-GwI"/>
                             <constraint firstAttribute="trailing" secondItem="ZOs-MX-rro" secondAttribute="trailing" id="DW0-Ig-Iot"/>
                             <constraint firstItem="Sto-wc-bb5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FyB-zv-DkA"/>
@@ -59,6 +59,6 @@
     <resources>
         <image name="LaunchScreenAttribution" width="300" height="28"/>
         <image name="LaunchScreenBackground" width="888" height="500"/>
-        <image name="LaunchScreenTitle" width="1216" height="264"/>
+        <image name="LaunchScreenTitle" width="1336" height="264"/>
     </resources>
 </document>
