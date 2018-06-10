@@ -17,6 +17,7 @@
 		1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		181AD9C420CD702400EEEB7F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181AD9C320CD702400EEEB7F /* CloudKit.framework */; };
+		181AD9C620CD82B100EEEB7F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C520CD82B100EEEB7F /* User.swift */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
@@ -162,6 +163,7 @@
 		18172931207B0C8700D6F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		181AD9C320CD702400EEEB7F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		181AD9C520CD82B100EEEB7F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
@@ -519,6 +521,7 @@
 				1853AAC020715665007EEC62 /* MyChallengesBox.swift */,
 				1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */,
 				18DD350C208CE9080077E7B1 /* Friend.swift */,
+				181AD9C520CD82B100EEEB7F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1035,6 +1038,7 @@
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
 				18DD350D208CE9080077E7B1 /* Friend.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
+				181AD9C620CD82B100EEEB7F /* User.swift in Sources */,
 				18D2ABDD20CD6A3500C9A1F4 /* CloudKitManager.swift in Sources */,
 				18847EB420706BB800B90C9C /* NewChallengeInteractor.swift in Sources */,
 				183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */,

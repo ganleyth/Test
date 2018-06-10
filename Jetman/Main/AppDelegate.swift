@@ -80,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3667026795210788~2234868642")
         
         // User authentication
+        CloudKitManager.shared.fetchUser { (recordID) in
+            guard let recordID = recordID else { return }
+            GameSession.shared.currentUser = User(recordID: recordID)
+        }
         
         return true
     }

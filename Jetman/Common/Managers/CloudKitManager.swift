@@ -12,10 +12,17 @@ class CloudKitManager {
     
     static let shared = CloudKitManager()
     
-    func requestiCloudAccountStatus(with completion: @escaping (_ isActive: Bool) -> Void) {
-        CKContainer.default().accountStatus { (status, error) in
+    func fetchUser(with completion: @escaping (_ recordID: CKRecordID?) -> Void) {
+        CKContainer.default().fetchUserRecordID { (recordID, error) in
+            if let error = error {
+                DispatchQueue.main.async {
+                    AppDelegate.shared.topViewController?.presentInfoAlertWith(title: "Unable to log in user", message: error.localizedDescription)
+                }
+                Logger.error("Error fetching user ID: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+            }
+            
             DispatchQueue.main.async {
-                completion(status == CKAccountStatus.available)
+                completion(recordID)
             }
         }
     }
