@@ -29,6 +29,12 @@ struct Constants {
         static let senderID = "senderID"
     }
     
+    struct CloudKit {
+        struct User {
+            static let iCloudRecordID = "iCloudRecordID"
+        }
+    }
+    
     struct Friend {
         static let id = "id"
         static let recordAgainst = "record_against"

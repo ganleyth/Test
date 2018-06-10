@@ -9,5 +9,14 @@
 import CloudKit
 
 struct User {
-    let recordID: CKRecordID
+    let iCloudRecordID: CKRecordID
+}
+
+// CloudKit
+extension User: CloudKitSyncable {
+    init?(record: CKRecord) {
+        guard let iCloudRecordID = record.value(forKey: Constants.CloudKit.User.iCloudRecordID) as? CKRecordID else { return nil }
+        
+        self.iCloudRecordID = iCloudRecordID
+    }
 }

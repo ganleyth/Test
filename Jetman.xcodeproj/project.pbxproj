@@ -18,6 +18,7 @@
 		1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		181AD9C420CD702400EEEB7F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181AD9C320CD702400EEEB7F /* CloudKit.framework */; };
 		181AD9C620CD82B100EEEB7F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C520CD82B100EEEB7F /* User.swift */; };
+		181AD9C820CD964400EEEB7F /* CloudKitSyncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
@@ -164,6 +165,7 @@
 		1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
 		181AD9C320CD702400EEEB7F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		181AD9C520CD82B100EEEB7F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncable.swift; sourceTree = "<group>"; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
@@ -522,6 +524,7 @@
 				1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */,
 				18DD350C208CE9080077E7B1 /* Friend.swift */,
 				181AD9C520CD82B100EEEB7F /* User.swift */,
+				181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */,
 				1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */,
 				18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */,
+				181AD9C820CD964400EEEB7F /* CloudKitSyncable.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,
 				183E7594203A727300092B2A /* CustomSubclasses.swift in Sources */,
 				183E756C2038AFAF00092B2A /* GameSession.swift in Sources */,
