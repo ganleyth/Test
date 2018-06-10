@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         branch?.setDebug()
         branch?.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: { (params, error) in
             if let error = error {
-                assertionFailure("Error initializing Branch: \(error.localizedDescription)")
+                Logger.error("Error initializing Branch: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
         })
         
@@ -78,6 +78,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3667026795210788~2234868642")
+        
+        // User authentication
         
         return true
     }

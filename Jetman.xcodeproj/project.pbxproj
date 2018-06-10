@@ -16,6 +16,7 @@
 		18172936207B0C8700D6F35E /* SharedJetman.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1817292E207B0C8600D6F35E /* SharedJetman.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
 		1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
+		181AD9C420CD702400EEEB7F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181AD9C320CD702400EEEB7F /* CloudKit.framework */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
@@ -83,6 +84,7 @@
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
+		18D2ABDD20CD6A3500C9A1F4 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */; };
 		18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */; };
 		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */; };
@@ -159,6 +161,7 @@
 		18172930207B0C8700D6F35E /* SharedJetman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedJetman.h; sourceTree = "<group>"; };
 		18172931207B0C8700D6F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SharedAssets.xcassets; sourceTree = "<group>"; };
+		181AD9C320CD702400EEEB7F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
@@ -231,6 +234,7 @@
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
 		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseInteractor.swift; sourceTree = "<group>"; };
@@ -262,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18172935207B0C8700D6F35E /* SharedJetman.framework in Frameworks */,
+				181AD9C420CD702400EEEB7F /* CloudKit.framework in Frameworks */,
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
 				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
 			);
@@ -544,6 +549,7 @@
 				18A671EC205DA1F000EB4BB8 /* Interactor.swift */,
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
+				18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -701,6 +707,7 @@
 		21BE0F6F51FB7D0D26498FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				181AD9C320CD702400EEEB7F /* CloudKit.framework */,
 				188CAA2E2083B6F400E2AC6B /* FirebaseAuth */,
 				18E1CFFB204B0FA700B4B506 /* GameKit.framework */,
 				EB9CF715D0E6671CFA77C9CE /* Pods_Jetman.framework */,
@@ -832,7 +839,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Thomas Ganley";
 				TargetAttributes = {
 					180C88981FC77F5F00D19F85 = {
@@ -852,7 +859,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1028,6 +1035,7 @@
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
 				18DD350D208CE9080077E7B1 /* Friend.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
+				18D2ABDD20CD6A3500C9A1F4 /* CloudKitManager.swift in Sources */,
 				18847EB420706BB800B90C9C /* NewChallengeInteractor.swift in Sources */,
 				183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */,
 				18B32FF91FDC4F6100D59107 /* WelcomeViewInteractor.swift in Sources */,
@@ -1174,6 +1182,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1181,6 +1190,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1231,6 +1241,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1238,6 +1249,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
