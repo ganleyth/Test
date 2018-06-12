@@ -24,8 +24,6 @@ class CloudKitManager {
             guard let this = self else { returningCompletion(); return }
             
             if let error = error {
-                AppDelegate.shared.topViewController?.presentInfoAlertWith(title: "Unable to log in user",
-                                                                           message: "Check your network connection and try again")
                 Logger.error("Error fetching user ID: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
@@ -34,8 +32,7 @@ class CloudKitManager {
             let predicate = NSPredicate(format: "iCloudRecordReference == %@", CKReference(recordID: recordID, action: .deleteSelf))
             this.fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, with: { (records, error) in
                 if let error = error {
-                    AppDelegate.shared.topViewController?.presentInfoAlertWith(title: "Unable to log in user",
-                                                                               message: "Check your network connection and try again")
+                    Logger.error("Error fetching user: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
                 }
                 
                 guard
@@ -62,7 +59,6 @@ class CloudKitManager {
                 let record = record,
                 let user = User(record: record) else {
                     Logger.error("Could not save new user", filePath: #file, funcName: #function, lineNumber: #line)
-                    AppDelegate.shared.topViewController?.presentInfoAlertWith(title: "Could not create new user", message: "Check your network connection and try again")
                     returnCompletion()
                     return
             }
