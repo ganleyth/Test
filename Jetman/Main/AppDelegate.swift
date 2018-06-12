@@ -80,9 +80,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3667026795210788~2234868642")
         
         // User authentication
-        CloudKitManager.shared.fetchUser { (recordID) in
-            guard let recordID = recordID else { return }
-            GameSession.shared.currentUser = User(recordID: recordID)
+        CloudKitManager.shared.fetchUser { (iCloudRecordID, user) in
+            if user == nil {
+                guard let iCloudRecordID = iCloudRecordID else { return }
+                CloudKitManager.shared.createUserWith(iCloudRecordID: iCloudRecordID, completion: { (createdUser) in
+                    guard let createdUser = createdUser else {
+                        Logger.error("New user not created", filePath: #file, funcName: #function, lineNumber: #line)
+                        return
+                    }
+                    GameSession.shared.currentUser = createdUser
+                })
+                return
+            }
+            GameSession.shared.currentUser = user
         }
         
         return true

@@ -12,7 +12,11 @@ class GameSession: GKGameSession {
     
     static let shared = GameSession()
     
-    var currentUser: User?
+    var currentUser: User? {
+        didSet {
+            print("Hello")
+        }
+    }
     let settings = Settings()
     var highScore: Int? {
         get {

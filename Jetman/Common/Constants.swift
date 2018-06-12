@@ -31,7 +31,8 @@ struct Constants {
     
     struct CloudKit {
         struct User {
-            static let iCloudRecordID = "iCloudRecordID"
+            static let recordName = "User"
+            static let iCloudRecordReference = "iCloudRecordReference"
         }
     }
     
