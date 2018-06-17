@@ -33,6 +33,8 @@
 		1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */; };
 		1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6DD2014427800571BD2 /* SpriteLoader.swift */; };
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
+		1847EE2E20D6E78D00CB53E3 /* NewUsernameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1847EE2D20D6E78D00CB53E3 /* NewUsernameView.storyboard */; };
+		1847EE3020D6E7A200CB53E3 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */; };
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */; };
@@ -182,6 +184,8 @@
 		1842D6D9201412E800571BD2 /* CGFloat+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Helpers.swift"; sourceTree = "<group>"; };
 		1842D6DD2014427800571BD2 /* SpriteLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteLoader.swift; sourceTree = "<group>"; };
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
+		1847EE2D20D6E78D00CB53E3 /* NewUsernameView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewUsernameView.storyboard; sourceTree = "<group>"; };
+		1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
 		1853AAC020715665007EEC62 /* MyChallengesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesBox.swift; sourceTree = "<group>"; };
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -390,6 +394,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		1847EE2C20D6E76400CB53E3 /* NewUsername */ = {
+			isa = PBXGroup;
+			children = (
+				1847EE2D20D6E78D00CB53E3 /* NewUsernameView.storyboard */,
+				1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */,
+			);
+			path = NewUsername;
+			sourceTree = "<group>";
+		};
 		18847EAE20706A2900B90C9C /* NewChallenge */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +580,7 @@
 			children = (
 				18CEF30B1FD32E60005C3980 /* Welcome */,
 				18CEF3151FD32F82005C3980 /* Settings */,
+				1847EE2C20D6E76400CB53E3 /* NewUsername */,
 				18CEF3141FD32F6C005C3980 /* Stats */,
 				18847EAE20706A2900B90C9C /* NewChallenge */,
 				18847EB52070724800B90C9C /* MyChallenges */,
@@ -945,6 +959,7 @@
 				18847EA92070634700B90C9C /* StatsView.storyboard in Resources */,
 				188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */,
 				18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */,
+				1847EE2E20D6E78D00CB53E3 /* NewUsernameView.storyboard in Resources */,
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				183E75A0203B83C100092B2A /* splash.wav in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
@@ -1058,6 +1073,7 @@
 				18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */,
 				18847EA72070122F00B90C9C /* EmbeddedController.swift in Sources */,
 				18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */,
+				1847EE3020D6E7A200CB53E3 /* NewUserViewController.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
 				18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */,
 				18B330231FDC7CEE00D59107 /* Standings.swift in Sources */,

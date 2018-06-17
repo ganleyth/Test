@@ -123,9 +123,8 @@ private extension WelcomeViewController {
         guard
             let ec = embeddedController,
             ec.childViewControllers.isEmpty,
-            let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
-        settingsView.delegate = self
-        castedEmbeddedController?.addEmbeddedChild(settingsView)
+            let newUserView = UIStoryboard(name: "NewUsernameView", bundle: nil).instantiateInitialViewController() as? NewUserViewController else { return }
+        castedEmbeddedController?.addEmbeddedChild(newUserView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
 }
