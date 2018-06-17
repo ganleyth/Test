@@ -36,6 +36,7 @@ final class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(presentDeferredViewController), name: Constants.Notifications.challengeReceived, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentNewUsernameEntryView), name: Constants.Notifications.requestNewUsernameEntry, object: nil)
         
         // Move the embedded controller container view off-screen initially
         embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation + 60)
@@ -43,9 +44,16 @@ final class WelcomeViewController: UIViewController {
         configureBannerAd()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        bannerView.load(GADRequest())
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presentDeferredViewController()
+        if let user = GameSession.shared.currentUser, user.username == nil {
+            presentNewUsernameEntryView()
+        }
     }
 
     @IBAction func showSettingsView(_ sender: UIButton) {
@@ -109,7 +117,16 @@ private extension WelcomeViewController {
     func configureBannerAd() {
         bannerView.rootViewController = self
         bannerView.adUnitID = "ca-app-pub-3667026795210788/2461550614"
-        bannerView.load(GADRequest())
+    }
+    
+    @objc func presentNewUsernameEntryView() {
+        guard
+            let ec = embeddedController,
+            ec.childViewControllers.isEmpty,
+            let settingsView = UIStoryboard(name: "SettingsView", bundle: nil).instantiateInitialViewController() as? SettingsViewController else { return }
+        settingsView.delegate = self
+        castedEmbeddedController?.addEmbeddedChild(settingsView)
+        animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
 }
 

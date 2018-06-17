@@ -18,11 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared = AppDelegate()
 
     var window: UIWindow?
-    var gameCenterVC: UIViewController? {
-        didSet {
-            NotificationCenter.default.post(name: Constants.Notifications.gameCenterVCReceived, object: self)
-        }
-    }
+    var gameCenterVC: UIViewController?
     
     var keyWindow: UIWindow? {
         return UIApplication.shared.keyWindow
