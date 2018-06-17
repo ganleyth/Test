@@ -31,8 +31,9 @@ struct Constants {
     
     struct CloudKit {
         struct User {
-            static let recordName = "User"
             static let iCloudRecordReference = "iCloudRecordReference"
+            static let recordName = "User"
+            static let username = "username"
         }
     }
     
@@ -50,8 +51,8 @@ struct Constants {
     }
     
     struct Notifications {
-        static let gameCenterVCReceived = Notification.Name(rawValue: "GameCenterVCReceived")
         static let challengeReceived = Notification.Name(rawValue: "ChallengeReceived")
+        static let requestNewUsernameEntry = Notification.Name(rawValue: "RequestNewUsername")
     }
     
     enum ObstacleTileName: String {

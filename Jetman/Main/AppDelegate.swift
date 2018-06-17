@@ -89,10 +89,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         return
                     }
                     GameSession.shared.currentUser = createdUser
+                    if createdUser.username == nil {
+                        NotificationCenter.default.post(name: Constants.Notifications.requestNewUsernameEntry, object: self)
+                    }
                 })
                 return
             }
             GameSession.shared.currentUser = user
+            if user?.username == nil {
+                NotificationCenter.default.post(name: Constants.Notifications.requestNewUsernameEntry, object: self)
+            }
         }
         
         return true
