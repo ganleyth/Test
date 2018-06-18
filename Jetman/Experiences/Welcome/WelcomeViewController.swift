@@ -124,6 +124,7 @@ private extension WelcomeViewController {
             let ec = embeddedController,
             ec.childViewControllers.isEmpty,
             let newUserView = UIStoryboard(name: "NewUsernameView", bundle: nil).instantiateInitialViewController() as? NewUserViewController else { return }
+        newUserView.delegate = self
         castedEmbeddedController?.addEmbeddedChild(newUserView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
