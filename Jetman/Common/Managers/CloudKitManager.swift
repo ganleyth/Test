@@ -84,7 +84,12 @@ class CloudKitManager {
     func setUsername(_ username: String, with completion: @escaping (_ success: Bool) -> Void) {
         guard let recordID = GameSession.shared.currentUser?.recordID else { completion(false); return }
         let newKeysAndValues: [String: Any] = [Constants.CloudKit.User.username: username]
-        update(recordID: recordID, in: CKContainer.default().publicCloudDatabase, withNewKeysAndValues: newKeysAndValues) { (success) in
+        update(recordID: recordID, in: CKContainer.default().publicCloudDatabase, withNewKeysAndValues: newKeysAndValues) { (success, record) in
+            if success,
+                let record = record,
+                let user = User(record: record) {
+                GameSession.shared.currentUser = user
+            }
             completion(success)
         }
     }
@@ -129,19 +134,19 @@ private extension CloudKitManager {
         }
     }
     
-    func update(recordID: CKRecordID, in database: CKDatabase, withNewKeysAndValues newKeysAndValues: [String: Any], with completion: @escaping (_ success: Bool) -> Void) {
+    func update(recordID: CKRecordID, in database: CKDatabase, withNewKeysAndValues newKeysAndValues: [String: Any], with completion: @escaping (_ success: Bool, _ record: CKRecord?) -> Void) {
         fetchRecordWith(recordID: recordID, in: database) { [weak self] (record, error) in
-            guard let this = self else { return }
+            guard let this = self else { completion(false, nil); return }
             
             if let error = error {
                 Logger.error("Could not fetch record \(recordID) to update it: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
-                completion(false)
+                completion(false, nil)
                 return
             }
             
             guard let record = record else {
                 Logger.info("Record to update was not found: record \(recordID)", filePath: #file, funcName: #function, lineNumber: #line)
-                completion(false)
+                completion(false, nil)
                 return
             }
             
@@ -156,7 +161,7 @@ private extension CloudKitManager {
                         success = false
                     }
                 }
-                completion(success)
+                completion(success, record)
             })
         }
     }
