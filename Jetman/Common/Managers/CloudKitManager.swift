@@ -67,6 +67,27 @@ class CloudKitManager {
             returnCompletion()
         }
     }
+    
+    func checkIsUsernameAvailable(username: String, with completion: @escaping (_ isAvailable: Bool, _ error: Error?) -> Void) {
+        let predicate = NSPredicate(format: "\(Constants.CloudKit.User.username) == %@", username)
+        let query = CKQuery(recordType: Constants.CloudKit.User.recordName, predicate: predicate)
+        perform(query: query, in: CKContainer.default().publicCloudDatabase) { (records, error) in
+            var isAvailable = false
+            if let records = records, records.isEmpty {
+                isAvailable = true
+            }
+            
+            completion(isAvailable, error)
+        }
+    }
+    
+    func setUsername(_ username: String, with completion: @escaping (_ success: Bool) -> Void) {
+        guard let recordID = GameSession.shared.currentUser?.recordID else { completion(false); return }
+        let newKeysAndValues: [String: Any] = [Constants.CloudKit.User.username: username]
+        update(recordID: recordID, in: CKContainer.default().publicCloudDatabase, withNewKeysAndValues: newKeysAndValues) { (success) in
+            completion(success)
+        }
+    }
 }
 
 private extension CloudKitManager {
@@ -88,6 +109,62 @@ private extension CloudKitManager {
         database.save(record) { (record, error) in
             if let error = error {
                 Logger.error("Error saving record: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+            }
+            
+            DispatchQueue.main.async {
+                completion(record, error)
+            }
+        }
+    }
+    
+    func perform(query: CKQuery, in database: CKDatabase, with completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
+        database.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                Logger.error("Error performing query: \(query): \n\(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+            }
+            
+            DispatchQueue.main.async {
+                completion(records, error)
+            }
+        }
+    }
+    
+    func update(recordID: CKRecordID, in database: CKDatabase, withNewKeysAndValues newKeysAndValues: [String: Any], with completion: @escaping (_ success: Bool) -> Void) {
+        fetchRecordWith(recordID: recordID, in: database) { [weak self] (record, error) in
+            guard let this = self else { return }
+            
+            if let error = error {
+                Logger.error("Could not fetch record \(recordID) to update it: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
+                completion(false)
+                return
+            }
+            
+            guard let record = record else {
+                Logger.info("Record to update was not found: record \(recordID)", filePath: #file, funcName: #function, lineNumber: #line)
+                completion(false)
+                return
+            }
+            
+            newKeysAndValues.forEach({ (key, value) in
+                record.setValue(value, forKey: key)
+            })
+            
+            this.save(record: record, to: database, with: { (record, error) in
+                var success = true
+                newKeysAndValues.keys.forEach {
+                    if record?.value(forKey: $0) == nil {
+                        success = false
+                    }
+                }
+                completion(success)
+            })
+        }
+    }
+    
+    func fetchRecordWith(recordID: CKRecordID, in database: CKDatabase, completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {
+        database.fetch(withRecordID: recordID) { (record, error) in
+            if let error = error {
+                Logger.error("Error fetching record with id \(recordID): \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {

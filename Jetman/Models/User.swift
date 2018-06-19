@@ -24,5 +24,7 @@ extension User: CloudKitSyncable {
         
         self.iCloudRecordID = iCloudRecordReference.recordID
         self.username = username
+        
+        self.recordID = record.recordID
     }
 }
