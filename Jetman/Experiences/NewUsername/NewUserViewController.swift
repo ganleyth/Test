@@ -60,9 +60,10 @@ class NewUserViewController: UIViewController {
 
 extension NewUserViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let text = textField.text, !text.isEmpty else { return true }
+        guard let text = textField.text, !text.isEmpty else { return false }
+        textField.text = text.uppercased()
         usernameTextField.resignFirstResponder()
-        assignNewUsername(text)
+        assignNewUsername(text.uppercased())
         return true
     }
 }
