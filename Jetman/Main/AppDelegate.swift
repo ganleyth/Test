@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else if let vc = keyWindow?.rootViewController {
             topVC = vc
         } else {
-            assertionFailure("Unhandled topVC case")
             return nil
         }
         
@@ -44,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var viewControllerToPresent: UIViewController?
+    var activityIndicatorView: ActivityIndicatorView? = nil
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -113,6 +113,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Branch.getInstance().handlePushNotification(userInfo)
+    }
+}
+
+// Activity Indicator
+extension AppDelegate {
+    func showActivityIndicator() {
+        guard
+            let activityIndicatorView = UINib(nibName: "ActivityIndicator", bundle: nil).instantiate(withOwner: nil, options: nil).first as? ActivityIndicatorView,
+            let topVC = topViewController else { return }
+        
+        topVC.animateCenterPresentation(of: activityIndicatorView)
+        self.activityIndicatorView = activityIndicatorView
+    }
+    
+    func hideActivityIndicator() {
+        
     }
 }
 

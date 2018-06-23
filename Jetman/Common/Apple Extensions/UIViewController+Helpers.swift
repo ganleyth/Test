@@ -17,4 +17,16 @@ extension UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    func animateCenterPresentation(of subView: UIView) {
+        subView.alpha = 0
+        view.addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        subView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        subView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            subView.alpha = 1
+        }, completion: nil)
+    }
 }

@@ -35,6 +35,8 @@
 		1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */; };
 		1847EE2E20D6E78D00CB53E3 /* NewUsernameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1847EE2D20D6E78D00CB53E3 /* NewUsernameView.storyboard */; };
 		1847EE3020D6E7A200CB53E3 /* NewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */; };
+		1851438120D8C0D5000EC8A0 /* ActivityIndicator.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */; };
+		1851438320D8C2D5000EC8A0 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1851438220D8C2D5000EC8A0 /* ActivityIndicator.swift */; };
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */; };
@@ -58,8 +60,6 @@
 		18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */; };
 		18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */; };
 		18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FD51FDA506100D59107 /* WelcomeViewController.swift */; };
-		18B32FD91FDA515400D59107 /* WindowView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FD81FDA515400D59107 /* WindowView.xib */; };
-		18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FDA1FDA51AA00D59107 /* WindowView.swift */; };
 		18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FE21FDA565C00D59107 /* GameplayView.storyboard */; };
 		18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE41FDC3DDC00D59107 /* GameplayViewController.swift */; };
 		18B32FE71FDC3ECC00D59107 /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FE61FDC3ECC00D59107 /* GameplayScene.swift */; };
@@ -186,6 +186,8 @@
 		1842D6E12015095400571BD2 /* SKTileGroup+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileGroup+Helpers.swift"; sourceTree = "<group>"; };
 		1847EE2D20D6E78D00CB53E3 /* NewUsernameView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewUsernameView.storyboard; sourceTree = "<group>"; };
 		1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserViewController.swift; sourceTree = "<group>"; };
+		1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityIndicator.xib; sourceTree = "<group>"; };
+		1851438220D8C2D5000EC8A0 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		1853AAC020715665007EEC62 /* MyChallengesBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesBox.swift; sourceTree = "<group>"; };
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -213,8 +215,6 @@
 		18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Helpers.swift"; sourceTree = "<group>"; };
 		18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		18B32FD51FDA506100D59107 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		18B32FD81FDA515400D59107 /* WindowView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WindowView.xib; sourceTree = "<group>"; };
-		18B32FDA1FDA51AA00D59107 /* WindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowView.swift; sourceTree = "<group>"; };
 		18B32FE21FDA565C00D59107 /* GameplayView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameplayView.storyboard; sourceTree = "<group>"; };
 		18B32FE41FDC3DDC00D59107 /* GameplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayViewController.swift; sourceTree = "<group>"; };
 		18B32FE61FDC3ECC00D59107 /* GameplayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
@@ -442,15 +442,6 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		18B32FD71FDA510D00D59107 /* ReusableViews */ = {
-			isa = PBXGroup;
-			children = (
-				18B32FD81FDA515400D59107 /* WindowView.xib */,
-				18B32FDA1FDA51AA00D59107 /* WindowView.swift */,
-			);
-			path = ReusableViews;
-			sourceTree = "<group>";
-		};
 		18B330261FDCA80000D59107 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,10 +597,10 @@
 		18CEF30F1FD32E8D005C3980 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				18B32FD71FDA510D00D59107 /* ReusableViews */,
-				18CEF3121FD32EF1005C3980 /* Scene Editor Files */,
 				18CEF3111FD32EE3005C3980 /* Tilesets */,
 				18DF6BD82027786200BF0502 /* Emitters */,
+				1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */,
+				1851438220D8C2D5000EC8A0 /* ActivityIndicator.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -631,13 +622,6 @@
 				18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */,
 			);
 			path = Tilesets;
-			sourceTree = "<group>";
-		};
-		18CEF3121FD32EF1005C3980 /* Scene Editor Files */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Scene Editor Files";
 			sourceTree = "<group>";
 		};
 		18CEF3141FD32F6C005C3980 /* Stats */ = {
@@ -953,9 +937,9 @@
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
 				18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */,
 				183E759F203B83C100092B2A /* crash.wav in Resources */,
+				1851438120D8C0D5000EC8A0 /* ActivityIndicator.xib in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
-				18B32FD91FDA515400D59107 /* WindowView.xib in Resources */,
 				18847EA92070634700B90C9C /* StatsView.storyboard in Resources */,
 				188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */,
 				18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */,
@@ -1057,6 +1041,7 @@
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,
 				18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */,
+				1851438320D8C2D5000EC8A0 /* ActivityIndicator.swift in Sources */,
 				18DD350D208CE9080077E7B1 /* Friend.swift in Sources */,
 				18B330191FDC7B6D00D59107 /* Settings.swift in Sources */,
 				181AD9C620CD82B100EEEB7F /* User.swift in Sources */,
@@ -1082,7 +1067,6 @@
 				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
-				18B32FDB1FDA51AA00D59107 /* WindowView.swift in Sources */,
 				1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
