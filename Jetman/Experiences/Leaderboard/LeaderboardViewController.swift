@@ -13,6 +13,8 @@ class LeaderboardViewController: UIViewController {
     @IBOutlet fileprivate var interactor: LeaderboardInteractor!
     @IBOutlet fileprivate var tableView: UITableView!
     
+    weak var delegate: WelcomeViewEmbeddedControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -23,6 +25,7 @@ class LeaderboardViewController: UIViewController {
             guard let this = self else { return }
             this.tableView.reloadData()
         }
+        interactor.fetchLeaders()
     }
     
     @IBAction func dismissPressed(_ sender: UIButton) {

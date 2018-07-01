@@ -15,11 +15,6 @@ enum RecordType: String {
 class CloudKitManager {
     
     static let shared = CloudKitManager()
-    private lazy var userInitiatedQueue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.qualityOfService = .userInitiated
-        return queue
-    }()
     
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
@@ -124,7 +119,7 @@ class CloudKitManager {
     func fetchLeaders(completion: @escaping (_ leaders: [User]) -> Void) {
         let predicate = NSPredicate(value: true)
         let sortDescriptors = [NSSortDescriptor(key: Constants.CloudKit.User.highScore, ascending: false)]
-        fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, sortDescriptors: sortDescriptors, resultsLimit: 10, qualityOfService: .userInitiated) { (records) in
+        fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, sortDescriptors: sortDescriptors, resultsLimit: 10) { (records) in
             var leaders = [User]()
             defer { completion(leaders) }
             
@@ -136,7 +131,8 @@ class CloudKitManager {
 
 private extension CloudKitManager {
     
-    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, qualityOfService: QualityOfService = .background, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
+    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
+        
         let query = CKQuery(recordType: recordType.rawValue, predicate: predicate)
         query.sortDescriptors = sortDescriptors
         let operation = CKQueryOperation(query: query)
@@ -155,12 +151,7 @@ private extension CloudKitManager {
         }
         
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
-        switch qualityOfService {
-        case .userInitiated:
-            userInitiatedQueue.addOperation(operation)
-        default:
-            break
-        }
+        database.add(operation)
     }
     
     func save(record: CKRecord, to database: CKDatabase, with completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {

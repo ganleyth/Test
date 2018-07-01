@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivu-xo-Au8">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,7 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,17 +66,14 @@
                                     <action selector="showSettingsView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="UKo-dN-trs"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MuH-zL-U1I">
-                                <rect key="frame" x="571" y="279" width="64" height="64"/>
-                                <color key="backgroundColor" name="AppYellow"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l9c-bp-fCA">
+                                <rect key="frame" x="567.5" y="275.5" width="67.5" height="67.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="MuH-zL-U1I" secondAttribute="height" multiplier="1:1" id="jeu-VW-Shw"/>
-                                    <constraint firstAttribute="height" constant="64" id="p5I-wU-A6R"/>
+                                    <constraint firstAttribute="width" secondItem="l9c-bp-fCA" secondAttribute="height" multiplier="1:1" id="jGE-ks-GTT"/>
                                 </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Stats"/>
+                                <state key="normal" title="Button" image="LeadersButton"/>
                                 <connections>
-                                    <action selector="showStatsView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="Gz3-cY-1kM"/>
+                                    <action selector="showLeaderboardView:" destination="Ivu-xo-Au8" eventType="touchUpInside" id="CYv-f0-v2V"/>
                                 </connections>
                             </button>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K45-9c-P6w">
@@ -94,6 +90,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="l9c-bp-fCA" secondAttribute="bottom" constant="32" id="48C-rP-1uH"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="4eQ-PN-YWS"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="5BT-Pe-ETd"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" constant="32" id="5cZ-JD-k6v"/>
@@ -107,6 +104,7 @@
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="QOB-1E-kGB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="Qv5-OB-HLh" secondAttribute="bottom" id="S6x-bZ-tQU"/>
                             <constraint firstItem="Sfx-gL-mcX" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="TaU-G8-wd5"/>
+                            <constraint firstItem="l9c-bp-fCA" firstAttribute="height" secondItem="Uf7-PZ-4JC" secondAttribute="height" id="UU3-zb-nRf"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="trailing" secondItem="Qv5-OB-HLh" secondAttribute="trailing" id="Uha-3Z-Ws9"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.8" id="Uhb-Xe-KB3"/>
                             <constraint firstItem="rcp-Un-A4m" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="Up8-lG-DrW"/>
@@ -115,13 +113,12 @@
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" id="XWO-dS-fte"/>
                             <constraint firstItem="43M-Bh-Yfg" firstAttribute="width" secondItem="Qv5-OB-HLh" secondAttribute="width" multiplier="0.8" id="YQ0-4N-bAk"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="YQz-gq-FqY"/>
+                            <constraint firstAttribute="trailing" secondItem="l9c-bp-fCA" secondAttribute="trailing" constant="32" id="aLN-dZ-upB"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="24" id="ayA-0p-tfi"/>
-                            <constraint firstAttribute="trailing" secondItem="MuH-zL-U1I" secondAttribute="trailing" constant="32" id="dJN-30-8fN"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
                             <constraint firstItem="zfV-jx-RuW" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="ejK-aI-ToB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="iMu-cv-G4F" secondAttribute="bottom" constant="16" id="gT4-IK-iVI"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.05" id="se1-Tq-nZQ"/>
-                            <constraint firstAttribute="bottom" secondItem="MuH-zL-U1I" secondAttribute="bottom" constant="32" id="yIb-mD-PNG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrt-Gm-bbn"/>
                     </view>
@@ -170,10 +167,8 @@
         <image name="LaunchScreenAttribution" width="300" height="28"/>
         <image name="LaunchScreenBackground" width="888" height="500"/>
         <image name="LaunchScreenTitle" width="1336" height="264"/>
+        <image name="LeadersButton" width="234" height="244"/>
         <image name="PlayButton" width="372" height="154"/>
         <image name="SettingsButton" width="234" height="242"/>
-        <namedColor name="AppYellow">
-            <color red="0.97254901960784312" green="0.80000000000000004" blue="0.27450980392156865" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

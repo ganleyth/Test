@@ -63,10 +63,10 @@ final class WelcomeViewController: UIViewController {
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
-    @IBAction func showStatsView(_ sender: UIButton) {
-        guard let statsView = UIStoryboard(name: "StatsView", bundle: nil).instantiateInitialViewController() as? StatsViewController else { return }
-        statsView.delegate = self
-        castedEmbeddedController?.addEmbeddedChild(statsView)
+    @IBAction func showLeaderboardView(_ sender: UIButton) {
+        guard let leaderboardView = UIStoryboard(name: "LeaderboardView", bundle: nil).instantiateInitialViewController() as? LeaderboardViewController else { return }
+        leaderboardView.delegate = self
+        castedEmbeddedController?.addEmbeddedChild(leaderboardView)
         animateEmbeddedControllerVisibility(isVisible: true, completion: nil)
     }
     
