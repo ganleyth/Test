@@ -25,7 +25,10 @@ class GameplayViewController: UIViewController {
         guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else { return nil }
         guard let scoreKeeper = (skView.scene as? GameplayScene)?.scoreKeeper else { return nil }
         
-        GameSession.shared.highScore = max(scoreKeeper.currentScore, GameSession.shared.highScore ?? 0)
+        if scoreKeeper.currentScore > GameSession.shared.highScore ?? 0 {
+            GameSession.shared.highScore = scoreKeeper.currentScore
+            CloudKitManager.shared.updateHighScore(scoreKeeper.currentScore, completion: nil)
+        }
         
         endOfGameView.loadView()
         endOfGameView.configureFor(score: scoreKeeper.currentScore, highScore: GameSession.shared.highScore ?? 0)
