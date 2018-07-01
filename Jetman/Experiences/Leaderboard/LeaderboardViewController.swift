@@ -18,6 +18,11 @@ class LeaderboardViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        interactor.uiRefresh = { [weak self] in
+            guard let this = self else { return }
+            this.tableView.reloadData()
+        }
     }
     
     @IBAction func dismissPressed(_ sender: UIButton) {

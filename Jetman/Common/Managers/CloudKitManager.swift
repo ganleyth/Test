@@ -15,6 +15,11 @@ enum RecordType: String {
 class CloudKitManager {
     
     static let shared = CloudKitManager()
+    private lazy var userInitiatedQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .userInitiated
+        return queue
+    }()
     
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
@@ -32,11 +37,7 @@ class CloudKitManager {
             guard let recordID = recordID else { returningCompletion(); return }
             returniCloudRecordID = recordID
             let predicate = NSPredicate(format: "iCloudRecordReference == %@", CKReference(recordID: recordID, action: .deleteSelf))
-            this.fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, with: { (records, error) in
-                if let error = error {
-                    Logger.error("Error fetching user: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
-                }
-                
+            this.fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, with: { (records) in
                 guard
                     let firstRecord = records?.first,
                     let user = User(record: firstRecord) else { returningCompletion(); return }
@@ -119,22 +120,46 @@ class CloudKitManager {
             completion?(success)
         }
     }
+    
+    func fetchLeaders(completion: @escaping (_ leaders: [User]) -> Void) {
+        let predicate = NSPredicate(value: true)
+        let sortDescriptors = [NSSortDescriptor(key: Constants.CloudKit.User.highScore, ascending: false)]
+        fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, sortDescriptors: sortDescriptors, resultsLimit: 10, qualityOfService: .userInitiated) { (records) in
+            var leaders = [User]()
+            defer { completion(leaders) }
+            
+            guard let records = records else { return }
+            leaders = records.compactMap { User(record: $0) }
+        }
+    }
 }
 
 private extension CloudKitManager {
     
-    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, with completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
+    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, qualityOfService: QualityOfService = .background, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
         let query = CKQuery(recordType: recordType.rawValue, predicate: predicate)
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
-        database.perform(query, inZoneWith: nil) { (records, error) in
-            if let error = error {
-                Logger.error("Error fetching user record: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
-            }
-            
+        query.sortDescriptors = sortDescriptors
+        let operation = CKQueryOperation(query: query)
+        if let rl = resultsLimit { operation.resultsLimit = rl }
+        
+        var records = [CKRecord]()
+        operation.recordFetchedBlock = { (record) in
+            records.append(record)
+        }
+        
+        operation.queryCompletionBlock = { (_, _) in
             DispatchQueue.main.async {
                 AppDelegate.shared.hideActivityIndicator()
-                completion(records, error)
+                completion(records)
             }
+        }
+        
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        switch qualityOfService {
+        case .userInitiated:
+            userInitiatedQueue.addOperation(operation)
+        default:
+            break
         }
     }
     
