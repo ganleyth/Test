@@ -17,10 +17,12 @@ class CloudKitManager {
     static let shared = CloudKitManager()
     
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         CKContainer.default().fetchUserRecordID { [weak self] (recordID, error) in
+            DispatchQueue.main.async { AppDelegate.shared.hideActivityIndicator() }
             var returniCloudRecordID: CKRecordID? = nil
             var returnUser: User? = nil
-            let returningCompletion = { completion(returniCloudRecordID, returnUser) }
+            let returningCompletion = { DispatchQueue.main.async { completion(returniCloudRecordID, returnUser) } } 
             guard let this = self else { returningCompletion(); return }
             
             if let error = error {

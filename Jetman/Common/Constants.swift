@@ -52,7 +52,16 @@ struct Constants {
     
     struct Notifications {
         static let challengeReceived = Notification.Name(rawValue: "ChallengeReceived")
+        static let presentAlert = Notification.Name(rawValue: "PresentAlert")
         static let requestNewUsernameEntry = Notification.Name(rawValue: "RequestNewUsername")
+        
+        struct UserInfo {
+            static let message = "message"
+            static let title = "title"
+            
+            static let iCloudLoginMessage = "You must be signed into iCloud on your device to enable Jetman! network capabilities. Please go to the Settings app and sign in."
+            static let iCloudLoginTitle = "Authentication Error"
+        }
     }
     
     enum ObstacleTileName: String {
