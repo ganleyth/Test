@@ -140,7 +140,9 @@ struct Constants {
         static let allowHaptics = "allowHaptics"
         static let allowSounds = "allowSounds"
         static let highScore = "highScore"
+        static let gamesPlayedCount = "gamesPlayedCount"
         static let uid = "uid"
+        static let userHasRatedApp = "userHasRatedApp"
     }
     
     enum ZPosition: Int {

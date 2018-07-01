@@ -8,6 +8,7 @@
 
 import SpriteKit
 import AVFoundation
+import StoreKit
 
 class GameplaySceneInteractor: Interactor {
     
@@ -160,6 +161,7 @@ extension GameplaySceneInteractor {
             musicAudioPlayer?.stop()
             if gameplayViewController?.challenge != nil { updateChallenge() }
             hasEnded = true
+            incrementGamesPlayedCountAndRequestAppRating()
         }
     }
 }
@@ -259,6 +261,26 @@ private extension GameplaySceneInteractor {
             DispatchQueue.main.async {
                 this.viewController.presentInfoAlertWith(title: title, message: message)
             }
+        }
+    }
+    
+    func incrementGamesPlayedCountAndRequestAppRating() {
+        guard var gamesPlayedCount = UserDefaults.standard.value(forKey: Constants.UserDefaults.gamesPlayedCount) as? Int else {
+            UserDefaults.standard.set(1, forKey: Constants.UserDefaults.gamesPlayedCount)
+            return
+        }
+        
+        gamesPlayedCount += 1
+        defer { UserDefaults.standard.set(gamesPlayedCount, forKey: Constants.UserDefaults.gamesPlayedCount) }
+        
+        if let hasRatedApp = UserDefaults.standard.value(forKey: Constants.UserDefaults.userHasRatedApp) as? Bool {
+            guard !hasRatedApp else { return }
+            if gamesPlayedCount == 3 {
+                SKStoreReviewController.requestReview()
+                UserDefaults.standard.set(true, forKey: Constants.UserDefaults.userHasRatedApp)
+            }
+        } else {
+            UserDefaults.standard.set(false, forKey: Constants.UserDefaults.userHasRatedApp)
         }
     }
 }
