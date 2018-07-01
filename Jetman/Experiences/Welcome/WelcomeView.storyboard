@@ -81,7 +81,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43M-Bh-Yfg">
-                                <rect key="frame" x="66.5" y="37.5" width="534" height="300"/>
+                                <rect key="frame" x="66.5" y="16" width="534" height="300"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="T8Y-1o-vLr" kind="embed" identifier="embedController" id="581-vb-Xxl"/>
@@ -100,7 +100,6 @@
                             <constraint firstItem="Sfx-gL-mcX" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.3" id="ISb-WY-pIb"/>
                             <constraint firstItem="zfV-jx-RuW" firstAttribute="top" secondItem="qrt-Gm-bbn" secondAttribute="top" id="J19-9O-Ach"/>
                             <constraint firstAttribute="trailing" secondItem="K45-9c-P6w" secondAttribute="trailing" id="NZs-Wa-KCQ"/>
-                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="centerY" secondItem="Qv5-OB-HLh" secondAttribute="centerY" id="OTC-ML-Lxr"/>
                             <constraint firstItem="Uf7-PZ-4JC" firstAttribute="height" secondItem="Qv5-OB-HLh" secondAttribute="height" multiplier="0.18" id="QOB-1E-kGB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="Qv5-OB-HLh" secondAttribute="bottom" id="S6x-bZ-tQU"/>
                             <constraint firstItem="Sfx-gL-mcX" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="TaU-G8-wd5"/>
@@ -115,6 +114,7 @@
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="YQz-gq-FqY"/>
                             <constraint firstAttribute="trailing" secondItem="l9c-bp-fCA" secondAttribute="trailing" constant="32" id="aLN-dZ-upB"/>
                             <constraint firstItem="iMu-cv-G4F" firstAttribute="top" secondItem="rcp-Un-A4m" secondAttribute="bottom" constant="24" id="ayA-0p-tfi"/>
+                            <constraint firstItem="43M-Bh-Yfg" firstAttribute="top" secondItem="Qv5-OB-HLh" secondAttribute="top" constant="16" id="bTE-dc-gt2"/>
                             <constraint firstItem="K45-9c-P6w" firstAttribute="leading" secondItem="Qv5-OB-HLh" secondAttribute="leading" id="dpL-F3-Xvx"/>
                             <constraint firstItem="zfV-jx-RuW" firstAttribute="centerX" secondItem="Qv5-OB-HLh" secondAttribute="centerX" id="ejK-aI-ToB"/>
                             <constraint firstItem="fYY-w6-hWI" firstAttribute="bottom" secondItem="iMu-cv-G4F" secondAttribute="bottom" constant="16" id="gT4-IK-iVI"/>

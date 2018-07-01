@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="usZ-hd-ToK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="usZ-hd-ToK">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,35 +20,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="iKx-TD-weF">
-                                <rect key="frame" x="108.5" y="0.0" width="450" height="225"/>
+                                <rect key="frame" x="128" y="0.0" width="412.5" height="206.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="iKx-TD-weF" secondAttribute="height" multiplier="1000:500" id="LX1-hN-PbO"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-TJ-jy1">
-                                <rect key="frame" x="92.5" y="-12" width="40" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Gfj-TJ-jy1" secondAttribute="height" multiplier="10:11" id="Drb-XP-W6w"/>
-                                    <constraint firstAttribute="width" constant="40" id="Iga-yR-Exk"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="SettingsDismiss"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewUsernameTitle" translatesAutoresizingMaskIntoConstraints="NO" id="EUz-XL-Gzc">
-                                <rect key="frame" x="168" y="24" width="331" height="34"/>
+                                <rect key="frame" x="167" y="16" width="333" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="EUz-XL-Gzc" secondAttribute="height" multiplier="706:72" id="7hj-hs-8lJ"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="XdH-tH-9Yn">
-                                <rect key="frame" x="140.5" y="74" width="386" height="102"/>
+                                <rect key="frame" x="160" y="58" width="348.5" height="97.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="rnA-MP-dRC">
-                                        <rect key="frame" x="0.0" y="0.0" width="386" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="348.5" height="40.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NewUsernameUsageDescription" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-Dy-rKn">
-                                                <rect key="frame" x="19.5" y="0.0" width="347" height="45"/>
+                                                <rect key="frame" x="17.5" y="0.0" width="314" height="40.5"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="RkG-Dy-rKn" secondAttribute="height" multiplier="756:98" id="0C0-Ox-YzS"/>
                                                 </constraints>
@@ -58,10 +49,10 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-de-ixJ">
-                                        <rect key="frame" x="0.0" y="61" width="386" height="41"/>
+                                        <rect key="frame" x="0.0" y="56.5" width="348.5" height="41"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GkV-1U-Wjd">
-                                                <rect key="frame" x="16" y="0.0" width="354" height="41"/>
+                                                <rect key="frame" x="16" y="0.0" width="316.5" height="41"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="32"/>
@@ -79,17 +70,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="iKx-TD-weF" firstAttribute="top" secondItem="QIm-SS-arJ" secondAttribute="top" id="2U1-Ed-wUL"/>
-                            <constraint firstItem="XdH-tH-9Yn" firstAttribute="top" secondItem="EUz-XL-Gzc" secondAttribute="bottom" priority="750" constant="16" id="8YC-qx-B1y"/>
-                            <constraint firstItem="Gfj-TJ-jy1" firstAttribute="top" secondItem="iKx-TD-weF" secondAttribute="top" constant="-12" id="DYo-gV-rkI"/>
+                            <constraint firstItem="XdH-tH-9Yn" firstAttribute="top" secondItem="EUz-XL-Gzc" secondAttribute="bottom" priority="750" constant="8" id="8YC-qx-B1y"/>
                             <constraint firstItem="iKx-TD-weF" firstAttribute="centerX" secondItem="QIm-SS-arJ" secondAttribute="centerX" id="I42-Ge-Ehe"/>
                             <constraint firstItem="XdH-tH-9Yn" firstAttribute="leading" secondItem="iKx-TD-weF" secondAttribute="leading" constant="32" id="Mff-9r-3HU"/>
-                            <constraint firstItem="EUz-XL-Gzc" firstAttribute="top" secondItem="QIm-SS-arJ" secondAttribute="top" constant="24" id="TbD-h4-yLN"/>
+                            <constraint firstItem="EUz-XL-Gzc" firstAttribute="top" secondItem="QIm-SS-arJ" secondAttribute="top" constant="16" id="TbD-h4-yLN"/>
                             <constraint firstItem="EUz-XL-Gzc" firstAttribute="centerX" secondItem="QIm-SS-arJ" secondAttribute="centerX" id="cIE-mi-548"/>
                             <constraint firstItem="iKx-TD-weF" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XdH-tH-9Yn" secondAttribute="bottom" constant="24" id="cUN-7y-TSH"/>
                             <constraint firstItem="iKx-TD-weF" firstAttribute="trailing" secondItem="XdH-tH-9Yn" secondAttribute="trailing" constant="32" id="eZe-ed-z2b"/>
-                            <constraint firstItem="iKx-TD-weF" firstAttribute="height" secondItem="QIm-SS-arJ" secondAttribute="height" multiplier="0.6" id="hWe-8E-391"/>
+                            <constraint firstItem="iKx-TD-weF" firstAttribute="height" secondItem="QIm-SS-arJ" secondAttribute="height" multiplier="0.55" id="hWe-8E-391"/>
                             <constraint firstItem="EUz-XL-Gzc" firstAttribute="height" secondItem="QIm-SS-arJ" secondAttribute="height" multiplier="0.09" id="jiu-h9-pxb"/>
-                            <constraint firstItem="Gfj-TJ-jy1" firstAttribute="leading" secondItem="iKx-TD-weF" secondAttribute="leading" constant="-16" id="rg0-UK-AIl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wfp-SD-Sj9"/>
                     </view>
@@ -106,6 +95,5 @@
         <image name="NewUsernameTitle" width="706" height="72"/>
         <image name="NewUsernameUsageDescription" width="756" height="98"/>
         <image name="SettingsBackground" width="1000" height="800"/>
-        <image name="SettingsDismiss" width="100" height="110"/>
     </resources>
 </document>
