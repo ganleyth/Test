@@ -99,48 +99,53 @@ private extension CloudKitManager {
     
     func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, with completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
         let query = CKQuery(recordType: recordType.rawValue, predicate: predicate)
-        AppDelegate.shared.showActivityIndicator()
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 Logger.error("Error fetching user record: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
+                AppDelegate.shared.hideActivityIndicator()
                 completion(records, error)
             }
         }
     }
     
     func save(record: CKRecord, to database: CKDatabase, with completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {
-        AppDelegate.shared.showActivityIndicator()
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         database.save(record) { (record, error) in
             if let error = error {
                 Logger.error("Error saving record: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
+                AppDelegate.shared.hideActivityIndicator()
                 completion(record, error)
             }
         }
     }
     
     func perform(query: CKQuery, in database: CKDatabase, with completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
-        AppDelegate.shared.showActivityIndicator()
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 Logger.error("Error performing query: \(query): \n\(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
+                AppDelegate.shared.hideActivityIndicator()
                 completion(records, error)
             }
         }
     }
     
     func update(recordID: CKRecordID, in database: CKDatabase, withNewKeysAndValues newKeysAndValues: [String: Any], with completion: @escaping (_ success: Bool, _ record: CKRecord?) -> Void) {
-        AppDelegate.shared.showActivityIndicator()
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         fetchRecordWith(recordID: recordID, in: database) { [weak self] (record, error) in
             guard let this = self else { completion(false, nil); return }
+            
+            DispatchQueue.main.async { AppDelegate.shared.hideActivityIndicator() }
             
             if let error = error {
                 Logger.error("Could not fetch record \(recordID) to update it: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
@@ -166,19 +171,23 @@ private extension CloudKitManager {
                         success = false
                     }
                 }
-                completion(success, record)
+                DispatchQueue.main.async {
+                    AppDelegate.shared.hideActivityIndicator()
+                    completion(success, record)
+                }
             })
         }
     }
     
     func fetchRecordWith(recordID: CKRecordID, in database: CKDatabase, completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {
-        AppDelegate.shared.showActivityIndicator()
+        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         database.fetch(withRecordID: recordID) { (record, error) in
             if let error = error {
                 Logger.error("Error fetching record with id \(recordID): \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
+                AppDelegate.shared.hideActivityIndicator()
                 completion(record, error)
             }
         }

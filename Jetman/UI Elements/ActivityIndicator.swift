@@ -14,4 +14,14 @@ class ActivityIndicatorView: UIView {
         super.awakeFromNib()
         activityIndicator.startAnimating()
     }
+    
+    func endActivityAnimation(completion: (() -> Void)? = nil) {
+        UIView.animate(withDuration: 0.1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { [weak self] in
+            guard let this = self else { return }
+            this.alpha = 0
+        }) { [weak self] (_) in
+            guard let this = self else { return }
+            completion?()
+        }
+    }
 }

@@ -120,15 +120,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     func showActivityIndicator() {
         guard
+            activityIndicatorView == nil,
             let activityIndicatorView = UINib(nibName: "ActivityIndicator", bundle: nil).instantiate(withOwner: nil, options: nil).first as? ActivityIndicatorView,
             let topVC = topViewController else { return }
         
-        topVC.animateCenterPresentation(of: activityIndicatorView)
+        activityIndicatorView.alpha = 0
+        topVC.animateCenterPresentation(of: activityIndicatorView, shouldShow: true, completion: nil)
         self.activityIndicatorView = activityIndicatorView
     }
     
     func hideActivityIndicator() {
-        
+        guard let activityIndicatorView = activityIndicatorView else { return }
+        activityIndicatorView.endActivityAnimation { [weak self] in
+            guard let this = self else { return }
+            activityIndicatorView.removeFromSuperview()
+            this.activityIndicatorView = nil
+        }
     }
 }
 
