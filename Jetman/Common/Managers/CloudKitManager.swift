@@ -15,7 +15,7 @@ enum RecordType: String {
 class CloudKitManager {
     
     static let shared = CloudKitManager()
-    
+
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         CKContainer.default().fetchUserRecordID { [weak self] (recordID, error) in
@@ -119,7 +119,7 @@ class CloudKitManager {
     func fetchLeaders(completion: @escaping (_ leaders: [User]) -> Void) {
         let predicate = NSPredicate(value: true)
         let sortDescriptors = [NSSortDescriptor(key: Constants.CloudKit.User.highScore, ascending: false)]
-        fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, sortDescriptors: sortDescriptors, resultsLimit: 10) { (records) in
+        fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, sortDescriptors: sortDescriptors, resultsLimit: 10, qualityOfService: .userInitiated) { (records) in
             var leaders = [User]()
             defer { completion(leaders) }
             
@@ -131,7 +131,7 @@ class CloudKitManager {
 
 private extension CloudKitManager {
     
-    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
+    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, qualityOfService: QualityOfService = .background, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
         
         let query = CKQuery(recordType: recordType.rawValue, predicate: predicate)
         query.sortDescriptors = sortDescriptors
@@ -149,6 +149,8 @@ private extension CloudKitManager {
                 completion(records)
             }
         }
+        
+        operation.qualityOfService = qualityOfService
         
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
         database.add(operation)

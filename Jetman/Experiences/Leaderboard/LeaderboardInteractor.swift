@@ -28,7 +28,7 @@ extension LeaderboardInteractor: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath) as? RightDetailTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "leaderboardCell", for: indexPath) as? RightDetailTableViewCell else { return RightDetailTableViewCell() }
         
         let leader = leaders[indexPath.row]
         cell.configureWith(primaryText: leader.username ?? "Unnamed User", secondaryText: "\(leader.highScore)")

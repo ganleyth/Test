@@ -18,8 +18,7 @@ class LeaderboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 40
         
         interactor.uiRefresh = { [weak self] in
             guard let this = self else { return }
@@ -29,5 +28,6 @@ class LeaderboardViewController: UIViewController {
     }
     
     @IBAction func dismissPressed(_ sender: UIButton) {
+        delegate?.embeddedControllerShouldDismiss()
     }
 }
