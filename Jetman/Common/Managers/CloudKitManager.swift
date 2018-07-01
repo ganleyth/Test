@@ -41,6 +41,11 @@ class CloudKitManager {
                     let firstRecord = records?.first,
                     let user = User(record: firstRecord) else { returningCompletion(); return }
                 
+                // Make sure the local high score is up to date with the remote high score
+                if user.highScore > (GameSession.shared.highScore ?? 0) {
+                    GameSession.shared.highScore = user.highScore
+                }
+                
                 returnUser = user
                 returningCompletion()
             })
