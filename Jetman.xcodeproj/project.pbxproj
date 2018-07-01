@@ -40,10 +40,12 @@
 		1853AAC120715665007EEC62 /* MyChallengesBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC020715665007EEC62 /* MyChallengesBox.swift */; };
 		1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */; };
 		187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */; };
+		1884675B20E94D0800CE5F33 /* LeaderboardView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1884675A20E94D0800CE5F33 /* LeaderboardView.storyboard */; };
+		1884675D20E94D1900CE5F33 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884675C20E94D1900CE5F33 /* LeaderboardViewController.swift */; };
+		1884675F20E94D4800CE5F33 /* LeaderboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884675E20E94D4800CE5F33 /* LeaderboardInteractor.swift */; };
+		1884676320E97A2F00CE5F33 /* RightDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1884676220E97A2F00CE5F33 /* RightDetailTableViewCell.xib */; };
+		1884676520E97A4000CE5F33 /* RightDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1884676420E97A4000CE5F33 /* RightDetailTableViewCell.swift */; };
 		18847EA72070122F00B90C9C /* EmbeddedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EA62070122F00B90C9C /* EmbeddedController.swift */; };
-		18847EA92070634700B90C9C /* StatsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EA82070634700B90C9C /* StatsView.storyboard */; };
-		18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAA2070635C00B90C9C /* StatsViewController.swift */; };
-		18847EAD2070637700B90C9C /* StatsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EAC2070637700B90C9C /* StatsInteractor.swift */; };
 		18847EB020706B1B00B90C9C /* NewChallengeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EAF20706B1B00B90C9C /* NewChallengeView.storyboard */; };
 		18847EB220706B9400B90C9C /* NewChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EB120706B9400B90C9C /* NewChallengeViewController.swift */; };
 		18847EB420706BB800B90C9C /* NewChallengeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EB320706BB800B90C9C /* NewChallengeInteractor.swift */; };
@@ -192,10 +194,12 @@
 		1853AAC220715FB4007EEC62 /* MessagesChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesChallenge.swift; sourceTree = "<group>"; };
 		1853AAC920716253007EEC62 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		187E4119208BBB4F009C7270 /* URL+AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+AppExtensions.swift"; sourceTree = "<group>"; };
+		1884675A20E94D0800CE5F33 /* LeaderboardView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LeaderboardView.storyboard; sourceTree = "<group>"; };
+		1884675C20E94D1900CE5F33 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		1884675E20E94D4800CE5F33 /* LeaderboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardInteractor.swift; sourceTree = "<group>"; };
+		1884676220E97A2F00CE5F33 /* RightDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RightDetailTableViewCell.xib; sourceTree = "<group>"; };
+		1884676420E97A4000CE5F33 /* RightDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightDetailTableViewCell.swift; sourceTree = "<group>"; };
 		18847EA62070122F00B90C9C /* EmbeddedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedController.swift; sourceTree = "<group>"; };
-		18847EA82070634700B90C9C /* StatsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatsView.storyboard; sourceTree = "<group>"; };
-		18847EAA2070635C00B90C9C /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
-		18847EAC2070637700B90C9C /* StatsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsInteractor.swift; sourceTree = "<group>"; };
 		18847EAF20706B1B00B90C9C /* NewChallengeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewChallengeView.storyboard; sourceTree = "<group>"; };
 		18847EB120706B9400B90C9C /* NewChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeViewController.swift; sourceTree = "<group>"; };
 		18847EB320706BB800B90C9C /* NewChallengeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChallengeInteractor.swift; sourceTree = "<group>"; };
@@ -348,7 +352,6 @@
 				18CEF3061FD32DF3005C3980 /* Models */,
 				18F4DE8E1FE5BEE7007FE471 /* Layer */,
 				18CEF3071FD32E03005C3980 /* Common */,
-				18CEF30F1FD32E8D005C3980 /* UI Elements */,
 				18CEF30A1FD32E54005C3980 /* Experiences */,
 			);
 			path = Jetman;
@@ -401,6 +404,25 @@
 				1847EE2F20D6E7A200CB53E3 /* NewUserViewController.swift */,
 			);
 			path = NewUsername;
+			sourceTree = "<group>";
+		};
+		1884675920E94CED00CE5F33 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				1884675A20E94D0800CE5F33 /* LeaderboardView.storyboard */,
+				1884675C20E94D1900CE5F33 /* LeaderboardViewController.swift */,
+				1884675E20E94D4800CE5F33 /* LeaderboardInteractor.swift */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		1884676120E97A1600CE5F33 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1884676220E97A2F00CE5F33 /* RightDetailTableViewCell.xib */,
+				1884676420E97A4000CE5F33 /* RightDetailTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		18847EAE20706A2900B90C9C /* NewChallenge */ = {
@@ -542,6 +564,7 @@
 				18CEF3081FD32E35005C3980 /* Managers */,
 				18DF6BE3203165EF00BF0502 /* Scoring */,
 				183E7595203A781B00092B2A /* Sounds */,
+				18CEF30F1FD32E8D005C3980 /* UI Elements */,
 				18CEF31B1FD4E8D7005C3980 /* Constants.swift */,
 				183E7593203A727300092B2A /* CustomSubclasses.swift */,
 				18CEF3161FD489D7005C3980 /* Logger.swift */,
@@ -571,8 +594,8 @@
 			children = (
 				18CEF30B1FD32E60005C3980 /* Welcome */,
 				18CEF3151FD32F82005C3980 /* Settings */,
+				1884675920E94CED00CE5F33 /* Leaderboard */,
 				1847EE2C20D6E76400CB53E3 /* NewUsername */,
-				18CEF3141FD32F6C005C3980 /* Stats */,
 				18847EAE20706A2900B90C9C /* NewChallenge */,
 				18847EB52070724800B90C9C /* MyChallenges */,
 				18CEF3101FD32EB6005C3980 /* Gameplay */,
@@ -597,6 +620,7 @@
 		18CEF30F1FD32E8D005C3980 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				1884676120E97A1600CE5F33 /* Cells */,
 				18CEF3111FD32EE3005C3980 /* Tilesets */,
 				18DF6BD82027786200BF0502 /* Emitters */,
 				1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */,
@@ -622,16 +646,6 @@
 				18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */,
 			);
 			path = Tilesets;
-			sourceTree = "<group>";
-		};
-		18CEF3141FD32F6C005C3980 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				18847EA82070634700B90C9C /* StatsView.storyboard */,
-				18847EAA2070635C00B90C9C /* StatsViewController.swift */,
-				18847EAC2070637700B90C9C /* StatsInteractor.swift */,
-			);
-			path = Stats;
 			sourceTree = "<group>";
 		};
 		18CEF3151FD32F82005C3980 /* Settings */ = {
@@ -936,16 +950,17 @@
 				18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
 				18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */,
+				1884675B20E94D0800CE5F33 /* LeaderboardView.storyboard in Resources */,
 				183E759F203B83C100092B2A /* crash.wav in Resources */,
 				1851438120D8C0D5000EC8A0 /* ActivityIndicator.xib in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
-				18847EA92070634700B90C9C /* StatsView.storyboard in Resources */,
 				188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */,
 				18DF6BDB202778D300BF0502 /* WaterEmitter.sks in Resources */,
 				1847EE2E20D6E78D00CB53E3 /* NewUsernameView.storyboard in Resources */,
 				18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */,
 				183E75A0203B83C100092B2A /* splash.wav in Resources */,
+				1884676320E97A2F00CE5F33 /* RightDetailTableViewCell.xib in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
@@ -1054,9 +1069,11 @@
 				18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */,
 				180C889D1FC77F5F00D19F85 /* AppDelegate.swift in Sources */,
 				18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */,
+				1884675F20E94D4800CE5F33 /* LeaderboardInteractor.swift in Sources */,
 				18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */,
 				18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */,
 				18847EA72070122F00B90C9C /* EmbeddedController.swift in Sources */,
+				1884675D20E94D1900CE5F33 /* LeaderboardViewController.swift in Sources */,
 				18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */,
 				1847EE3020D6E7A200CB53E3 /* NewUserViewController.swift in Sources */,
 				18CEF3171FD489D7005C3980 /* Logger.swift in Sources */,
@@ -1072,12 +1089,12 @@
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */,
+				1884676520E97A4000CE5F33 /* RightDetailTableViewCell.swift in Sources */,
 				18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */,
 				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,
 				18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */,
 				18E53F8E20C7770600BE7BB9 /* EndOfGameViewController.swift in Sources */,
 				18847EB220706B9400B90C9C /* NewChallengeViewController.swift in Sources */,
-				18847EAB2070635C00B90C9C /* StatsViewController.swift in Sources */,
 				18B3300B1FDC564800D59107 /* LoginManager.swift in Sources */,
 				18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */,
 				18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */,
@@ -1094,7 +1111,6 @@
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
 				18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */,
 				18DD3509208BDEB90077E7B1 /* Manager.swift in Sources */,
-				18847EAD2070637700B90C9C /* StatsInteractor.swift in Sources */,
 				1842D6DA201412E800571BD2 /* CGFloat+Helpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

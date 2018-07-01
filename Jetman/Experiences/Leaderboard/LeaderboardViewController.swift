@@ -1,0 +1,25 @@
+//
+//  LeaderboardViewController.swift
+//  Jetman
+//
+//  Created by Thomas Ganley on 7/1/18.
+//  Copyright © 2018 Thomas Ganley. All rights reserved.
+//
+
+import UIKit
+
+class LeaderboardViewController: UIViewController {
+
+    @IBOutlet fileprivate var interactor: LeaderboardInteractor!
+    @IBOutlet fileprivate var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    @IBAction func dismissPressed(_ sender: UIButton) {
+    }
+}
