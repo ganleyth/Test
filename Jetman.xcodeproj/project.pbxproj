@@ -52,7 +52,6 @@
 		18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18847EB62070726C00B90C9C /* MyChallengesView.storyboard */; };
 		18847EB9207073E300B90C9C /* MyChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EB8207073E300B90C9C /* MyChallengesViewController.swift */; };
 		18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */; };
-		188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */; };
 		188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA382083C03800E2AC6B /* GoogleService-Info.plist */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
@@ -82,12 +81,6 @@
 		18B3302C1FDD8F1500D59107 /* LayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302B1FDD8F1500D59107 /* LayerTests.swift */; };
 		18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */; };
 		18B330321FDDA07900D59107 /* SKNode+HelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */; };
-		18C8575320829A2E00E30EA9 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1853AAC920716253007EEC62 /* Messages.framework */; };
-		18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C8575520829A2E00E30EA9 /* MessagesViewController.swift */; };
-		18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575720829A2E00E30EA9 /* MainInterface.storyboard */; };
-		18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18C8575A20829A2F00E30EA9 /* Assets.xcassets */; };
-		18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */; };
-		18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */; };
 		18CEF3171FD489D7005C3980 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3161FD489D7005C3980 /* Logger.swift */; };
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
@@ -116,13 +109,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		180C88B41FC77F5F00D19F85 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 180C88981FC77F5F00D19F85;
-			remoteInfo = Jetman;
-		};
-		180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 180C88911FC77F5F00D19F85 /* Project object */;
 			proxyType = 1;
@@ -161,8 +147,6 @@
 		180C88AE1FC77F5F00D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180C88B91FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JetmanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		180C88C41FC77F6000D19F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1817292E207B0C8600D6F35E /* SharedJetman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SharedJetman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18172930207B0C8700D6F35E /* SharedJetman.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedJetman.h; sourceTree = "<group>"; };
 		18172931207B0C8700D6F35E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -205,7 +189,6 @@
 		18847EB62070726C00B90C9C /* MyChallengesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyChallengesView.storyboard; sourceTree = "<group>"; };
 		18847EB8207073E300B90C9C /* MyChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesViewController.swift; sourceTree = "<group>"; };
 		18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChallengesInteractor.swift; sourceTree = "<group>"; };
-		188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DefaultCompactView.storyboard; sourceTree = "<group>"; };
 		188CAA2F2083B6F400E2AC6B /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		188CAA302083B6F400E2AC6B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		188CAA322083B6F400E2AC6B /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
@@ -238,12 +221,6 @@
 		18B3302B1FDD8F1500D59107 /* LayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerTests.swift; sourceTree = "<group>"; };
 		18B3302F1FDDA05F00D59107 /* SKNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Helpers.swift"; sourceTree = "<group>"; };
 		18B330311FDDA07900D59107 /* SKNode+HelpersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+HelpersTests.swift"; sourceTree = "<group>"; };
-		18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = JetpackJimmyMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		18C8575520829A2E00E30EA9 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
-		18C8575820829A2E00E30EA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		18C8575A20829A2F00E30EA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18C8575C20829A2F00E30EA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCompactViewController.swift; sourceTree = "<group>"; };
 		18CEF3161FD489D7005C3980 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -291,25 +268,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		180C88BB1FC77F6000D19F85 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1817292A207B0C8600D6F35E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18C8574F20829A2E00E30EA9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18C8575320829A2E00E30EA9 /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,9 +283,7 @@
 			children = (
 				180C889B1FC77F5F00D19F85 /* Jetman */,
 				180C88B61FC77F6000D19F85 /* JetmanTests */,
-				180C88C11FC77F6000D19F85 /* JetmanUITests */,
 				1817292F207B0C8700D6F35E /* SharedJetman */,
-				18C8575420829A2E00E30EA9 /* JetpackJimmyMessages */,
 				180C889A1FC77F5F00D19F85 /* Products */,
 				CDBC9F1E65E66D3385737AD6 /* Pods */,
 				21BE0F6F51FB7D0D26498FDC /* Frameworks */,
@@ -335,9 +295,7 @@
 			children = (
 				180C88991FC77F5F00D19F85 /* Jetman.app */,
 				180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */,
-				180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */,
 				1817292E207B0C8600D6F35E /* SharedJetman.framework */,
-				18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -363,14 +321,6 @@
 				180C88B91FC77F6000D19F85 /* Info.plist */,
 			);
 			path = JetmanTests;
-			sourceTree = "<group>";
-		};
-		180C88C11FC77F6000D19F85 /* JetmanUITests */ = {
-			isa = PBXGroup;
-			children = (
-				180C88C41FC77F6000D19F85 /* Info.plist */,
-			);
-			path = JetmanUITests;
 			sourceTree = "<group>";
 		};
 		1817292F207B0C8700D6F35E /* SharedJetman */ = {
@@ -485,43 +435,6 @@
 				18B3302B1FDD8F1500D59107 /* LayerTests.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		18C8575420829A2E00E30EA9 /* JetpackJimmyMessages */ = {
-			isa = PBXGroup;
-			children = (
-				18C857682082A20700E30EA9 /* Experiences */,
-				18C8575A20829A2F00E30EA9 /* Assets.xcassets */,
-				18C8575C20829A2F00E30EA9 /* Info.plist */,
-			);
-			path = JetpackJimmyMessages;
-			sourceTree = "<group>";
-		};
-		18C857682082A20700E30EA9 /* Experiences */ = {
-			isa = PBXGroup;
-			children = (
-				18C857692082A21000E30EA9 /* Main */,
-				18C8576A2082A21A00E30EA9 /* DefaultCompactView */,
-			);
-			path = Experiences;
-			sourceTree = "<group>";
-		};
-		18C857692082A21000E30EA9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				18C8575720829A2E00E30EA9 /* MainInterface.storyboard */,
-				18C8575520829A2E00E30EA9 /* MessagesViewController.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		18C8576A2082A21A00E30EA9 /* DefaultCompactView */ = {
-			isa = PBXGroup;
-			children = (
-				188CAA2B2083ACB100E2AC6B /* DefaultCompactView.storyboard */,
-				18C857652082A18300E30EA9 /* DefaultCompactViewController.swift */,
-			);
-			path = DefaultCompactView;
 			sourceTree = "<group>";
 		};
 		18CEF3051FD32DED005C3980 /* Main */ = {
@@ -798,24 +711,6 @@
 			productReference = 180C88B31FC77F5F00D19F85 /* JetmanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		180C88BD1FC77F6000D19F85 /* JetmanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 180C88CD1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanUITests" */;
-			buildPhases = (
-				180C88BA1FC77F6000D19F85 /* Sources */,
-				180C88BB1FC77F6000D19F85 /* Frameworks */,
-				180C88BC1FC77F6000D19F85 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				180C88C01FC77F6000D19F85 /* PBXTargetDependency */,
-			);
-			name = JetmanUITests;
-			productName = JetmanUITests;
-			productReference = 180C88BE1FC77F6000D19F85 /* JetmanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		1817292D207B0C8600D6F35E /* SharedJetman */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18172939207B0C8700D6F35E /* Build configuration list for PBXNativeTarget "SharedJetman" */;
@@ -833,23 +728,6 @@
 			productName = SharedJetman;
 			productReference = 1817292E207B0C8600D6F35E /* SharedJetman.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18C8576220829A2F00E30EA9 /* Build configuration list for PBXNativeTarget "JetpackJimmyMessages" */;
-			buildPhases = (
-				18C8574E20829A2E00E30EA9 /* Sources */,
-				18C8574F20829A2E00E30EA9 /* Frameworks */,
-				18C8575020829A2E00E30EA9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = JetpackJimmyMessages;
-			productName = JetpackJimmyMessages;
-			productReference = 18C8575220829A2E00E30EA9 /* JetpackJimmyMessages.appex */;
-			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
 
@@ -888,23 +766,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 180C88981FC77F5F00D19F85;
 					};
-					180C88BD1FC77F6000D19F85 = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 180C88981FC77F5F00D19F85;
-					};
 					1817292D207B0C8600D6F35E = {
 						CreatedOnToolsVersion = 9.3;
 						ProvisioningStyle = Automatic;
-					};
-					18C8575120829A2E00E30EA9 = {
-						CreatedOnToolsVersion = 9.3;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.SafariKeychain = {
-								enabled = 0;
-							};
-						};
 					};
 				};
 			};
@@ -923,9 +787,7 @@
 			targets = (
 				180C88981FC77F5F00D19F85 /* Jetman */,
 				180C88B21FC77F5F00D19F85 /* JetmanTests */,
-				180C88BD1FC77F6000D19F85 /* JetmanUITests */,
 				1817292D207B0C8600D6F35E /* SharedJetman */,
-				18C8575120829A2E00E30EA9 /* JetpackJimmyMessages */,
 			);
 		};
 /* End PBXProject section */
@@ -972,29 +834,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		180C88BC1FC77F6000D19F85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1817292C207B0C8600D6F35E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1817293C207B0C9C00D6F35E /* SharedAssets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18C8575020829A2E00E30EA9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18C8576320829B5B00E30EA9 /* SharedAssets.xcassets in Resources */,
-				188CAA2C2083ACB100E2AC6B /* DefaultCompactView.storyboard in Resources */,
-				18C8575B20829A2F00E30EA9 /* Assets.xcassets in Resources */,
-				18C8575920829A2E00E30EA9 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1121,26 +965,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		180C88BA1FC77F6000D19F85 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		18172929207B0C8600D6F35E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18C8574E20829A2E00E30EA9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18C857662082A18300E30EA9 /* DefaultCompactViewController.swift in Sources */,
-				18C8575620829A2E00E30EA9 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,11 +979,6 @@
 			isa = PBXTargetDependency;
 			target = 180C88981FC77F5F00D19F85 /* Jetman */;
 			targetProxy = 180C88B41FC77F5F00D19F85 /* PBXContainerItemProxy */;
-		};
-		180C88C01FC77F6000D19F85 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 180C88981FC77F5F00D19F85 /* Jetman */;
-			targetProxy = 180C88BF1FC77F6000D19F85 /* PBXContainerItemProxy */;
 		};
 		18172934207B0C8700D6F35E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1179,14 +1002,6 @@
 				180C88AC1FC77F5F00D19F85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		18C8575720829A2E00E30EA9 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18C8575820829A2E00E30EA9 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1376,38 +1191,6 @@
 			};
 			name = Release;
 		};
-		180C88CE1FC77F6000D19F85 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				INFOPLIST_FILE = JetmanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Jetman;
-			};
-			name = Debug;
-		};
-		180C88CF1FC77F6000D19F85 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				INFOPLIST_FILE = JetmanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.JetmanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Jetman;
-			};
-			name = Release;
-		};
 		18172937207B0C8700D6F35E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1464,54 +1247,6 @@
 			};
 			name = Release;
 		};
-		18C8576020829A2F00E30EA9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
-				);
-				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		18C8576120829A2F00E30EA9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QFVJ6KY7E2;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/FirebaseAuth/Frameworks",
-				);
-				INFOPLIST_FILE = JetpackJimmyMessages/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ganleyapps.ProjectYelnag.JetpackJimmyMessages;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1542,29 +1277,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		180C88CD1FC77F6000D19F85 /* Build configuration list for PBXNativeTarget "JetmanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				180C88CE1FC77F6000D19F85 /* Debug */,
-				180C88CF1FC77F6000D19F85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		18172939207B0C8700D6F35E /* Build configuration list for PBXNativeTarget "SharedJetman" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18172937207B0C8700D6F35E /* Debug */,
 				18172938207B0C8700D6F35E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		18C8576220829A2F00E30EA9 /* Build configuration list for PBXNativeTarget "JetpackJimmyMessages" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18C8576020829A2F00E30EA9 /* Debug */,
-				18C8576120829A2F00E30EA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
