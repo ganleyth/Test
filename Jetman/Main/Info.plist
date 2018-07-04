@@ -18,15 +18,6 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>jetpackjimmy</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -53,9 +44,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>branch_app_domain</key>
-	<string>jetpackjimmyy04i.app.link</string>
-	<key>branch_key</key>
-	<string>key_live_jjw7eTpRSgkXBcICmQyqjfdetDddWq1j</string>
 </dict>
 </plist>

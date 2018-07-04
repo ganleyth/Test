@@ -103,7 +103,6 @@
 		18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */; };
 		18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */; };
 		18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */; };
-		18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E1CFFB204B0FA700B4B506 /* GameKit.framework */; };
 		18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */; };
 		18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFFF204B2A0100B4B506 /* SettingsViewController.swift */; };
 		18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */; };
@@ -282,7 +281,6 @@
 				18172935207B0C8700D6F35E /* SharedJetman.framework in Frameworks */,
 				181AD9C420CD702400EEEB7F /* CloudKit.framework in Frameworks */,
 				34CBCF6910CE0754412C1A46 /* Pods_Jetman.framework in Frameworks */,
-				18E1CFFC204B0FA700B4B506 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,13 +1008,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Jetman/Pods-Jetman-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Branch/Branch.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Branch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
