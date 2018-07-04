@@ -32,7 +32,7 @@ class CloudKitManager {
             guard let recordID = recordID else { returningCompletion(); return }
             returniCloudRecordID = recordID
             let predicate = NSPredicate(format: "iCloudRecordReference == %@", CKReference(recordID: recordID, action: .deleteSelf))
-            this.fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, with: { (records) in
+            this.fetchRecordsThatMatch(CKContainer.default().publicCloudDatabase, recordType: .user, predicate: predicate, qualityOfService: .userInteractive, with: { (records) in
                 guard
                     let firstRecord = records?.first,
                     let user = User(record: firstRecord) else { returningCompletion(); return }
