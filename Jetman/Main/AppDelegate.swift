@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     var viewControllerToPresent: UIViewController?
-    private lazy var serialQueue = DispatchQueue(label: "ActivityIndicatorSerialQueue")
+    
+    private lazy var serialQueue: DispatchQueue = DispatchQueue(label: "ActivityIndicatorSerialQueue", qos: .userInteractive)
     var _activityIndicatorView: ActivityIndicatorView?
     var activityIndicatorView: ActivityIndicatorView? {
         get {
@@ -127,7 +128,8 @@ extension AppDelegate {
         guard
             activityIndicatorView == nil,
             let activityIndicatorView = UINib(nibName: "ActivityIndicator", bundle: nil).instantiate(withOwner: nil, options: nil).first as? ActivityIndicatorView,
-            let topVC = topViewController else { return }
+            let topVC = topViewController,
+            !(topVC is GameplayViewController) else { return }
         
         activityIndicatorView.alpha = 0
         topVC.animateCenterPresentation(of: activityIndicatorView, shouldShow: true, completion: nil)
