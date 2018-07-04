@@ -14,7 +14,16 @@ enum RecordType: String {
 
 class CloudKitManager {
     
+    enum OperationCategory: String {
+        case leaderboardFetch
+    }
+    
     static let shared = CloudKitManager()
+    private lazy var operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .default
+        return queue
+    }()
 
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
@@ -127,11 +136,15 @@ class CloudKitManager {
             leaders = records.compactMap { User(record: $0) }
         }
     }
+    
+    func cancelOperation(for category: OperationCategory) {
+        operationQueue.operations.filter({ $0.name == category.rawValue }).forEach { $0.cancel() }
+    }
 }
 
 private extension CloudKitManager {
     
-    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, qualityOfService: QualityOfService = .background, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
+    func fetchRecordsThatMatch(_ database: CKDatabase, recordType: RecordType, predicate: NSPredicate, sortDescriptors: [NSSortDescriptor]? = nil, resultsLimit: Int? = nil, qualityOfService: QualityOfService = .background, category: OperationCategory? = nil, with completion: @escaping (_ records: [CKRecord]?) -> Void) {
         
         let query = CKQuery(recordType: recordType.rawValue, predicate: predicate)
         query.sortDescriptors = sortDescriptors
@@ -150,10 +163,12 @@ private extension CloudKitManager {
             }
         }
         
+        operation.database = database
         operation.qualityOfService = qualityOfService
+        operation.name = category?.rawValue
         
         DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
-        database.add(operation)
+        operationQueue.addOperation(operation)
     }
     
     func save(record: CKRecord, to database: CKDatabase, with completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {

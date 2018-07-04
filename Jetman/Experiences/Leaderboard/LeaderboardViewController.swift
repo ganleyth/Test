@@ -28,6 +28,7 @@ class LeaderboardViewController: UIViewController {
     }
     
     @IBAction func dismissPressed(_ sender: UIButton) {
+        CloudKitManager.shared.cancelOperation(for: .leaderboardFetch)
         delegate?.embeddedControllerShouldDismiss()
     }
 }
