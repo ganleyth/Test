@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d9e-ED-dsK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d9e-ED-dsK">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbX-6n-cIk">
-                                <rect key="frame" x="36.5" y="-12" width="40" height="44"/>
+                                <rect key="frame" x="591" y="-12" width="40" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="Lag-4U-2er"/>
@@ -61,7 +60,7 @@
                             <constraint firstItem="6Na-A7-4M9" firstAttribute="height" secondItem="KIb-a0-jcN" secondAttribute="height" multiplier="0.12" id="KIr-jL-bGM"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="top" secondItem="KIb-a0-jcN" secondAttribute="top" id="MQX-rS-2L0"/>
                             <constraint firstItem="6Na-A7-4M9" firstAttribute="centerX" secondItem="KIb-a0-jcN" secondAttribute="centerX" id="TGf-d6-fQa"/>
-                            <constraint firstItem="KbX-6n-cIk" firstAttribute="leading" secondItem="6CL-dx-gTv" secondAttribute="leading" constant="-16" id="Xzr-Sh-gtN"/>
+                            <constraint firstItem="KbX-6n-cIk" firstAttribute="trailing" secondItem="6CL-dx-gTv" secondAttribute="trailing" constant="16" id="Xzr-Sh-gtN"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="trailing" secondItem="sDR-e4-XQN" secondAttribute="trailing" constant="32" id="qcF-MX-vAF"/>
                             <constraint firstItem="KbX-6n-cIk" firstAttribute="top" secondItem="6CL-dx-gTv" secondAttribute="top" constant="-12" id="vcF-xd-55J"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="bottom" secondItem="KIb-a0-jcN" secondAttribute="bottom" id="w7Z-SY-WLu"/>

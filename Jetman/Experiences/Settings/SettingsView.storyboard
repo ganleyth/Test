@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSs-b1-cQ5">
-                                <rect key="frame" x="83" y="-12" width="40" height="44"/>
+                                <rect key="frame" x="544" y="-12" width="40" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CSs-b1-cQ5" secondAttribute="height" multiplier="10:11" id="6Ob-Rb-tim"/>
@@ -98,7 +98,7 @@
                         <constraints>
                             <constraint firstItem="dEU-q1-dOq" firstAttribute="height" secondItem="0G4-Ng-Hoy" secondAttribute="height" multiplier="0.15" id="4oe-zD-beb"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="trailing" secondItem="4wc-YL-W60" secondAttribute="trailing" constant="32" id="H1S-8S-ikY"/>
-                            <constraint firstItem="CSs-b1-cQ5" firstAttribute="leading" secondItem="adb-MW-lFo" secondAttribute="leading" constant="-16" id="MIB-w3-Twz"/>
+                            <constraint firstItem="CSs-b1-cQ5" firstAttribute="trailing" secondItem="adb-MW-lFo" secondAttribute="trailing" constant="16" id="MIB-w3-Twz"/>
                             <constraint firstItem="Bkd-me-3x9" firstAttribute="centerX" secondItem="0G4-Ng-Hoy" secondAttribute="centerX" id="N6V-wO-zCg"/>
                             <constraint firstItem="4wc-YL-W60" firstAttribute="leading" secondItem="adb-MW-lFo" secondAttribute="leading" constant="32" id="QXz-bn-3XI"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="centerX" secondItem="0G4-Ng-Hoy" secondAttribute="centerX" id="VGB-wc-ndG"/>
