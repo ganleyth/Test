@@ -26,9 +26,9 @@ class CloudKitManager {
     }()
 
     func fetchUser(with completion: @escaping (_ iCloudRecordID: CKRecordID?, _ user: User?) -> Void) {
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         CKContainer.default().fetchUserRecordID { [weak self] (recordID, error) in
-            DispatchQueue.main.async { AppDelegate.shared.hideActivityIndicator() }
+            DispatchQueue.main.async { AppDelegate.shared.decrementActivityCount() }
             var returniCloudRecordID: CKRecordID? = nil
             var returnUser: User? = nil
             let returningCompletion = { DispatchQueue.main.async { completion(returniCloudRecordID, returnUser) } } 
@@ -138,7 +138,10 @@ class CloudKitManager {
     }
     
     func cancelOperation(for category: OperationCategory) {
-        operationQueue.operations.filter({ $0.name == category.rawValue }).forEach { $0.cancel() }
+        operationQueue.operations.filter({ $0.name == category.rawValue }).forEach {
+            $0.cancel()
+            DispatchQueue.main.async { AppDelegate.shared.decrementActivityCount() }
+        }
     }
 }
 
@@ -158,7 +161,7 @@ private extension CloudKitManager {
         
         operation.queryCompletionBlock = { (_, _) in
             DispatchQueue.main.async {
-                AppDelegate.shared.hideActivityIndicator()
+                AppDelegate.shared.decrementActivityCount()
                 completion(records)
             }
         }
@@ -167,44 +170,44 @@ private extension CloudKitManager {
         operation.qualityOfService = qualityOfService
         operation.name = category?.rawValue
         
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         operationQueue.addOperation(operation)
     }
     
     func save(record: CKRecord, to database: CKDatabase, with completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         database.save(record) { (record, error) in
             if let error = error {
                 Logger.error("Error saving record: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
-                AppDelegate.shared.hideActivityIndicator()
+                AppDelegate.shared.decrementActivityCount()
                 completion(record, error)
             }
         }
     }
     
     func perform(query: CKQuery, in database: CKDatabase, with completion: @escaping (_ records: [CKRecord]?, _ error: Error?) -> Void) {
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         database.perform(query, inZoneWith: nil) { (records, error) in
             if let error = error {
                 Logger.error("Error performing query: \(query): \n\(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
-                AppDelegate.shared.hideActivityIndicator()
+                AppDelegate.shared.decrementActivityCount()
                 completion(records, error)
             }
         }
     }
     
     func update(recordID: CKRecordID, in database: CKDatabase, withNewKeysAndValues newKeysAndValues: [String: Any], with completion: @escaping (_ success: Bool, _ record: CKRecord?) -> Void) {
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         fetchRecordWith(recordID: recordID, in: database) { [weak self] (record, error) in
             guard let this = self else { completion(false, nil); return }
             
-            DispatchQueue.main.async { AppDelegate.shared.hideActivityIndicator() }
+            DispatchQueue.main.async { AppDelegate.shared.decrementActivityCount() }
             
             if let error = error {
                 Logger.error("Could not fetch record \(recordID) to update it: \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
@@ -222,7 +225,7 @@ private extension CloudKitManager {
                 record.setValue(value, forKey: key)
             })
             
-            DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+            DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
             this.save(record: record, to: database, with: { (record, error) in
                 var success = true
                 newKeysAndValues.keys.forEach {
@@ -231,7 +234,7 @@ private extension CloudKitManager {
                     }
                 }
                 DispatchQueue.main.async {
-                    AppDelegate.shared.hideActivityIndicator()
+                    AppDelegate.shared.decrementActivityCount()
                     completion(success, record)
                 }
             })
@@ -239,14 +242,14 @@ private extension CloudKitManager {
     }
     
     func fetchRecordWith(recordID: CKRecordID, in database: CKDatabase, completion: @escaping (_ record: CKRecord?, _ error: Error?) -> Void) {
-        DispatchQueue.main.async { AppDelegate.shared.showActivityIndicator() }
+        DispatchQueue.main.async { AppDelegate.shared.incrementActivityCount() }
         database.fetch(withRecordID: recordID) { (record, error) in
             if let error = error {
                 Logger.error("Error fetching record with id \(recordID): \(error.localizedDescription)", filePath: #file, funcName: #function, lineNumber: #line)
             }
             
             DispatchQueue.main.async {
-                AppDelegate.shared.hideActivityIndicator()
+                AppDelegate.shared.decrementActivityCount()
                 completion(record, error)
             }
         }
