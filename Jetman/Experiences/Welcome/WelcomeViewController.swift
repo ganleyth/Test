@@ -42,6 +42,9 @@ final class WelcomeViewController: UIViewController {
         embeddedControllerContainerView.transform = CGAffineTransform(translationX: 0, y: containerViewYTranslation + 60)
         
         configureBannerAd()
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(embeddedControllerShouldDismiss))
+        dimmingView.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -156,7 +159,7 @@ private extension WelcomeViewController {
 
 // MARK: - Embedded controller delegate
 extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
-    func embeddedControllerShouldDismiss() {
+    @objc func embeddedControllerShouldDismiss() {
         animateEmbeddedControllerVisibility(isVisible: false) { [weak self] in
             guard let this = self else { return }
             this.castedEmbeddedController?.removeChildren()
