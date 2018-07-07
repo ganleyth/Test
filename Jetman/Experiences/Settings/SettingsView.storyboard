@@ -18,6 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-fy-jYB">
+                                <rect key="frame" x="568" y="0.0" width="99" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tre-6h-pGW">
+                                <rect key="frame" x="0.0" y="0.0" width="99" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="adb-MW-lFo">
                                 <rect key="frame" x="99" y="0.0" width="469" height="375"/>
                                 <constraints>
@@ -97,17 +105,25 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dEU-q1-dOq" firstAttribute="height" secondItem="0G4-Ng-Hoy" secondAttribute="height" multiplier="0.15" id="4oe-zD-beb"/>
+                            <constraint firstItem="2kh-fy-jYB" firstAttribute="bottom" secondItem="0G4-Ng-Hoy" secondAttribute="bottom" id="5by-N3-d6A"/>
+                            <constraint firstItem="2kh-fy-jYB" firstAttribute="leading" secondItem="adb-MW-lFo" secondAttribute="trailing" id="7sd-WV-gXd"/>
+                            <constraint firstItem="tre-6h-pGW" firstAttribute="leading" secondItem="0G4-Ng-Hoy" secondAttribute="leading" id="8V1-FA-8cB"/>
+                            <constraint firstItem="tre-6h-pGW" firstAttribute="top" secondItem="0G4-Ng-Hoy" secondAttribute="top" id="8vl-Rf-Kr6"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="trailing" secondItem="4wc-YL-W60" secondAttribute="trailing" constant="32" id="H1S-8S-ikY"/>
+                            <constraint firstItem="2kh-fy-jYB" firstAttribute="trailing" secondItem="0G4-Ng-Hoy" secondAttribute="trailing" id="K5P-op-qFV"/>
                             <constraint firstItem="CSs-b1-cQ5" firstAttribute="trailing" secondItem="adb-MW-lFo" secondAttribute="trailing" constant="16" id="MIB-w3-Twz"/>
                             <constraint firstItem="Bkd-me-3x9" firstAttribute="centerX" secondItem="0G4-Ng-Hoy" secondAttribute="centerX" id="N6V-wO-zCg"/>
                             <constraint firstItem="4wc-YL-W60" firstAttribute="leading" secondItem="adb-MW-lFo" secondAttribute="leading" constant="32" id="QXz-bn-3XI"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="centerX" secondItem="0G4-Ng-Hoy" secondAttribute="centerX" id="VGB-wc-ndG"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="top" secondItem="0G4-Ng-Hoy" secondAttribute="top" id="VSN-y9-sHp"/>
+                            <constraint firstItem="adb-MW-lFo" firstAttribute="leading" secondItem="tre-6h-pGW" secondAttribute="trailing" id="cCr-HM-cfl"/>
                             <constraint firstItem="Bkd-me-3x9" firstAttribute="top" secondItem="0G4-Ng-Hoy" secondAttribute="top" constant="32" id="e3I-Ck-pPw"/>
                             <constraint firstItem="adb-MW-lFo" firstAttribute="bottom" secondItem="0G4-Ng-Hoy" secondAttribute="bottom" id="glW-ef-zQ3"/>
                             <constraint firstItem="CSs-b1-cQ5" firstAttribute="top" secondItem="adb-MW-lFo" secondAttribute="top" constant="-12" id="joT-W8-CUg"/>
                             <constraint firstItem="Bkd-me-3x9" firstAttribute="height" secondItem="0G4-Ng-Hoy" secondAttribute="height" multiplier="0.12" id="m3C-LM-9DW"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4wc-YL-W60" secondAttribute="bottom" constant="32" id="m7y-9e-gEY"/>
+                            <constraint firstItem="tre-6h-pGW" firstAttribute="bottom" secondItem="0G4-Ng-Hoy" secondAttribute="bottom" id="nyX-Pl-bDB"/>
+                            <constraint firstItem="2kh-fy-jYB" firstAttribute="top" secondItem="0G4-Ng-Hoy" secondAttribute="top" id="wV1-F7-v0P"/>
                             <constraint firstItem="4wc-YL-W60" firstAttribute="top" secondItem="Bkd-me-3x9" secondAttribute="bottom" priority="750" constant="40" id="wqo-LW-wQp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e2Y-jn-MZU"/>
@@ -115,6 +131,8 @@
                     <connections>
                         <outlet property="hapticsSwitch" destination="Jc6-av-i8n" id="mHP-bu-b7M"/>
                         <outlet property="soundsSwitch" destination="dEU-q1-dOq" id="tkW-VB-cWT"/>
+                        <outlet property="tapPlateLeft" destination="tre-6h-pGW" id="ZrW-v6-Ghe"/>
+                        <outlet property="tapPlateRight" destination="2kh-fy-jYB" id="M63-sh-gMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzA-7C-Vkl" userLabel="First Responder" sceneMemberID="firstResponder"/>

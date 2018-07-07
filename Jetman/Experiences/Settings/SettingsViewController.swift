@@ -11,6 +11,8 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet fileprivate var soundsSwitch: UIButton!
     @IBOutlet fileprivate var hapticsSwitch: UIButton!
+    @IBOutlet fileprivate var tapPlateLeft: UIView!
+    @IBOutlet fileprivate var tapPlateRight: UIView!
     
     fileprivate var soundsIsOn: Bool! {
         didSet {
@@ -30,6 +32,11 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         soundsIsOn = GameSession.shared.settings.allowSounds
         hapticsIsOn = GameSession.shared.settings.allowHaptics
+        
+        [tapPlateLeft, tapPlateRight].forEach {
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(askDelegateToDismiss))
+            $0?.addGestureRecognizer(tapRecognizer)
+        }
     }
     
     weak var delegate: WelcomeViewEmbeddedControllerDelegate?
@@ -43,6 +50,10 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func dismissSettingsView(_ sender: UIButton) {
+        askDelegateToDismiss()
+    }
+    
+    @objc private func askDelegateToDismiss() {
         delegate?.embeddedControllerShouldDismiss()
     }
 }
