@@ -18,6 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrw-8g-hjo">
+                                <rect key="frame" x="0.0" y="0.0" width="52.5" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vY8-Nn-Lpa">
+                                <rect key="frame" x="615" y="0.0" width="52" height="375"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SettingsBackground" translatesAutoresizingMaskIntoConstraints="NO" id="6CL-dx-gTv">
                                 <rect key="frame" x="52.5" y="0.0" width="562.5" height="375"/>
                                 <constraints>
@@ -54,16 +62,24 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vY8-Nn-Lpa" firstAttribute="leading" secondItem="6CL-dx-gTv" secondAttribute="trailing" id="5om-Ai-UbU"/>
                             <constraint firstItem="sDR-e4-XQN" firstAttribute="top" secondItem="6Na-A7-4M9" secondAttribute="bottom" constant="16" id="7Bg-aH-Ets"/>
+                            <constraint firstItem="6CL-dx-gTv" firstAttribute="leading" secondItem="hrw-8g-hjo" secondAttribute="trailing" id="BAQ-2d-lE6"/>
+                            <constraint firstItem="vY8-Nn-Lpa" firstAttribute="top" secondItem="KIb-a0-jcN" secondAttribute="top" id="EgX-OT-UzU"/>
                             <constraint firstItem="sDR-e4-XQN" firstAttribute="leading" secondItem="6CL-dx-gTv" secondAttribute="leading" constant="32" id="K7G-6b-cG6"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="centerX" secondItem="KIb-a0-jcN" secondAttribute="centerX" id="K8L-hQ-JUJ"/>
                             <constraint firstItem="6Na-A7-4M9" firstAttribute="height" secondItem="KIb-a0-jcN" secondAttribute="height" multiplier="0.12" id="KIr-jL-bGM"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="top" secondItem="KIb-a0-jcN" secondAttribute="top" id="MQX-rS-2L0"/>
+                            <constraint firstItem="hrw-8g-hjo" firstAttribute="top" secondItem="KIb-a0-jcN" secondAttribute="top" id="P0e-Kz-0xK"/>
                             <constraint firstItem="6Na-A7-4M9" firstAttribute="centerX" secondItem="KIb-a0-jcN" secondAttribute="centerX" id="TGf-d6-fQa"/>
                             <constraint firstItem="KbX-6n-cIk" firstAttribute="trailing" secondItem="6CL-dx-gTv" secondAttribute="trailing" constant="16" id="Xzr-Sh-gtN"/>
+                            <constraint firstAttribute="bottom" secondItem="hrw-8g-hjo" secondAttribute="bottom" id="cbb-m5-f16"/>
+                            <constraint firstAttribute="trailing" secondItem="vY8-Nn-Lpa" secondAttribute="trailing" id="f7P-vm-cs7"/>
+                            <constraint firstAttribute="bottom" secondItem="vY8-Nn-Lpa" secondAttribute="bottom" id="psU-M1-3XC"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="trailing" secondItem="sDR-e4-XQN" secondAttribute="trailing" constant="32" id="qcF-MX-vAF"/>
                             <constraint firstItem="KbX-6n-cIk" firstAttribute="top" secondItem="6CL-dx-gTv" secondAttribute="top" constant="-12" id="vcF-xd-55J"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="bottom" secondItem="KIb-a0-jcN" secondAttribute="bottom" id="w7Z-SY-WLu"/>
+                            <constraint firstItem="hrw-8g-hjo" firstAttribute="leading" secondItem="KIb-a0-jcN" secondAttribute="leading" id="xgG-gp-nak"/>
                             <constraint firstItem="6Na-A7-4M9" firstAttribute="top" secondItem="KIb-a0-jcN" secondAttribute="top" constant="32" id="yrf-Jx-p7N"/>
                             <constraint firstItem="6CL-dx-gTv" firstAttribute="bottom" secondItem="sDR-e4-XQN" secondAttribute="bottom" constant="48" id="zvd-Dj-bB8"/>
                         </constraints>
@@ -72,6 +88,8 @@
                     <connections>
                         <outlet property="interactor" destination="DuP-zh-o90" id="ydP-Pq-5eL"/>
                         <outlet property="tableView" destination="sDR-e4-XQN" id="t7g-9y-xgT"/>
+                        <outlet property="tapPlateLeft" destination="hrw-8g-hjo" id="NKj-LB-a8l"/>
+                        <outlet property="tapPlateRight" destination="vY8-Nn-Lpa" id="EhN-nz-Yvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2br-Gg-CBt" userLabel="First Responder" sceneMemberID="firstResponder"/>

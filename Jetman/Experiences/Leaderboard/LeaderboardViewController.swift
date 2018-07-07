@@ -12,6 +12,8 @@ class LeaderboardViewController: UIViewController {
 
     @IBOutlet fileprivate var interactor: LeaderboardInteractor!
     @IBOutlet fileprivate var tableView: UITableView!
+    @IBOutlet fileprivate var tapPlateLeft: UIView!
+    @IBOutlet fileprivate var tapPlateRight: UIView!
     
     weak var delegate: WelcomeViewEmbeddedControllerDelegate?
     
@@ -25,9 +27,18 @@ class LeaderboardViewController: UIViewController {
             this.tableView.reloadData()
         }
         interactor.fetchLeaders()
+        
+        [tapPlateLeft, tapPlateRight].forEach {
+            let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(askDelegateToDismiss))
+            $0?.addGestureRecognizer(tapRecognizer)
+        }
     }
     
     @IBAction func dismissPressed(_ sender: UIButton) {
+        askDelegateToDismiss()
+    }
+    
+    @objc private func askDelegateToDismiss() {
         CloudKitManager.shared.cancelOperation(for: .leaderboardFetch)
         delegate?.embeddedControllerShouldDismiss()
     }
