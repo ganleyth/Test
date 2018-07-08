@@ -37,6 +37,13 @@ class NewUserViewController: UIViewController {
             guard let this = self else { return }
             guard error == nil else {
                 this.presentInfoAlertWith(title: "Oops!", message: "Couldn't connect to the network. Try again!")
+                this.usernameTextField.becomeFirstResponder()
+                return
+            }
+            
+            guard isAvailable else {
+                this.presentInfoAlertWith(title: "Oops!", message: "That username is taken. Try another one.")
+                this.usernameTextField.becomeFirstResponder()
                 return
             }
             
