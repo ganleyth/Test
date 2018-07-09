@@ -43,16 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var viewControllerToPresent: UIViewController?
     
     private lazy var serialQueue: DispatchQueue = DispatchQueue(label: "ActivityIndicatorSerialQueue", qos: .userInteractive)
-    private var _activityIndicatorView: ActivityIndicatorView?
-    private var activityCount = 0 {
-        didSet {
-            if activityCount == 0 {
-                hideActivityIndicator()
-            } else if activityCount == 1 {
-                showActivityIndicator()
-            }
-        }
-    }
+    var _activityIndicatorView: ActivityIndicatorView?
     var activityIndicatorView: ActivityIndicatorView? {
         get {
             var result: ActivityIndicatorView?
@@ -133,16 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // Activity Indicator
 extension AppDelegate {
-    func incrementActivityCount() {
-        activityCount += 1
-    }
-    
-    func decrementActivityCount() {
-        guard activityCount >= 1 else { return }
-        activityCount -= 1
-    }
-    
-    private func showActivityIndicator() {
+    func showActivityIndicator() {
         guard
             activityIndicatorView == nil,
             let activityIndicatorView = UINib(nibName: "ActivityIndicator", bundle: nil).instantiate(withOwner: nil, options: nil).first as? ActivityIndicatorView,
@@ -154,7 +136,7 @@ extension AppDelegate {
         self.activityIndicatorView = activityIndicatorView
     }
     
-    private func hideActivityIndicator() {
+    func hideActivityIndicator() {
         guard let activityIndicatorView = activityIndicatorView else { return }
         activityIndicatorView.endActivityAnimation { [weak self] in
             guard let this = self else { return }
