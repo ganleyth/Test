@@ -160,6 +160,14 @@ private extension WelcomeViewController {
 // MARK: - Embedded controller delegate
 extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
     @objc func embeddedControllerShouldDismiss() {
+        if let firstChildVC = embeddedController?.childViewControllers.first {
+            switch firstChildVC {
+            case _ as LeaderboardViewController:
+                CloudKitManager.shared.cancelOperation(for: .leaderboardFetch)
+            default:
+                break
+            }
+        }
         animateEmbeddedControllerVisibility(isVisible: false) { [weak self] in
             guard let this = self else { return }
             this.castedEmbeddedController?.removeChildren()
