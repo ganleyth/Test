@@ -49,7 +49,7 @@ final class WelcomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        bannerView.load(GADRequest())
+//        bannerView.load(GADRequest())
     }
     
     override func viewDidAppear(_ animated: Bool) {
