@@ -8,5 +8,6 @@ use_frameworks!
 # Pods for Jetman
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
+pod 'GA-SDK-IOS'
 
 end
