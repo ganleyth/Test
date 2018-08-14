@@ -9,5 +9,6 @@ use_frameworks!
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
 pod 'GA-SDK-IOS'
+pod 'FBSDKCoreKit'
 
 end
