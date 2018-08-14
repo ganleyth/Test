@@ -9,6 +9,7 @@
 import SpriteKit
 import AVFoundation
 import StoreKit
+import GameAnalytics
 
 class GameplaySceneInteractor: Interactor {
     
@@ -150,6 +151,7 @@ extension GameplaySceneInteractor {
         case .yetToStart:
             player.state = .idle
         case .playing:
+            GameAnalytics.addProgressionEvent(with: GAProgressionStatusStart, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!")
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: Constants.TileMapLayer.startingVelocity, y: 0))
         case .gameOver:
@@ -162,6 +164,8 @@ extension GameplaySceneInteractor {
             if gameplayViewController?.challenge != nil { updateChallenge() }
             hasEnded = true
             incrementGamesPlayedCountAndRequestAppRating()
+            let score = scene.scoreKeeper.currentScore
+            GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!", score: score)
         }
     }
 }
