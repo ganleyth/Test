@@ -300,13 +300,3 @@ extension GameplaySceneInteractor: AVAudioPlayerDelegate {
         }
     }
 }
-
-extension GameplaySceneInteractor: ScoreKeeperDelegate {
-    func scoreDidReachCheckpointMultiple() {
-        guard let levelLayer = scene?.levelLayer else {
-            fatalError("Level layer not available.")
-        }
-        let newVelocity = levelLayer.velocity + Constants.TileMapLayer.velocityDifficultyIncrement
-        levelLayer.setVelocity(value: newVelocity)
-    }
-}
