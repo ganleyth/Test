@@ -115,7 +115,7 @@ struct Constants {
     struct TileMapLayer {
         static let defaultTileWidth: CGFloat = 128.0
         static let defaultTileHeight: CGFloat = 128.0
-        static let defaultRowCount = 16
+        static let defaultRowCount = 9
         static let startingVelocity = -220
         static let velocityDifficultyIncrement = CGPoint(x: -2, y: 0)
         
@@ -124,7 +124,7 @@ struct Constants {
         }
         
         static var maxObstacleHeight: Int {
-            return Int(defaultRowCount / 2)
+            return Int(defaultRowCount / 2) - 2
         }
         
         static var defaultColumnCount: Int {

@@ -26,7 +26,7 @@ class GameplayScene: SKScene {
             let view = view,
             let playerPosition = levelLayer?.startingPositionForPlayer else { return nil }
         let player = Player(gender: GameSession.shared.settings.playerGender)
-        player.scaleToWindowSize(view.bounds.size, height: true, multiplier: 0.1)
+        player.scaleToWindowSize(view.bounds.size, height: true, multiplier: 0.18)
         return player
     }()
     

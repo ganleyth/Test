@@ -63,7 +63,7 @@ extension Player {
     
     private func updateRotation() {
         if state == .flying {
-            let rotation = SKAction.rotate(toAngle: CGFloat(-55.0).degreesToRadians, duration: 0.3)
+            let rotation = SKAction.rotate(toAngle: CGFloat(-10.0).degreesToRadians, duration: 0.1)
             run(rotation)
         }
     }
@@ -85,6 +85,9 @@ extension Player {
             if let collisionBitmask = physicsBody?.collisionBitMask {
                 physicsBody?.collisionBitMask = collisionBitmask & inverseForPlatfom
             }
+            // Update action
+            let animation = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.08))
+            run(animation, withKey: Constants.Player.animationKey)
         case .dead:
             self.texture = firstTexture
             if isAscending { endAscension() }
