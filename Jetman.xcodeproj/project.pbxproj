@@ -98,6 +98,7 @@
 		18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */; };
 		18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */; };
 		18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFFF204B2A0100B4B506 /* SettingsViewController.swift */; };
+		18E36BC72140136A00858560 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E36BC62140136A00858560 /* Obstacle.swift */; };
 		18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */; };
 		18E53F8E20C7770600BE7BB9 /* EndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */; };
 		18EFBA602083DF90007462CC /* Jetman.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 183E75A4203BADAB00092B2A /* Jetman.entitlements */; };
@@ -239,6 +240,7 @@
 		18E1CFFB204B0FA700B4B506 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsView.storyboard; sourceTree = "<group>"; };
 		18E1CFFF204B2A0100B4B506 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		18E36BC62140136A00858560 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndOfGameView.storyboard; sourceTree = "<group>"; };
 		18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameViewController.swift; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
@@ -464,6 +466,7 @@
 				18DD350C208CE9080077E7B1 /* Friend.swift */,
 				181AD9C520CD82B100EEEB7F /* User.swift */,
 				181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */,
+				18E36BC62140136A00858560 /* Obstacle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
 				1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */,
+				18E36BC72140136A00858560 /* Obstacle.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
