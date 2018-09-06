@@ -71,18 +71,12 @@ final class LevelLayer: Layer {
         
         obstacleBuildingBlocks = ObstacleBuildingBlocks(topTile: obstacleTileTop, middleTile: obstacleTileMiddle, bottomTile: obstacleTileBottom)
         
-        guard
-            let bottomBoundaryTopMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topMiddle.rawValue }).first,
-            let bottomBoundaryTopIncreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topIncrease.rawValue }).first,
-            let bottomBoundaryTopDecreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topDecrease.rawValue }).first,
-            let bottomBoundaryMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middle.rawValue }).first,
-            let bottomBoundaryMiddleIncreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middleIncrease.rawValue }).first,
-            let bottomBoundaryMiddleDecreaseTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.middleDecrease.rawValue }).first else {
+        guard let bottomBoundaryTopMiddleTile = tileSet.tileGroups.filter({ $0.name == Constants.BottomBoundaryTileName.topMiddle.rawValue }).first else {
                 Logger.severe("Invalid tile set for level layer - bottom boundary", filePath: #file, funcName: #function, lineNumber: #line)
                 fatalError()
         }
         
-        bottomBoundaryBuildingBlocks = BottomBoundaryBuildingBlocks(topMiddleTile: bottomBoundaryTopMiddleTile, topIncreaseTile: bottomBoundaryTopIncreaseTile, topDecreaseTile: bottomBoundaryTopDecreaseTile, middleTile: bottomBoundaryMiddleTile, middleIncreaseTile: bottomBoundaryMiddleIncreaseTile, middleDecreaseTile: bottomBoundaryMiddleDecreaseTile)
+        bottomBoundaryBuildingBlocks = BottomBoundaryBuildingBlocks(topMiddleTile: bottomBoundaryTopMiddleTile)
         
         guard
             let platformLeadingTile = tileSet.tileGroups.filter({ $0.name == Constants.PlatformTileName.leading }).first,
@@ -145,22 +139,11 @@ final class LevelLayer: Layer {
 extension LevelLayer {
 
     private func populateBottomBoundary(for tileMap: SKTileMapNode) {
-        var currentRow = currentBottomBoundaryMaxRow
-
         for j in 0..<tileMap.numberOfColumns {
-            tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentRow)
+            tileMap.setTileGroup(bottomBoundaryBuildingBlocks.topMiddleTile, forColumn: j, row: currentBottomBoundaryMaxRow)
         }
 
-        addBottomBoundaryPhysicsBody(to: tileMap, atLevel: currentRow)
-        currentRow -= 1
-
-        while currentRow >= 0 {
-            for j in 0..<tileMap.numberOfColumns {
-                tileMap.setTileGroup(bottomBoundaryBuildingBlocks.middleTile, forColumn: j, row: currentRow)
-            }
-            currentRow -= 1
-        }
-        
+        addBottomBoundaryPhysicsBody(to: tileMap, atLevel: currentBottomBoundaryMaxRow)
     }
     
     private func addPlatformToFirstTileMap() {
@@ -358,11 +341,6 @@ struct ObstacleBuildingBlocks {
 
 struct BottomBoundaryBuildingBlocks {
     let topMiddleTile: SKTileGroup
-    let topIncreaseTile: SKTileGroup
-    let topDecreaseTile: SKTileGroup
-    let middleTile: SKTileGroup
-    let middleIncreaseTile: SKTileGroup
-    let middleDecreaseTile: SKTileGroup
 }
 
 struct PlatformBuildingBlocks {
