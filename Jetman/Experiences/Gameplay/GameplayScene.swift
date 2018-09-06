@@ -73,7 +73,7 @@ class GameplayScene: SKScene {
         
         guard
             let levelLayer = levelLayer else { return }
-        scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: levelLayer.completedTileMaps)
+//        scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: levelLayer.completedTileMaps)
 
         gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: scoreKeeper.currentScore)
     }

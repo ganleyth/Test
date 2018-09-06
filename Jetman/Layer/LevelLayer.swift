@@ -10,39 +10,34 @@ import SpriteKit
 import GameKit
 
 final class LevelLayer: Layer {
-    private var leadingTileMap: SKTileMapNode
-    private var trailingTileMap: SKTileMapNode
+    private var guideTileMap: SKTileMapNode
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     private let platformBuildingBlocks: PlatformBuildingBlocks
     
     private var currentBottomBoundaryMaxRow = 0
     
-    private var leadingTileMapObstaclePositions: [CoordinatePosition] = []
-    private var trailingTileMapObstaclePositions: [CoordinatePosition] = []
+    private var obstaclePositions: [CoordinatePosition] = []
     private var platformPositions: [CoordinatePosition] = []
-    
-    private let minNumberOfObstacles = 2
-    private let maxNumberOfObstacles = 3
     
     private var platformRemoved = false
     
-    var completedTileMaps = 0
     lazy var absoluteTileMapWidth: CGFloat = {
-        return (leadingTileMap.frame.width + trailingTileMap.frame.width) / 2.0
+        return guideTileMap.frame.width
     }()
+    
     var currentPosition: CGPoint {
-        return -leadingTileMap.position
+        return -guideTileMap.position
     }
     
     var startingPositionForPlayer: CGPoint {
         let sumOfX = platformPositions.reduce(0.0) { (sum, nextPosition) -> CGFloat in
-            return sum + CGFloat(nextPosition.x) * leadingTileMap.scaledTileSize.width
+            return sum + CGFloat(nextPosition.x) * guideTileMap.scaledTileSize.width
         }
         
         let x = sumOfX / CGFloat(platformPositions.count)
-        let y = CGFloat(leadingTileMap.numberOfRows - 2) * leadingTileMap.scaledTileSize.height
-        let xOffsetForCentering = 0.5 * leadingTileMap.scaledTileSize.width
+        let y = CGFloat(guideTileMap.numberOfRows - 2) * guideTileMap.scaledTileSize.height
+        let xOffsetForCentering = 0.5 * guideTileMap.scaledTileSize.width
         return CGPoint(x: x + xOffsetForCentering, y: y)
     }
     
@@ -57,6 +52,10 @@ final class LevelLayer: Layer {
         }
         
         return possiblePositions
+    }()
+    
+    private lazy var numberOfColumns: Int = {
+        return ((LevelManager.shared.currentObstacleCount + 1) * 5)
     }()
 
     init(windowSize: CGSize, tileSet: SKTileSet) {
@@ -88,21 +87,15 @@ final class LevelLayer: Layer {
         
         platformBuildingBlocks = PlatformBuildingBlocks(leadingTile: platformLeadingTile, middleTile: platformMiddleTile, trailingTile: platformTrailingTile)
         
-        leadingTileMap = SKTileMapNode()
-        trailingTileMap = SKTileMapNode()
+        guideTileMap = SKTileMapNode()
         
         super.init()
         
-        initializeTileMap(leadingTileMap, with: tileSet, windowSize: windowSize)
-        initializeTileMap(trailingTileMap, with: tileSet, windowSize: windowSize)
-        
-        trailingTileMap.position = CGPoint(x: leadingTileMap.frame.maxX, y: 0.0)
-        populateTrailingTileMap()
-        
+        initializeTileMap(guideTileMap, with: tileSet, windowSize: windowSize)
+        populateGuideTileMap()
         addPlatformToFirstTileMap()
         
-        addChild(leadingTileMap)
-        addChild(trailingTileMap)
+        addChild(guideTileMap)
     }
     
     private func initializeTileMap(_ tileMap: SKTileMapNode, with tileSet: SKTileSet, windowSize: CGSize) {
@@ -118,7 +111,7 @@ final class LevelLayer: Layer {
     private func configureTileMap(_ tileMap: SKTileMapNode, forWindowSize windowSize: CGSize) {
         tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
         tileMap.numberOfRows = Constants.TileMapLayer.defaultRowCount
-        tileMap.numberOfColumns = Constants.TileMapLayer.defaultColumnCount
+        tileMap.numberOfColumns = numberOfColumns
         
         tileMap.scaleToWindowSize(windowSize)
     }
@@ -129,9 +122,6 @@ final class LevelLayer: Layer {
     
     override func update(with delta: TimeInterval, in frameSize: CGSize) {
         super.update(with: delta, in: frameSize)
-        if leadingTileMap.frame.maxX < 0 {
-            shiftLeadingTileMapToTrailingPosition()
-        }
     }
 }
 
@@ -147,34 +137,34 @@ extension LevelLayer {
     }
     
     private func addPlatformToFirstTileMap() {
-        let middleRow = Int(leadingTileMap.numberOfRows / 2) - 1
-        leadingTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 0, row: middleRow)
-        leadingTileMap.setTileGroup(platformBuildingBlocks.trailingTile, forColumn: 1, row: middleRow)
+        let middleRow = Int(guideTileMap.numberOfRows / 2) - 1
+        guideTileMap.setTileGroup(platformBuildingBlocks.leadingTile, forColumn: 0, row: middleRow)
+        guideTileMap.setTileGroup(platformBuildingBlocks.trailingTile, forColumn: 1, row: middleRow)
         
         for i in 0...1 {
             platformPositions.append(CoordinatePosition(x: i, y: middleRow))
         }
         
-        leadingTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 0, y: middleRow), numberOfRows: 1, numberOfColumns: 2, type: .platform)
+        guideTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 0, y: middleRow), numberOfRows: 1, numberOfColumns: 2, type: .platform)
     }
     
-    private func populateTrailingTileMap() {
+    private func populateGuideTileMap() {
         
-        let randomNumberOfObstaclesZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxNumberOfObstacles - minNumberOfObstacles) + 1)
-        let randomNumberOfObstacles = minNumberOfObstacles + randomNumberOfObstaclesZeroIndexed
-        
-        var lengths = [Int]()
-        for _ in 0..<randomNumberOfObstacles {
-            lengths.append(randomObstacleLength())
-        }
-        
-        let positions = generateRandomObstaclePositions(for: trailingTileMap, numberOfSegments: randomNumberOfObstacles, lengths: lengths)
-        
-        for i in 0..<positions.count {
-            let position = positions[i]
-            let length = lengths[i]
-            addObstacleTo(trailingTileMap, length: length, xIndex: position.x, yIndex: position.y)
-        }
+//        let randomNumberOfObstaclesZeroIndexed = GKRandomSource.sharedRandom().nextInt(upperBound: (maxNumberOfObstacles - minNumberOfObstacles) + 1)
+//        let randomNumberOfObstacles = minNumberOfObstacles + randomNumberOfObstaclesZeroIndexed
+//
+//        var lengths = [Int]()
+//        for _ in 0..<randomNumberOfObstacles {
+//            lengths.append(randomObstacleLength())
+//        }
+//
+//        let positions = generateRandomObstaclePositions(for: trailingTileMap, numberOfSegments: randomNumberOfObstacles, lengths: lengths)
+//
+//        for i in 0..<positions.count {
+//            let position = positions[i]
+//            let length = lengths[i]
+//            addObstacleTo(trailingTileMap, length: length, xIndex: position.x, yIndex: position.y)
+//        }
     }
     
     private func randomObstacleLength() -> Int {
@@ -194,18 +184,18 @@ extension LevelLayer {
         let middleIndexes = (bottomIndex + 1)...(bottomIndex + length)
         
         tileMap.setTileGroup(obstacleBuildingBlocks.bottomTile, forColumn: xIndex, row: bottomIndex)
-        trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: bottomIndex))
+        obstaclePositions.append(CoordinatePosition(x: xIndex, y: bottomIndex))
         tileMap.setTileGroup(obstacleBuildingBlocks.topTile, forColumn: xIndex, row: topIndex)
-        trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: topIndex))
+        obstaclePositions.append(CoordinatePosition(x: xIndex, y: topIndex))
         
         for i in middleIndexes {
             tileMap.setTileGroup(obstacleBuildingBlocks.middleTile, forColumn: xIndex, row: i)
-            trailingTileMapObstaclePositions.append(CoordinatePosition(x: xIndex, y: i))
+            obstaclePositions.append(CoordinatePosition(x: xIndex, y: i))
         }
         
         guard let middleIndexesMin = middleIndexes.min() else { return }
         
-        trailingTileMap.addObstaclePhysicsBodies(with: CoordinatePosition(x: xIndex, y: middleIndexesMin), length: length)
+        guideTileMap.addObstaclePhysicsBodies(with: CoordinatePosition(x: xIndex, y: middleIndexesMin), length: length)
     }
     
     private func generateRandomObstaclePositions(for tileMap: SKTileMapNode, numberOfSegments: Int, lengths: [Int]) -> [CoordinatePosition] {
@@ -263,18 +253,6 @@ extension LevelLayer {
         return positions
     }
     
-    private func clearAllObstaclesInTileMap(_ tileMap: SKTileMapNode) {
-        for position in leadingTileMapObstaclePositions {
-            tileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
-        }
-        
-        leadingTileMapObstaclePositions.removeAll()
-        
-        tileMap.enumerateChildNodes(withName: Constants.SpriteName.obstacle) { (childNode, _) in
-            childNode.removeFromParent()
-        }
-    }
-    
     private func addPhysicsBodyToUpperBoundary(of tileMap: SKTileMapNode) {
         let physicsBody = SKPhysicsBody(edgeFrom: CGPoint(x: tileMap.frame.minX, y: tileMap.frame.maxY), to: CGPoint(x: tileMap.frame.maxX, y: tileMap.frame.maxY))
         physicsBody.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.topBoundary
@@ -284,28 +262,13 @@ extension LevelLayer {
 
 // MARK: - Update
 extension LevelLayer {
-    private func shiftLeadingTileMapToTrailingPosition() {
-        completedTileMaps += 1
-        clearAllObstaclesInTileMap(leadingTileMap)
-        if !platformRemoved {
-            removePlatform()
-            platformRemoved = true
-        }
-        
-        leadingTileMap.position = CGPoint(x: trailingTileMap.frame.maxX + Constants.RepeatingLayer.repeatedNodeOffset, y: leadingTileMap.position.y)
-        swap(&leadingTileMap, &trailingTileMap)
-        swap(&leadingTileMapObstaclePositions, &trailingTileMapObstaclePositions)
-
-        populateTrailingTileMap()
-    }
-    
     private func removePlatform() {
         for position in platformPositions {
-            leadingTileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
+            guideTileMap.setTileGroup(nil, forColumn: position.x, row: position.y)
         }
         
-        for childToRemove in leadingTileMap.children.filter({ $0.name == Constants.SpriteName.platform }) {
-            leadingTileMap.removeChildren(in: [childToRemove])
+        for childToRemove in guideTileMap.children.filter({ $0.name == Constants.SpriteName.platform }) {
+            guideTileMap.removeChildren(in: [childToRemove])
         }
     }
 }
