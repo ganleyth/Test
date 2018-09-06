@@ -95,6 +95,7 @@
 		18DF6BE020278BF100BF0502 /* ObstacleContactEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */; };
 		18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */; };
 		18DF6BE52031660A00BF0502 /* ScoreKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */; };
+		18DFD421214165BB00E936F7 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFD420214165BB00E936F7 /* LevelManager.swift */; };
 		18E1CFFA204349CE00B4B506 /* GameCenterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */; };
 		18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */; };
 		18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1CFFF204B2A0100B4B506 /* SettingsViewController.swift */; };
@@ -236,6 +237,7 @@
 		18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleContactEmitter.sks; sourceTree = "<group>"; };
 		18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = JetpackSmokeEmitter.sks; sourceTree = "<group>"; };
 		18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreKeeper.swift; sourceTree = "<group>"; };
+		18DFD420214165BB00E936F7 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenterManager.swift; sourceTree = "<group>"; };
 		18E1CFFB204B0FA700B4B506 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		18E1CFFD204B29B200B4B506 /* SettingsView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsView.storyboard; sourceTree = "<group>"; };
@@ -476,7 +478,6 @@
 			children = (
 				18CEF3181FD4E55E005C3980 /* Apple Extensions */,
 				18CEF3081FD32E35005C3980 /* Managers */,
-				18DF6BE3203165EF00BF0502 /* Scoring */,
 				183E7595203A781B00092B2A /* Sounds */,
 				18CEF30F1FD32E8D005C3980 /* UI Elements */,
 				18CEF31B1FD4E8D7005C3980 /* Constants.swift */,
@@ -499,6 +500,8 @@
 				18B330061FDC55E200D59107 /* NetworkManager.swift */,
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
 				18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */,
+				18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */,
+				18DFD420214165BB00E936F7 /* LevelManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -610,14 +613,6 @@
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
-			sourceTree = "<group>";
-		};
-		18DF6BE3203165EF00BF0502 /* Scoring */ = {
-			isa = PBXGroup;
-			children = (
-				18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */,
-			);
-			path = Scoring;
 			sourceTree = "<group>";
 		};
 		18E53F8A20C776C200BE7BB9 /* EndOfGameView */ = {
@@ -901,6 +896,7 @@
 			files = (
 				18B330071FDC55E200D59107 /* NetworkManager.swift in Sources */,
 				18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */,
+				18DFD421214165BB00E936F7 /* LevelManager.swift in Sources */,
 				187E411A208BBB4F009C7270 /* URL+AppExtensions.swift in Sources */,
 				18B330031FDC553E00D59107 /* ChallengeManager.swift in Sources */,
 				18B32FE51FDC3DDC00D59107 /* GameplayViewController.swift in Sources */,

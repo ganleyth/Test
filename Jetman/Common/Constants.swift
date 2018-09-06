@@ -149,6 +149,7 @@ struct Constants {
     struct UserDefaults {
         static let allowHaptics = "allowHaptics"
         static let allowSounds = "allowSounds"
+        static let currentLevel = "currentLevel"
         static let highScore = "highScore"
         static let gamesPlayedCount = "gamesPlayedCount"
         static let uid = "uid"
