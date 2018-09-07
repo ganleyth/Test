@@ -55,7 +55,8 @@ final class LevelLayer: Layer {
     }()
     
     private lazy var numberOfColumns: Int = {
-        return ((LevelManager.shared.currentObstacleCount + 1) * 5)
+        let obstacleCount = LevelManager.shared.currentObstacleItemizedCount.dynamicShort + LevelManager.shared.currentObstacleItemizedCount.staticLong + LevelManager.shared.currentObstacleItemizedCount.staticShort
+        return ((obstacleCount + 1) * 5)
     }()
 
     init(windowSize: CGSize, tileSet: SKTileSet) {
