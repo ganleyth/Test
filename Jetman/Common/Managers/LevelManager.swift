@@ -21,7 +21,34 @@ class LevelManager {
         }
     }
     
-    var currentObstacleCount: Int {
-        return 30 + currentLevel
+    var currentObstacleItemizedCount: (staticShort: Int, dynamicShort: Int, staticLong: Int) {
+        var counter = 0
+        var byThreesCounter = 0
+        var staticShortCounter = 0
+        var dynamicShortCounter = 0
+        var staticLongCounter = 0
+        
+        while counter < currentLevel {
+            switch byThreesCounter {
+            case 0:
+                staticShortCounter += 1
+            case 1:
+                dynamicShortCounter += 1
+            case 2:
+                staticLongCounter += 1
+            default:
+                fatalError("Unexpected byThreesCounter")
+            }
+            
+            if byThreesCounter == 2 {
+                byThreesCounter = 0
+            } else {
+                byThreesCounter += 1
+            }
+            
+            counter += 1
+        }
+        
+        return (30 + staticShortCounter, dynamicShortCounter, staticLongCounter)
     }
 }
