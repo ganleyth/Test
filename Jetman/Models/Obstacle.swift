@@ -11,13 +11,15 @@ import SpriteKit
 
 class Obstacle: SKTileMapNode {
     let length: Int
+    let coordinatePosition: CoordinatePosition
     let obstacleBuildingBlocks: ObstacleBuildingBlocks
     let isDynamic: Bool
     
     
     
-    init(length: Int, obstacleBuildingBlocks: ObstacleBuildingBlocks, isDynamic: Bool = false) {
+    init(length: Int, coordinatePosition: CoordinatePosition, obstacleBuildingBlocks: ObstacleBuildingBlocks, isDynamic: Bool = false) {
         self.length = length
+        self.coordinatePosition = coordinatePosition
         self.obstacleBuildingBlocks = obstacleBuildingBlocks
         self.isDynamic = isDynamic
         

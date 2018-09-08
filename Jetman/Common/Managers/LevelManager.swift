@@ -10,8 +10,6 @@ import Foundation
 
 class LevelManager {
     
-    static let shared = LevelManager()
-    
     var currentLevel: Int {
         get {
             return UserDefaults.standard.value(forKey: Constants.UserDefaults.currentLevel) as? Int ?? 1
@@ -21,7 +19,7 @@ class LevelManager {
         }
     }
     
-    var currentObstacleItemizedCount: (staticShort: Int, dynamicShort: Int, staticLong: Int) {
+    lazy var obstacleItemizedCount: (staticShort: Int, dynamicShort: Int, staticLong: Int) = {
         var counter = 0
         var byThreesCounter = 0
         var staticShortCounter = 0
@@ -50,5 +48,9 @@ class LevelManager {
         }
         
         return (30 + staticShortCounter, dynamicShortCounter, staticLongCounter)
-    }
+    }()
+    
+    lazy var obstacleCount: Int = {
+        return obstacleItemizedCount.staticShort + obstacleItemizedCount.dynamicShort + obstacleItemizedCount.staticLong
+    }()
 }
