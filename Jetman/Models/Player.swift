@@ -88,6 +88,10 @@ extension Player {
             // Update action
             let animation = SKAction.repeatForever(SKAction.animate(with: textures, timePerFrame: 0.08))
             run(animation, withKey: Constants.Player.animationKey)
+            
+            // Update physics
+            physicsBody = SKPhysicsBody(texture: firstTexture, size: frame.size)
+            setPhysicsBodyProperties()
         case .dead:
             self.texture = firstTexture
             if isAscending { endAscension() }
