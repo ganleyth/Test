@@ -56,13 +56,13 @@ final class LevelLayer: Layer {
     }()
     
     private lazy var numberOfColumns: Int = {
-        return ((levelManager.obstacleCount + 1) * 5)
+        return ((levelManager.obstacleCount + 1) * Constants.TileMapLayer.defaultColumnsPerObstacle)
     }()
     
     private lazy var obstacleXPositions: [Int] = {
         var positions: [Int] = []
-        for i in 0..<numberOfColumns {
-            if (i + 1) % 5 == 0 {
+        for i in 0..<(numberOfColumns - 1) {
+            if (i + 1) % Constants.TileMapLayer.defaultColumnsPerObstacle == 0 {
                 positions.append(i)
             }
         }

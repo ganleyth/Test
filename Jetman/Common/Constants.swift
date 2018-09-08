@@ -116,6 +116,7 @@ struct Constants {
         static let defaultTileWidth: CGFloat = 128.0
         static let defaultTileHeight: CGFloat = 128.0
         static let defaultRowCount = 9
+        static let defaultColumnsPerObstacle = 10
         static let startingVelocity = -220
         static let velocityDifficultyIncrement = CGPoint(x: -2, y: 0)
         

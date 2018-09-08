@@ -15,7 +15,9 @@ class Obstacle: SKTileMapNode {
     let obstacleBuildingBlocks: ObstacleBuildingBlocks
     let isDynamic: Bool
     
-    
+    var heightIncludingCaps: Int {
+        return length + 2
+    }
     
     init(length: Int, coordinatePosition: CoordinatePosition, obstacleBuildingBlocks: ObstacleBuildingBlocks, isDynamic: Bool = false) {
         self.length = length
@@ -45,10 +47,10 @@ class Obstacle: SKTileMapNode {
     
     private func assignTileGroups() {
         setTileGroup(obstacleBuildingBlocks.bottomTile, forColumn: 0, row: 0)
-        for i in 0..<(length - 1) {
+        for i in 1..<(heightIncludingCaps - 1) {
             setTileGroup(obstacleBuildingBlocks.middleTile, forColumn: 0, row: i)
         }
-        setTileGroup(obstacleBuildingBlocks.topTile, forColumn: 0, row: length - 1)
+        setTileGroup(obstacleBuildingBlocks.topTile, forColumn: 0, row: heightIncludingCaps - 1)
     }
     
     private func setupPhysicsBody() {
