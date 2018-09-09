@@ -140,6 +140,7 @@ final class LevelLayer: Layer {
         initializeTileMap(guideTileMap, with: tileSet, windowSize: windowSize)
         populateGuideTileMap()
         addPlatformToFirstTileMap()
+        populateFinishLine()
         
         addChild(guideTileMap)
     }
@@ -206,8 +207,6 @@ extension LevelLayer {
         }
         obstacle.position = positionInTileMap
         guideTileMap.addChild(obstacle)
-        
-//        guideTileMap.addObstaclePhysicsBodies(with: CoordinatePosition(x: xIndex, y: middleIndexesMin), length: length)
     }
     
     private func randomYPositionForObstacleOfLength(_ length: Int) -> Int {
@@ -271,6 +270,38 @@ extension LevelLayer {
     private func removeBottomBoundaryPhysicsBody(of tileMap: SKTileMapNode) {
         guard let nodeToRemove = tileMap.childNode(withName: Constants.SpriteName.bottomBoundary) else { return }
         nodeToRemove.removeFromParent()
+    }
+}
+
+// MARK: - Finish Line
+private extension LevelLayer {
+    enum FinishLineTile {
+        case black
+        case white
+        
+        func inverted() -> FinishLineTile {
+            return self == .black ? .white : .black
+        }
+    }
+    
+    func populateFinishLine() {
+        let finishLineFirstColumn = numberOfColumns - 3
+        var firstTile = FinishLineTile.black
+        var currentTile = FinishLineTile.black
+        let blackTileGroup = SKTileGroup(tileDefinition: SKTileDefinition(texture: SKTexture(imageNamed: "BlackTile"), size: Constants.TileMapLayer.defaultTileSize))
+        let whiteTileGroup = SKTileGroup(tileDefinition: SKTileDefinition(texture: SKTexture(imageNamed: "WhiteTile"), size: Constants.TileMapLayer.defaultTileSize))
+        guideTileMap.tileSet.tileGroups.append(contentsOf: [blackTileGroup, whiteTileGroup])
+        
+        for j in finishLineFirstColumn..<numberOfColumns {
+            for i in (currentBottomBoundaryMaxRow + 1)..<Constants.TileMapLayer.defaultRowCount {
+                let tileGroup = currentTile == .black ? blackTileGroup : whiteTileGroup
+                guideTileMap.setTileGroup(tileGroup, forColumn: j, row: i)
+                currentTile = currentTile.inverted()
+            }
+            
+            firstTile = firstTile.inverted()
+            currentTile = firstTile
+        }
     }
 }
 
