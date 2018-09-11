@@ -59,6 +59,7 @@
 		18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EC205DA1F000EB4BB8 /* Interactor.swift */; };
 		18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EE205DACD900EB4BB8 /* FriendManager.swift */; };
 		18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */; };
+		18ABA4242146124900FFD2C4 /* FinishLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4232146124900FFD2C4 /* FinishLine.swift */; };
 		18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */; };
 		18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FD51FDA506100D59107 /* WelcomeViewController.swift */; };
 		18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FE21FDA565C00D59107 /* GameplayView.storyboard */; };
@@ -201,6 +202,7 @@
 		18A671EC205DA1F000EB4BB8 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		18A671EE205DACD900EB4BB8 /* FriendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendManager.swift; sourceTree = "<group>"; };
 		18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Helpers.swift"; sourceTree = "<group>"; };
+		18ABA4232146124900FFD2C4 /* FinishLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLine.swift; sourceTree = "<group>"; };
 		18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		18B32FD51FDA506100D59107 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		18B32FE21FDA565C00D59107 /* GameplayView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameplayView.storyboard; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 				181AD9C520CD82B100EEEB7F /* User.swift */,
 				181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */,
 				18E36BC62140136A00858560 /* Obstacle.swift */,
+				18ABA4232146124900FFD2C4 /* FinishLine.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -929,6 +932,7 @@
 				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
+				18ABA4242146124900FFD2C4 /* FinishLine.swift in Sources */,
 				1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */,
 				18E36BC72140136A00858560 /* Obstacle.swift in Sources */,
 				18B3301F1FDC7BE900D59107 /* RepeatingLayer.swift in Sources */,

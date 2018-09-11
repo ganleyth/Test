@@ -55,19 +55,25 @@ final class LevelLayer: Layer {
         return possiblePositions
     }()
     
+    private let numberOfExtraFrames = 3
     private lazy var numberOfColumns: Int = {
-        return ((levelManager.obstacleCount + 1) * Constants.TileMapLayer.defaultColumnsPerObstacle)
+        return ((levelManager.obstacleCount + numberOfExtraFrames) * Constants.TileMapLayer.defaultColumnsPerObstacle)
     }()
+    
     
     private lazy var obstacleXPositions: [Int] = {
         var positions: [Int] = []
-        for i in 0..<(numberOfColumns - 1) {
+        for i in 0..<(numberOfColumns - (numberOfExtraFrames * Constants.TileMapLayer.defaultColumnsPerObstacle)) {
             if (i + 1) % Constants.TileMapLayer.defaultColumnsPerObstacle == 0 {
                 positions.append(i)
             }
         }
         return positions
     }()
+    
+    private var firstFinishLineColumn: Int {
+        return numberOfColumns - ((numberOfExtraFrames - 1) * Constants.TileMapLayer.defaultColumnsPerObstacle)
+    }
     
     private lazy var obstacles: [Obstacle] = {
         var obstacles: [Obstacle] = []
@@ -140,7 +146,7 @@ final class LevelLayer: Layer {
         initializeTileMap(guideTileMap, with: tileSet, windowSize: windowSize)
         populateGuideTileMap()
         addPlatformToFirstTileMap()
-        populateFinishLine()
+        addFinishLine()
         
         addChild(guideTileMap)
     }
@@ -193,6 +199,14 @@ extension LevelLayer {
         }
         
         guideTileMap.addRectangularPhysicsBody(with: CoordinatePosition(x: 0, y: middleRow), numberOfRows: 1, numberOfColumns: 2, type: .platform)
+    }
+    
+    func addFinishLine() {
+        let finishLine = FinishLine(length: Constants.TileMapLayer.defaultRowCount, width: 5)
+        finishLine.position = CGPoint(x: CGFloat(firstFinishLineColumn) * Constants.TileMapLayer.defaultTileWidth,
+                                      y: 0)
+        finishLine.zPosition = -1
+        guideTileMap.addChild(finishLine)
     }
     
     private func populateGuideTileMap() {
@@ -270,38 +284,6 @@ extension LevelLayer {
     private func removeBottomBoundaryPhysicsBody(of tileMap: SKTileMapNode) {
         guard let nodeToRemove = tileMap.childNode(withName: Constants.SpriteName.bottomBoundary) else { return }
         nodeToRemove.removeFromParent()
-    }
-}
-
-// MARK: - Finish Line
-private extension LevelLayer {
-    enum FinishLineTile {
-        case black
-        case white
-        
-        func inverted() -> FinishLineTile {
-            return self == .black ? .white : .black
-        }
-    }
-    
-    func populateFinishLine() {
-        let finishLineFirstColumn = numberOfColumns - 3
-        var firstTile = FinishLineTile.black
-        var currentTile = FinishLineTile.black
-        let blackTileGroup = SKTileGroup(tileDefinition: SKTileDefinition(texture: SKTexture(imageNamed: "BlackTile"), size: Constants.TileMapLayer.defaultTileSize))
-        let whiteTileGroup = SKTileGroup(tileDefinition: SKTileDefinition(texture: SKTexture(imageNamed: "WhiteTile"), size: Constants.TileMapLayer.defaultTileSize))
-        guideTileMap.tileSet.tileGroups.append(contentsOf: [blackTileGroup, whiteTileGroup])
-        
-        for j in finishLineFirstColumn..<numberOfColumns {
-            for i in (currentBottomBoundaryMaxRow + 1)..<Constants.TileMapLayer.defaultRowCount {
-                let tileGroup = currentTile == .black ? blackTileGroup : whiteTileGroup
-                guideTileMap.setTileGroup(tileGroup, forColumn: j, row: i)
-                currentTile = currentTile.inverted()
-            }
-            
-            firstTile = firstTile.inverted()
-            currentTile = firstTile
-        }
     }
 }
 
