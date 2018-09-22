@@ -13,6 +13,7 @@ import Firebase
 
 protocol GameplayDelegate: class {
     func didTapPlayAgain()
+    func didTapContinuePlaying(carryOverScore: Int)
 }
 
 class GameplayViewController: UIViewController {
@@ -58,6 +59,9 @@ class GameplayViewController: UIViewController {
     weak var delegate: GameplayDelegate?
     
     var challenge: Challenge?
+    var scoreKeeper: ScoreKeeper? {
+        return (skView.scene as? GameplayScene)?.scoreKeeper
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,6 +145,9 @@ extension GameplayViewController: EndOfGameDelegate {
 
 extension GameplayViewController: EndOfLevelDelegate {
     func didTapContinuePlaying() {
-        
+        guard let scoreKeeper = scoreKeeper else {
+            fatalError("Scene must be available still to find the current score.")
+        }
+        delegate?.didTapContinuePlaying(carryOverScore: scoreKeeper.currentScore)
     }
 }

@@ -177,13 +177,17 @@ extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
 
 extension WelcomeViewController: GameplayDelegate {
     func didTapPlayAgain() {
-        resetGameplay()
+        resetGameplay(carryOverScore: nil)
     }
     
-    private func resetGameplay() {
+    func didTapContinuePlaying(carryOverScore: Int) {
+        resetGameplay(carryOverScore: carryOverScore)
+    }
+    
+    private func resetGameplay(carryOverScore: Int?) {
         guard let pvc = presentedViewController else { return }
         pvc.dismiss(animated: false) {
-            self.performSegue(withIdentifier: "showGameplay", sender: nil)
+            self.performSegue(withIdentifier: "showGameplay", sender: carryOverScore)
         }
     }
 }
