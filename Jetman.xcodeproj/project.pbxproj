@@ -86,6 +86,7 @@
 		18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF3191FD4E585005C3980 /* Date+Helpers.swift */; };
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
 		18D2ABDD20CD6A3500C9A1F4 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */; };
+		18D52E7D21568CAC00059239 /* EndOfLevelCelebration.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */; };
 		18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */; };
 		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */; };
@@ -229,6 +230,7 @@
 		18CEF3191FD4E585005C3980 /* Date+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helpers.swift"; sourceTree = "<group>"; };
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
+		18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndOfLevelCelebration.sks; sourceTree = "<group>"; };
 		18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
 		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseInteractor.swift; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				18DF6BD9202778D300BF0502 /* WaterEmitter.sks */,
 				18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */,
 				18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */,
+				18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */,
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -806,6 +809,7 @@
 				18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */,
 				183E75A3203B962C00092B2A /* music.wav in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
+				18D52E7D21568CAC00059239 /* EndOfLevelCelebration.sks in Resources */,
 				183E759B203B335700092B2A /* bubblePop.wav in Resources */,
 				18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */,
 				18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */,

@@ -202,7 +202,7 @@ extension LevelLayer {
     }
     
     func addFinishLine() {
-        let finishLine = FinishLine(length: Constants.TileMapLayer.defaultRowCount, width: 5)
+        let finishLine = FinishLine(length: Constants.TileMapLayer.defaultRowCount, width: 20)
         finishLine.position = CGPoint(x: CGFloat(firstFinishLineColumn) * Constants.TileMapLayer.defaultTileWidth,
                                       y: 0)
         finishLine.zPosition = -1

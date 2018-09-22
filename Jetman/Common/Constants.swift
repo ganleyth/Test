@@ -89,10 +89,11 @@ struct Constants {
         static let platform: UInt32       = 0b00000000000000000000000000000100
         static let obstacle: UInt32       = 0b00000000000000000000000000001000
         static let topBoundary: UInt32    = 0b00000000000000000000000000010000
+        static let finishLine: UInt32     = 0b00000000000000000000000000100000
     }
     
     struct PhysicsBodyContactTestBitMask {
-        static let boundariesAndObstacles: UInt32 = 0b00000000000000000000000000011101
+        static let boundariesAndObstacles: UInt32 = 0b00000000000000000000000000111101
         static let none: UInt32                   = 0b00000000000000000000000000000000
         static let player: UInt32                 = 0b00000000000000000000000000000010
     }

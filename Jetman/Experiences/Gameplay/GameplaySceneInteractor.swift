@@ -216,6 +216,13 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .medium)
             audioPlayer = hasCollided ? nil : collisionAudioPlayer
             hasCollided = true
+        case Constants.PhysicsBodyCategoryBitMask.finishLine:
+            guard currentGameplayMode == .playing else { return }
+            emitter = SKEmitterNode(fileNamed: "EndOfLevelCelebration") ?? SKEmitterNode()
+            emitter?.position = CGPoint(x: viewController.view.frame.size.width / 2.0,
+                                        y: viewController.view.frame.size.height / 2.0)
+            feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .medium)
+            audioPlayer = nil
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()
