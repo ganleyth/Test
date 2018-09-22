@@ -210,6 +210,7 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             emitter?.numParticlesToEmit = 8
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .light)
             audioPlayer = hasSplashed ? nil : splashAudioPlayer
+            hasCollided = true
             hasSplashed = true
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
             guard currentGameplayMode == .playing else { return }
