@@ -87,6 +87,8 @@
 		18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CEF31B1FD4E8D7005C3980 /* Constants.swift */; };
 		18D2ABDD20CD6A3500C9A1F4 /* CloudKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */; };
 		18D52E7D21568CAC00059239 /* EndOfLevelCelebration.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */; };
+		18D52E802156AA5300059239 /* EndOfLevelView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D52E7F2156AA5300059239 /* EndOfLevelView.storyboard */; };
+		18D52E822156AA6700059239 /* EndOfLevelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D52E812156AA6700059239 /* EndOfLevelViewController.swift */; };
 		18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */; };
 		18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */; };
 		18DD3507208BD9140077E7B1 /* ChallengeResponseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */; };
@@ -231,6 +233,8 @@
 		18CEF31B1FD4E8D7005C3980 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitManager.swift; sourceTree = "<group>"; };
 		18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EndOfLevelCelebration.sks; sourceTree = "<group>"; };
+		18D52E7F2156AA5300059239 /* EndOfLevelView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndOfLevelView.storyboard; sourceTree = "<group>"; };
+		18D52E812156AA6700059239 /* EndOfLevelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfLevelViewController.swift; sourceTree = "<group>"; };
 		18DD3502208BC9C90077E7B1 /* ChallengeResponseView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChallengeResponseView.storyboard; sourceTree = "<group>"; };
 		18DD3504208BC9FE0077E7B1 /* ChallengeResponseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseViewController.swift; sourceTree = "<group>"; };
 		18DD3506208BD9140077E7B1 /* ChallengeResponseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeResponseInteractor.swift; sourceTree = "<group>"; };
@@ -454,7 +458,6 @@
 				180C88A91FC77F5F00D19F85 /* Assets.xcassets */,
 				180C88AE1FC77F5F00D19F85 /* Info.plist */,
 				188CAA382083C03800E2AC6B /* GoogleService-Info.plist */,
-				183E756B2038AFAF00092B2A /* GameSession.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				18E1CFF9204349CE00B4B506 /* GameCenterManager.swift */,
 				18D2ABDC20CD6A3500C9A1F4 /* CloudKitManager.swift */,
 				18DF6BE42031660A00BF0502 /* ScoreKeeper.swift */,
+				183E756B2038AFAF00092B2A /* GameSession.swift */,
 				18DFD420214165BB00E936F7 /* LevelManager.swift */,
 			);
 			path = Managers;
@@ -521,6 +525,7 @@
 				18847EAE20706A2900B90C9C /* NewChallenge */,
 				18847EB52070724800B90C9C /* MyChallenges */,
 				18CEF3101FD32EB6005C3980 /* Gameplay */,
+				18D52E7E2156AA3A00059239 /* EndOfLevelView */,
 				18E53F8A20C776C200BE7BB9 /* EndOfGameView */,
 				18DD3501208BC9A60077E7B1 /* ChallengeResponseView */,
 			);
@@ -597,6 +602,15 @@
 				181AD9C920CDF2CF00EEEB7F /* CKRecord+AppExtensions.swift */,
 			);
 			path = "Apple Extensions";
+			sourceTree = "<group>";
+		};
+		18D52E7E2156AA3A00059239 /* EndOfLevelView */ = {
+			isa = PBXGroup;
+			children = (
+				18D52E7F2156AA5300059239 /* EndOfLevelView.storyboard */,
+				18D52E812156AA6700059239 /* EndOfLevelViewController.swift */,
+			);
+			path = EndOfLevelView;
 			sourceTree = "<group>";
 		};
 		18DD3501208BC9A60077E7B1 /* ChallengeResponseView */ = {
@@ -818,6 +832,7 @@
 				1884675B20E94D0800CE5F33 /* LeaderboardView.storyboard in Resources */,
 				183E759F203B83C100092B2A /* crash.wav in Resources */,
 				1851438120D8C0D5000EC8A0 /* ActivityIndicator.xib in Resources */,
+				18D52E802156AA5300059239 /* EndOfLevelView.storyboard in Resources */,
 				18DF6BE220279C9100BF0502 /* JetpackSmokeEmitter.sks in Resources */,
 				18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */,
 				188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */,
@@ -943,6 +958,7 @@
 				183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */,
 				18CEF31A1FD4E585005C3980 /* Date+Helpers.swift in Sources */,
 				1842D6DE2014427800571BD2 /* SpriteLoader.swift in Sources */,
+				18D52E822156AA6700059239 /* EndOfLevelViewController.swift in Sources */,
 				1884676520E97A4000CE5F33 /* RightDetailTableViewCell.swift in Sources */,
 				18B330251FDCA51B00D59107 /* CGPoint+Helpers.swift in Sources */,
 				18B330301FDDA05F00D59107 /* SKNode+Helpers.swift in Sources */,

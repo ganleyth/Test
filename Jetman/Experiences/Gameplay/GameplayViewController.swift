@@ -37,6 +37,24 @@ class GameplayViewController: UIViewController {
         return endOfGameView
     }()
     
+    lazy var endOfLevelView: EndOfLevelViewController? = {
+        guard let endOfLevelView = UIStoryboard(name: "EndOfLevelView", bundle: nil).instantiateInitialViewController() as? EndOfLevelViewController else { return nil }
+        guard let scoreKeeper = (skView.scene as? GameplayScene)?.scoreKeeper else { return nil }
+        
+        if scoreKeeper.currentScore > GameSession.shared.highScore ?? 0 {
+            GameSession.shared.highScore = scoreKeeper.currentScore
+            CloudKitManager.shared.updateHighScore(scoreKeeper.currentScore, completion: nil)
+        }
+        
+        endOfLevelView.loadView()
+        endOfLevelView.configureFor(score: scoreKeeper.currentScore,
+                                    highScore: GameSession.shared.highScore ?? 0,
+                                    nextLevel: GameSession.shared.levelManager.currentLevel)
+        endOfLevelView.delegate = self
+        
+        return endOfLevelView
+    }()
+    
     weak var delegate: GameplayDelegate?
     
     var challenge: Challenge?
@@ -63,8 +81,8 @@ class GameplayViewController: UIViewController {
         return true
     }
     
-    private func animateEmbeddedControllerVisibility(isVisible: Bool) {
-        guard let endOfGameView = endOfGameView else { return }
+    private func animateEmbeddedControllerVisibility(isVisible: Bool, playerDied: Bool) {
+        guard let viewToPresent: UIViewController = playerDied ? endOfGameView : endOfLevelView else { return }
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(containerView)
@@ -74,10 +92,10 @@ class GameplayViewController: UIViewController {
         containerView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
-        addChildViewController(endOfGameView)
-        endOfGameView.didMove(toParentViewController: self)
-        containerView.addSubview(endOfGameView.view)
-        endOfGameView.view.frame = containerView.frame
+        addChildViewController(viewToPresent)
+        viewToPresent.didMove(toParentViewController: self)
+        containerView.addSubview(viewToPresent.view)
+        viewToPresent.view.frame = containerView.frame
         
         let yTranslation = (containerView.frame.height + (view.frame.maxY - containerView.frame.maxY)) * 1.2
         containerView.transform = CGAffineTransform(translationX: 0, y: yTranslation)
@@ -99,10 +117,10 @@ extension GameplayViewController: GameplaySceneDelegate {
         scoreLabel.text = "\(newScore)"
     }
     
-    func gameplayDidEnd() {
+    func gameplayDidEnd(playerDied: Bool) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let this = self else { return }
-            this.animateEmbeddedControllerVisibility(isVisible: true)
+            this.animateEmbeddedControllerVisibility(isVisible: true, playerDied: playerDied)
         }
     }
 }
@@ -118,5 +136,11 @@ extension GameplayViewController: EndOfGameDelegate {
     
     func didTapPlayAgain() {
         delegate?.didTapPlayAgain()
+    }
+}
+
+extension GameplayViewController: EndOfLevelDelegate {
+    func didTapContinuePlaying() {
+        
     }
 }

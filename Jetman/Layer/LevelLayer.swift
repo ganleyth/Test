@@ -21,7 +21,9 @@ final class LevelLayer: Layer {
     private var platformPositions: [CoordinatePosition] = []
     
     private var platformRemoved = false
-    private var levelManager = LevelManager()
+    private var levelManager: LevelManager {
+        return GameSession.shared.levelManager
+    }
     
     lazy var absoluteTileMapWidth: CGFloat = {
         return guideTileMap.frame.width

@@ -10,7 +10,7 @@ import SpriteKit
 
 protocol GameplaySceneDelegate: class {
     func gameplaySceneDidUpdateScore(newScore: Int)
-    func gameplayDidEnd()
+    func gameplayDidEnd(playerDied: Bool)
 }
 
 class GameplayScene: SKScene {

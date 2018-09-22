@@ -164,18 +164,18 @@ extension GameplaySceneInteractor {
             
             if hasCollided {
                 player.state = .dead
+                incrementGamesPlayedCountAndRequestAppRating()
             } else {
                 if let longPress = longPressGestureRecognizer {
                     scene.view?.removeGestureRecognizer(longPress)
                 }
                 player.state = .levelComplete
+                GameSession.shared.levelManager.currentLevel += 1
             }
             
-            scene.gameplayDelegate?.gameplayDidEnd()
-            musicAudioPlayer?.stop()
-            if gameplayViewController?.challenge != nil { updateChallenge() }
             hasEnded = true
-            incrementGamesPlayedCountAndRequestAppRating()
+            scene.gameplayDelegate?.gameplayDidEnd(playerDied: hasCollided)
+            musicAudioPlayer?.stop()
             let score = scene.scoreKeeper.currentScore
             GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!", score: score)
         }
