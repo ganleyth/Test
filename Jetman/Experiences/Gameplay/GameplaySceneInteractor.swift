@@ -176,7 +176,7 @@ extension GameplaySceneInteractor {
             hasEnded = true
             scene.gameplayDelegate?.gameplayDidEnd(playerDied: hasCollided)
             musicAudioPlayer?.stop()
-            let score = scene.scoreKeeper.currentScore
+            let score = GameSession.shared.scoreKeeper.currentScore
             GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!", score: score)
         }
     }
@@ -268,25 +268,7 @@ private extension GameplaySceneInteractor {
         if descentAudioPlayer?.isPlaying ?? false { descentAudioPlayer?.stop() }
     }
     
-    func updateChallenge() {
-        guard var challenge = gameplayViewController?.challenge else { return }
-        challenge.score = scene?.scoreKeeper.currentScore
-        FirebaseManager.shared.challengeManager.reportFirstTurnScore(for: challenge) { [weak self] (error) in
-            guard let this = self else { return }
-            let title: String
-            let message: String
-            if error != nil {
-                title = "Score Submission Error"
-                message = "Could not successfully submit score"
-            } else {
-                title = "Score Submitted!"
-                message = "Your score for this challenge has been submitted"
-            }
-            DispatchQueue.main.async {
-                this.viewController.presentInfoAlertWith(title: title, message: message)
-            }
-        }
-    }
+    func updateChallenge() {}
     
     func incrementGamesPlayedCountAndRequestAppRating() {
         guard var gamesPlayedCount = UserDefaults.standard.value(forKey: Constants.UserDefaults.gamesPlayedCount) as? Int else {

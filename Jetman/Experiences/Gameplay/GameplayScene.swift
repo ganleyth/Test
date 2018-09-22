@@ -32,13 +32,8 @@ class GameplayScene: SKScene {
     
     var lastTime: TimeInterval?
     
-    lazy var scoreKeeper: ScoreKeeper = {
-        let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
-        return scoreKeeper
-    }()
-    
     weak var gameplayDelegate: GameplaySceneDelegate?
-
+    
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
@@ -73,8 +68,8 @@ class GameplayScene: SKScene {
         
         guard
             let levelLayer = levelLayer else { return }
-        scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: 10)
+        GameSession.shared.scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: 0)
 
-        gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: scoreKeeper.currentScore)
+        gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: GameSession.shared.scoreKeeper.currentScore)
     }
 }

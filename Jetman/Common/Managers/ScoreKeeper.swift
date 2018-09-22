@@ -12,12 +12,22 @@ import CoreGraphics
 class ScoreKeeper {
     var currentScore = 0
     let pointsPerTileMap: Int
+    var lastXPosition: CGFloat = 0
     
     init(pointsPerTileMap: Int) {
         self.pointsPerTileMap = pointsPerTileMap
     }
     
     func update(forPosition position: CGPoint, maxPosition: CGFloat, completedTileMaps: Int) {
-        currentScore = Int((CGFloat(completedTileMaps) + position.x / maxPosition) * CGFloat(pointsPerTileMap))
+        let x = position.x
+        currentScore = currentScore + Int((x - lastXPosition) * 1000 / maxPosition)
+        lastXPosition = x
+    }
+    
+    func reset(didGameEnd: Bool) {
+        lastXPosition = 0
+        if didGameEnd {
+            currentScore = 0
+        }
     }
 }

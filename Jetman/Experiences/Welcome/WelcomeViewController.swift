@@ -97,9 +97,6 @@ final class WelcomeViewController: UIViewController {
         } else if segue.identifier == "showGameplay" {
             guard let gameplayVC = segue.destination as? GameplayViewController else { return }
             gameplayVC.delegate = self
-            if let challenge = sender as? Challenge {
-                gameplayVC.challenge = challenge
-            }
         }
     }
 }
@@ -177,17 +174,19 @@ extension WelcomeViewController: WelcomeViewEmbeddedControllerDelegate {
 
 extension WelcomeViewController: GameplayDelegate {
     func didTapPlayAgain() {
-        resetGameplay(carryOverScore: nil)
+        GameSession.shared.scoreKeeper.reset(didGameEnd: true)
+        resetGameplay()
     }
     
-    func didTapContinuePlaying(carryOverScore: Int) {
-        resetGameplay(carryOverScore: carryOverScore)
+    func didTapContinuePlaying() {
+        GameSession.shared.scoreKeeper.reset(didGameEnd: false)
+        resetGameplay()
     }
     
-    private func resetGameplay(carryOverScore: Int?) {
+    private func resetGameplay() {
         guard let pvc = presentedViewController else { return }
         pvc.dismiss(animated: false) {
-            self.performSegue(withIdentifier: "showGameplay", sender: carryOverScore)
+            self.performSegue(withIdentifier: "showGameplay", sender: nil)
         }
     }
 }

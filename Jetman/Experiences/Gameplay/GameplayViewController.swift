@@ -13,7 +13,7 @@ import Firebase
 
 protocol GameplayDelegate: class {
     func didTapPlayAgain()
-    func didTapContinuePlaying(carryOverScore: Int)
+    func didTapContinuePlaying()
 }
 
 class GameplayViewController: UIViewController {
@@ -24,8 +24,8 @@ class GameplayViewController: UIViewController {
     
     lazy var endOfGameView: EndOfGameViewController? = {
         guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else { return nil }
-        guard let scoreKeeper = (skView.scene as? GameplayScene)?.scoreKeeper else { return nil }
         
+        let scoreKeeper = GameSession.shared.scoreKeeper
         if scoreKeeper.currentScore > GameSession.shared.highScore ?? 0 {
             GameSession.shared.highScore = scoreKeeper.currentScore
             CloudKitManager.shared.updateHighScore(scoreKeeper.currentScore, completion: nil)
@@ -40,7 +40,7 @@ class GameplayViewController: UIViewController {
     
     lazy var endOfLevelView: EndOfLevelViewController? = {
         guard let endOfLevelView = UIStoryboard(name: "EndOfLevelView", bundle: nil).instantiateInitialViewController() as? EndOfLevelViewController else { return nil }
-        guard let scoreKeeper = (skView.scene as? GameplayScene)?.scoreKeeper else { return nil }
+        let scoreKeeper = GameSession.shared.scoreKeeper
         
         if scoreKeeper.currentScore > GameSession.shared.highScore ?? 0 {
             GameSession.shared.highScore = scoreKeeper.currentScore
@@ -59,9 +59,6 @@ class GameplayViewController: UIViewController {
     weak var delegate: GameplayDelegate?
     
     var challenge: Challenge?
-    var scoreKeeper: ScoreKeeper? {
-        return (skView.scene as? GameplayScene)?.scoreKeeper
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -145,9 +142,6 @@ extension GameplayViewController: EndOfGameDelegate {
 
 extension GameplayViewController: EndOfLevelDelegate {
     func didTapContinuePlaying() {
-        guard let scoreKeeper = scoreKeeper else {
-            fatalError("Scene must be available still to find the current score.")
-        }
-        delegate?.didTapContinuePlaying(carryOverScore: scoreKeeper.currentScore)
+        delegate?.didTapContinuePlaying()
     }
 }
