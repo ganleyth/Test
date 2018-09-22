@@ -40,6 +40,8 @@ class GameplaySceneInteractor: Interactor {
     private let descentAudioPlayer = AVAudioPlayer.audioPlayer(for: .descent, looping: false)
     private let musicAudioPlayer = AVAudioPlayer.audioPlayer(for: .music, looping: true, volumeLevel: .low)
     
+    private var longPressGestureRecognizer: UILongPressGestureRecognizer?
+    
     init(scene: GameplayScene) {
         super.init()
         
@@ -63,6 +65,7 @@ extension GameplaySceneInteractor {
     private func addGestureRecognizers() {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGestureRecognizer(gesture:)))
         longPress.minimumPressDuration = 0.05
+        longPressGestureRecognizer = longPress
         scene?.view?.addGestureRecognizer(longPress)
     }
 }
@@ -158,7 +161,16 @@ extension GameplaySceneInteractor {
             guard !hasEnded else { return }
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
             scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
-            player.state = .dead
+            
+            if hasCollided {
+                player.state = .dead
+            } else {
+                if let longPress = longPressGestureRecognizer {
+                    scene.view?.removeGestureRecognizer(longPress)
+                }
+                player.state = .levelComplete
+            }
+            
             scene.gameplayDelegate?.gameplayDidEnd()
             musicAudioPlayer?.stop()
             if gameplayViewController?.challenge != nil { updateChallenge() }

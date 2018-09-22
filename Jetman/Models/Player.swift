@@ -17,7 +17,7 @@ class Player: SKSpriteNode {
             if state != oldValue {
                 updateRotation()
                 updateAnimationAndPhysics()
-                if state == .dead { propulsionSoundPlayer?.stop() }
+                if state == .dead || state == .levelComplete { propulsionSoundPlayer?.stop() }
             }
         }
     }
@@ -92,6 +92,8 @@ extension Player {
             // Update physics
             physicsBody = SKPhysicsBody(texture: firstTexture, size: frame.size)
             setPhysicsBodyProperties()
+        case .levelComplete:
+            endLevel()
         case .dead:
             self.texture = firstTexture
             if isAscending { endAscension() }
@@ -127,6 +129,7 @@ extension Player {
     enum State {
         case idle
         case flying
+        case levelComplete
         case dead
     }
 }
@@ -159,6 +162,19 @@ extension Player {
         run(rotate)
         isAscending = false
 
+        GameSession.shared.soundQueue.addOperation { [weak self] in
+            guard let this = self else { return }
+            this.propulsionSoundPlayer?.pause()
+        }
+        
+        smokeEmitter?.particleBirthRate = 0
+    }
+    
+    func endLevel() {
+        physicsBody = nil
+        removeAction(forKey: Constants.Player.ascendKey)
+        isAscending = false
+        
         GameSession.shared.soundQueue.addOperation { [weak self] in
             guard let this = self else { return }
             this.propulsionSoundPlayer?.pause()
