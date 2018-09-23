@@ -147,8 +147,10 @@ final class LevelLayer: Layer {
         
         initializeTileMap(guideTileMap, with: tileSet, windowSize: windowSize)
         populateGuideTileMap()
+        addCoins()
         addPlatformToFirstTileMap()
         addFinishLine()
+        guideTileMap.scaleToWindowSize(windowSize)
         
         addChild(guideTileMap)
     }
@@ -167,8 +169,6 @@ final class LevelLayer: Layer {
         tileMap.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
         tileMap.numberOfRows = Constants.TileMapLayer.defaultRowCount
         tileMap.numberOfColumns = numberOfColumns
-        
-        tileMap.scaleToWindowSize(windowSize)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -209,6 +209,34 @@ extension LevelLayer {
                                       y: 0)
         finishLine.zPosition = -1
         guideTileMap.addChild(finishLine)
+    }
+    
+    private func addCoins() {
+        for obstacle in obstacles {
+            let spaceAbove = (CGFloat(guideTileMap.numberOfRows) * CGFloat(Constants.TileMapLayer.defaultTileHeight)) - (obstacle.position.y + (CGFloat(obstacle.numberOfRows) * CGFloat(Constants.TileMapLayer.defaultTileHeight)))
+            let spaceBelow = obstacle.position.y - (CGFloat(currentBottomBoundaryMaxRow) * CGFloat(Constants.TileMapLayer.defaultTileHeight))
+            
+            let placeCoinAbove: Bool
+            if spaceAbove > spaceBelow {
+                placeCoinAbove = true
+            } else if spaceBelow > spaceAbove {
+                placeCoinAbove = false
+            } else {
+                let random = GKRandomSource.sharedRandom().nextInt(upperBound: 2)
+                placeCoinAbove = random == 1
+            }
+            
+            let centerX = obstacle.position.x + (Constants.TileMapLayer.defaultTileWidth / 2.0)
+            let centerY: CGFloat
+            if placeCoinAbove {
+                centerY = (obstacle.position.y + CGFloat(obstacle.numberOfRows) * Constants.TileMapLayer.defaultTileHeight) + (spaceAbove / 2.0)
+            } else {
+                centerY = obstacle.position.y - (spaceBelow / 2.0)
+            }
+            
+            let coin = Coin(position: CGPoint(x: centerX, y: centerY))
+            guideTileMap.addChild(coin)
+        }
     }
     
     private func populateGuideTileMap() {

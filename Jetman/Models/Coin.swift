@@ -13,11 +13,12 @@ class Coin: SKSpriteNode {
     static let texture = SKTexture(imageNamed: "Coin")
     
     init(position: CGPoint) {
-        let radius = 40
+        let radius = 60
         let width = radius * 2
         let height = width * 262 / 240
         super.init(texture: Coin.texture, color: .clear, size: CGSize(width: width, height: height))
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        self.zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         self.position = position
         let pb = SKPhysicsBody(circleOfRadius: CGFloat(radius), center: position)
         pb.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.coin
