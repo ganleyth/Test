@@ -20,9 +20,11 @@ class Coin: SKSpriteNode {
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         self.position = position
-        let pb = SKPhysicsBody(circleOfRadius: CGFloat(radius), center: position)
+        let pb = SKPhysicsBody(circleOfRadius: CGFloat(radius), center: CGPoint.zero)
         pb.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.coin
         pb.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
+        pb.affectedByGravity = false
+        physicsBody = pb
     }
     
     required init?(coder aDecoder: NSCoder) {

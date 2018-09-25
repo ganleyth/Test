@@ -192,7 +192,7 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
                 return
         }
         
-        let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyContactTestBitMask.player ? contact.bodyA : contact.bodyB
+        let playerBody = contact.bodyA.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.player ? contact.bodyA : contact.bodyB
         let otherBody = playerBody == contact.bodyA ? contact.bodyB : contact.bodyA
         
         let emitter: SKEmitterNode?
