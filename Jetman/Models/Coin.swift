@@ -23,6 +23,7 @@ class Coin: SKSpriteNode {
         let pb = SKPhysicsBody(circleOfRadius: CGFloat(radius), center: CGPoint.zero)
         pb.categoryBitMask = Constants.PhysicsBodyCategoryBitMask.coin
         pb.contactTestBitMask = Constants.PhysicsBodyContactTestBitMask.player
+        pb.collisionBitMask = 0
         pb.affectedByGravity = false
         physicsBody = pb
     }

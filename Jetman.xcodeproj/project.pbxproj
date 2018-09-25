@@ -54,6 +54,7 @@
 		18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18847EBA207073F100B90C9C /* MyChallengesInteractor.swift */; };
 		188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA382083C03800E2AC6B /* GoogleService-Info.plist */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
+		18982082215A6E5800F20AB2 /* CoinEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18982081215A6E5800F20AB2 /* CoinEmitter.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
 		18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EC205DA1F000EB4BB8 /* Interactor.swift */; };
@@ -201,6 +202,7 @@
 		188CAA322083B6F400E2AC6B /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
 		188CAA382083C03800E2AC6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
+		18982081215A6E5800F20AB2 /* CoinEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinEmitter.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
 		18A671EC205DA1F000EB4BB8 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 				18DF6BDF20278BF100BF0502 /* ObstacleContactEmitter.sks */,
 				18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */,
 				18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */,
+				18982081215A6E5800F20AB2 /* CoinEmitter.sks */,
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -825,6 +828,7 @@
 				1817293E207B0CEF00D6F35E /* SharedAssets.xcassets in Resources */,
 				18847EB72070726C00B90C9C /* MyChallengesView.storyboard in Resources */,
 				183E75A3203B962C00092B2A /* music.wav in Resources */,
+				18982082215A6E5800F20AB2 /* CoinEmitter.sks in Resources */,
 				180C88AA1FC77F5F00D19F85 /* Assets.xcassets in Resources */,
 				18D52E7D21568CAC00059239 /* EndOfLevelCelebration.sks in Resources */,
 				183E759B203B335700092B2A /* bubblePop.wav in Resources */,
