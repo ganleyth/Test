@@ -236,6 +236,7 @@ extension LevelLayer {
             
             let coin = Coin(position: CGPoint(x: centerX, y: centerY))
             guideTileMap.addChild(coin)
+            coin.addRotation()
         }
     }
     

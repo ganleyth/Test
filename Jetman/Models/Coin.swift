@@ -31,4 +31,14 @@ class Coin: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func addRotation() {
+        let scale1 = SKAction.scaleX(to: 0.3, duration: 0.1)
+        let scale2 = SKAction.scaleX(to: 1.1, duration: 0.15)
+        let scale3 = SKAction.scaleX(to: -0.3, duration: 0.1)
+        let scale4 = SKAction.scaleX(to: -1.1, duration: 0.15)
+        let sequence = SKAction.sequence([scale1, scale3, scale4, scale3, scale1, scale2])
+        let loop = SKAction.repeatForever(sequence)
+        run(loop)
+    }
 }
