@@ -253,7 +253,7 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .light)
             audioPlayer = nil
             coin.removeFromParent()
-            GameSession.shared.scoreKeeper.addPointsForCoin()
+            GameSession.shared.scoreKeeper.addPointsForCoin(andDecreaseCoinsLeftToFireMode: !fireModeManager.inFireMode)
             let scoreIncreaseNode = ScoreIncreaseNode(scoreIncrease: 10)
             scoreIncreaseNode.position = CGPoint(x: contact.contactPoint.x, y: contact.contactPoint.y + CGFloat(20))
             scene.addChild(scoreIncreaseNode)
@@ -293,13 +293,15 @@ private extension GameplaySceneInteractor {
     }
     
     @objc func enterFireMode() {
-        guard let levelLayer = scene?.levelLayer else { return }
+        guard currentGameplayMode == .playing,
+            let levelLayer = scene?.levelLayer else { return }
         fireModeManager.enterFireMode()
         levelLayer.setVelocity(value: fireModeVelocity)
     }
     
     @objc func exitFireMode() {
-        guard let levelLayer = scene?.levelLayer else { return }
+        guard currentGameplayMode == .playing,
+            let levelLayer = scene?.levelLayer else { return }
         levelLayer.setVelocity(value: normalVelocity)
         GameSession.shared.scoreKeeper.resetCoinsToFireMode()
     }

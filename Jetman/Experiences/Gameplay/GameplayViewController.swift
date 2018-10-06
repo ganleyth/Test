@@ -127,7 +127,7 @@ private extension GameplayViewController {
     }
     
     func animateHighScoreLabelAlpha() {
-        UIView.animate(withDuration: 1, delay: 3, animations: { [weak self] in
+        UIView.animate(withDuration: 1, delay: 1, animations: { [weak self] in
             self?.highScoreLabel.alpha = 0
         }) { [weak self] (_) in
             self?.highScoreLabel.removeFromSuperview()

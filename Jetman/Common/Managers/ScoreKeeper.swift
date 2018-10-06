@@ -13,11 +13,13 @@ class ScoreKeeper {
     var currentScore = 0
     var coinsLeftToFireMode = 10
     
-    func addPointsForCoin() {
+    func addPointsForCoin(andDecreaseCoinsLeftToFireMode decreaseCoinsLeftToFireMode: Bool) {
         currentScore += 10
-        coinsLeftToFireMode -= 1
-        if coinsLeftToFireMode == 0 {
-            NotificationCenter.default.post(name: Constants.Notifications.coinsLeftToFireModeZero, object: self)
+        if decreaseCoinsLeftToFireMode {
+            coinsLeftToFireMode -= 1
+            if coinsLeftToFireMode == 0 {
+                NotificationCenter.default.post(name: Constants.Notifications.coinsLeftToFireModeZero, object: self)
+            }
         }
         postScoreChange()
     }

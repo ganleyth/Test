@@ -14,7 +14,7 @@ class FireModeManager {
     
     func enterFireMode() {
         inFireMode = true
-        timer = Timer(fire: Date(timeInterval: 10, since: Date()), interval: 0, repeats: false) { [weak self] (_) in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             guard let this = self else { return }
             NotificationCenter.default.post(name: Constants.Notifications.fireModeEnd, object: self)
             this.timer = nil
