@@ -162,9 +162,9 @@ struct Constants {
     
     enum ZPosition: Int {
         case backgroundLayer = 0
-        case emitter
         case playerAndObstacles
         case foregroundLayer
+        case emitter
         
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)
