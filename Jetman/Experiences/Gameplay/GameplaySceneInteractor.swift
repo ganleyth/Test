@@ -238,12 +238,15 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             audioPlayer = nil
         case Constants.PhysicsBodyCategoryBitMask.coin:
             guard currentGameplayMode == .playing,
-                let node = otherBody.node else { return }
+                let coin = otherBody.node as? Coin,
+                !coin.hasBeenCollected else { return }
+            coin.hasBeenCollected = true
             emitter = SKEmitterNode(fileNamed: "CoinEmitter")
             emitter?.position = contact.contactPoint
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .light)
             audioPlayer = nil
-            node.removeFromParent()
+            coin.removeFromParent()
+            GameSession.shared.scoreKeeper.addPointsForCoin()
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()

@@ -15,7 +15,7 @@ class GameSession: GKGameSession {
     var currentUser: User?
     let settings = Settings()
     let levelManager = LevelManager()
-    let scoreKeeper = ScoreKeeper(pointsPerTileMap: 100)
+    let scoreKeeper = ScoreKeeper()
     var highScore: Int? {
         get {
             return UserDefaults.standard.object(forKey: Constants.UserDefaults.highScore) as? Int

@@ -66,9 +66,7 @@ class GameplayScene: SKScene {
         }
         lastTime = currentTime
         
-        guard
-            let levelLayer = levelLayer else { return }
-        GameSession.shared.scoreKeeper.update(forPosition: levelLayer.currentPosition, maxPosition: levelLayer.absoluteTileMapWidth, completedTileMaps: 0)
+        guard let levelLayer = levelLayer else { return }
 
         gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: GameSession.shared.scoreKeeper.currentScore)
     }

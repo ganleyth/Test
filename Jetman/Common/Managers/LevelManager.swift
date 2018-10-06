@@ -8,6 +8,8 @@
 
 import Foundation
 
+typealias Level = Int
+
 class LevelManager {
     
     var currentLevel: Int {

@@ -11,6 +11,7 @@ import SpriteKit
 
 class Coin: SKSpriteNode {
     static let texture = SKTexture(imageNamed: "Coin")
+    var hasBeenCollected = false
     
     init(position: CGPoint) {
         let radius = 60

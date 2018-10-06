@@ -132,7 +132,9 @@ extension GameplayViewController: EndOfGameDelegate {
     }
     
     func didTapGoToHome() {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            GameSession.shared.scoreKeeper.reset(didGameEnd: true)
+        }
     }
     
     func didTapPlayAgain() {
