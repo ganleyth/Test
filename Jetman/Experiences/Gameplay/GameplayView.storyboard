@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Af-7c-xQP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Af-7c-xQP">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,22 +22,19 @@
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-s9-WvD">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                             </skView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-P4-fIB">
-                                <rect key="frame" x="24" y="337" width="142" height="26"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Isg-p4-Sxn">
+                                <rect key="frame" x="323.5" y="4" width="20.5" height="65"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsb-RO-H9D">
-                                        <rect key="frame" x="0.0" y="0.0" width="66" height="26"/>
-                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-HZ-oD2">
+                                        <rect key="frame" x="0.0" y="0.0" width="20.5" height="39"/>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                        <color key="textColor" name="AppRed"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW1-HZ-oD2">
-                                        <rect key="frame" x="70" y="0.0" width="72" height="26"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="72" id="BB8-zR-KHY"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EK5-ir-ly4">
+                                        <rect key="frame" x="0.0" y="39" width="20.5" height="26"/>
                                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" name="AppRed"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -44,9 +42,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Isg-p4-Sxn" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="DXL-qv-ugV"/>
                             <constraint firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
-                            <constraint firstItem="vvb-P4-fIB" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" constant="24" id="NpH-vw-LFl"/>
-                            <constraint firstAttribute="bottom" secondItem="vvb-P4-fIB" secondAttribute="bottom" constant="12" id="Ssx-Na-gdL"/>
+                            <constraint firstItem="Isg-p4-Sxn" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="NRE-Nz-pFW"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="top" secondItem="Sql-cf-KyZ" secondAttribute="top" id="Wsa-VI-f9q"/>
                             <constraint firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" id="s7D-1Z-tiX"/>
@@ -54,8 +52,8 @@
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
                     <connections>
+                        <outlet property="highScoreLabel" destination="EK5-ir-ly4" id="syR-33-WFP"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
-                        <outlet property="scoreNameLabel" destination="Dsb-RO-H9D" id="jFC-sC-HXr"/>
                         <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
                     </connections>
                 </viewController>
@@ -64,4 +62,9 @@
             <point key="canvasLocation" x="34.632683658170919" y="-631.20000000000005"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AppRed">
+            <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

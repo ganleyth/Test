@@ -247,6 +247,9 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             audioPlayer = nil
             coin.removeFromParent()
             GameSession.shared.scoreKeeper.addPointsForCoin()
+            let scoreIncreaseNode = ScoreIncreaseNode(scoreIncrease: 10)
+            scoreIncreaseNode.position = CGPoint(x: contact.contactPoint.x, y: contact.contactPoint.y + CGFloat(20))
+            scene.addChild(scoreIncreaseNode)
         default:
             Logger.severe("Player made contact with invalid body", filePath: #file, funcName: #function, lineNumber: #line)
             fatalError()

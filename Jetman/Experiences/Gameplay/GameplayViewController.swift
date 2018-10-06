@@ -19,8 +19,8 @@ protocol GameplayDelegate: class {
 class GameplayViewController: UIViewController {
     
     @IBOutlet weak var skView: SKView!
-    @IBOutlet weak var scoreNameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var highScoreLabel: UILabel!
     
     lazy var endOfGameView: EndOfGameViewController? = {
         guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else { return nil }
@@ -76,13 +76,28 @@ class GameplayViewController: UIViewController {
         skView.showsPhysics = true
         
         (skView.scene as? GameplayScene)?.gameplayDelegate = self
+        configureSubviews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateHighScoreLabelAlpha()
     }
     
     override var prefersStatusBarHidden: Bool {
         return true
     }
+}
+
+// MARK: - Private helpers
+private extension GameplayViewController {
     
-    private func animateEmbeddedControllerVisibility(isVisible: Bool, playerDied: Bool) {
+    func configureSubviews() {
+        scoreLabel.text = "\(GameSession.shared.scoreKeeper.currentScore)"
+        highScoreLabel.text = "High: \(GameSession.shared.highScore ?? 0)"
+    }
+    
+    func animateEmbeddedControllerVisibility(isVisible: Bool, playerDied: Bool) {
         guard let viewToPresent: UIViewController = playerDied ? endOfGameView : endOfLevelView else { return }
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -105,6 +120,14 @@ class GameplayViewController: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
             containerView.transform = CGAffineTransform.identity
         }, completion: nil)
+    }
+    
+    func animateHighScoreLabelAlpha() {
+        UIView.animate(withDuration: 1, delay: 3, animations: { [weak self] in
+            self?.highScoreLabel.alpha = 0
+        }) { [weak self] (_) in
+            self?.highScoreLabel.removeFromSuperview()
+        }
     }
 }
 

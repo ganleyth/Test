@@ -60,6 +60,7 @@
 		18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EC205DA1F000EB4BB8 /* Interactor.swift */; };
 		18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EE205DACD900EB4BB8 /* FriendManager.swift */; };
 		18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */; };
+		18AA25A121695A0E00AA3331 /* ScoreIncreaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */; };
 		18ABA4242146124900FFD2C4 /* FinishLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4232146124900FFD2C4 /* FinishLine.swift */; };
 		18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */; };
 		18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FD51FDA506100D59107 /* WelcomeViewController.swift */; };
@@ -208,6 +209,7 @@
 		18A671EC205DA1F000EB4BB8 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		18A671EE205DACD900EB4BB8 /* FriendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendManager.swift; sourceTree = "<group>"; };
 		18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Helpers.swift"; sourceTree = "<group>"; };
+		18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreIncreaseNode.swift; sourceTree = "<group>"; };
 		18ABA4232146124900FFD2C4 /* FinishLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLine.swift; sourceTree = "<group>"; };
 		18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		18B32FD51FDA506100D59107 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -482,6 +484,7 @@
 				18E36BC62140136A00858560 /* Obstacle.swift */,
 				18ABA4232146124900FFD2C4 /* FinishLine.swift */,
 				18D52E832157116C00059239 /* Coin.swift */,
+				18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -985,6 +988,7 @@
 				183E756C2038AFAF00092B2A /* GameSession.swift in Sources */,
 				18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */,
 				18DD3505208BC9FE0077E7B1 /* ChallengeResponseViewController.swift in Sources */,
+				18AA25A121695A0E00AA3331 /* ScoreIncreaseNode.swift in Sources */,
 				18B3301D1FDC7B9500D59107 /* Layer.swift in Sources */,
 				18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */,
 				18847EBB207073F100B90C9C /* MyChallengesInteractor.swift in Sources */,
