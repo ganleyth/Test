@@ -21,6 +21,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var skView: SKView!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
+    @IBOutlet weak var coinsToFireModeLabel: UILabel!
     
     lazy var endOfGameView: EndOfGameViewController? = {
         guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else { return nil }
@@ -77,6 +78,9 @@ class GameplayViewController: UIViewController {
         
         (skView.scene as? GameplayScene)?.gameplayDelegate = self
         configureSubviews()
+        updateScoreLabels()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateScoreLabels), name: Constants.Notifications.scoreDidUpdate, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -132,13 +136,9 @@ private extension GameplayViewController {
 }
 
 extension GameplayViewController: GameplaySceneDelegate {
-    func gameplaySceneDidUpdateScore(newScore: Int) {
-        guard
-            let displayedScore = scoreLabel.text,
-            let displayedScoreInt = Int(displayedScore),
-            newScore != displayedScoreInt else { return }
-        
-        scoreLabel.text = "\(newScore)"
+    @objc func updateScoreLabels() {
+        scoreLabel.text = "\(GameSession.shared.scoreKeeper.currentScore)"
+        coinsToFireModeLabel.text = "\(GameSession.shared.scoreKeeper.coinsLeftToFireMode)"
     }
     
     func gameplayDidEnd(playerDied: Bool) {

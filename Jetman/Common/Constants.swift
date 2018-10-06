@@ -53,8 +53,11 @@ struct Constants {
     
     struct Notifications {
         static let challengeReceived = Notification.Name(rawValue: "ChallengeReceived")
+        static let coinsLeftToFireModeZero = Notification.Name(rawValue: "CoinsLeftToFireModeZero")
+        static let fireModeEnd = Notification.Name(rawValue: "FireModeEnd")
         static let presentAlert = Notification.Name(rawValue: "PresentAlert")
         static let requestNewUsernameEntry = Notification.Name(rawValue: "RequestNewUsername")
+        static let scoreDidUpdate = Notification.Name(rawValue: "ScoreDidUpdate")
         
         struct UserInfo {
             static let message = "message"

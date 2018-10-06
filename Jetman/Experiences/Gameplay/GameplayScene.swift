@@ -9,7 +9,6 @@
 import SpriteKit
 
 protocol GameplaySceneDelegate: class {
-    func gameplaySceneDidUpdateScore(newScore: Int)
     func gameplayDidEnd(playerDied: Bool)
 }
 
@@ -53,8 +52,6 @@ class GameplayScene: SKScene {
         
         player.position = playerPosition
         addChild(player)
-        
-        gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: 0)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -65,9 +62,5 @@ class GameplayScene: SKScene {
             levelLayer?.update(with: delta, in: view.frame.size)
         }
         lastTime = currentTime
-        
-        guard let levelLayer = levelLayer else { return }
-
-        gameplayDelegate?.gameplaySceneDidUpdateScore(newScore: GameSession.shared.scoreKeeper.currentScore)
     }
 }

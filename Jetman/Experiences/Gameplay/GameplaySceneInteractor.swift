@@ -42,6 +42,10 @@ class GameplaySceneInteractor: Interactor {
     
     private var longPressGestureRecognizer: UILongPressGestureRecognizer?
     
+    private let fireModeManager = FireModeManager()
+    private let normalVelocity = CGPoint(x: -220, y: 0)
+    private let fireModeVelocity = CGPoint(x: -330, y: 0)
+    
     init(scene: GameplayScene) {
         super.init()
         
@@ -53,6 +57,9 @@ class GameplaySceneInteractor: Interactor {
         collisionAudioPlayer?.delegate = self
         descentAudioPlayer?.prepareToPlay()
         musicAudioPlayer?.play()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(exitFireMode), name: Constants.Notifications.fireModeEnd, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(enterFireMode), name: Constants.Notifications.coinsLeftToFireModeZero, object: nil)
     }
     
     func reset() {
@@ -155,12 +162,12 @@ extension GameplaySceneInteractor {
             player.state = .idle
         case .playing:
             GameAnalytics.addProgressionEvent(with: GAProgressionStatusStart, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!")
-            scene.backgroundLayer?.setVelocity(value: CGPoint(x: -50, y: 0))
-            scene.levelLayer?.setVelocity(value: CGPoint(x: Constants.TileMapLayer.startingVelocity, y: 0))
+            scene.backgroundLayer?.setVelocity(value: CGPoint(x: -100, y: 0))
+            scene.levelLayer?.setVelocity(value: normalVelocity)
         case .gameOver:
             guard !hasEnded else { return }
-            scene.backgroundLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
-            scene.levelLayer?.setVelocity(value: CGPoint(x: 0, y: 0))
+            scene.backgroundLayer?.setVelocity(value: .zero)
+            scene.levelLayer?.setVelocity(value: .zero)
             
             if hasCollided {
                 player.state = .dead
@@ -283,6 +290,18 @@ private extension GameplaySceneInteractor {
         if splashAudioPlayer?.isPlaying ?? false { splashAudioPlayer?.stop() }
         if collisionAudioPlayer?.isPlaying ?? false { collisionAudioPlayer?.stop() }
         if descentAudioPlayer?.isPlaying ?? false { descentAudioPlayer?.stop() }
+    }
+    
+    @objc func enterFireMode() {
+        guard let levelLayer = scene?.levelLayer else { return }
+        fireModeManager.enterFireMode()
+        levelLayer.setVelocity(value: fireModeVelocity)
+    }
+    
+    @objc func exitFireMode() {
+        guard let levelLayer = scene?.levelLayer else { return }
+        levelLayer.setVelocity(value: normalVelocity)
+        GameSession.shared.scoreKeeper.resetCoinsToFireMode()
     }
     
     func updateChallenge() {}

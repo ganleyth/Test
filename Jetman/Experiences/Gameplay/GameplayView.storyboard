@@ -39,19 +39,45 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jLe-Hg-9hx">
+                                <rect key="frame" x="563.5" y="4" width="39.5" height="24"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Jwm-8t-Uci">
+                                        <rect key="frame" x="0.0" y="0.0" width="19" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Jwm-8t-Uci" secondAttribute="height" multiplier="102:128" id="rtL-Zn-9fS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nza-w8-YxN">
+                                        <rect key="frame" x="23" y="0.0" width="16.5" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="gSq-sj-bBY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                                        <color key="textColor" name="AppRed"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Jwm-8t-Uci" firstAttribute="height" secondItem="nza-w8-YxN" secondAttribute="height" id="YCv-nh-MFF"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jLe-Hg-9hx" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="1nK-d3-dF6"/>
                             <constraint firstItem="Isg-p4-Sxn" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="DXL-qv-ugV"/>
                             <constraint firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
                             <constraint firstItem="Isg-p4-Sxn" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="NRE-Nz-pFW"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="top" secondItem="Sql-cf-KyZ" secondAttribute="top" id="Wsa-VI-f9q"/>
                             <constraint firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
+                            <constraint firstItem="3cD-BQ-kkw" firstAttribute="trailing" secondItem="jLe-Hg-9hx" secondAttribute="trailing" constant="64" id="iEG-1r-TbU"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="leading" secondItem="Sql-cf-KyZ" secondAttribute="leading" id="s7D-1Z-tiX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3cD-BQ-kkw"/>
                     </view>
                     <connections>
+                        <outlet property="coinsToFireModeLabel" destination="nza-w8-YxN" id="BFy-Es-yN7"/>
                         <outlet property="highScoreLabel" destination="EK5-ir-ly4" id="syR-33-WFP"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
                         <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
@@ -63,6 +89,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FireIcon" width="102" height="128"/>
         <namedColor name="AppRed">
             <color red="0.89411764705882357" green="0.32941176470588235" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
