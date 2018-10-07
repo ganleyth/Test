@@ -24,9 +24,12 @@ class ScoreKeeper {
         postScoreChange()
     }
     
-    func addPointsForDestroyedObstacle(in level: Level) {
-        currentScore += (10 + 2 * level)
+    @discardableResult
+    func addPointsForDestroyedObstacle(in level: Level) -> Int {
+        let increment = (10 + 2 * level)
+        currentScore += increment
         postScoreChange()
+        return increment
     }
     
     func reset(didGameEnd: Bool) {

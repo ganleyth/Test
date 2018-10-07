@@ -221,12 +221,31 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             hasSplashed = true
         case Constants.PhysicsBodyCategoryBitMask.obstacle:
             guard currentGameplayMode == .playing else { return }
-            emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
+            if !fireModeManager.inFireMode {
+                emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
+                emitter?.numParticlesToEmit = 15
+                audioPlayer = hasCollided ? nil : collisionAudioPlayer
+                hasCollided = true
+            } else {
+                guard
+                    let shapeNode = otherBody.node as? ShapeNodeForPhysicsBody,
+                    let obstacle = shapeNode.attachedToNode else { fatalError("This has to be an Obstacle") }
+                if obstacle.hasExploded {
+                    emitter = nil
+                    audioPlayer = nil
+                } else {
+                    obstacle.hasExploded = true
+                    obstacle.removeFromParent()
+                    emitter = SKEmitterNode(fileNamed: "ObstacleExplosionEmitter")
+                    audioPlayer = collisionAudioPlayer
+                    let scoreIncrease = GameSession.shared.scoreKeeper.addPointsForDestroyedObstacle(in: GameSession.shared.levelManager.currentLevel)
+                    let scoreIncreaseNode = ScoreIncreaseNode(scoreIncrease: scoreIncrease)
+                    scoreIncreaseNode.position = CGPoint(x: contact.contactPoint.x, y: contact.contactPoint.y + CGFloat(20))
+                    scene.addChild(scoreIncreaseNode)
+                }
+            }
             emitter?.position = contact.contactPoint
-            emitter?.numParticlesToEmit = 15
             feedbackGenerator = CustomUIImpactFeedbackGenerator(style: .medium)
-            audioPlayer = hasCollided ? nil : collisionAudioPlayer
-            hasCollided = true
         case Constants.PhysicsBodyCategoryBitMask.topBoundary:
             guard currentGameplayMode == .playing else { return }
             emitter = SKEmitterNode(fileNamed: "ObstacleContactEmitter") ?? SKEmitterNode()
@@ -262,8 +281,10 @@ extension GameplaySceneInteractor: SKPhysicsContactDelegate {
             fatalError()
         }
         
-        if (otherBody.categoryBitMask != Constants.PhysicsBodyCategoryBitMask.platform)
-            && (otherBody.categoryBitMask != Constants.PhysicsBodyCategoryBitMask.coin) {
+        if otherBody.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.bottomBoundary ||
+            otherBody.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.topBoundary ||
+            otherBody.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.finishLine ||
+            (!fireModeManager.inFireMode && otherBody.categoryBitMask == Constants.PhysicsBodyCategoryBitMask.obstacle) {
             currentGameplayMode = .gameOver
         }
         

@@ -15,6 +15,8 @@ class Obstacle: SKTileMapNode {
     let obstacleBuildingBlocks: ObstacleBuildingBlocks
     let isDynamic: Bool
     
+    var hasExploded = false
+    
     var heightIncludingCaps: Int {
         return length + 2
     }
@@ -55,7 +57,8 @@ class Obstacle: SKTileMapNode {
     
     private func setupPhysicsBody() {
         let lengthSpriteSize = CGSize(width: tileSize.width, height: CGFloat(length) * tileSize.height)
-        let lengthSprite = SKSpriteNode(color: .clear, size: CGSize(width: tileSize.width, height: CGFloat(length) * tileSize.height))
+        let lengthSprite = ShapeNodeForPhysicsBody(color: .clear, size: CGSize(width: tileSize.width, height: CGFloat(length) * tileSize.height))
+        lengthSprite.attachedToNode = self
         lengthSprite.anchorPoint = CGPoint.zero
         let x: CGFloat = 0
         let lengthY = tileSize.height
@@ -68,7 +71,8 @@ class Obstacle: SKTileMapNode {
         lengthSprite.name = Constants.SpriteName.obstacle
         addChild(lengthSprite)
         
-        let topSprite = SKSpriteNode(color: .clear, size: tileSize)
+        let topSprite = ShapeNodeForPhysicsBody(color: .clear, size: tileSize)
+        topSprite.attachedToNode = self
         topSprite.anchorPoint = CGPoint.zero
         topSprite.position = CGPoint(x: x, y: lengthY + CGFloat(length) * tileSize.height)
         topSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: CGRect(origin: CGPoint.zero, size: tileSize))
@@ -78,7 +82,8 @@ class Obstacle: SKTileMapNode {
         topSprite.name = Constants.SpriteName.obstacle
         addChild(topSprite)
         
-        let bottomSprite = SKSpriteNode(color: .clear, size: tileSize)
+        let bottomSprite = ShapeNodeForPhysicsBody(color: .clear, size: tileSize)
+        bottomSprite.attachedToNode = self
         bottomSprite.anchorPoint = CGPoint.zero
         bottomSprite.position = CGPoint(x: x, y: lengthY - tileSize.height)
         bottomSprite.physicsBody = SKPhysicsBody(edgeLoopFrom: UIBezierPath.triangleOfDefaultSize.cgPath)

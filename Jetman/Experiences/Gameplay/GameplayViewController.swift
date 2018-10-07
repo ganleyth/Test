@@ -22,6 +22,7 @@ class GameplayViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var highScoreLabel: UILabel!
     @IBOutlet weak var coinsToFireModeLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     
     lazy var endOfGameView: EndOfGameViewController? = {
         guard let endOfGameView = UIStoryboard(name: "EndOfGameView", bundle: nil).instantiateInitialViewController() as? EndOfGameViewController else { return nil }
@@ -99,6 +100,7 @@ private extension GameplayViewController {
     func configureSubviews() {
         scoreLabel.text = "\(GameSession.shared.scoreKeeper.currentScore)"
         highScoreLabel.text = "High: \(GameSession.shared.highScore ?? 0)"
+        levelLabel.text = "Level: \(GameSession.shared.levelManager.currentLevel)"
     }
     
     func animateEmbeddedControllerVisibility(isVisible: Bool, playerDied: Bool) {
@@ -129,8 +131,10 @@ private extension GameplayViewController {
     func animateHighScoreLabelAlpha() {
         UIView.animate(withDuration: 1, delay: 1, animations: { [weak self] in
             self?.highScoreLabel.alpha = 0
+            self?.levelLabel.alpha = 0
         }) { [weak self] (_) in
             self?.highScoreLabel.removeFromSuperview()
+            self?.levelLabel.removeFromSuperview()
         }
     }
 }

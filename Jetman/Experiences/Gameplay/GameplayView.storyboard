@@ -62,13 +62,29 @@
                                     <constraint firstItem="Jwm-8t-Uci" firstAttribute="height" secondItem="nza-w8-YxN" secondAttribute="height" id="YCv-nh-MFF"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzS-49-0rG">
+                                <rect key="frame" x="64" y="4" width="98.5" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsP-fi-bUk">
+                                        <rect key="frame" x="0.0" y="0.0" width="98.5" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="KMg-tD-rkg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
+                                        <color key="textColor" name="AppRed"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jLe-Hg-9hx" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="1nK-d3-dF6"/>
                             <constraint firstItem="Isg-p4-Sxn" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="DXL-qv-ugV"/>
+                            <constraint firstItem="wzS-49-0rG" firstAttribute="top" secondItem="3cD-BQ-kkw" secondAttribute="top" constant="4" id="GBv-Nn-mV9"/>
                             <constraint firstAttribute="bottom" secondItem="Izn-s9-WvD" secondAttribute="bottom" id="HW5-Wv-x5u"/>
                             <constraint firstItem="Isg-p4-Sxn" firstAttribute="centerX" secondItem="Sql-cf-KyZ" secondAttribute="centerX" id="NRE-Nz-pFW"/>
+                            <constraint firstItem="wzS-49-0rG" firstAttribute="leading" secondItem="3cD-BQ-kkw" secondAttribute="leading" constant="64" id="WFj-uy-MkU"/>
                             <constraint firstItem="Izn-s9-WvD" firstAttribute="top" secondItem="Sql-cf-KyZ" secondAttribute="top" id="Wsa-VI-f9q"/>
                             <constraint firstAttribute="trailing" secondItem="Izn-s9-WvD" secondAttribute="trailing" id="hxY-KV-nIR"/>
                             <constraint firstItem="3cD-BQ-kkw" firstAttribute="trailing" secondItem="jLe-Hg-9hx" secondAttribute="trailing" constant="64" id="iEG-1r-TbU"/>
@@ -79,6 +95,7 @@
                     <connections>
                         <outlet property="coinsToFireModeLabel" destination="nza-w8-YxN" id="BFy-Es-yN7"/>
                         <outlet property="highScoreLabel" destination="EK5-ir-ly4" id="syR-33-WFP"/>
+                        <outlet property="levelLabel" destination="GsP-fi-bUk" id="PCz-Ri-xa0"/>
                         <outlet property="scoreLabel" destination="TW1-HZ-oD2" id="Zl2-gG-rl9"/>
                         <outlet property="skView" destination="Izn-s9-WvD" id="5Hh-mI-DAq"/>
                     </connections>

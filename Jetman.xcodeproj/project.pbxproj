@@ -20,6 +20,7 @@
 		181AD9C620CD82B100EEEB7F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C520CD82B100EEEB7F /* User.swift */; };
 		181AD9C820CD964400EEEB7F /* CloudKitSyncable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */; };
 		181AD9CA20CDF2CF00EEEB7F /* CKRecord+AppExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181AD9C920CDF2CF00EEEB7F /* CKRecord+AppExtensions.swift */; };
+		182E85292169BABF0055A5C9 /* ShapeNodeForPhysicsBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E85282169BABF0055A5C9 /* ShapeNodeForPhysicsBody.swift */; };
 		183E67612068724700E6DB57 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E67602068724700E6DB57 /* UIViewController+Helpers.swift */; };
 		183E6763206874B700E6DB57 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E6762206874B700E6DB57 /* FirebaseManager.swift */; };
 		183E756C2038AFAF00092B2A /* GameSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E756B2038AFAF00092B2A /* GameSession.swift */; };
@@ -62,6 +63,7 @@
 		18A8A83B201641B200749884 /* UIBezierPath+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */; };
 		18AA25A121695A0E00AA3331 /* ScoreIncreaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */; };
 		18AA25A3216968E100AA3331 /* FireModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA25A2216968E100AA3331 /* FireModeManager.swift */; };
+		18AA25A72169B60100AA3331 /* ObstacleExplosionEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18AA25A62169B60000AA3331 /* ObstacleExplosionEmitter.sks */; };
 		18ABA4242146124900FFD2C4 /* FinishLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABA4232146124900FFD2C4 /* FinishLine.swift */; };
 		18B32FD41FDA504F00D59107 /* WelcomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */; };
 		18B32FD61FDA506100D59107 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B32FD51FDA506100D59107 /* WelcomeViewController.swift */; };
@@ -165,6 +167,7 @@
 		181AD9C520CD82B100EEEB7F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncable.swift; sourceTree = "<group>"; };
 		181AD9C920CDF2CF00EEEB7F /* CKRecord+AppExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CKRecord+AppExtensions.swift"; sourceTree = "<group>"; };
+		182E85282169BABF0055A5C9 /* ShapeNodeForPhysicsBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeNodeForPhysicsBody.swift; sourceTree = "<group>"; };
 		183E67602068724700E6DB57 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		183E6762206874B700E6DB57 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		183E756B2038AFAF00092B2A /* GameSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSession.swift; sourceTree = "<group>"; };
@@ -212,6 +215,7 @@
 		18A8A83A201641B200749884 /* UIBezierPath+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Helpers.swift"; sourceTree = "<group>"; };
 		18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreIncreaseNode.swift; sourceTree = "<group>"; };
 		18AA25A2216968E100AA3331 /* FireModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireModeManager.swift; sourceTree = "<group>"; };
+		18AA25A62169B60000AA3331 /* ObstacleExplosionEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ObstacleExplosionEmitter.sks; sourceTree = "<group>"; };
 		18ABA4232146124900FFD2C4 /* FinishLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishLine.swift; sourceTree = "<group>"; };
 		18B32FD31FDA504F00D59107 /* WelcomeView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeView.storyboard; sourceTree = "<group>"; };
 		18B32FD51FDA506100D59107 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -487,6 +491,7 @@
 				18ABA4232146124900FFD2C4 /* FinishLine.swift */,
 				18D52E832157116C00059239 /* Coin.swift */,
 				18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */,
+				182E85282169BABF0055A5C9 /* ShapeNodeForPhysicsBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -642,6 +647,7 @@
 				18DF6BE120279C9100BF0502 /* JetpackSmokeEmitter.sks */,
 				18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */,
 				18982081215A6E5800F20AB2 /* CoinEmitter.sks */,
+				18AA25A62169B60000AA3331 /* ObstacleExplosionEmitter.sks */,
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -843,6 +849,7 @@
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
 				18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */,
 				1884675B20E94D0800CE5F33 /* LeaderboardView.storyboard in Resources */,
+				18AA25A72169B60100AA3331 /* ObstacleExplosionEmitter.sks in Resources */,
 				183E759F203B83C100092B2A /* crash.wav in Resources */,
 				1851438120D8C0D5000EC8A0 /* ActivityIndicator.xib in Resources */,
 				18D52E802156AA5300059239 /* EndOfLevelView.storyboard in Resources */,
@@ -964,6 +971,7 @@
 				183E7599203A7D7B00092B2A /* AVAudioPlayer+Helpers.swift in Sources */,
 				18B3301B1FDC7B7D00D59107 /* Player.swift in Sources */,
 				18B32FED1FDC408400D59107 /* WelcomeScene.swift in Sources */,
+				182E85292169BABF0055A5C9 /* ShapeNodeForPhysicsBody.swift in Sources */,
 				18ABA4242146124900FFD2C4 /* FinishLine.swift in Sources */,
 				18AA25A3216968E100AA3331 /* FireModeManager.swift in Sources */,
 				1853AAC320715FB4007EEC62 /* MessagesChallenge.swift in Sources */,

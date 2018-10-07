@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14306.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uyp-os-zH3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uyp-os-zH3">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14278.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="v5i-Eo-1Lu">
-                                <rect key="frame" x="132" y="68" width="304" height="50.5"/>
+                                <rect key="frame" x="132" y="68" width="266" height="50.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NextLevel" translatesAutoresizingMaskIntoConstraints="NO" id="PK7-cq-FEC">
                                         <rect key="frame" x="0.0" y="11" width="203.5" height="28.5"/>
@@ -40,7 +40,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wht-4X-ca4">
-                                        <rect key="frame" x="219.5" y="0.0" width="84.5" height="50.5"/>
+                                        <rect key="frame" x="219.5" y="0.0" width="46.5" height="50.5"/>
                                         <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="38"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -107,7 +107,7 @@
                             <constraint firstItem="c50-43-y3Q" firstAttribute="bottom" secondItem="Q1E-fb-xYd" secondAttribute="bottom" constant="32" id="7Y6-eP-wx1"/>
                             <constraint firstItem="rNE-gT-cWw" firstAttribute="centerX" secondItem="Z2A-PL-d7v" secondAttribute="centerX" id="A7E-6S-kJ2"/>
                             <constraint firstItem="Q1E-fb-xYd" firstAttribute="height" secondItem="c50-43-y3Q" secondAttribute="height" multiplier="0.17" id="B2a-2G-6Jf"/>
-                            <constraint firstItem="c50-43-y3Q" firstAttribute="trailing" secondItem="v5i-Eo-1Lu" secondAttribute="trailing" constant="48" id="ILT-wH-VMY"/>
+                            <constraint firstItem="c50-43-y3Q" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="v5i-Eo-1Lu" secondAttribute="trailing" constant="16" id="ILT-wH-VMY"/>
                             <constraint firstItem="OVC-pc-AXm" firstAttribute="height" secondItem="c50-43-y3Q" secondAttribute="height" multiplier="0.065" id="Jg3-mf-AAd"/>
                             <constraint firstItem="c50-43-y3Q" firstAttribute="top" secondItem="Z2A-PL-d7v" secondAttribute="top" id="Nij-Yt-hbc"/>
                             <constraint firstItem="rNE-gT-cWw" firstAttribute="height" secondItem="Z2A-PL-d7v" secondAttribute="height" multiplier="0.1" id="Pt1-cC-jRR"/>
@@ -132,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDq-Yr-zq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73.313343328335833" y="151.19999999999999"/>
+            <point key="canvasLocation" x="72.887323943661968" y="150"/>
         </scene>
     </scenes>
     <resources>
