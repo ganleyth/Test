@@ -113,6 +113,7 @@
 		18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */; };
 		18E53F8E20C7770600BE7BB9 /* EndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */; };
 		18EFBA602083DF90007462CC /* Jetman.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 183E75A4203BADAB00092B2A /* Jetman.entitlements */; };
+		18F1CD85217B761D00CE6231 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18F1CD84217B761D00CE6231 /* MyScene.sks */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -265,6 +266,7 @@
 		18E36BC62140136A00858560 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndOfGameView.storyboard; sourceTree = "<group>"; };
 		18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameViewController.swift; sourceTree = "<group>"; };
+		18F1CD84217B761D00CE6231 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
@@ -355,6 +357,13 @@
 				1817293B207B0C9C00D6F35E /* SharedAssets.xcassets */,
 			);
 			path = SharedJetman;
+			sourceTree = "<group>";
+		};
+		182E852A2169C8860055A5C9 /* Light Nodes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Light Nodes";
 			sourceTree = "<group>";
 		};
 		183E7595203A781B00092B2A /* Sounds */ = {
@@ -503,6 +512,7 @@
 				18CEF3081FD32E35005C3980 /* Managers */,
 				183E7595203A781B00092B2A /* Sounds */,
 				18CEF30F1FD32E8D005C3980 /* UI Elements */,
+				182E852A2169C8860055A5C9 /* Light Nodes */,
 				18CEF31B1FD4E8D7005C3980 /* Constants.swift */,
 				183E7593203A727300092B2A /* CustomSubclasses.swift */,
 				18CEF3161FD489D7005C3980 /* Logger.swift */,
@@ -568,6 +578,7 @@
 				18DF6BD82027786200BF0502 /* Emitters */,
 				1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */,
 				1851438220D8C2D5000EC8A0 /* ActivityIndicator.swift */,
+				18F1CD84217B761D00CE6231 /* MyScene.sks */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -863,6 +874,7 @@
 				1884676320E97A2F00CE5F33 /* RightDetailTableViewCell.xib in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
+				18F1CD85217B761D00CE6231 /* MyScene.sks in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

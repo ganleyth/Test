@@ -41,6 +41,19 @@ class Player: SKSpriteNode {
         emitter.particleBirthRate = 0
         return emitter
     }()
+    
+    private lazy var fireModeLight: SKLightNode = {
+        let light = SKLightNode()
+        light.position = CGPoint(x: -22, y: -27)
+        light.zPosition = Constants.ZPosition.light.floatValue
+        light.name = Constants.Player.lightName
+        light.lightColor = .yellow
+        light.ambientColor = .black
+        light.falloff = 1
+        light.isEnabled = false
+        light.categoryBitMask = Constants.Lighting.fireModeLightBitMask
+        return light
+    }()
 
     init(gender: Gender) {
         self.gender = gender
@@ -49,8 +62,13 @@ class Player: SKSpriteNode {
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         propulsionSoundPlayer?.prepareToPlay()
         if let se = smokeEmitter { addChild(se) }
+        addChild(fireModeLight)
+        lightingBitMask = Constants.Lighting.fireModeLightBitMask
         
         updateAnimationAndPhysics()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(enterFireMode), name: Constants.Notifications.fireModeBegin, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(exitFireMode), name: Constants.Notifications.fireModeEnd, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -181,5 +199,13 @@ extension Player {
         }
         
         smokeEmitter?.particleBirthRate = 0
+    }
+    
+    @objc private func enterFireMode() {
+        fireModeLight.isEnabled = true
+    }
+    
+    @objc private func exitFireMode() {
+        fireModeLight.isEnabled = false
     }
 }

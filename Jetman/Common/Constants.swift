@@ -47,6 +47,10 @@ struct Constants {
         static let global: LeaderboardName = "GlobalLeaderboard"
     }
     
+    struct Lighting {
+        static let fireModeLightBitMask: UInt32 = 0b00000000000000000000000000000001
+    }
+    
     struct LoggerDefaults {
         static let defaultFormat = "yyyy-MM-dd hh:mm:ss.SSS"
     }
@@ -54,6 +58,7 @@ struct Constants {
     struct Notifications {
         static let challengeReceived = Notification.Name(rawValue: "ChallengeReceived")
         static let coinsLeftToFireModeZero = Notification.Name(rawValue: "CoinsLeftToFireModeZero")
+        static let fireModeBegin = Notification.Name(rawValue: "FireModeBegin")
         static let fireModeEnd = Notification.Name(rawValue: "FireModeEnd")
         static let presentAlert = Notification.Name(rawValue: "PresentAlert")
         static let requestNewUsernameEntry = Notification.Name(rawValue: "RequestNewUsername")
@@ -83,6 +88,7 @@ struct Constants {
     struct Player {
         static let animationKey = "animation"
         static let ascendKey = "ascend"
+        static let lightName = "light"
         static let smokeEmitterName = "smokeEmitter"
     }
     
@@ -168,6 +174,7 @@ struct Constants {
         case playerAndObstacles
         case foregroundLayer
         case emitter
+        case light
         
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)

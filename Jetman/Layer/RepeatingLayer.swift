@@ -20,6 +20,8 @@ class RepeatingLayer: Layer {
         super.init()
 
         setupRepeatingNodes()
+        
+        nodes.forEach { $0.lightingBitMask = Constants.Lighting.fireModeLightBitMask }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -67,5 +69,4 @@ extension RepeatingLayer {
             nodes.sort { $0.position.x < $1.position.x }
         }
     }
-    
 }

@@ -37,6 +37,7 @@ class FinishLine: SKTileMapNode {
         self.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
         self.numberOfRows = length
         self.numberOfColumns = width
+        lightingBitMask = Constants.Lighting.fireModeLightBitMask
         
         populateFinishLine()
         setupPhysicsBody()

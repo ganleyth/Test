@@ -27,6 +27,7 @@ class Coin: SKSpriteNode {
         pb.collisionBitMask = 0
         pb.affectedByGravity = false
         physicsBody = pb
+        lightingBitMask = Constants.Lighting.fireModeLightBitMask
     }
     
     required init?(coder aDecoder: NSCoder) {

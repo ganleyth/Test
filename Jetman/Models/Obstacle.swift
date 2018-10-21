@@ -35,6 +35,7 @@ class Obstacle: SKTileMapNode {
         self.tileSize = CGSize(width: Constants.TileMapLayer.defaultTileWidth, height: Constants.TileMapLayer.defaultTileHeight)
         self.numberOfRows = length + 2
         self.numberOfColumns = 1
+        lightingBitMask = Constants.Lighting.fireModeLightBitMask
         
         assignTileGroups()
         setupPhysicsBody()

@@ -10,7 +10,11 @@ import SpriteKit
 import GameKit
 
 final class LevelLayer: Layer {
-    private var guideTileMap: SKTileMapNode
+    private lazy var guideTileMap: SKTileMapNode = {
+        let node = SKTileMapNode()
+        node.lightingBitMask = Constants.Lighting.fireModeLightBitMask
+        return node
+    }()
     private let obstacleBuildingBlocks: ObstacleBuildingBlocks
     private let bottomBoundaryBuildingBlocks: BottomBoundaryBuildingBlocks
     private let platformBuildingBlocks: PlatformBuildingBlocks
@@ -140,8 +144,6 @@ final class LevelLayer: Layer {
         }
         
         platformBuildingBlocks = PlatformBuildingBlocks(leadingTile: platformLeadingTile, middleTile: platformMiddleTile, trailingTile: platformTrailingTile)
-        
-        guideTileMap = SKTileMapNode()
         
         super.init()
         

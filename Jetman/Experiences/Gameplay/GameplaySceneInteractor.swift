@@ -46,6 +46,17 @@ class GameplaySceneInteractor: Interactor {
     private let normalVelocity = CGPoint(x: -220, y: 0)
     private let fireModeVelocity = CGPoint(x: -330, y: 0)
     
+    private lazy var fireModeLightNode: SKLightNode = {
+        let lightNode = SKLightNode()
+        lightNode.lightColor = .red
+        lightNode.ambientColor = .red
+        lightNode.zPosition = Constants.ZPosition.light.floatValue
+        lightNode.position = .zero
+        lightNode.isEnabled = true
+        
+        return lightNode
+    }()
+    
     init(scene: GameplayScene) {
         super.init()
         

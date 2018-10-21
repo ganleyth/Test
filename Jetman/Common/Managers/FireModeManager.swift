@@ -14,6 +14,7 @@ class FireModeManager {
     
     func enterFireMode() {
         inFireMode = true
+        NotificationCenter.default.post(name: Constants.Notifications.fireModeBegin, object: self)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             guard let this = self else { return }
             NotificationCenter.default.post(name: Constants.Notifications.fireModeEnd, object: self)

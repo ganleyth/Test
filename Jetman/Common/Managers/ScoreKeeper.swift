@@ -11,7 +11,7 @@ import CoreGraphics
 
 class ScoreKeeper {
     var currentScore = 0
-    var coinsLeftToFireMode = 10
+    var coinsLeftToFireMode = 2
     
     func addPointsForCoin(andDecreaseCoinsLeftToFireMode decreaseCoinsLeftToFireMode: Bool) {
         currentScore += 10
