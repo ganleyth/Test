@@ -12,6 +12,7 @@ import AVKit
 class Player: SKSpriteNode {
     let gender: Gender
     private var isAscending = false
+    private var isFireMode = false
     var state: State = .idle {
         didSet {
             if state != oldValue {
@@ -42,6 +43,15 @@ class Player: SKSpriteNode {
         return emitter
     }()
     
+    private lazy var fireEmitter: SKEmitterNode? = {
+        guard let emitter = SKEmitterNode(fileNamed: "FireEmitter") else { return nil }
+        emitter.position = CGPoint(x: -22, y: -27)
+        emitter.zPosition = Constants.ZPosition.emitter.floatValue
+        emitter.name = Constants.Player.fireEmitterName
+        emitter.particleBirthRate = 0
+        return emitter
+    }()
+    
     private lazy var fireModeLight: SKLightNode = {
         let light = SKLightNode()
         light.position = CGPoint(x: -22, y: -27)
@@ -52,6 +62,7 @@ class Player: SKSpriteNode {
         light.falloff = 1
         light.isEnabled = false
         light.categoryBitMask = Constants.Lighting.fireModeLightBitMask
+        light.alpha = 0.2
         return light
     }()
 
@@ -62,6 +73,7 @@ class Player: SKSpriteNode {
         zPosition = Constants.ZPosition.playerAndObstacles.floatValue
         propulsionSoundPlayer?.prepareToPlay()
         if let se = smokeEmitter { addChild(se) }
+        if let fe = fireEmitter { addChild(fe) }
         addChild(fireModeLight)
         lightingBitMask = Constants.Lighting.fireModeLightBitMask
         
@@ -169,7 +181,7 @@ extension Player {
             this.propulsionSoundPlayer?.play()
         }
         
-        smokeEmitter?.particleBirthRate = 6
+        if !isFireMode { enableSmokeEmitter(true) }
     }
     
     func endAscension() {
@@ -185,7 +197,7 @@ extension Player {
             this.propulsionSoundPlayer?.pause()
         }
         
-        smokeEmitter?.particleBirthRate = 0
+        enableSmokeEmitter(false)
     }
     
     func endLevel() {
@@ -198,14 +210,30 @@ extension Player {
             this.propulsionSoundPlayer?.pause()
         }
         
-        smokeEmitter?.particleBirthRate = 0
+        enableSmokeEmitter(false)
     }
     
     @objc private func enterFireMode() {
+        isFireMode = true
         fireModeLight.isEnabled = true
+        enableFireEmitter(true)
+        enableSmokeEmitter(false)
     }
     
     @objc private func exitFireMode() {
         fireModeLight.isEnabled = false
+        enableFireEmitter(false)
+        if isAscending { enableSmokeEmitter(true) }
+        isFireMode = false
+    }
+    
+    private func enableSmokeEmitter(_ enable: Bool) {
+        guard let se = smokeEmitter else { return }
+        se.particleBirthRate = enable ? 6 : 0
+    }
+    
+    private func enableFireEmitter(_ enable: Bool) {
+        guard let fe = fireEmitter else { return }
+        fe.particleBirthRate = enable ? 200 : 0
     }
 }

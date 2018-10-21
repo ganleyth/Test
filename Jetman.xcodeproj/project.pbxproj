@@ -56,6 +56,7 @@
 		188CAA392083C03800E2AC6B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 188CAA382083C03800E2AC6B /* GoogleService-Info.plist */; };
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18982082215A6E5800F20AB2 /* CoinEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18982081215A6E5800F20AB2 /* CoinEmitter.sks */; };
+		189B6F50217CF44900684A4B /* FireEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 189B6F4F217CF44900684A4B /* FireEmitter.sks */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
 		18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EC205DA1F000EB4BB8 /* Interactor.swift */; };
@@ -113,7 +114,6 @@
 		18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */; };
 		18E53F8E20C7770600BE7BB9 /* EndOfGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */; };
 		18EFBA602083DF90007462CC /* Jetman.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 183E75A4203BADAB00092B2A /* Jetman.entitlements */; };
-		18F1CD85217B761D00CE6231 /* MyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18F1CD84217B761D00CE6231 /* MyScene.sks */; };
 		18F4DE8B1FE578D1007FE471 /* GameplaySceneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */; };
 		18F4DE8D1FE596B9007FE471 /* SKSpriteNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */; };
 		18F4DE901FE5CBBE007FE471 /* TimeInterval+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */; };
@@ -209,6 +209,7 @@
 		188CAA382083C03800E2AC6B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18982081215A6E5800F20AB2 /* CoinEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinEmitter.sks; sourceTree = "<group>"; };
+		189B6F4F217CF44900684A4B /* FireEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireEmitter.sks; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
 		18A671EC205DA1F000EB4BB8 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -266,7 +267,6 @@
 		18E36BC62140136A00858560 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
 		18E53F8B20C776F400BE7BB9 /* EndOfGameView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EndOfGameView.storyboard; sourceTree = "<group>"; };
 		18E53F8D20C7770600BE7BB9 /* EndOfGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfGameViewController.swift; sourceTree = "<group>"; };
-		18F1CD84217B761D00CE6231 /* MyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyScene.sks; sourceTree = "<group>"; };
 		18F4DE8A1FE578D1007FE471 /* GameplaySceneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameplaySceneInteractor.swift; path = Jetman/Experiences/Gameplay/GameplaySceneInteractor.swift; sourceTree = SOURCE_ROOT; };
 		18F4DE8C1FE596B9007FE471 /* SKSpriteNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKSpriteNode+Helpers.swift"; sourceTree = "<group>"; };
 		18F4DE8F1FE5CBBE007FE471 /* TimeInterval+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Helpers.swift"; sourceTree = "<group>"; };
@@ -578,7 +578,6 @@
 				18DF6BD82027786200BF0502 /* Emitters */,
 				1851438020D8C0D5000EC8A0 /* ActivityIndicator.xib */,
 				1851438220D8C2D5000EC8A0 /* ActivityIndicator.swift */,
-				18F1CD84217B761D00CE6231 /* MyScene.sks */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -659,6 +658,7 @@
 				18D52E7C21568CAC00059239 /* EndOfLevelCelebration.sks */,
 				18982081215A6E5800F20AB2 /* CoinEmitter.sks */,
 				18AA25A62169B60000AA3331 /* ObstacleExplosionEmitter.sks */,
+				189B6F4F217CF44900684A4B /* FireEmitter.sks */,
 				18DF6BDA202778D300BF0502 /* Assets.xcassets */,
 			);
 			path = Emitters;
@@ -858,6 +858,7 @@
 				18E1CFFE204B29B200B4B506 /* SettingsView.storyboard in Resources */,
 				18E53F8C20C776F400BE7BB9 /* EndOfGameView.storyboard in Resources */,
 				180C88AD1FC77F5F00D19F85 /* LaunchScreen.storyboard in Resources */,
+				189B6F50217CF44900684A4B /* FireEmitter.sks in Resources */,
 				18DD3503208BC9C90077E7B1 /* ChallengeResponseView.storyboard in Resources */,
 				1884675B20E94D0800CE5F33 /* LeaderboardView.storyboard in Resources */,
 				18AA25A72169B60100AA3331 /* ObstacleExplosionEmitter.sks in Resources */,
@@ -874,7 +875,6 @@
 				1884676320E97A2F00CE5F33 /* RightDetailTableViewCell.xib in Resources */,
 				183E75A1203B83C100092B2A /* descent.wav in Resources */,
 				18DF6BDC202778D300BF0502 /* Assets.xcassets in Resources */,
-				18F1CD85217B761D00CE6231 /* MyScene.sks in Resources */,
 				18B32FE31FDA565C00D59107 /* GameplayView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

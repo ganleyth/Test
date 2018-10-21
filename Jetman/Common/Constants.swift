@@ -88,6 +88,7 @@ struct Constants {
     struct Player {
         static let animationKey = "animation"
         static let ascendKey = "ascend"
+        static let fireEmitterName = "fireEmitter"
         static let lightName = "light"
         static let smokeEmitterName = "smokeEmitter"
     }
@@ -171,10 +172,10 @@ struct Constants {
     
     enum ZPosition: Int {
         case backgroundLayer = 0
+        case light
         case playerAndObstacles
         case foregroundLayer
         case emitter
-        case light
         
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)
