@@ -172,7 +172,7 @@ extension GameplaySceneInteractor {
         case .yetToStart:
             player.state = .idle
         case .playing:
-            GameAnalytics.addProgressionEvent(with: GAProgressionStatusStart, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!")
+//            GameAnalytics.addProgressionEvent(with: GAProgressionStatusStart, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!")
             scene.backgroundLayer?.setVelocity(value: CGPoint(x: -100, y: 0))
             scene.levelLayer?.setVelocity(value: normalVelocity)
         case .gameOver:
@@ -195,7 +195,7 @@ extension GameplaySceneInteractor {
             scene.gameplayDelegate?.gameplayDidEnd(playerDied: hasCollided)
             musicAudioPlayer?.stop()
             let score = GameSession.shared.scoreKeeper.currentScore
-            GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!", score: score)
+//            GameAnalytics.addProgressionEvent(with: GAProgressionStatusComplete, progression01: "Jetman!", progression02: "Jetman!", progression03: "Jetman!", score: score)
         }
     }
 }

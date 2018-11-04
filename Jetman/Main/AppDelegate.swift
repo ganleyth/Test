@@ -83,8 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3667026795210788~2234868642")
         
         // Game Analytics
-        GameAnalytics.configureBuild("1.3.0")
-        GameAnalytics.initialize(withGameKey: "8e72d5cde7a32901323fb87a2ebe6e7c",
+//        GameAnalytics.configureBuild("1.3.0")
+//        GameAnalytics.initialize(withGameKey: "8e72d5cde7a32901323fb87a2ebe6e7c",
                                  gameSecret: "ec25ae8a29fbc6a59109df5f69a3a7ced53dd94a")
         
         // User authentication
