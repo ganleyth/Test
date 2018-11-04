@@ -100,9 +100,12 @@ final class LevelLayer: Layer {
         }
         
         for i in 0..<levelManager.obstacleItemizedCount.dynamicShort {
-            obstacles.append(Obstacle(length: shortLength,
+            obstacles.append(DynamicObstacle(length: shortLength,
                                       coordinatePosition: CoordinatePosition(x: randomXPositions[j], y: randomYPositionForObstacleOfLength(shortLength)),
-                                      obstacleBuildingBlocks: obstacleBuildingBlocks))
+                                      obstacleBuildingBlocks: obstacleBuildingBlocks,
+                                      verticalVelocity: Constants.ObstacleVerticalVelocity.medium.rawValue,
+                                      levelMinY: CGFloat(currentBottomBoundaryMaxRow + 1) * Constants.TileMapLayer.defaultTileHeight,
+                                      levelMaxY: CGFloat(Constants.TileMapLayer.defaultRowCount) * Constants.TileMapLayer.defaultTileHeight))
             j += 1
         }
         

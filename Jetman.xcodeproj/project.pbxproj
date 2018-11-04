@@ -57,6 +57,7 @@
 		18956FA91FEDF19A00EAE585 /* ForegroundTileset.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */; };
 		18982082215A6E5800F20AB2 /* CoinEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 18982081215A6E5800F20AB2 /* CoinEmitter.sks */; };
 		189B6F50217CF44900684A4B /* FireEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 189B6F4F217CF44900684A4B /* FireEmitter.sks */; };
+		189B6F52217D37A100684A4B /* DynamicObstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B6F51217D37A100684A4B /* DynamicObstacle.swift */; };
 		18A13DDE1FEECCEC00A042AD /* LevelLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */; };
 		18A13DE01FEED1D400A042AD /* SKTileMapNode+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */; };
 		18A671ED205DA1F000EB4BB8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A671EC205DA1F000EB4BB8 /* Interactor.swift */; };
@@ -210,6 +211,7 @@
 		18956FA81FEDF19A00EAE585 /* ForegroundTileset.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ForegroundTileset.sks; sourceTree = "<group>"; };
 		18982081215A6E5800F20AB2 /* CoinEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CoinEmitter.sks; sourceTree = "<group>"; };
 		189B6F4F217CF44900684A4B /* FireEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireEmitter.sks; sourceTree = "<group>"; };
+		189B6F51217D37A100684A4B /* DynamicObstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicObstacle.swift; sourceTree = "<group>"; };
 		18A13DDD1FEECCEC00A042AD /* LevelLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLayer.swift; sourceTree = "<group>"; };
 		18A13DDF1FEED1D400A042AD /* SKTileMapNode+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Helpers.swift"; sourceTree = "<group>"; };
 		18A671EC205DA1F000EB4BB8 /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				181AD9C520CD82B100EEEB7F /* User.swift */,
 				181AD9C720CD964400EEEB7F /* CloudKitSyncable.swift */,
 				18E36BC62140136A00858560 /* Obstacle.swift */,
+				189B6F51217D37A100684A4B /* DynamicObstacle.swift */,
 				18ABA4232146124900FFD2C4 /* FinishLine.swift */,
 				18D52E832157116C00059239 /* Coin.swift */,
 				18AA25A021695A0E00AA3331 /* ScoreIncreaseNode.swift */,
@@ -1005,6 +1008,7 @@
 				18A671EF205DACD900EB4BB8 /* FriendManager.swift in Sources */,
 				1842D6E22015095400571BD2 /* SKTileGroup+Helpers.swift in Sources */,
 				18E1D000204B2A0100B4B506 /* SettingsViewController.swift in Sources */,
+				189B6F52217D37A100684A4B /* DynamicObstacle.swift in Sources */,
 				181AD9C820CD964400EEEB7F /* CloudKitSyncable.swift in Sources */,
 				181AD9CA20CDF2CF00EEEB7F /* CKRecord+AppExtensions.swift in Sources */,
 				18CEF31C1FD4E8D7005C3980 /* Constants.swift in Sources */,

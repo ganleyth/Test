@@ -49,7 +49,7 @@ class LevelManager {
             counter += 1
         }
         
-        return (15 + staticShortCounter, dynamicShortCounter, staticLongCounter)
+        return (10 + staticShortCounter, 5 + dynamicShortCounter, staticLongCounter)
     }()
     
     lazy var obstacleCount: Int = {

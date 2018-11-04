@@ -13,7 +13,6 @@ class Obstacle: SKTileMapNode {
     let length: Int
     let coordinatePosition: CoordinatePosition
     let obstacleBuildingBlocks: ObstacleBuildingBlocks
-    let isDynamic: Bool
     
     var hasExploded = false
     
@@ -25,7 +24,6 @@ class Obstacle: SKTileMapNode {
         self.length = length
         self.coordinatePosition = coordinatePosition
         self.obstacleBuildingBlocks = obstacleBuildingBlocks
-        self.isDynamic = isDynamic
         
         super.init()
         
@@ -39,9 +37,6 @@ class Obstacle: SKTileMapNode {
         
         assignTileGroups()
         setupPhysicsBody()
-        if isDynamic {
-            setupDynamism()
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

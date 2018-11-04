@@ -73,6 +73,12 @@ struct Constants {
         }
     }
     
+    enum ObstacleVerticalVelocity: CGFloat {
+        case light = 100.0
+        case medium = 200.0
+        case heavy = 300.0
+    }
+    
     enum ObstacleTileName: String {
         case top = "obstacleTileTop"
         case middle = "obstacleTileMiddle"
@@ -172,10 +178,10 @@ struct Constants {
     
     enum ZPosition: Int {
         case backgroundLayer = 0
-        case light
         case playerAndObstacles
         case foregroundLayer
         case emitter
+        case light
         
         var floatValue: CGFloat {
             return CGFloat(self.rawValue)
