@@ -111,18 +111,18 @@ class CloudKitManager {
     }
     
     func updateHighScore(_ score: Int, completion: ((_ success: Bool) -> Void)?) {
-        guard let userRecordID = GameSession.shared.currentUser?.recordID else { return }
-        
-        let newKeysAndValues = [Constants.CloudKit.User.highScore: score]
-        
-        update(recordID: userRecordID, in: CKContainer.default().publicCloudDatabase, withNewKeysAndValues: newKeysAndValues) { (success, record) in
-            if success,
-                let record = record,
-                let user = User(record: record) {
-                GameSession.shared.currentUser = user
-            }
-            completion?(success)
-        }
+//        guard let userRecordID = GameSession.shared.currentUser?.recordID else { return }
+//        
+//        let newKeysAndValues = [Constants.CloudKit.User.highScore: score]
+//        
+//        update(recordID: userRecordID, in: CKContainer.default().publicCloudDatabase, withNewKeysAndValues: newKeysAndValues) { (success, record) in
+//            if success,
+//                let record = record,
+//                let user = User(record: record) {
+//                GameSession.shared.currentUser = user
+//            }
+//            completion?(success)
+//        }
     }
     
     func fetchLeaders(completion: @escaping (_ leaders: [User]) -> Void) {
